@@ -1,0 +1,3 @@
+rootProject.name = 'java-in-action'
+include 'java8-in-action'
+
