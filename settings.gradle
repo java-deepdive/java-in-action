@@ -1,3 +1,5 @@
 rootProject.name = 'java-in-action'
 include 'java8-in-action'
+include 'java-in-interview'
+include 'java-in-leetCode'
 
