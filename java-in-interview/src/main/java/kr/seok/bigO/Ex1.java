@@ -1,7 +1,7 @@
 package kr.seok.bigO;
 
-public class Example1 {
-    /* 시간 복잡도 ? */
+/* 아래 코드의 시간복잡도? */
+public class Ex1 {
     void foo(int[] array) {
         int sum = 0;
         int product = 1;

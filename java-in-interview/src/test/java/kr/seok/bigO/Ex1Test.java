@@ -3,12 +3,12 @@ package kr.seok.bigO;
 import org.junit.jupiter.api.BeforeEach;
 import org.junit.jupiter.api.Test;
 
-class Example1Test {
-    Example1 ex;
+class Ex1Test {
+    Ex1 ex;
 
     @BeforeEach
     public void setUp() {
-        ex = new Example1();
+        ex = new Ex1();
     }
 
     @Test
