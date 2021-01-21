@@ -3,4 +3,4 @@
 ## Contents
 
 ## Study
-- [x] [1주차 - OT](docs/contents/20210118.md)
+- [x] [1주차 - OT](docs/study/20210118.md)
