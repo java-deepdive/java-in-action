@@ -10,7 +10,6 @@ package kr.seok.strNArr;
  */
 public class Ex1 {
 
-
     /*
         문자열이 주어짐
 
@@ -24,8 +23,6 @@ public class Ex1 {
      */
     boolean isUniqueChars(String str) {
         // 문자 집합에서 i 번째 문자가 배열 내에 존재하는지 표시하는 boolean 배열을 사용
-
-        //
 
         /*
             문자열의 길이가 `문자 집합의 크기`보다 클 경우 false를 반환해도 됨
