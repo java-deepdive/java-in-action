@@ -5,6 +5,7 @@
 ### 면접문제
 - 자료구조
 > 배열과 문자열
+
 - 두 가지 방법으로 해결할 수 있는 문제들은 서로 대체하는 것이 가능하다.
 
 1. 해시테이블
@@ -29,7 +30,7 @@
 
 - 나만의 StringBuilder, HashTable, ArrayList를 구현해보기
 
-4. 면접문제
+4. 면접문제 유형
 
 - 중복 확인
 - 순열 확인
@@ -46,3 +47,4 @@
 
 ## Study
 - [x] [1주차 - OT](docs/study/20210118.md)
+- [x] [2주차 - StringBuffer & StringBuilder](docs/study/20210125.md)

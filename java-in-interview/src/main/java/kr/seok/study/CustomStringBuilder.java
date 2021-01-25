@@ -33,7 +33,7 @@ public final class CustomStringBuilder extends AbstractStringBuilder implements 
     }
 
     @Override
-    protected AbstractStringBuilder replace(int start, int end, String str) {
+    public AbstractStringBuilder replace(int start, int end, String str) {
         super.replace(start, end, str);
         return this;
     }
@@ -45,7 +45,7 @@ public final class CustomStringBuilder extends AbstractStringBuilder implements 
     }
 
     @Override
-    protected AbstractStringBuilder reverse() {
+    public AbstractStringBuilder reverse() {
         return super.reverse();
     }
 

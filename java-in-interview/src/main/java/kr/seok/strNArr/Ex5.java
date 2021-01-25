@@ -26,7 +26,6 @@ public class Ex5 {
             - 문자열의 길이를 알고 있으면 어떤 연산이 필요한지 알 수 있다.
 
      */
-
    boolean oneEditAway(String first, String second) {
        // 문자열 길이를 통해 필요한 해법을 선택
        if(first.length() == second.length()) { // 교체

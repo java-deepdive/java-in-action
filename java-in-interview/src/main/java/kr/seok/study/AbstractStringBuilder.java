@@ -59,9 +59,12 @@ abstract class AbstractStringBuilder {
             throw new StringIndexOutOfBoundsException(offset);
         if (str == null) str = "null";
         int len = str.length();
+
         ensureCapacityInternal(count + len);
+
         System.arraycopy(value, offset, value, offset + len, count - offset);
         System.arraycopy(str.toCharArray(), 0, value, offset, len);
+
         count += len;
         return this;
     }
@@ -78,8 +81,10 @@ abstract class AbstractStringBuilder {
         char[] dest = str.toCharArray();
 
         ensureCapacityInternal(newCount);
+
         System.arraycopy(value, end, value, start + len, count - end);
         System.arraycopy(dest, 0, value, start, dest.length);
+
         count = newCount;
         return this;
     }
@@ -90,6 +95,7 @@ abstract class AbstractStringBuilder {
         if (start > end) throw new StringIndexOutOfBoundsException();
 
         int len = end - start;
+
         if (len > 0) {
             System.arraycopy(value, start + len, value, start, count - end);
             count -= len;

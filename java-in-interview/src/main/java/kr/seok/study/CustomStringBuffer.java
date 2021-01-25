@@ -4,8 +4,8 @@ import java.io.Serializable;
 import java.util.Arrays;
 
 /**
- * Java 라이브러리 분석
- * Thread safe StringBuffer
+ * Java 라이브러리 분석 <br>
+ *  - Thread safe StringBuffer
  */
 public final class CustomStringBuffer extends AbstractStringBuilder implements Serializable {
 
@@ -63,7 +63,9 @@ public final class CustomStringBuffer extends AbstractStringBuilder implements S
 
     @Override
     public synchronized String toString() {
-        return new String(Arrays.copyOfRange(value, 0, count));
+        return new String(
+                Arrays.copyOfRange(value, 0, count)
+        );
     }
 }
 
