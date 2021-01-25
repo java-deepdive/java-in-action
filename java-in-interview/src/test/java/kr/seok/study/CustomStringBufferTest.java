@@ -9,10 +9,11 @@ import static org.assertj.core.api.Assertions.assertThat;
 class CustomStringBufferTest {
 
     CustomStringBuffer sb;
-
+    CustomStringBuffer capacitySb;
     @BeforeEach
     public void setUp() {
         sb = new CustomStringBuffer("This is");
+        capacitySb = new CustomStringBuffer();
     }
 
     @Test
@@ -71,5 +72,19 @@ class CustomStringBufferTest {
     void testCase7() {
         sb.reverse();
         assertThat(sb.toString()).contains("si sihT");
+    }
+
+    @Test
+    @DisplayName("StringBuffer Capacity 증가 테스트")
+    void testCase8() {
+        System.out.println("초기 문자열 길이 확인 : " + capacitySb.length());
+        System.out.println("초기 버퍼 크기 확인 : " + capacitySb.capacity());
+        String str = "zzzzaaskldjaskldjaskljdklasjdklasdjklas";
+
+        for(char ch : str.toCharArray()) {
+            capacitySb.append(ch + "");
+            System.out.println(capacitySb.length());
+            System.out.println(capacitySb.capacity());
+        }
     }
 }

@@ -54,6 +54,7 @@ abstract class AbstractStringBuilder {
         return this;
     }
 
+
     public AbstractStringBuilder insert(int offset, String str) {
         if ((offset < 0) || (offset > length()))
             throw new StringIndexOutOfBoundsException(offset);
@@ -152,13 +153,15 @@ abstract class AbstractStringBuilder {
         return count;
     }
 
+    public int capacity() {
+        return value.length;
+    }
+
     protected AbstractStringBuilder reverse() {
         boolean hasSurrogates = false;
         int n = count - 1;
 
-        System.out.println((n - 1));
         for (int j = (n - 1) >> 1; j >= 0; j--) {
-            System.out.println(j);
             int k = n - j;
             char cj = value[j];
             char ck = value[k];

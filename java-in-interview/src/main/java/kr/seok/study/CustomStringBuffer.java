@@ -67,5 +67,15 @@ public final class CustomStringBuffer extends AbstractStringBuilder implements S
                 Arrays.copyOfRange(value, 0, count)
         );
     }
+
+    @Override
+    public int length() {
+        return super.length();
+    }
+
+    @Override
+    public int capacity() {
+        return super.capacity();
+    }
 }
 
