@@ -1,4 +1,4 @@
-package kr.seok.string;
+package kr.seok.stack;
 
 import java.util.HashMap;
 import java.util.Stack;
