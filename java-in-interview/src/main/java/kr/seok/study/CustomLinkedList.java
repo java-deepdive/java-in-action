@@ -15,9 +15,6 @@ import java.util.Comparator;
  */
 public class CustomLinkedList<E> {
 
-    transient int size = 0;
-    transient Node<E> last;
-
     /**
      * 연결리스트에서 데이터를 저장하는 노드를 정의
      */
@@ -31,8 +28,8 @@ public class CustomLinkedList<E> {
         }
     }
 
-    private Node<E> head; // 헤더 노드
-    private Node<E> cur; // 선태 노드
+    Node<E> head; // 헤더 노드
+    Node<E> cur; // 선택 노드
 
     /*
         생성자는 머리 노드를 가리키는 변수 head에 null을 대입
@@ -102,18 +99,18 @@ public class CustomLinkedList<E> {
         if(head != null) {
             if(head.next == null) { // 노드가 하나만 있는 경우
                 removeFirst(); // 머리 노드를 삭제
-            }
-        } else {
-            Node<E> ptr = head; // 스캔중인 노드
-            Node<E> pre = head; // 스캔 중인 노드의 앞 노드
+            } else {
+                Node<E> ptr = head; // 스캔중인 노드
+                Node<E> pre = head; // 스캔 중인 노드의 앞 노드
 
-            // while문 종료 시, ptr은 꼬리 노드를 가리키고, pre 꼬리로부터 두 번째 노드를 가리킨다.
-            while (ptr.next != null) {
-                pre = ptr; // 다음 포인터 값이 있는 경우 pre Node에 저장
-                ptr = ptr.next; // 다음 포인터를 현 포인터로 저장
+                // while문 종료 시, ptr은 꼬리 노드를 가리키고, pre 꼬리로부터 두 번째 노드를 가리킨다.
+                while (ptr.next != null) {
+                    pre = ptr; // 다음 포인터 값이 있는 경우 pre Node에 저장
+                    ptr = ptr.next; // 다음 포인터를 현 포인터로 저장
+                }
+                pre.next = null; // pre는 삭제 후의 꼬리 노드
+                cur = pre;
             }
-            pre.next = null; // pre는 삭제 후의 꼬리 노드
-            cur = pre;
         }
     }
 
