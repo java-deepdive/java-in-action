@@ -1,5 +1,10 @@
 package kr.seok.study;
 
+/**
+ * @Reference [책] Do it! 자료구조와 함께 배우는 알고리즘
+ *
+ * @see java.util.Hashtable
+ */
 public class ChainHash<K, V> {
 
     class Node<K, V> {
@@ -38,7 +43,7 @@ public class ChainHash<K, V> {
         }
     }
 
-    public int hashValue(Object key ) {
+    public int hashValue(Object key) {
         return key.hashCode() % size;
     }
 
