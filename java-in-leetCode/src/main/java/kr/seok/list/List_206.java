@@ -37,4 +37,21 @@ public class List_206 {
         }
         return prev;
     }
+
+    /*
+
+        재귀버전은 거꾸로 작업
+
+        재귀는 이해가 힘듦..
+
+     */
+    public ListNode reverseListRecursive(ListNode head) {
+        if (head == null || head.next == null) return head;
+
+        ListNode p = reverseList(head.next);
+        head.next.next = head;
+        head.next = null;
+
+        return p;
+    }
 }
