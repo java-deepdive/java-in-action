@@ -24,8 +24,9 @@ public class Factorial {
         if (number == 1)
             return done(factorial);
         else
-            return call(() ->
-                    factorialTailRec(factorial * number, number - 1));
+            return call(
+                    () -> factorialTailRec(factorial * number, number - 1)
+            );
     }
 
     public static int factorial(final int number) {
