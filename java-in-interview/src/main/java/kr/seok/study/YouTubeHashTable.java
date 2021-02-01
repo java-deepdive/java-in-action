@@ -81,16 +81,18 @@ public class YouTubeHashTable {
         int hashCode = getHashCode(key);
         int index = convertToIndex(hashCode);
 
-        LinkedList<Node> list = data[index];
+        LinkedList<Node> list = data[index]; // 해시 값으로 계산된 인덱스로 LinkedList 를 조회
 
-        if(list == null) {
+        if(list == null) { // list가 없으면 새 LinkedList 를 생성 및 해당 인덱스에 초기화 시킴
             list = new LinkedList<>();
             data[index] = list;
         }
-        Node node = search(list, key);
-        if(node == null) {
+        // list 가 존재한다? 그럼 특정 키 값에 매핑되는 노드를 가져오도록 함
+        Node node = search(list, key); // 노드 검색
+
+        if(node == null) { // 해당 노드가 없으면 동일한 인덱스에 list 마지막에 추가
             list.addLast(new Node(key, value));
-        } else {
+        } else { // 아니면 데이터를 수정
             node.setValue(value);
         }
     }
@@ -98,7 +100,9 @@ public class YouTubeHashTable {
     String get(String key) {
         int hashCode = getHashCode(key);
         int index = convertToIndex(hashCode);
+
         LinkedList<Node> list = data[index];
+
         Node node = search(list, key);
         return node == null ? "not found" : node.getValue();
     }
