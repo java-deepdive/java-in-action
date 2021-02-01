@@ -8,13 +8,13 @@ import java.util.Comparator;
 
 import static org.assertj.core.api.Assertions.assertThat;
 
-class CustomLinkedListTest {
+class PointerLinkedListTest {
 
-    CustomLinkedList<Integer> linkedList;
+    PointerLinkedList<Integer> linkedList;
 
     @BeforeEach
     public void setUp() {
-        linkedList = new CustomLinkedList<>();
+        linkedList = new PointerLinkedList<>();
     }
 
     @Test

@@ -16,7 +16,7 @@ import java.util.Comparator;
  * @see java.util.ArrayList
  * @see java.util.LinkedList
  */
-public class CustomLinkedList<E> {
+public class PointerLinkedList<E> {
 
     /**
      * 연결리스트(LinkedList)에서 사용되는 데이터를 저장하는 컨테이너 역할을 하는 Node 클래스
@@ -44,7 +44,7 @@ public class CustomLinkedList<E> {
             - 노드가 2개인 연결리스트를 판단하는 방법 -? head.next.next == null
             - tail 노드인지 판단하는 방법 -> node.next == null
      */
-    public CustomLinkedList() {
+    public PointerLinkedList() {
         head = cur = null;
     }
 
