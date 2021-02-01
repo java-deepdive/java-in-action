@@ -12,15 +12,18 @@ import java.util.Comparator;
  *  - 리스트의 데이터: Node 또는 element
  *  - 노드의 구성: 데이터와 다음 노드를 가리키는 포인터
  *  - 처음(head node)과 끝(tail node)에 있는 노드
+ *
+ * @see java.util.ArrayList
+ * @see java.util.LinkedList
  */
 public class CustomLinkedList<E> {
 
     /**
-     * 연결리스트에서 데이터를 저장하는 노드를 정의
+     * 연결리스트(LinkedList)에서 사용되는 데이터를 저장하는 컨테이너 역할을 하는 Node 클래스
      */
-    static class Node<E> {
-        E data; // 데이터
-        Node<E> next; // 다음 노드를 가리키는 포인터
+    class Node<E> {
+        E data;         // 데이터
+        Node<E> next;   // 다음 노드를 가리키는 포인터
 
         Node(E element, Node<E> next) {
             this.data = element;
@@ -36,10 +39,10 @@ public class CustomLinkedList<E> {
         그 결과 노드가 하나도 없는 비어있는 연결리스트를 생성
 
         이 개념을 통해 알 수 있는 것
-        - 연결리스트가 비어있는지 확인 하는 방법 -> head == null
-        - 노드가 1개인 연결리스트를 판단하는 방법 -> head.next == null
-        - 노드가 2개인 연결리스트를 판단하는 방법 -? head.next.next == null
-        - tail 노드인지 판단하는 방법 -> node.next == null
+            - 연결리스트가 비어있는지 확인 하는 방법 -> head == null
+            - 노드가 1개인 연결리스트를 판단하는 방법 -> head.next == null
+            - 노드가 2개인 연결리스트를 판단하는 방법 -? head.next.next == null
+            - tail 노드인지 판단하는 방법 -> node.next == null
      */
     public CustomLinkedList() {
         head = cur = null;
@@ -114,6 +117,9 @@ public class CustomLinkedList<E> {
         }
     }
 
+    /*
+
+     */
     public void remove(Node p) {
         if(head != null) {
             if(p == head) {
@@ -146,6 +152,7 @@ public class CustomLinkedList<E> {
         cur = null;
     }
 
+    // 해당 노드가 존재하는지 확인하는 메서드
     public boolean next() {
         if(cur == null || cur.next == null) {
             return false;
@@ -154,6 +161,7 @@ public class CustomLinkedList<E> {
         return true;
     }
 
+    // 현재 노드의 데이터를 조회
     public void printCurrentNode() {
         if(cur == null) {
             System.out.println("선택한 노드가 없습니다.");
@@ -162,6 +170,7 @@ public class CustomLinkedList<E> {
         }
     }
 
+    // 내용 출력
     public void dump() {
         Node<E> ptr = head;
 
