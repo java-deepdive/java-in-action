@@ -1,4 +1,4 @@
-package kr.seok.study;
+package kr.seok.list;
 
 import java.util.Comparator;
 

@@ -3,6 +3,8 @@ package kr.seok.study;
 import java.util.LinkedList;
 
 /**
+ * 유튜브에서 참고한 HashTable 구현
+ *
  * class
  *  : Node
  *

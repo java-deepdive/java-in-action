@@ -123,7 +123,14 @@ public class ChainHash<K, V> {
         return 0;
     }
 
-    // 노드이 제거
+    /*
+        노드 제거
+        1. 해시 값 조회
+        2. 포인터 값 조회
+        3. 포인터를 순회하면서 키 값에 맞는 노드를 탐색
+        4. 키 값이 있다? -> pp 값은 null -> 포인터의 다음 노드 주소 값을 저장하고 종료
+        5. 키 값이 없다? -> 해당 포인터를 임시 포인터 값 pp 에 저장, 포인터의 다음 노드 주소값을 p에 저장 -> 키 값에 매칭되는 노드를 탐색, pp 값이 저장되어 있음 -> 포인터의 다음 노드 주소값을 pp.next에
+     */
     public int remove(K key) {
 
         int hash = hashValue(key);  // 삭제할 데이터의 해시 값
@@ -131,19 +138,17 @@ public class ChainHash<K, V> {
         Node<K, V> pp = null;       // 바로 앞의 선택 노드
 
         while (p != null) { // 배열에서 동일한 키값의 Node를 탐색
-            if(p.getKey().equals(key)) {
-                if(pp == null) { // 키 값을 찾으면
-                    table[hash] = p.next;
+            if(p.getKey().equals(key)) { // 키 값에 해당하는 노드 탐색 완료
+                if(pp == null) {
+                    table[hash] = p.next; // cur 값을 삭제 후 pointer 값을 table에 저장
                 } else {
                     pp.next = p.next;
                 }
                 return 0;
             }
-
-            pp = p;
+            pp = p; // key 값에 해당하는 노드가 없으면 임시 포인터에 저장
             p = p.next; // 다음 노드를 가리킴
         }
-
         return 1; // 해당 키 값이 존재하지 않음
     }
 
