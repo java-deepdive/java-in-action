@@ -25,22 +25,17 @@ public class List_203 {
 
     public ListNode removeElements(ListNode head, int val) {
         ListNode sentinel = new ListNode(0); // 일단 기본 값 0을 넣고 노드를 생성
-        sentinel.next = head; // head 노드를 생성한 노드의 next에 저장함으로써 연결
+        sentinel.next = head; // head 노드를 생성한 노드의 next에 저장하여 head로 정의
 
-        ListNode prev = sentinel; // 새 노드를 prev에 저장
-        ListNode curr = head; // head를 curr에 저장
-
+        ListNode prev = sentinel, curr = head;
         /*
             prev -> curr 을 연결
          */
         while (curr != null) { // curr Node 부터 연결된 Node를 탐색
             if (curr.val == val) { // 탐색 노드의 값 과 삭제해야하는 값을 비교
-                /*
-
-                 */
                 prev.next = curr.next;
             } else { // 앞으로 탐색
-                prev = curr;
+                prev = curr; // 이전 노드에 curr 노드를 저장
             }
             /*
                 현 curr 값과 삭제하길 원하는 값과 같은 경우 (데이터를 찾음)
@@ -50,7 +45,7 @@ public class List_203 {
                 2. prev <- curr 로 값을 이동, 포인터(curr.next)를 curr 로 이동
 
              */
-            curr = curr.next;
+            curr = curr.next; // 다음 노드를 curr 노드로 저장하여 ( ) ( ) ( ) 모양을 유지
         }
         return sentinel.next;
     }

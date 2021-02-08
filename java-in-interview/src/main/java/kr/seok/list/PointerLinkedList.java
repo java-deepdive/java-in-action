@@ -117,8 +117,8 @@ public class PointerLinkedList<E> {
         }
     }
 
-    /*
-
+    /**
+     * @see List_203
      */
     public void remove(Node p) {
         if(head != null) {

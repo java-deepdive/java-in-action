@@ -29,11 +29,11 @@ public class List_206 {
         // 1, 2, 3, 4
         while (curr != null) { // 단방향 리스트의 특성에 따라 head를 기준으로 탐색
 
-            ListNode next = curr.next; // 다음 노드를 저장 2
+            ListNode nextTmp = curr.next; // 다음 노드를 저장 2
             curr.next = prev; // 1을 next에 저장 -> 2, 1
             prev = curr;
 
-            curr = next;
+            curr = nextTmp;
         }
         return prev;
     }
@@ -48,7 +48,7 @@ public class List_206 {
     public ListNode reverseListRecursive(ListNode head) {
         if (head == null || head.next == null) return head;
 
-        ListNode p = reverseList(head.next);
+        ListNode p = reverseListRecursive(head.next);
         head.next.next = head;
         head.next = null;
 
