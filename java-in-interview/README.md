@@ -11,5 +11,6 @@
 - 연결리스트의 장점은 리스트의 시작 지점에서 아이템을 추가하거나 삭제하는 연산을 상수 시간에 할 수 있다.
 
 ## Study
+- [x] [월요일 스터디 정리](https://www.notion.so/seokrae/2020-4db5e56dc5024889a721b4c39760aad5)
 - [x] [1주차 - OT](docs/study/20210118.md)
 - [x] [2주차 - StringBuffer & StringBuilder](docs/study/20210125.md)
