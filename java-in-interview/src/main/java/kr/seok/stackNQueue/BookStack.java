@@ -6,7 +6,7 @@ package kr.seok.stackNQueue;
  * 자료구조 Stack
  */
 public class BookStack {
-    private int max; // 스택 용량
+    private int size; // 스택 용량
     private int ptr; // 스택의 포인터
     private int[] stk; // 스택의 본체
 
@@ -28,11 +28,11 @@ public class BookStack {
      */
     public BookStack(int capacity) {
         ptr = 0;
-        max = capacity;
+        size = capacity;
         try {
-            stk = new int[max]; // 스택 본체용 배열을 생성
+            stk = new int[size]; // 스택 본체용 배열을 생성
         } catch (OutOfMemoryError e) { // 생성할 수 없으므로 예외 처리
-            max = 0;
+            size = 0;
         }
     }
 
@@ -45,7 +45,7 @@ public class BookStack {
 
      */
     public int push(int x) throws OverflowIntStackException {
-        if(ptr >= max) // 스택이 가득 참
+        if(ptr >= size) // 스택이 가득 참
             throw new OverflowIntStackException();
         // x를 저장하고 스택 포인터를 증가시킨다.
         return stk[ptr++] = x;
@@ -92,7 +92,7 @@ public class BookStack {
 
     // 최대 수용량 확인
     public int capacity() {
-        return max;
+        return size;
     }
 
     // 현재 포인터 값을 확인
@@ -107,7 +107,7 @@ public class BookStack {
 
     // max 값이 ptr과 같은 경우 스택이 가득 찼음을 판단
     public boolean isFull() {
-        return ptr >= max;
+        return ptr >= size;
     }
 
     public void dump() {
