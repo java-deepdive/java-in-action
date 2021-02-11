@@ -23,21 +23,21 @@ public class List_234 {
      */
     public boolean isPalindrome(ListNode head) {
 
-        List<Integer> vals = new ArrayList<>();
+        List<Integer> visited = new ArrayList<>();
 
         // copy
         ListNode cur = head;
         while (cur != null) {
-            vals.add(cur.val);
+            visited.add(cur.val);
             cur = cur.next;
         }
 
         int front = 0;
-        int back = vals.size() - 1;
+        int back = visited.size() - 1;
 
         // two pointer로 검색
         while (front < back) {
-            if(!vals.get(front).equals(vals.get(back))) {
+            if(!visited.get(front).equals(visited.get(back))) {
                 return false;
             }
             front++;
