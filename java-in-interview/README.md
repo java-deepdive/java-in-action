@@ -13,3 +13,4 @@
 - [x] [월요일 스터디 정리](https://www.notion.so/seokrae/2020-4db5e56dc5024889a721b4c39760aad5)
 - [x] [1주차 - OT](docs/study/20210118.md)
 - [x] [2주차 - StringBuffer & StringBuilder](docs/study/20210125.md)
+- [x] [3주차 - HashTable & LinkedList](docs/study/20210208.md)
