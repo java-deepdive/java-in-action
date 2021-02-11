@@ -25,7 +25,7 @@ package kr.seok.list;
  */
 public class List_876 {
 
-    public class ListNode {
+    public static class ListNode {
         int val;
         ListNode next;
         ListNode() { }

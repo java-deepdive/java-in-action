@@ -4,7 +4,7 @@ import java.util.ArrayList;
 import java.util.List;
 
 public class List_234 {
-    public class ListNode {
+    public static class ListNode {
         int val;
         ListNode next;
         ListNode() { }
