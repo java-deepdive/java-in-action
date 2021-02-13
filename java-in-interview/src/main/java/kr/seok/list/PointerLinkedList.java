@@ -21,7 +21,7 @@ public class PointerLinkedList<E> {
     /**
      * 연결리스트(LinkedList)에서 사용되는 데이터를 저장하는 컨테이너 역할을 하는 Node 클래스
      */
-    class Node<E> {
+    static class Node<E> {
         E data;         // 데이터
         Node<E> next;   // 다음 노드를 가리키는 포인터
 
@@ -29,6 +29,14 @@ public class PointerLinkedList<E> {
             this.data = element;
             this.next = next;
         }
+
+        private static class NoOrderComparator implements Comparator<Integer> {
+            @Override
+            public int compare(Integer o1, Integer o2) {
+                return o1.compareTo(o2);
+            }
+        }
+        public static final Comparator<Integer> NO_ORDER = new NoOrderComparator();
     }
 
     Node<E> head; // 헤더 노드
