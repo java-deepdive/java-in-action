@@ -4,8 +4,6 @@ import org.junit.jupiter.api.BeforeEach;
 import org.junit.jupiter.api.DisplayName;
 import org.junit.jupiter.api.Test;
 
-import java.util.Comparator;
-
 import static org.assertj.core.api.Assertions.assertThat;
 
 class PointerLinkedListTest {
@@ -64,16 +62,8 @@ class PointerLinkedListTest {
     @DisplayName("데이터 조회 메서드 테스트")
     void testCase5() {
         appendLinkedList();
-        linkedList.search(2, NO_ORDER);
+        linkedList.search(2, PointerLinkedList.Node.NO_ORDER);
     }
-
-    private static class NoOrderComparator implements Comparator<Integer> {
-        @Override
-        public int compare(Integer o1, Integer o2) {
-            return o1.compareTo(o2);
-        }
-    }
-    public static final Comparator<Integer> NO_ORDER = new NoOrderComparator();
 
     @Test
     @DisplayName("removeFirst() 메서드 테스트")

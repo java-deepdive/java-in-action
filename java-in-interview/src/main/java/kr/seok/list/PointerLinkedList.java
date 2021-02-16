@@ -135,16 +135,17 @@ public class PointerLinkedList<E> {
             } else {
                 Node<E> ptr = head;
 
-                while (ptr.next != p) {
+                while (ptr.next != p) { // 탐색 포인터의 뒤쪽 포인터가 p와 같을 때까지 반복
                     ptr = ptr.next;
 
                     if(ptr == null) {
                         return;
                     }
+                } // 탐색 완료
 
-                    ptr.next = p.next;
-                    cur = ptr;
-                }
+                ptr.next = p.next; // 탐색 노드 포인터 p.next를 앞쪽 노드 포인터 ptr.next에 대입하여 값을 제거
+                cur = ptr;
+                // 참조하지 않는 노드의 메모리는 자동으로 해제
             }
         }
     }

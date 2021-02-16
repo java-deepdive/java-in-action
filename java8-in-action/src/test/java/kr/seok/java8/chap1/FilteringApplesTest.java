@@ -7,6 +7,8 @@ import org.junit.jupiter.api.Test;
 import java.util.Arrays;
 import java.util.List;
 
+import static java.util.stream.Collectors.toList;
+
 class FilteringApplesTest {
 
     FilteringApples apples;
@@ -127,6 +129,40 @@ class FilteringApplesTest {
         List<Apple> inventory = getApples();
         List<Apple> apples = this.apples.filterApples(inventory,
                 (Apple a) -> a.getWeight() < 80 || "brown".equals(a.getColor()));
+        apples.forEach(System.out::println);
+    }
+
+    /**
+     * 컬렉션을 필터링하는 가장 빠른 방법
+     * - 컬렉션을 스트림으로 바꾸고, 병렬로 처리한 다음에 리스트로 다시 복원
+     *
+     * Apple{color='green', weight=155}
+     */
+    @Test
+    @DisplayName("stream().filter()를 이용한 필터링")
+    void testCase8() {
+        List<Apple> inventory = getApples();
+        List<Apple> apples = inventory.stream()
+                .filter((Apple a) -> a.getWeight() > 150)
+                .collect(toList());
+
+        apples.forEach(System.out::println);
+    }
+
+    /**
+     * 스트림 parallelStream 처리
+     *
+     * Apple{color='green', weight=155}
+     */
+    @Test
+    @DisplayName("parallelStream().filter()를 이용한 필터링")
+    void testCase9() {
+        List<Apple> inventory = getApples();
+        List<Apple> apples = inventory
+                .parallelStream()
+                .filter((Apple a) -> a.getWeight() > 150)
+                .collect(toList());
+
         apples.forEach(System.out::println);
     }
 }

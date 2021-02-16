@@ -5,6 +5,13 @@ import java.util.Stack;
 
 /**
  *
+ * Given a string s containing just the characters '(', ')', '{', '}', '[' and ']', determine if the input string is valid.
+ *
+ * An input string is valid if:
+ *
+ * Open brackets must be closed by the same type of brackets.
+ * Open brackets must be closed in the correct order.
+ *
  * 1. 스택 Stack을 초기화
  * 2. Bracket을 한 번에 하나씩 처리
  * 3. 만약 opening bracket을 마주하는 경우 stack에 밀어넣는다.
@@ -15,7 +22,7 @@ import java.util.Stack;
 public class String_20 {
 
     // Hash table that takes care of the mappings.
-    private HashMap<Character, Character> mappings;
+    private final HashMap<Character, Character> mappings;
 
     // Initialize hash map with mappings. This simply makes the code easier to read.
     public String_20() {
