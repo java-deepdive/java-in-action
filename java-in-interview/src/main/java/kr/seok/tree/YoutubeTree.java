@@ -4,17 +4,19 @@ public class YoutubeTree {
 
     // Binary Heap (min, max)
     // 힙이란?
-
-    private BasicTree.Node root;
-
-
-}
-
-class BasicTree {
     static class Node {
         int data;
         Node left;
         Node right;
+
+        public Node() {
+        }
+
+        public Node(int data, Node left, Node right) {
+            this.data = data;
+            this.left = left;
+            this.right = right;
+        }
     }
 
     public Node root;
@@ -39,17 +41,17 @@ class BasicTree {
 
     // left -> current -> right
     public void inOrder(Node node) {
-        if(node != null) {
+        if (node != null) {
             inOrder(node.left);
-            System.out.println(node.data);
+            System.out.print(node.data + " -> ");
             inOrder(node.right);
         }
     }
 
     // current -> left -> right
     public void preOrder(Node node) {
-        if(node != null) {
-            System.out.println(node.data);
+        if (node != null) {
+            System.out.print(node.data + " -> ");
             preOrder(node.left);
             preOrder(node.right);
         }
@@ -57,10 +59,11 @@ class BasicTree {
 
     // left -> right -> current
     public void postOrder(Node node) {
-        if(node != null) {
+        if (node != null) {
             postOrder(node.left);
             postOrder(node.right);
-            System.out.println(node.data);
+            System.out.print(node.data + " -> ");
         }
     }
+
 }
