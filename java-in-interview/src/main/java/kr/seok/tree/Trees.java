@@ -1,6 +1,12 @@
 package kr.seok.tree;
 
+/**
+ * https://youtu.be/oSWTXtMglKE
+ *  - Data Structures: Trees
+ *
+ */
 public class Trees {
+
     class Node {
         Node left, right;
         int data;
