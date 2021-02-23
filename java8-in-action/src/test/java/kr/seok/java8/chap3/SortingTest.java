@@ -1,6 +1,5 @@
 package kr.seok.java8.chap3;
 
-import kr.seok.java8.chap1.Apple;
 import org.junit.jupiter.api.BeforeEach;
 import org.junit.jupiter.api.DisplayName;
 import org.junit.jupiter.api.Test;
@@ -9,6 +8,9 @@ import java.util.ArrayList;
 import java.util.Arrays;
 import java.util.Comparator;
 import java.util.List;
+import java.util.function.Function;
+import java.util.function.Predicate;
+import java.util.stream.Collectors;
 
 /**
  * 동작 파라미터화를 통한 정렬하기
@@ -28,7 +30,8 @@ class SortingTest {
                 Arrays.asList(
                         new Apple(80,"green"),
                         new Apple(155, "green"),
-                        new Apple(120, "red")));
+                        new Apple(120, "red"))
+        );
     }
 
     @Test
@@ -109,6 +112,113 @@ class SortingTest {
         // Apple 을 weight 별로 비교하여 inventory 를 sort 하는 코드
         inventory.sort(Comparator.comparing(Apple::getWeight));
 
+        // [Apple{color='green', weight=80}, Apple{color='red', weight=120}, Apple{color='green', weight=155}]
         System.out.println(inventory);
+    }
+
+    @Test
+    @DisplayName("Comparator 에서 제공하는 API 를 이용한 역정렬")
+    void testCase8() {
+        inventory.sort(
+                Comparator.comparing(Apple::getWeight)
+                        // Comparator 는 추상 메서드로 compare 메서드를 제공하지만 그 외에 기능이 되는 메서드를 default 메서드로 제공한다.
+                        .reversed()
+        );
+        // [Apple{color='green', weight=155}, Apple{color='red', weight=120}, Apple{color='green', weight=80}]
+        System.out.println(inventory);
+    }
+
+    @Test
+    @DisplayName("Comparator 에서 디폴트 메서드로 제공하는 기능을 통해 기능 세분화")
+    void testCase9() {
+
+        inventory.add(new Apple(80, "black"));
+
+        // Comparator 에서 제공하는 default 메서드를 chaining으로 연결
+        inventory.sort(
+                Comparator.comparing(Apple::getWeight)
+                .reversed() // 무게로 내림차순 정렬
+                .thenComparing(Apple::getColor) // 두 사과의 무게가 같으면 Color 별로 정렬
+        );
+
+        // [Apple{color='green', weight=155}, Apple{color='red', weight=120}, Apple{color='black', weight=80}, Apple{color='green', weight=80}]
+        System.out.println(inventory);
+    }
+
+
+    // Apple{color='red', weight=120}
+    Predicate<Apple> redApple = apple -> "red".equals(apple.getColor());
+    Predicate<Apple> greenApple = apple -> "green".equals(apple.getColor());
+    Predicate<Apple> notRedApple = redApple.negate();
+
+    @Test
+    @DisplayName("Predicate 를 정의하여 조건 별로 출력해보기")
+    void testCase10() {
+
+        List<Apple> redApples = inventory.stream()
+                .filter(redApple).collect(Collectors.toList());
+        System.out.println(" redApple :: " + redApples);
+
+        List<Apple> greenApples1 = inventory.stream()
+                .filter(greenApple).collect(Collectors.toList());
+        System.out.println(" greenApple :: " + greenApples1);
+
+        List<Apple> greenApples2 = inventory.stream()
+                .filter(notRedApple).collect(Collectors.toList());
+        System.out.println(" notRedApple :: " + greenApples2);
+    }
+
+    Predicate<Apple> redAndHeavyApple = redApple.and(a -> a.getWeight() > 150);
+    Predicate<Apple> redAndHeavyAppleOrGreen = redApple
+            .and(a -> a.getWeight() > 150)
+            .or(a -> "green".equals(a.getColor()));
+
+    @Test
+    @DisplayName("Predicate 조합하기")
+    void testCase11() {
+
+        inventory.add(new Apple(200, "red"));
+
+        List<Apple> redAndHeavyApples = inventory.stream()
+                .filter(redAndHeavyApple)
+                .collect(Collectors.toList());
+
+        // [Apple{color='red', weight=200}]
+        System.out.println(" redAndHeavyApples :: " + redAndHeavyApples);
+
+        // red && 150 || green 출력하기
+        List<Apple> redAndHeavyAppleOrGreens = inventory.stream()
+                .filter(redAndHeavyAppleOrGreen)
+                .collect(Collectors.toList());
+
+        // [Apple{color='green', weight=80}, Apple{color='green', weight=155}, Apple{color='red', weight=200}]
+        System.out.println(" redAndHeavyAppleOrGreen :: " + redAndHeavyAppleOrGreens);
+
+    }
+    Function<Integer, Integer> f = x -> x + 1;
+    Function<Integer, Integer> g = x -> x * 2;
+    // 주어진 함수를 먼저 적용한 결과를 다른 함수의 입력으로 전달하는 함수를 반환
+    Function<Integer, Integer> h = f.andThen(g);
+
+    @Test
+    @DisplayName("Function 인터페이스를 이용한 조합")
+    void testCase12() {
+
+        int result = h.apply(1);
+        // 4를 반환
+        System.out.println(result);
+    }
+
+    // compose 메서드는 인수로 주어진 함수를 먼저 실행한 다음 그 결과를 외부 함수의 인수로 제공한다.
+    Function<Integer, Integer> i = f.compose(g);
+
+    @Test
+    @DisplayName("Functon 인터페이스를 이용한 조합 compose")
+    void testCase13() {
+
+        // 역함수 실행 확인
+        int result = i.apply(1);
+        // 3을 반환
+        System.out.println(result);
     }
 }

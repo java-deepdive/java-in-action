@@ -1,9 +1,7 @@
 package kr.seok.java8.chap3;
 
-import kr.seok.java8.chap1.Apple;
 
-import java.util.*;
-import static java.util.Comparator.comparing;
+import java.util.Comparator;
 
 /**
  * Apple 리스트를 정렬하기 위한 클래스
