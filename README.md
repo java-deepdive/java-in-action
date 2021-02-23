@@ -17,12 +17,13 @@
     - Cracking the Coding Interview 내용 안에 같은 유형이 많음
 
 ## [Java8 In Functional](java8-in-functional/README.md)
-- 서술적인 내용이 아니라서 함축적인 내용과 예제도 부족함
+- 서술적인 내용이 아닌 함축적인 내용으로 쉽게 이해하기 힘들고 예제 코드도 부족함
 - 빠르게 훑어보고 어떤 것이 있는지, 내게 필요한 부분이 어떤 것이 있는지 확인하는 용도로 써야 할 듯
 
 ## [Java8 In Action](java8-in-action/README.md)
 - Java8을 본격 공부하기 위한 책
 - 단순하게 코딩하기 위해서가 아니라 Java8에서 구현된 코드의 매커니즘을 공부해야 함
+- Java 8이 나오게 된 개발 환경, 상황적인 부분을 고려하여 이해 할 것
 
 ## Java Garbage Collection
 - [(Naver D2 - 2011.12.22) Java Garbage Collection 읽기](https://www.notion.so/seokrae/Garbage-Collection-65857d2182e54d2eba7ee9e8c63818f4)
