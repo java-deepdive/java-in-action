@@ -23,6 +23,15 @@ public class Tree_105 {
             this.left = left;
             this.right = right;
         }
+
+        @Override
+        public String toString() {
+            return "TreeNode{" +
+                    "val=" + val +
+                    ", left=" + left +
+                    ", right=" + right +
+                    '}';
+        }
     }
 
 
@@ -38,12 +47,13 @@ public class Tree_105 {
             return null;
 
         // pick up pre_idx element as a root
-        int root_val = preorder[pre_idx];
-        TreeNode root = new TreeNode(root_val);
+        int root_val = preorder[pre_idx]; // preOrder로 탐색한 데이터를 하나씩 조회
+        TreeNode root = new TreeNode(root_val); // 루트 노드 생성
 
         // root splits inorder list
         // into left and right subtrees
-        int index = idx_map.get(root_val);
+        int index = idx_map.get(root_val); // inorder 가 저장된
+        System.out.println("root_val : " + root_val + " : : index : " + index);
 
         // recursion
         pre_idx++;
@@ -51,6 +61,7 @@ public class Tree_105 {
         root.left = helper(in_left, index);
         // build right subtree
         root.right = helper(index + 1, in_right);
+
         return root;
     }
 
