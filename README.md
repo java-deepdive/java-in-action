@@ -32,6 +32,11 @@
 - Garbage Collection 튜닝
 - 자바 애플리케이션 성능 튜닝의 도
 
+## [기술이론 정리하기](https://www.notion.so/seokrae/b231ac0ef6cd406d9db051cf08050c58)
+1. JPA
+2. RDB
+3. Design Pattern & HTTP, REST API
+
 ## keyword
 - KPI
 - MBO
