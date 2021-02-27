@@ -33,11 +33,4 @@
   - Stack을 활용하여 재귀 로직을 구현하는 그림 그려보기
   - 원형 큐의 특징과 선형 큐와의 차이점
 
-- [ ] [5주차 - Tree & Graph](docs/study/20210222.md)
-
-## [기술이론 정리하기](https://www.notion.so/seokrae/b231ac0ef6cd406d9db051cf08050c58)
-1. JPA
-2. RDB
-3. Design Pattern & HTTP, REST API
-
-
+- [x] [5주차 - Tree & Graph](docs/study/20210222.md)
