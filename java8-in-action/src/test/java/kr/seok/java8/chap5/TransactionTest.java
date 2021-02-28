@@ -5,10 +5,10 @@ import org.junit.jupiter.api.Test;
 
 import java.util.Arrays;
 import java.util.List;
+import java.util.stream.Collectors;
 
 import static java.util.Comparator.comparing;
-import static java.util.stream.Collectors.toList;
-import static java.util.stream.Collectors.toSet;
+import static java.util.stream.Collectors.*;
 import static org.assertj.core.api.Assertions.assertThat;
 
 class TransactionTest {
@@ -82,6 +82,15 @@ class TransactionTest {
                 .sorted()
                 .collect(toList())
                 .forEach(System.out::println);
+        String collect = transactions.stream()
+                // 거래자 추출
+                .map(transaction -> transaction.getTrader().getName())
+                // 거래자 중복 필터링
+                .distinct()
+                // 이름순으로 정렬
+                .sorted()
+                .collect(joining(", "));
+        System.out.println(collect);
     }
 
     @Test
