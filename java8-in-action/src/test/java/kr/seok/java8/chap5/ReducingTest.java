@@ -1,5 +1,6 @@
 package kr.seok.java8.chap5;
 
+import kr.seok.java8.chap4.Dish;
 import org.junit.jupiter.api.DisplayName;
 import org.junit.jupiter.api.Test;
 
@@ -60,5 +61,14 @@ class ReducingTest {
                 .reduce(0, (a, b) -> a + b);
 
         assertThat(count).isEqualTo(9);
+    }
+
+    @Test
+    @DisplayName("reduce를 이용한 칼로리 전체 합 계산")
+    void testCase5() {
+        int sum = menu.stream()
+                .map(Dish::getCalories)
+                .reduce(0, Integer::sum);
+        assertThat(sum).isEqualTo(4300);
     }
 }
