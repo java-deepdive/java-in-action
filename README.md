@@ -37,6 +37,10 @@
 2. RDB
 3. Design Pattern & HTTP, REST API
 
+## [TDD, Clean Code with Java 11기](java-in-tdd/README.md)
+- nextstep 의 TDD, Clean Code with Java 11기 진행
+- TDD, OOP 관점에 대한 이해
+
 ## keyword
 - KPI
 - MBO
