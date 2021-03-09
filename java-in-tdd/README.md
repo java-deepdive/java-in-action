@@ -16,4 +16,4 @@
     - [public, protected 메서드에 대한 테스트 코드 작성 필요](https://github.com/next-step/java-racingcar/pull/1960#discussion_r590072116)
     - [builder 보다 formatter 사용하기](https://github.com/next-step/java-racingcar/pull/1960#discussion_r590075327)
     - [멤버 변수는 2개까지만 사용하기](https://github.com/next-step/java-racingcar/pull/1960#discussion_r590078081)
-
+    - [객체 비교를 위해 equals, hashcode 작성하기](https://github.com/next-step/java-racingcar/pull/1960#discussion_r590105669)
