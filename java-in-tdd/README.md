@@ -6,6 +6,9 @@
 - [x] [2단계 문자열 계산기](https://github.com/next-step/java-racingcar/pull/1914#pullrequestreview-605336872)
     - enum을 사용한 상태 값과 행위에 대한 코드 응집성 증대
     - 하나의 메서드 안에 15줄 이하로 작성하기
+
+![uml](docs/Constants.png)
+
 - [x] [3단계 자동차 경주](https://github.com/next-step/java-racingcar/pull/1960#pullrequestreview-607170886)
     - [특정 역할이 없는 코드 삭제](https://github.com/next-step/java-racingcar/pull/1960#discussion_r589048328)
     - [특정 객체에 종속적인 상수는 공통이 아닌 해당 객체에서 관리](https://github.com/next-step/java-racingcar/pull/1960#discussion_r589048600)
@@ -17,3 +20,5 @@
     - [builder 보다 formatter 사용하기](https://github.com/next-step/java-racingcar/pull/1960#discussion_r590075327)
     - [멤버 변수는 2개까지만 사용하기](https://github.com/next-step/java-racingcar/pull/1960#discussion_r590078081)
     - [객체 비교를 위해 equals, hashcode 작성하기](https://github.com/next-step/java-racingcar/pull/1960#discussion_r590105669)
+
+![uml](docs/RequestRacingGame.png)
