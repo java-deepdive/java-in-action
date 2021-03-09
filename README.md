@@ -40,7 +40,31 @@
 ## [TDD, Clean Code with Java 11기](java-in-tdd/README.md)
 - nextstep 의 TDD, Clean Code with Java 11기 진행
 - TDD, OOP 관점에 대한 이해
+- 개발 자유도가 높아 구조적인 것 외에는 코드가 다 다를 수 있음
 
+### JUnit 학습 테스트
+- JUnit 연습
+  - @DisplayName
+  - @ParameterizedTest
+  - @CsvSource
+  - @MethodSource
+  - @ValueSource
+  - assertThatIllegalArgumentException()
+  - assertThatIllegalStateException()
+  - assertThatIOException()
+  - assertThatNullPointerException()
+
+### 단순한 로직으로 OOP 패턴 구현하기
+- 메서드의 분리
+- TDD 실습 및 습관화를 위한 연습
+
+### 자동차 경주
+- Git Commit
+  - [AngularJS Commit Message Conventions](https://gist.github.com/stephenparish/9941e89d80e2bc58a153)
+  - [Code Convention](https://google.github.io/styleguide/javaguide.html)
+  
+- Code
+  - 
 ## keyword
 - KPI
 - MBO
