@@ -22,3 +22,8 @@
     - [객체 비교를 위해 equals, hashcode 작성하기](https://github.com/next-step/java-racingcar/pull/1960#discussion_r590105669)
 
 ![uml](docs/RequestRacingGame.png)
+
+
+- [x] [4단계 자동차 경주(우승자)](https://github.com/next-step/java-racingcar/pull/2013)
+
+![uml](docs/step4.png)
