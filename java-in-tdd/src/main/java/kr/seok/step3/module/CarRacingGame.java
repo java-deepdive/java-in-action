@@ -1,6 +1,5 @@
 package kr.seok.step3.module;
 
-
 import kr.seok.step3.domain.CarManager;
 import kr.seok.step3.domain.RacingResult;
 import kr.seok.step3.ui.dto.RequestRacingGame;
@@ -24,6 +23,7 @@ public class CarRacingGame {
         racingResult = new RacingResult();
     }
 
+    // final 필드를 2개 이하로 사용하기 위해 초기화 메서드를 따로 생성
     private void initGame(final RequestRacingGame userInput) {
         attemptCount = userInput.getAttemptCount();
         carManager = new CarManager(userInput.getParticipants());
@@ -34,7 +34,6 @@ public class CarRacingGame {
         IntStream.range(START_IDX, attemptCount)
                 .forEach(value ->
                         // 라운드 별 기록 저장
-//                        racingRounds.add(carManager.run())
                         racingResult.addRacingRound(carManager.run())
                 );
     }

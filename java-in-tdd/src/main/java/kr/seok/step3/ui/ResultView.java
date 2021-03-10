@@ -1,6 +1,4 @@
 package kr.seok.step3.ui;
-
-
 import kr.seok.step3.domain.Car;
 import kr.seok.step3.domain.RacingResult;
 import kr.seok.step3.domain.RacingRound;
@@ -8,6 +6,7 @@ import kr.seok.step3.domain.RacingRound;
 import java.util.List;
 import java.util.stream.IntStream;
 
+import static java.lang.System.lineSeparator;
 import static java.util.stream.Collectors.joining;
 import static kr.seok.step3.util.Constants.START_IDX;
 
@@ -17,8 +16,9 @@ import static kr.seok.step3.util.Constants.START_IDX;
 public class ResultView {
 
     public static final String CAR_DISTANCE_MARKING = "-";
-    public static final String CARRIAGE_RETURN = "\n";
     public static final String EMPTY = "";
+    public static final String GUIDE_WINNER = "가 최종 우승했습니다.";
+    public static final String SPLIT_DELIMITER = ", ";
 
     private final String hyphen;
 
@@ -32,9 +32,9 @@ public class ResultView {
 
         final String result = racingRounds.stream()
                 .map(this::printRecordPerCar)
-                .collect(joining(CARRIAGE_RETURN + CARRIAGE_RETURN));
+                .collect(joining(lineSeparator() + lineSeparator()));
 
-        System.out.println(result);
+        System.out.println(result + System.lineSeparator());
     }
 
     // 라운드당 자동차 기록 출력
@@ -42,15 +42,20 @@ public class ResultView {
         final List<Car> cars = round.getCars();
         return cars.stream()
                 .map(this::printDistancePerRecord)
-                .collect(joining(CARRIAGE_RETURN));
-
+                .collect(joining(lineSeparator()));
     }
 
     // 자동차 별 거리 출력
     private String printDistancePerRecord(final Car car) {
-        return IntStream.range(START_IDX, car.getPosition())
+        String carDistance = IntStream.range(START_IDX, car.getPosition())
                 .mapToObj(i -> hyphen)
                 .reduce(EMPTY, (acc, cur) -> acc + cur);
+        return String.format("%s : %s ", car.getName(), carDistance);
     }
 
+    // 승자 출력 메서드
+    public void printWinner(RacingResult racingResult) {
+        final String[] winner = racingResult.getWinner();
+        System.out.println(String.join(SPLIT_DELIMITER, winner) + GUIDE_WINNER);
+    }
 }

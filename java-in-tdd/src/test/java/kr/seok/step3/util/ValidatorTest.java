@@ -8,6 +8,7 @@ import org.junit.jupiter.params.provider.MethodSource;
 import java.util.stream.Stream;
 
 import static kr.seok.step3.util.Validator.isNullAndIsBlank;
+import static kr.seok.step3.util.Validator.isValidNames;
 import static org.assertj.core.api.Assertions.assertThat;
 
 /**
@@ -28,5 +29,18 @@ public class ValidatorTest {
     @MethodSource("blankStrings")
     void isNullAndIsBlank_ShouldReturnTrueOrFalse(String given, boolean expected) {
         assertThat(isNullAndIsBlank(given)).isEqualTo(expected);
+    }
+
+    private static Stream<Arguments> validNames() {
+        return Stream.of(
+                Arguments.of("seok,rae", true),
+                Arguments.of("seok.rae", false)
+
+        );
+    }
+    @ParameterizedTest(name = "{0} 값을 입력 시 {1}")
+    @MethodSource(value = "validNames")
+    void testCase(String given, boolean expected) {
+        assertThat(isValidNames(given)).isEqualTo(expected);
     }
 }
