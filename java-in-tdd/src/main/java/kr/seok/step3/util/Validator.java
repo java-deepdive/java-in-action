@@ -27,4 +27,8 @@ public final class Validator {
     public static boolean isValidNames(String participantNames) {
         return Pattern.matches(VALID_USERNAMES, participantNames);
     }
+
+    public static boolean isValidNameLength(String name) {
+        return name.length() > 5 || name.length() < 1;
+    }
 }
