@@ -2,9 +2,26 @@ package kr.seok.step3.domain;
 
 import java.util.Objects;
 
+/**
+ * primitive 타입 데이터의 관리
+ * <pre>
+ *      // 생성자를 통한 값 주입이 아닌 이상 값이 변하지 않는 immutable object
+ *      public Position move() {
+ *         return new Position(position + 1);
+ *     }
+ * </pre>
+ * <pre>
+ *     // 내부에서 관리하는 값이 변하는 mutable object (위 문제의 성능 이슈를 줆임)
+ *     public Position move() {
+ *         position = position + 1;
+ *         return this;
+ *     }
+ * </pre>
+ *
+ */
 public class Position {
 
-    private int position;
+    private final int position;
 
     public Position() {
         this(0);
@@ -18,8 +35,7 @@ public class Position {
     }
 
     public Position move() {
-        position = position + 1;
-        return this;
+        return new Position(position + 1);
     }
 
     public int getPosition() {
@@ -31,7 +47,7 @@ public class Position {
         if (this == o) return true;
         if (o == null || getClass() != o.getClass()) return false;
         final Position position1 = (Position) o;
-        return getPosition() == position1.getPosition();
+        return position == position1.position;
     }
 
     @Override
