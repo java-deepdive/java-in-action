@@ -1,7 +1,13 @@
 package kr.seok.step3.domain;
 
-import static kr.seok.step3.util.Validator.isNullAndIsBlank;
+import java.util.Objects;
 
+import static kr.seok.step3.util.Validator.isNullAndIsBlank;
+import static kr.seok.step3.util.Validator.isValidNameLength;
+
+/**
+ * 데이터의 관리를 위한 immutable object
+ */
 public class Name {
 
     private final String name;
@@ -10,18 +16,27 @@ public class Name {
         if(isNullAndIsBlank(name)) {
             throw new IllegalArgumentException("이름 비어있음");
         }
-        if(isValidName(name)) {
+        if(isValidNameLength(name)) {
             throw new IllegalArgumentException("5글자 넘음");
         }
         this.name = name.trim();
     }
 
-    private boolean isValidName(String name) {
-        return name.length() > 5 || name.length() < 1;
-    }
-
     public String getName() {
         return name;
+    }
+
+    @Override
+    public boolean equals(Object o) {
+        if (this == o) return true;
+        if (o == null || getClass() != o.getClass()) return false;
+        final Name name1 = (Name) o;
+        return Objects.equals(name, name1.name);
+    }
+
+    @Override
+    public int hashCode() {
+        return Objects.hash(getName());
     }
 
     @Override
