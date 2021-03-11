@@ -1,7 +1,7 @@
 package kr.seok.step3.module;
 
-import kr.seok.step3.domain.CarManager;
-import kr.seok.step3.domain.RacingResult;
+import kr.seok.step3.wrapper.CarManager;
+import kr.seok.step3.wrapper.RacingResult;
 import kr.seok.step3.ui.dto.RequestRacingGame;
 
 import java.util.stream.IntStream;

@@ -2,6 +2,8 @@ package kr.seok.step3.domain;
 
 
 import kr.seok.step3.move.MoveStrategy;
+import kr.seok.step3.wrapper.CarManager;
+import kr.seok.step3.wrapper.RacingRound;
 import org.junit.jupiter.api.DisplayName;
 import org.junit.jupiter.params.ParameterizedTest;
 import org.junit.jupiter.params.provider.Arguments;
@@ -18,7 +20,7 @@ import static org.assertj.core.api.Assertions.assertThat;
  */
 class CarManagerTest {
 
-    public static final MoveStrategy MOVE_STRATEGY = () -> true;
+    private static final MoveStrategy MOVE_STRATEGY = () -> true;
 
     private static Stream<Arguments> getCarManagement() {
         return Stream.of(
@@ -37,7 +39,7 @@ class CarManagerTest {
     @DisplayName("자동차 관리 클래스의 자동차 생성 테스트")
     @ParameterizedTest(name = "CarManage 클래스로 Car 생성된 인스턴스 갯수: {1}")
     @MethodSource("getCarManagement")
-    void createCarManageTest(String[] participants, int expected) {
+    void createCarManageTest(final String[] participants, final int expected) {
         // participants
         CarManager carManager = new CarManager(participants, MOVE_STRATEGY);
         // when
@@ -49,7 +51,7 @@ class CarManagerTest {
     @DisplayName("자동차 라운드별 run 수행 후 RacingRound 값 테스트")
     @ParameterizedTest(name = "레이싱 참여자 entry {0}, 한 라운드 실행한 자동차 수 {1}")
     @MethodSource("getCarManagement")
-    void carManager_RunningCarsTest(String[] participants, int expected) {
+    void carManager_RunningCarsTest(final String[] participants, final int expected) {
         // given
         CarManager carManager = new CarManager(participants, MOVE_STRATEGY);
 
@@ -65,7 +67,7 @@ class CarManagerTest {
     @DisplayName("한 라운드 레이싱 후 결과 RacingRound의 자동차 위치 확인 테스트")
     @ParameterizedTest(name = "레이싱 참여자 entry {0}, 한 번 라운드 진행 한 위치 정보 {1}")
     @MethodSource("racingCarList")
-    void carManager_moveCarTest(String[] participants, int expected) {
+    void carManager_moveCarTest(final String[] participants, final int expected) {
         // given
         CarManager carManager = new CarManager(participants, MOVE_STRATEGY);
         // when

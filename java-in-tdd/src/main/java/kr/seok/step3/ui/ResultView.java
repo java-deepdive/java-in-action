@@ -1,11 +1,12 @@
 package kr.seok.step3.ui;
 import kr.seok.step3.domain.Car;
-import kr.seok.step3.domain.RacingResult;
-import kr.seok.step3.domain.RacingRound;
+import kr.seok.step3.wrapper.RacingResult;
+import kr.seok.step3.wrapper.RacingRound;
 
 import java.util.List;
 import java.util.stream.IntStream;
 
+import static java.lang.String.join;
 import static java.lang.System.lineSeparator;
 import static java.util.stream.Collectors.joining;
 import static kr.seok.step3.util.Constants.START_IDX;
@@ -15,10 +16,10 @@ import static kr.seok.step3.util.Constants.START_IDX;
  */
 public class ResultView {
 
-    public static final String CAR_DISTANCE_MARKING = "-";
-    public static final String EMPTY = "";
     public static final String GUIDE_WINNER = "가 최종 우승했습니다.";
+    public static final String CAR_DISTANCE_MARKING = "-";
     public static final String SPLIT_DELIMITER = ", ";
+    public static final String EMPTY = "";
 
     private final String hyphen;
 
@@ -57,6 +58,6 @@ public class ResultView {
     // 승자 출력 메서드
     public void printWinner(RacingResult racingResult) {
         final String[] winner = racingResult.findWinner();
-        System.out.println(String.join(SPLIT_DELIMITER, winner) + GUIDE_WINNER);
+        System.out.println(join(SPLIT_DELIMITER, winner) + GUIDE_WINNER);
     }
 }

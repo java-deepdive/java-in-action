@@ -30,7 +30,7 @@ class PositionTest {
 
     @ParameterizedTest(name = "Position 이동 확인 테스트")
     @MethodSource(value = "movePositionTestCase")
-    void movePositionTest(int initPosition, Position maxPosition) {
+    void movePositionTest(final int initPosition, final Position maxPosition) {
         Position position = new Position(initPosition);
 
         position = position.move();
@@ -42,7 +42,7 @@ class PositionTest {
 
     @ParameterizedTest(name = "position 예외 테스트")
     @CsvSource(value = {"-1", "-2"})
-    void exceptionPositionTest(int given) {
+    void exceptionPositionTest(final int given) {
         assertThatIllegalArgumentException()
                 .isThrownBy(() -> new Position(given));
     }

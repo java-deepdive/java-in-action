@@ -2,6 +2,7 @@ package kr.seok.step3.domain;
 
 
 import kr.seok.step3.move.MoveStrategy;
+import kr.seok.step3.wrapper.RacingRound;
 import org.junit.jupiter.api.DisplayName;
 import org.junit.jupiter.params.ParameterizedTest;
 import org.junit.jupiter.params.provider.Arguments;
@@ -18,7 +19,7 @@ import static org.assertj.core.api.Assertions.assertThat;
  */
 class RacingRoundTest {
 
-    public static final MoveStrategy MOVE_STRATEGY = () -> true;
+    private static final MoveStrategy MOVE_STRATEGY = () -> true;
 
     private static Stream<Arguments> racingEntry() {
         Car car1 = new Car("a", MOVE_STRATEGY);
@@ -34,7 +35,7 @@ class RacingRoundTest {
     @DisplayName("레이싱 라운드 기록 테스트")
     @ParameterizedTest(name = "레이싱 참여 한 인원 {1} 체크")
     @MethodSource(value = "racingEntry")
-    void racingOfRoundTest(List<Car> entry, int participants) {
+    void racingOfRoundTest(final List<Car> entry, final int participants) {
         // given
         RacingRound racingRound = new RacingRound(entry);
         // when

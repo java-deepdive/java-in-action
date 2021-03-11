@@ -51,28 +51,28 @@ public class ValidatorTest {
     @DisplayName("유효성 검사: Integer.parseInt() 테스트")
     @ParameterizedTest(name = "{0} 입력 시 정수형으로 변환 {1}")
     @MethodSource(value = "isNumericEntry")
-    void isStringToIntegerParseIntTest(String given, boolean expected) {
+    void isStringToIntegerParseIntTest(final String given, final boolean expected) {
         assertThat(isNumeric(given)).isEqualTo(expected);
     }
 
     @DisplayName("유효성 검사: Null, Whitespace 체크")
     @ParameterizedTest(name = "입력 값 `{0}` 인 경우 : {1} ")
     @MethodSource("blankStrings")
-    void isNullAndIsBlank_ShouldReturnTrueOrFalse(String given, boolean expected) {
+    void isNullAndIsBlank_ShouldReturnTrueOrFalse(final String given, final boolean expected) {
         assertThat(isNullAndIsBlank(given)).isEqualTo(expected);
     }
 
     @DisplayName("유효성 검사: a-zA-Z ',' 외 문자열 사용 불가")
     @ParameterizedTest(name = "{0} 값을 입력 시 {1}")
     @MethodSource(value = "validNames")
-    void validNameTest(String given, boolean expected) {
+    void validNameTest(final String given, final boolean expected) {
         assertThat(isValidNames(given)).isEqualTo(expected);
     }
 
     @DisplayName("유효성 검사: 문자열 길이 1 ~ 5까지만 유효")
     @ParameterizedTest(name = "{0} 해당 문자열은 {1}")
     @MethodSource(value = "invalidEntry")
-    void isValidNameOneToFiveLength(String given, boolean expected) {
+    void isValidNameOneToFiveLength(final String given, final boolean expected) {
         assertThat(isValidNameLength(given)).isEqualTo(expected);
     }
 }

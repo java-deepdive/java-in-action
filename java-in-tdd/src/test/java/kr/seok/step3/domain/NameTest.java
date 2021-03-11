@@ -24,7 +24,7 @@ class NameTest {
 
     @ParameterizedTest(name = "자동차 이름 설정 {0} -> 동등성, 동일성 테스트")
     @CsvSource(value = {"user", "user1"})
-    void testCase1(String given) {
+    void equalsNameTest(final String given) {
         // given
         Name name = new Name(given);
         // when
@@ -36,7 +36,7 @@ class NameTest {
 
     @ParameterizedTest(name = "{0} 이름 설정 시 예외 발생 테스트")
     @MethodSource(value = "invalidEntry")
-    void testCase2(String given) {
+    void exceptionNameTest(final String given) {
         assertThatIllegalArgumentException()
                 .isThrownBy(() -> new Name(given));
     }

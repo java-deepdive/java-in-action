@@ -2,6 +2,8 @@ package kr.seok.step3.domain;
 
 
 import kr.seok.step3.move.MoveStrategy;
+import kr.seok.step3.wrapper.RacingResult;
+import kr.seok.step3.wrapper.RacingRound;
 import org.junit.jupiter.api.DisplayName;
 import org.junit.jupiter.params.ParameterizedTest;
 import org.junit.jupiter.params.provider.Arguments;
@@ -18,7 +20,7 @@ import static org.assertj.core.api.Assertions.assertThat;
  */
 class RacingResultTest {
 
-    public static final MoveStrategy MOVE_STRATEGY = () -> true;
+    private static final MoveStrategy MOVE_STRATEGY = () -> true;
 
     private static Stream<Arguments> racingEntry() {
         Car car1 = new Car("a", MOVE_STRATEGY);
@@ -31,11 +33,11 @@ class RacingResultTest {
         );
     }
     private static Stream<Arguments> racingWinnerEntry() {
-        Car car1 = new Car("a", 0, MOVE_STRATEGY);
-        Car car2 = new Car("b", 0, MOVE_STRATEGY);
-        Car car3 = new Car("c", 3, MOVE_STRATEGY);
-        Car car4 = new Car("d", 4, MOVE_STRATEGY);
-        Car car5 = new Car("e", 4, MOVE_STRATEGY);
+        Car car1 = new Car(new Name("a"), new Position(0), MOVE_STRATEGY);
+        Car car2 = new Car(new Name("b"), new Position(0), MOVE_STRATEGY);
+        Car car3 = new Car(new Name("c"), new Position(3), MOVE_STRATEGY);
+        Car car4 = new Car(new Name("d"), new Position(4), MOVE_STRATEGY);
+        Car car5 = new Car(new Name("e"), new Position(4), MOVE_STRATEGY);
         return Stream.of(
                 Arguments.of(Arrays.asList(car1, car2, car3), new String[] {"c"}),
                 Arguments.of(Arrays.asList(car1, car2, car3, car4), new String[] {"d"}),
@@ -46,7 +48,7 @@ class RacingResultTest {
     @DisplayName("레이싱 결과를 확인하기 위한 컬렉션 사이즈 확인 테스트")
     @ParameterizedTest(name = "레이싱 라운드 수 {1}")
     @MethodSource(value = "racingEntry")
-    void getRacingRound(List<Car> cars, int roundNumber) {
+    void getRacingRound(final List<Car> cars, final int roundNumber) {
         // given
         RacingRound racingRound = new RacingRound(cars);
         // when
@@ -67,7 +69,7 @@ class RacingResultTest {
     @DisplayName("레이싱 결과 우승자 확인 테스트")
     @ParameterizedTest(name = "레이싱 엔트리 결과 Winner 확인 {1}")
     @MethodSource(value = "racingWinnerEntry")
-    void getRacingWinner(List<Car> cars, String[] winnerName) {
+    void getRacingWinner(final List<Car> cars, final String[] winnerName) {
         // given
         RacingRound racingRound = new RacingRound(cars);
         // when

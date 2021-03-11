@@ -6,8 +6,6 @@ import kr.seok.step3.move.MoveStrategy;
 
 import java.util.Objects;
 
-import static kr.seok.step3.util.Constants.START_IDX;
-
 /**
  * 자동차의 상태와 행위를 관리하는 클래스
  */
@@ -25,12 +23,13 @@ public class Car {
 
     // 인터페이스를 파라미터로 받아 외부에서 움직임의 기준을 변경할 수 있도록 수정
     public Car(final String name, final MoveStrategy moveStrategy) {
-        this(name, START_IDX, moveStrategy);
+        this(new Name(name), new Position(), moveStrategy);
     }
 
-    public Car(final String name, int position, final MoveStrategy moveStrategy) {
-        this.name = new Name(name);
-        this.position = new Position(position);
+    // 내부 및 테스트 코드에서만 호출하기위한 protected
+    protected Car(final Name name, final Position position, final MoveStrategy moveStrategy) {
+        this.name = name;
+        this.position = position;
         this.moveStrategy = moveStrategy;
     }
 
@@ -39,15 +38,15 @@ public class Car {
             position = position.move();
         }
         // 이동 하면 새로 생성해야 하는게 맞을까?
-        return new Car(name.getName(), position.getPosition(), moveStrategy);
-    }
-
-    public Name getName() {
-        return name;
+        return new Car(name, position, moveStrategy);
     }
 
     public boolean isWinner(final Position maxPosition) {
         return position.equals(maxPosition);
+    }
+
+    public Name getName() {
+        return name;
     }
 
     public Position getPosition() {
@@ -55,16 +54,17 @@ public class Car {
     }
 
     @Override
-    public boolean equals(Object o) {
+    public boolean equals(final Object o) {
         if (this == o) return true;
         if (o == null || getClass() != o.getClass()) return false;
-        Car car = (Car) o;
-        return Objects.equals(name, car.name)
+        final Car car = (Car) o;
+        return Objects.equals(moveStrategy, car.moveStrategy)
+                && Objects.equals(name, car.name)
                 && Objects.equals(position, car.position);
     }
 
     @Override
     public int hashCode() {
-        return Objects.hash(name, position);
+        return Objects.hash(moveStrategy, name, position);
     }
 }
