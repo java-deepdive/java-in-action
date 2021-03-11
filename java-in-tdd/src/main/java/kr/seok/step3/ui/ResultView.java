@@ -47,7 +47,8 @@ public class ResultView {
 
     // 자동차 별 거리 출력
     private String printDistancePerRecord(final Car car) {
-        String carDistance = IntStream.range(START_IDX, car.getPosition())
+        int position = car.getPosition().getPosition();
+        String carDistance = IntStream.range(START_IDX, position)
                 .mapToObj(i -> hyphen)
                 .reduce(EMPTY, (acc, cur) -> acc + cur);
         return String.format("%s : %s ", car.getName(), carDistance);
@@ -55,7 +56,7 @@ public class ResultView {
 
     // 승자 출력 메서드
     public void printWinner(RacingResult racingResult) {
-        final String[] winner = racingResult.getWinner();
+        final String[] winner = racingResult.findWinner();
         System.out.println(String.join(SPLIT_DELIMITER, winner) + GUIDE_WINNER);
     }
 }

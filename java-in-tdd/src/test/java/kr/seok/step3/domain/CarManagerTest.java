@@ -72,7 +72,8 @@ class CarManagerTest {
         RacingRound run = carManager.run();
         List<Car> cars = run.getCars();
         List<Integer> collect = cars.stream()
-                .mapToInt(Car::getPosition).boxed()
+                .map(Car::getPosition)
+                .mapToInt(Position::getPosition).boxed()
                 .collect(Collectors.toList());
 
         // then

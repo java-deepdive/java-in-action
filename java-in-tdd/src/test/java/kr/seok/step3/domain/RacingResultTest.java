@@ -74,7 +74,7 @@ class RacingResultTest {
         RacingResult racingResult = new RacingResult();
         racingResult.addRacingRound(racingRound);
         // then
-        String[] winner = racingResult.getWinner();
+        String[] winner = racingResult.findWinner();
         assertThat(winner).containsExactly(winnerName);
     }
 }

@@ -34,6 +34,7 @@ class CarTest {
             Arguments.of("b", false, 0)
         );
     }
+
     @DisplayName("자동차 생성 테스트")
     @ParameterizedTest(name = "자동차 이름부여 생성 테스트 {0} == {1}")
     @MethodSource(value = "carList")

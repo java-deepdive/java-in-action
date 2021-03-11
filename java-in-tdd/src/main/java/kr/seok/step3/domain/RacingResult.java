@@ -25,20 +25,22 @@ public class RacingResult {
     }
 
     // 레이싱 결과를 담는 클래스에 승자를 출력하기 위한 메서드
-    public String[] getWinner() {
+    public String[] findWinner() {
         RacingRound lastRound = getRacingRounds().get(racingRounds.size() - 1);
         List<Car> cars = lastRound.getCars();
 
-        int maxPosition = getMaxPosition(cars);
+        Position maxPosition = getMaxPosition(cars);
         return cars.stream()
-                .filter(car -> car.getPosition() == maxPosition)
+                .filter(car -> car.isWinner(maxPosition))
                 .map(Car::getName)
+                .map(Name::getName)
                 .toArray(String[]::new);
     }
 
-    private int getMaxPosition(List<Car> cars) {
+    protected Position getMaxPosition(List<Car> cars) {
         return cars.stream()
-                .max(Comparator.comparing(Car::getPosition))
-                .get().getPosition();
+                .map(Car::getPosition)
+                .max(Comparator.comparingInt(Position::getPosition))
+                .get();
     }
 }

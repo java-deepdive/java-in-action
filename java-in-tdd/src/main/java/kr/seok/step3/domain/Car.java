@@ -15,9 +15,8 @@ public class Car {
 
     // 메시지를 처리하기 위해 자율적으로 선택
     private final MoveStrategy moveStrategy;
-
-    private int position;
-    private final String name;
+    private final Name name;
+    private Position position;
 
     // 생성하는 쪽에서 무조건 이동하는 전략을 넣지 않고도 기본 값으로 사용할 수 있는 전략을 설정
     public Car(final String name) {
@@ -29,38 +28,43 @@ public class Car {
         this(name, START_IDX, moveStrategy);
     }
 
-    public Car(final String name, final int position, final MoveStrategy moveStrategy) {
-        this.name = name;
-        this.position = position;
+    public Car(final String name, int position, final MoveStrategy moveStrategy) {
+        this.name = new Name(name);
+        this.position = new Position(position);
         this.moveStrategy = moveStrategy;
     }
 
     public Car move() {
         if (moveStrategy.isMovable()) {
-            position++;
+            position = position.move();
         }
         // 이동 하면 새로 생성해야 하는게 맞을까?
-        return new Car(name, position, moveStrategy);
+        return new Car(name.getName(), position.getPosition(), moveStrategy);
     }
 
-    public int getPosition() {
-        return position;
-    }
-
-    public String getName() {
+    public Name getName() {
         return name;
+    }
+
+    public boolean isWinner(final Position maxPosition) {
+        return position.equals(maxPosition);
+    }
+
+    public Position getPosition() {
+        return position;
     }
 
     @Override
     public boolean equals(Object o) {
         if (this == o) return true;
-        if (!(o instanceof Car)) return false;
-        final Car car = (Car) o;
-        return getPosition() == car.getPosition() && name.equals(car.name);
+        if (o == null || getClass() != o.getClass()) return false;
+        Car car = (Car) o;
+        return Objects.equals(name, car.name)
+                && Objects.equals(position, car.position);
     }
 
     @Override
     public int hashCode() {
-        return Objects.hash(getPosition(), name);
+        return Objects.hash(name, position);
     }
 }
