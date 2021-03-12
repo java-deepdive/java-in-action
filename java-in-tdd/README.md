@@ -23,12 +23,14 @@
 
 ![uml](docs/RequestRacingGame.png)
 
-
 - [x] [4단계 자동차 경주(우승자)](https://github.com/next-step/java-racingcar/pull/2013)
     - [원시 값을 감싸는 클래스로 만들어 객체를 비교 하는 방식으로 개선](https://github.com/next-step/java-racingcar/pull/2013#pullrequestreview-609736875)
   
 ![uml](docs/step4.png)
 
 - [x] [5단계 자동차 경주(리펙토링)](https://github.com/next-step/java-racingcar/pull/2037)
-
+    - [객체 비교 테스트](https://github.com/next-step/java-racingcar/pull/2037#discussion_r593197783)
+    - [메서드 시그니처와 다른 로직](https://github.com/next-step/java-racingcar/pull/2037#discussion_r593202597)
+    - [객체의 역할과 책임](https://github.com/next-step/java-racingcar/pull/2037#discussion_r593203847)
+  
 ![uml](docs/step5.png)

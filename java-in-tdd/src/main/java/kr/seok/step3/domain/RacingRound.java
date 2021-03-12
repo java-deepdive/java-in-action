@@ -18,4 +18,11 @@ public class RacingRound {
     public List<Car> getCars() {
         return Collections.unmodifiableList(cars);
     }
+
+    public Position getMaxPosition() {
+        return cars.stream()
+                .map(Car::getPosition)
+                .reduce(Position::greaterThan)
+                .orElseGet(Position::new);
+    }
 }
