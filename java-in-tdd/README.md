@@ -25,5 +25,10 @@
 
 
 - [x] [4단계 자동차 경주(우승자)](https://github.com/next-step/java-racingcar/pull/2013)
-
+    - [원시 값을 감싸는 클래스로 만들어 객체를 비교 하는 방식으로 개선](https://github.com/next-step/java-racingcar/pull/2013#pullrequestreview-609736875)
+  
 ![uml](docs/step4.png)
+
+- [x] [5단계 자동차 경주(리펙토링)](https://github.com/next-step/java-racingcar/pull/2037)
+
+![uml](docs/step5.png)
