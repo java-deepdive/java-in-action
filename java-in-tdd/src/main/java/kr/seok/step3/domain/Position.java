@@ -2,6 +2,9 @@ package kr.seok.step3.domain;
 
 import java.util.Objects;
 
+import static kr.seok.step3.util.Constants.NUMBER_ONE;
+import static kr.seok.step3.util.Constants.NUMBER_ZERO;
+
 /**
  * primitive 타입 데이터의 관리
  * <pre>
@@ -19,27 +22,36 @@ import java.util.Objects;
  * </pre>
  *
  */
-public class Position {
+public class Position implements Comparable<Position> {
+
+    public static final String CANNOT_NEGATIVE_VALUES = "Position 은 음수 값을 가질 수 없다.";
 
     private final int position;
 
     public Position() {
-        this(0);
+        this(NUMBER_ZERO);
     }
 
     public Position(int position) {
-        if(position < 0) {
-            throw new IllegalArgumentException("position은 음수 값을 가질 수 없다.");
+        if(position < NUMBER_ZERO) {
+            throw new IllegalArgumentException(CANNOT_NEGATIVE_VALUES);
         }
         this.position = position;
     }
 
     public Position move() {
-        return new Position(position + 1);
+        return new Position(position + NUMBER_ONE);
     }
 
     public int getPosition() {
         return position;
+    }
+
+    public Position greaterThan(Position maxPosition) {
+        if(compareTo(maxPosition) >= 0) {
+            return maxPosition;
+        }
+        return this;
     }
 
     @Override
@@ -53,5 +65,15 @@ public class Position {
     @Override
     public int hashCode() {
         return Objects.hash(getPosition());
+    }
+
+    @Override
+    public int compareTo(Position o) {
+        return o.position - position;
+    }
+
+    @Override
+    public String toString() {
+        return position + "";
     }
 }

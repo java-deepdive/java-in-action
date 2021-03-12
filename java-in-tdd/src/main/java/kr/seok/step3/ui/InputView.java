@@ -1,10 +1,13 @@
 package kr.seok.step3.ui;
 
+
 import kr.seok.step3.ui.dto.RequestRacingGame;
 
 import java.util.Arrays;
 import java.util.Scanner;
 
+import static java.lang.System.out;
+import static kr.seok.step3.util.Constants.NUMBER_FIVE;
 import static kr.seok.step3.util.Validator.*;
 
 /**
@@ -34,7 +37,7 @@ public class InputView {
 
     // 사용자 입력 값이 숫자가 아닌 경우 재입력 처리
     private String[] requestUserName() {
-        System.out.println(GUIDE_INPUT_CAR_NAMES);
+        out.println(GUIDE_INPUT_CAR_NAMES);
         String participantNames = scanner.nextLine();
         // 분리가 가능한 문자열
         if(!isNullAndIsBlank(participantNames)
@@ -48,17 +51,18 @@ public class InputView {
     private boolean greaterThenNameMaxLength(String participantNames) {
         String[] names = participantNames.split(SPLIT_DELIMITER);
         return Arrays.stream(names)
-                .anyMatch(s -> s.length() > 5);
+                .anyMatch(s -> s.length() > NUMBER_FIVE);
     }
 
     // 라운드 수를 입력 받으려는 경우 숫자로 파싱이 되는지 확인
     private int requestAttemptCount() {
-        System.out.println(GUIDE_HOW_MANY_TRY);
+        out.println(GUIDE_HOW_MANY_TRY);
         String attemptCount = scanner.nextLine();
 
-        if(isNumeric(attemptCount)) {
+        if(isNumeric(attemptCount) && isNaturalCount(attemptCount)) {
             return Integer.parseInt(attemptCount);
         }
         return requestAttemptCount();
     }
+
 }

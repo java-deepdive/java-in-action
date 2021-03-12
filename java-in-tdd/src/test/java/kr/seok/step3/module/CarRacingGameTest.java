@@ -1,6 +1,7 @@
 package kr.seok.step3.module;
 
-import kr.seok.step3.wrapper.RacingResult;
+
+import kr.seok.step3.domain.RacingResult;
 import kr.seok.step3.ui.dto.RequestRacingGame;
 import org.junit.jupiter.api.DisplayName;
 import org.junit.jupiter.params.ParameterizedTest;
@@ -22,7 +23,7 @@ class CarRacingGameTest {
     @DisplayName("레이싱 게임 정상 작동 테스트")
     @ParameterizedTest(name = "자동차 {0} 대, 총 {1} 차 레이스 시작")
     @MethodSource(value = "racingParticipants")
-    void racingGameTest(final String[] participants, final int attemptCount) {
+    void racingGameTest(String[] participants, int attemptCount) {
         // given
         RequestRacingGame request = new RequestRacingGame(participants, attemptCount);
         CarRacingGame racingGame = new CarRacingGame(request);

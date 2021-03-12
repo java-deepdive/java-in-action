@@ -1,7 +1,6 @@
-package kr.seok.step3.wrapper;
+package kr.seok.step3.domain;
 
 
-import kr.seok.step3.domain.Car;
 import kr.seok.step3.move.ConditionMoveStrategy;
 import kr.seok.step3.move.MoveStrategy;
 

@@ -1,12 +1,13 @@
 package kr.seok.step3.module;
 
-import kr.seok.step3.wrapper.CarManager;
-import kr.seok.step3.wrapper.RacingResult;
+
+import kr.seok.step3.domain.CarManager;
+import kr.seok.step3.domain.RacingResult;
 import kr.seok.step3.ui.dto.RequestRacingGame;
 
 import java.util.stream.IntStream;
 
-import static kr.seok.step3.util.Constants.START_IDX;
+import static kr.seok.step3.util.Constants.NUMBER_ZERO;
 
 /**
  * 레이싱 게임 역할을 하는 클래스
@@ -31,7 +32,7 @@ public class CarRacingGame {
 
     // 레이스
     public void race() {
-        IntStream.range(START_IDX, attemptCount)
+        IntStream.range(NUMBER_ZERO, attemptCount)
                 .forEach(value ->
                         // 라운드 별 기록 저장
                         racingResult.addRacingRound(carManager.run())

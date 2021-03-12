@@ -1,7 +1,9 @@
 package kr.seok.step3.ui;
+
+
 import kr.seok.step3.domain.Car;
-import kr.seok.step3.wrapper.RacingResult;
-import kr.seok.step3.wrapper.RacingRound;
+import kr.seok.step3.domain.RacingResult;
+import kr.seok.step3.domain.RacingRound;
 
 import java.util.List;
 import java.util.stream.IntStream;
@@ -9,7 +11,7 @@ import java.util.stream.IntStream;
 import static java.lang.String.join;
 import static java.lang.System.lineSeparator;
 import static java.util.stream.Collectors.joining;
-import static kr.seok.step3.util.Constants.START_IDX;
+import static kr.seok.step3.util.Constants.NUMBER_ZERO;
 
 /**
  * 자동차 경주의 상태를 출력하기 위한 클래스
@@ -35,7 +37,7 @@ public class ResultView {
                 .map(this::printRecordPerCar)
                 .collect(joining(lineSeparator() + lineSeparator()));
 
-        System.out.println(result + System.lineSeparator());
+        System.out.println(result + lineSeparator());
     }
 
     // 라운드당 자동차 기록 출력
@@ -49,7 +51,7 @@ public class ResultView {
     // 자동차 별 거리 출력
     private String printDistancePerRecord(final Car car) {
         int position = car.getPosition().getPosition();
-        String carDistance = IntStream.range(START_IDX, position)
+        String carDistance = IntStream.range(NUMBER_ZERO, position)
                 .mapToObj(i -> hyphen)
                 .reduce(EMPTY, (acc, cur) -> acc + cur);
         return String.format("%s : %s ", car.getName(), carDistance);
@@ -57,7 +59,7 @@ public class ResultView {
 
     // 승자 출력 메서드
     public void printWinner(RacingResult racingResult) {
-        final String[] winner = racingResult.findWinner();
+        final String[] winner = racingResult.findWinners();
         System.out.println(join(SPLIT_DELIMITER, winner) + GUIDE_WINNER);
     }
 }

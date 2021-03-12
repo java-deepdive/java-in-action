@@ -10,6 +10,9 @@ import java.util.stream.Stream;
 import static org.assertj.core.api.Assertions.assertThat;
 import static org.assertj.core.api.Assertions.assertThatIllegalArgumentException;
 
+/**
+ * 자동차 이름 관련 테스트 코드
+ */
 class NameTest {
 
     private static Stream<Arguments> invalidEntry() {

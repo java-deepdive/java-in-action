@@ -1,5 +1,6 @@
 package kr.seok.step3.domain;
 
+
 import java.util.Objects;
 
 import static kr.seok.step3.util.Validator.isNullAndIsBlank;
@@ -10,14 +11,17 @@ import static kr.seok.step3.util.Validator.isValidNameLength;
  */
 public class Name {
 
+    public static final String GUIDE_EMPTY_STRING = "이름 비어있습니다.";
+    public static final String MORE_THAN_FIVE_CHARACTERS = "5글자가 넘습니다.";
+
     private final String name;
 
     public Name(final String name) {
         if(isNullAndIsBlank(name)) {
-            throw new IllegalArgumentException("이름 비어있음");
+            throw new IllegalArgumentException(GUIDE_EMPTY_STRING);
         }
         if(isValidNameLength(name)) {
-            throw new IllegalArgumentException("5글자 넘음");
+            throw new IllegalArgumentException(MORE_THAN_FIVE_CHARACTERS);
         }
         this.name = name.trim();
     }

@@ -2,8 +2,6 @@ package kr.seok.step3.domain;
 
 
 import kr.seok.step3.move.MoveStrategy;
-import kr.seok.step3.wrapper.CarManager;
-import kr.seok.step3.wrapper.RacingRound;
 import org.junit.jupiter.api.DisplayName;
 import org.junit.jupiter.params.ParameterizedTest;
 import org.junit.jupiter.params.provider.Arguments;

@@ -1,7 +1,6 @@
 package kr.seok.step3;
 
-
-import kr.seok.step3.wrapper.RacingResult;
+import kr.seok.step3.domain.RacingResult;
 import kr.seok.step3.module.CarRacingGame;
 import kr.seok.step3.ui.InputView;
 import kr.seok.step3.ui.ResultView;

@@ -1,6 +1,4 @@
-package kr.seok.step3.wrapper;
-
-import kr.seok.step3.domain.Car;
+package kr.seok.step3.domain;
 
 import java.util.Collections;
 import java.util.List;

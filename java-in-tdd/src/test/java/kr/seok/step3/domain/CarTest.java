@@ -1,5 +1,6 @@
 package kr.seok.step3.domain;
 
+
 import kr.seok.step3.move.MoveStrategy;
 import org.junit.jupiter.api.DisplayName;
 import org.junit.jupiter.params.ParameterizedTest;
@@ -23,15 +24,15 @@ class CarTest {
 
     private static Stream<Arguments> carList() {
         return Stream.of(
-            Arguments.of("user1", "user1"),
-            Arguments.of("user2", "user2")
+                Arguments.of("user1", "user1"),
+                Arguments.of("user2", "user2")
         );
     }
 
     private static Stream<Arguments> carPosition() {
         return Stream.of(
-            Arguments.of("user1", true, 1),
-            Arguments.of("user2", false, 0)
+                Arguments.of("user1", true, 1),
+                Arguments.of("user2", false, 0)
         );
     }
 
@@ -58,7 +59,7 @@ class CarTest {
         assertThat(carName.hashCode()).isEqualTo(expectedName.hashCode());
     }
 
-    @DisplayName("자동차의 이동하는지 확인하는 테스트")
+    @DisplayName("move(): 자동차의 이동하는지 확인하는 테스트")
     @ParameterizedTest(name = "자동차({0})는 움직임 {1} 설정 시 Position{2}")
     @MethodSource(value = "carPosition")
     void moveCarPosition(final String name, final boolean moveFlag, final int position) {
@@ -71,7 +72,7 @@ class CarTest {
         assertThat(carPosition).isEqualTo(new Position(position));
     }
 
-    @DisplayName("자동차의 연속적인 이동 위치를 확인 테스트")
+    @DisplayName("move(): 자동차의 연속적인 이동 위치를 확인 테스트")
     @ParameterizedTest(name = "자동차 이동 전략: {0}, position 값 : {1}")
     @CsvSource(value = {"user1, true, 2", "user2, false, 0"})
     void movesCarPosition(final String name, final boolean moveFlag, final int expected) {
@@ -85,7 +86,7 @@ class CarTest {
         assertThat(carPosition).isEqualTo(new Position(expected));
     }
 
-    @DisplayName("자동차 우승자 테스트")
+    @DisplayName("isWinner(): 자동차 우승자 테스트")
     @ParameterizedTest(name = "해당 자동차가 우승 == {2}")
     @MethodSource(value = "winnerEntry")
     void carWinnerTest(final Car given, final Position maxPosition, final boolean expected) {
