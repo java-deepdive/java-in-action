@@ -1,15 +1,16 @@
 package kr.seok.lotto.calculator;
 
-import study.calculator.pattern.CustomPattern;
-import study.calculator.pattern.DefaultPattern;
-import study.calculator.pattern.PatternSeparator;
+
+import kr.seok.lotto.calculator.pattern.CustomPattern;
+import kr.seok.lotto.calculator.pattern.DefaultPattern;
+import kr.seok.lotto.calculator.pattern.PatternSeparator;
 
 import java.util.Arrays;
 import java.util.List;
 
 import static java.util.stream.Collectors.toList;
-import static study.calculator.Validator.PREFIX_STRATEGY_CONDITION;
-import static study.calculator.Validator.STRING_WHITESPACE;
+import static kr.seok.lotto.calculator.Validator.PREFIX_STRATEGY_CONDITION;
+import static kr.seok.lotto.calculator.Validator.STRING_WHITESPACE;
 
 /**
  * 숫자를 관리 할 일급 컬렉션

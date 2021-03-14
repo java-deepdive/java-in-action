@@ -1,6 +1,6 @@
 package kr.seok.lotto.calculator;
 
-import study.calculator.exception.CalculatorException;
+import kr.seok.lotto.calculator.exception.CalculatorException;
 
 import java.util.Objects;
 

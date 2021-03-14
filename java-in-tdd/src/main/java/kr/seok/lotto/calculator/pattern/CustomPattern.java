@@ -1,6 +1,6 @@
 package kr.seok.lotto.calculator.pattern;
 
-import study.calculator.exception.CalculatorException;
+import kr.seok.lotto.calculator.exception.CalculatorException;
 
 import java.util.regex.Matcher;
 import java.util.regex.Pattern;

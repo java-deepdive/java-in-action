@@ -1,12 +1,13 @@
 package kr.seok.lotto.calculator;
 
-import study.calculator.exception.CalculatorException;
+
+import kr.seok.lotto.calculator.exception.CalculatorException;
 
 import java.util.List;
 
-import static study.calculator.Number.ZERO;
-import static study.calculator.Validator.isNotNullAndIsBlank;
-import static study.calculator.Validator.isSingleLengthAndIsNotNumeric;
+import static kr.seok.lotto.calculator.Number.ZERO;
+import static kr.seok.lotto.calculator.Validator.isNotNullAndIsBlank;
+import static kr.seok.lotto.calculator.Validator.isSingleLengthAndIsNotNumeric;
 
 public final class StringAddCalculator {
 
