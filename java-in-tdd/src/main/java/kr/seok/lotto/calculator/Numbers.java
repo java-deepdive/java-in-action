@@ -1,6 +1,5 @@
 package kr.seok.lotto.calculator;
 
-
 import kr.seok.lotto.calculator.pattern.CustomPattern;
 import kr.seok.lotto.calculator.pattern.DefaultPattern;
 import kr.seok.lotto.calculator.pattern.PatternSeparator;
@@ -9,8 +8,6 @@ import java.util.Arrays;
 import java.util.List;
 
 import static java.util.stream.Collectors.toList;
-import static kr.seok.lotto.calculator.Validator.PREFIX_STRATEGY_CONDITION;
-import static kr.seok.lotto.calculator.Validator.STRING_WHITESPACE;
 
 /**
  * 숫자를 관리 할 일급 컬렉션
@@ -18,10 +15,6 @@ import static kr.seok.lotto.calculator.Validator.STRING_WHITESPACE;
 public class Numbers {
 
     private final List<Number> numbers;
-
-    public Numbers() {
-        this(STRING_WHITESPACE);
-    }
 
     private Numbers(String text) {
         this(text, new DefaultPattern());
@@ -32,22 +25,27 @@ public class Numbers {
     }
 
     public static Numbers of(String text) {
-        if(text.startsWith(PREFIX_STRATEGY_CONDITION)) {
+        if(isContainsCustomPatternText(text)) {
             return new Numbers(text, new CustomPattern());
         }
         return new Numbers(text);
+    }
+
+    private static boolean isContainsCustomPatternText(String text) {
+        return text.startsWith(Validator.PREFIX_STRATEGY_CONDITION);
     }
 
     protected List<Number> getExtractNumbers(String text, PatternSeparator patternSeparator) {
         String[] stringsSeparatedBySeparator = patternSeparator.matches(text);
 
         return Arrays.stream(stringsSeparatedBySeparator)
-                .filter(Validator::isNumeric)
                 .map(Number::of)
                 .collect(toList());
     }
 
-    public List<Number> getNumbers() {
-        return numbers;
+    public int sumNumbers() {
+        return numbers.stream()
+                .mapToInt(Number::getNumber)
+                .sum();
     }
 }
