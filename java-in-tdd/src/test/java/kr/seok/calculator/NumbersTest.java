@@ -1,9 +1,9 @@
-package kr.seok.lotto.calculator;
+package kr.seok.calculator;
 
 
-import kr.seok.lotto.calculator.pattern.CustomPattern;
-import kr.seok.lotto.calculator.pattern.DefaultPattern;
-import kr.seok.lotto.calculator.pattern.PatternSeparator;
+import kr.seok.calculator.pattern.CustomPattern;
+import kr.seok.calculator.pattern.DefaultPattern;
+import kr.seok.calculator.pattern.PatternSeparator;
 import org.junit.jupiter.api.DisplayName;
 import org.junit.jupiter.params.ParameterizedTest;
 import org.junit.jupiter.params.provider.Arguments;

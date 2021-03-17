@@ -1,4 +1,4 @@
-package kr.seok.lotto.calculator;
+package kr.seok.calculator;
 
 public final class StringAddCalculator {
 

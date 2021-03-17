@@ -1,4 +1,4 @@
-package kr.seok.lotto.calculator.exception;
+package kr.seok.calculator.exception;
 
 public class CalculatorException extends RuntimeException {
     public CalculatorException() { }

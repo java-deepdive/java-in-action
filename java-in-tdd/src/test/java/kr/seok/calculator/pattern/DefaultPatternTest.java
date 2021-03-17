@@ -1,4 +1,4 @@
-package kr.seok.lotto.calculator.pattern;
+package kr.seok.calculator.pattern;
 
 
 import org.junit.jupiter.params.ParameterizedTest;

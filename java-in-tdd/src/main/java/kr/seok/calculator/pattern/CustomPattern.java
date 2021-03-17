@@ -1,7 +1,7 @@
-package kr.seok.lotto.calculator.pattern;
+package kr.seok.calculator.pattern;
 
 
-import kr.seok.lotto.calculator.exception.CalculatorException;
+import kr.seok.calculator.exception.CalculatorException;
 
 import java.util.regex.Matcher;
 import java.util.regex.Pattern;

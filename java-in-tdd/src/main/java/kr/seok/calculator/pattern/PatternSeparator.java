@@ -1,4 +1,4 @@
-package kr.seok.lotto.calculator.pattern;
+package kr.seok.calculator.pattern;
 
 @FunctionalInterface
 public interface PatternSeparator {

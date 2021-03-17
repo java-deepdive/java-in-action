@@ -1,7 +1,7 @@
-package kr.seok.lotto.calculator.pattern;
+package kr.seok.calculator.pattern;
 
 
-import kr.seok.lotto.calculator.exception.CalculatorException;
+import kr.seok.calculator.exception.CalculatorException;
 import org.junit.jupiter.params.ParameterizedTest;
 import org.junit.jupiter.params.provider.Arguments;
 import org.junit.jupiter.params.provider.MethodSource;
