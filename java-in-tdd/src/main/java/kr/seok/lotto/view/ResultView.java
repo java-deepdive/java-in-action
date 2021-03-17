@@ -1,11 +1,12 @@
 package kr.seok.lotto.view;
 
-import study.lotto.domain.Lotto;
-import study.lotto.domain.LottoMatch;
-import study.lotto.domain.LottoResult;
-import study.lotto.domain.ProfitMessage;
-import study.lotto.service.Lottos;
-import study.lotto.view.dto.RequestMoney;
+
+import kr.seok.lotto.domain.Lotto;
+import kr.seok.lotto.domain.LottoMatch;
+import kr.seok.lotto.domain.LottoResult;
+import kr.seok.lotto.domain.ProfitMessage;
+import kr.seok.lotto.service.Lottos;
+import kr.seok.lotto.view.dto.RequestMoney;
 
 import java.io.PrintStream;
 import java.util.List;

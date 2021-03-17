@@ -1,12 +1,13 @@
 package kr.seok.lotto;
 
-import study.lotto.controller.LottoGame;
-import study.lotto.domain.LottoResult;
-import study.lotto.service.Lottos;
-import study.lotto.view.InputView;
-import study.lotto.view.ResultView;
-import study.lotto.view.dto.RequestMoney;
-import study.lotto.view.dto.RequestWinningNumber;
+
+import kr.seok.lotto.controller.LottoGame;
+import kr.seok.lotto.domain.LottoResult;
+import kr.seok.lotto.service.Lottos;
+import kr.seok.lotto.view.InputView;
+import kr.seok.lotto.view.ResultView;
+import kr.seok.lotto.view.dto.RequestMoney;
+import kr.seok.lotto.view.dto.RequestWinningNumber;
 
 public class LottoApplication {
     public static void main(String[] args) {

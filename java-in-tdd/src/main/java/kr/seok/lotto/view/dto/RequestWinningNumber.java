@@ -1,7 +1,8 @@
 package kr.seok.lotto.view.dto;
 
-import study.lotto.domain.LottoNumber;
-import study.lotto.exception.LottoException;
+
+import kr.seok.lotto.domain.LottoNumber;
+import kr.seok.lotto.exception.LottoException;
 
 import java.util.Arrays;
 import java.util.List;

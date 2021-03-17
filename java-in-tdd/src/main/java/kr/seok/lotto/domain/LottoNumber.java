@@ -1,7 +1,8 @@
 package kr.seok.lotto.domain;
 
-import study.lotto.exception.LottoException;
-import study.lotto.generator.LottoNumberGenerator;
+
+import kr.seok.lotto.exception.LottoException;
+import kr.seok.lotto.generator.LottoNumberGenerator;
 
 import java.util.Objects;
 

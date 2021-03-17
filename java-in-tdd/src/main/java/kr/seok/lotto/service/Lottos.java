@@ -1,6 +1,7 @@
 package kr.seok.lotto.service;
 
-import study.lotto.domain.Lotto;
+
+import kr.seok.lotto.domain.Lotto;
 
 import java.util.Collections;
 import java.util.List;

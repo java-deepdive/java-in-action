@@ -1,10 +1,12 @@
 package kr.seok.lotto.view.dto;
 
-import study.lotto.exception.LottoException;
+
+import kr.seok.lotto.exception.LottoException;
 
 import java.util.Objects;
 
-import static study.lotto.view.InputView.LOTTO_PRICE;
+import static kr.seok.lotto.view.InputView.LOTTO_PRICE;
+
 
 public class RequestMoney {
 

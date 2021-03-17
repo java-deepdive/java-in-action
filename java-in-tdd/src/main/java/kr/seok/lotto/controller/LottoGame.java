@@ -1,8 +1,9 @@
 package kr.seok.lotto.controller;
 
-import study.lotto.domain.Lotto;
-import study.lotto.service.Lottos;
-import study.lotto.view.dto.RequestMoney;
+
+import kr.seok.lotto.domain.Lotto;
+import kr.seok.lotto.service.Lottos;
+import kr.seok.lotto.view.dto.RequestMoney;
 
 import java.util.List;
 import java.util.stream.Collectors;

@@ -1,8 +1,9 @@
 package kr.seok.lotto.domain;
 
-import study.lotto.generator.LottoNumberGenerator;
-import study.lotto.generator.NumberGenerator;
-import study.lotto.view.dto.RequestWinningNumber;
+
+import kr.seok.lotto.generator.LottoNumberGenerator;
+import kr.seok.lotto.generator.NumberGenerator;
+import kr.seok.lotto.view.dto.RequestWinningNumber;
 
 import java.util.List;
 import java.util.Objects;

@@ -1,8 +1,9 @@
 package kr.seok.lotto.view;
 
-import study.lotto.exception.LottoException;
-import study.lotto.view.dto.RequestMoney;
-import study.lotto.view.dto.RequestWinningNumber;
+
+import kr.seok.lotto.exception.LottoException;
+import kr.seok.lotto.view.dto.RequestMoney;
+import kr.seok.lotto.view.dto.RequestWinningNumber;
 
 import java.util.Objects;
 import java.util.Scanner;
