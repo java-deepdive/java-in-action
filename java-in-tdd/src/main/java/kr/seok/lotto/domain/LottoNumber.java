@@ -2,17 +2,25 @@ package kr.seok.lotto.domain;
 
 
 import kr.seok.lotto.exception.LottoException;
-import kr.seok.lotto.generator.LottoNumberGenerator;
+import kr.seok.lotto.util.Validation;
 
 import java.util.Objects;
+
+import static kr.seok.lotto.generator.LottoNumberGenerator.MAX_NUMBER_BOUND;
+import static kr.seok.lotto.generator.LottoNumberGenerator.MIN_NUMBER_BOUND;
 
 /**
  * 로또 숫자 번호에 대한 wrapper class
  */
-public class LottoNumber {
+public class LottoNumber implements Comparable<LottoNumber> {
 
+    public static final String GUIDE_CANNOT_PARSE_STRING_TO_INTEGER = "숫자로 캐스팅 할 수 없는 값 입니다.";
     public static final String GUIDE_NOT_USE_VALUE = "로또 번호로 사용할 수 없는 값 입니다.";
     private final int number;
+
+    public LottoNumber(final String bonusNumber) {
+        this(Validation.parseInt(bonusNumber));
+    }
 
     public LottoNumber(final int number) {
         if(isInvalidNumber(number)) {
@@ -22,7 +30,7 @@ public class LottoNumber {
     }
 
     private boolean isInvalidNumber(final int number) {
-        return LottoNumberGenerator.MIN_NUMBER_BOUND > number || LottoNumberGenerator.MAX_NUMBER_BOUND < number;
+        return MIN_NUMBER_BOUND > number || MAX_NUMBER_BOUND < number;
     }
 
     @Override
@@ -41,5 +49,10 @@ public class LottoNumber {
     @Override
     public String toString() {
         return String.valueOf(number);
+    }
+
+    @Override
+    public int compareTo(LottoNumber o) {
+        return Integer.compare(number, o.number);
     }
 }
