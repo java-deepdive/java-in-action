@@ -14,7 +14,7 @@ public class Bag {
         this.invitation = invitation;
     }
 
-    public boolean hashInvitation() {
+    public boolean hasInvitation() {
         return invitation != null;
     }
 
