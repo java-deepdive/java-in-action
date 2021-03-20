@@ -23,3 +23,11 @@
   
 - 해결책
   - 책임의 이동
+
+![1차](docs/audience1.png)
+
+![2차](docs/audience2.png)
+
+![3차](docs/audience3.png)
+
+![4차](docs/audience4.png)
