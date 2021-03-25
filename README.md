@@ -59,13 +59,23 @@
 - TDD 실습 및 습관화를 위한 연습
 
 ### 자동차 경주
+- [1차 - 학습 테스트](https://github.com/next-step/java-racingcar/pull/1847)
+- [2차 - 자동차 경주](https://github.com/next-step/java-racingcar/pull/1914)
+- [3차 - 자동차 경주](https://github.com/next-step/java-racingcar/pull/1960)
+- [4차 - 자동차 경주](https://github.com/next-step/java-racingcar/pull/2013)
+- [5차 - 자동차 경주](https://github.com/next-step/java-racingcar/pull/2037)
+
+### 로또
+- [1차 - 문자열 덧셈 계산기](https://github.com/next-step/java-lotto/pull/1242)
+- [2차 - 로또](https://github.com/next-step/java-lotto/pull/1255)
+- [3차 - 로또](https://github.com/next-step/java-lotto/pull/1261)
+- [4차 - 로또](https://github.com/next-step/java-lotto/pull/1273)
+
+### 참고
 - Git Commit
   - [AngularJS Commit Message Conventions](https://gist.github.com/stephenparish/9941e89d80e2bc58a153)
   - [Code Convention](https://google.github.io/styleguide/javaguide.html)
-  
-- Code
-  - 
+
 ## keyword
 - KPI
 - MBO
-
