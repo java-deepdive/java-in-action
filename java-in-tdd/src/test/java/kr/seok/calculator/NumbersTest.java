@@ -47,12 +47,6 @@ class NumbersTest {
         // given
         Numbers numbers = Numbers.of(given);
         // when
-        List<Number> numberList = numbers.getNumbers();
-        List<Integer> result = numberList.stream()
-                .map(Number::getNumber)
-                .collect(toList());
-        // then
-        assertThat(result).containsExactly(expected);
     }
 
     @DisplayName("일급 컬렉션 문자열 분리 테스트")
@@ -62,13 +56,6 @@ class NumbersTest {
         // given
         Numbers numbers = Numbers.of(given);
         // when
-        List<Number> numberList = numbers.getNumbers();
-        List<Integer> result = numberList.stream()
-                .map(Number::getNumber)
-                .collect(toList());
-
-        // then
-        assertThat(result).containsExactly(expected);
     }
 
     @DisplayName("일급 컬렉션 전략에 따른 문자열 분리 테스트")
@@ -76,14 +63,5 @@ class NumbersTest {
     @MethodSource(value = "strategySeparateNumbers")
     void getExtractNumbers_전략에_따른_문자열분리(String given, PatternSeparator patternSeparator, Integer[] expected) {
         // given
-        Numbers numbers = new Numbers();
-        // when
-        List<Number> extractNumberList = numbers.getExtractNumbers(given, patternSeparator);
-        List<Integer> result = extractNumberList.stream()
-                .map(Number::getNumber)
-                .collect(toList());
-        // then
-        assertThat(result).contains(expected);
-
     }
 }
