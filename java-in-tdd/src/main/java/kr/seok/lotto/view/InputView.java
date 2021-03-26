@@ -4,57 +4,54 @@ import java.util.Arrays;
 import java.util.List;
 import java.util.Scanner;
 import java.util.Set;
-import java.util.stream.Collectors;
 import java.util.stream.IntStream;
 
 import static java.util.stream.Collectors.toList;
 import static java.util.stream.Collectors.toSet;
+import static kr.seok.lotto.util.Constants.*;
 
+/**
+ * View
+ * 기본 라이브러리에만 의존
+ */
 public class InputView {
-    public static final String GUIDE_LAST_WEEK_WINNING_NUMBER = "지난 주 당첨 번호를 입력해 주세요.";
-    public static final String GUIDE_MANUAL_LOTTO_COUNT = "수동으로 구매할 로또 수를 입력해 주세요.";
-    public static final String GUIDE_MANUAL_NUMBERS = "수동으로 구매할 번호를 입력해 주세요.";
-    public static final String GUIDE_PURCHASE_MONEY = "구입금액을 입력해 주세요.";
 
-    public static final String SPACIAL_CHARACTER_SPACE = "\\s";
-    public static final String SPLIT_DELIMITER = ",";
-    public static final String WHITE_SPACE = "";
+    private static final Scanner in = new Scanner(System.in);
 
-
-    private final Scanner scanner;
-
-    public InputView() {
-        this.scanner = new Scanner(System.in);
+    private static String nextLine() {
+        return in.nextLine();
     }
 
-    public int requestMoney() { // 구매
+    public String requestPurchasedLotto() {
         System.out.println(GUIDE_PURCHASE_MONEY);
-        return scanner.nextInt();
+        return in.nextLine();
     }
 
-    public int requestManual() {
+    public String requestManual() {
         System.out.println(GUIDE_MANUAL_LOTTO_COUNT);
-        int amount = scanner.nextInt();
-        scanner.nextLine();
-        return amount;
+        return in.nextLine();
     }
 
-    public Set<Integer> requestLastWeekWinningNumbers() {
+    public String requestWinningNumbers() {
         System.out.println(GUIDE_LAST_WEEK_WINNING_NUMBER);
-        return apply(scanner.nextLine());
+        return in.nextLine();
     }
 
-    public List<Set<Integer>> makeManualLottoNumbers(final int manualCount) {
+    public String requestBonusNumber() {
+        System.out.println(GUIDE_INPUT_BONUS_NUMBER);
+        return in.nextLine();
+    }
+
+    public List<Set<Integer>> makeManualLottoNumbers(final String manualCount) {
         System.out.println(GUIDE_MANUAL_NUMBERS);
-        return IntStream.range(0, manualCount)
-                .mapToObj(i -> scanner.nextLine())
+        return IntStream.rangeClosed(1, Integer.parseInt(manualCount))
+                .mapToObj(i -> nextLine())
                 .map(this::apply)
                 .collect(toList());
     }
 
-    private Set<Integer> apply(String s) {
-        String[] split = s.split(",");
-        return Arrays.stream(split)
+    private Set<Integer> apply(String lottoNumbers) {
+        return Arrays.stream(lottoNumbers.split(SPLIT_DELIMITER))
                 .map(Integer::new)
                 .collect(toSet());
     }

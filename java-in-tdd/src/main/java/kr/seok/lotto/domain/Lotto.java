@@ -4,9 +4,9 @@ package kr.seok.lotto.domain;
 import kr.seok.lotto.exception.LottoException;
 
 import java.util.Collection;
-import java.util.HashSet;
 import java.util.Objects;
 import java.util.Set;
+import java.util.TreeSet;
 
 import static kr.seok.lotto.service.LottoFactory.LOTTO_MAX_SIZE;
 import static kr.seok.lotto.util.Constants.GUIDE_ERR_LOTTO_SIZE;
@@ -19,9 +19,7 @@ public class Lotto {
     private final Set<LottoNumber> lottoNumbers;
 
     protected Lotto(final Collection<LottoNumber> lottoNumbers) {
-        if(lottoNumbers.size() != LOTTO_MAX_SIZE) {
-            throw new LottoException(GUIDE_ERR_LOTTO_SIZE);
-        }
+        checkValidation(lottoNumbers);
         this.lottoNumbers = getLottoNumbers(lottoNumbers);
     }
 
@@ -29,8 +27,14 @@ public class Lotto {
         return new Lotto(numbers);
     }
 
-    private Set<LottoNumber> getLottoNumbers(Collection<LottoNumber> lottoNumbers) {
-        return new HashSet<>(lottoNumbers);
+    private void checkValidation(final Collection<LottoNumber> lottoNumbers) {
+        if(lottoNumbers.size() != LOTTO_MAX_SIZE) {
+            throw new LottoException(GUIDE_ERR_LOTTO_SIZE);
+        }
+    }
+
+    private Set<LottoNumber> getLottoNumbers(final Collection<LottoNumber> lottoNumbers) {
+        return new TreeSet<>(lottoNumbers);
     }
 
     public long match(final Lotto winningLotto) {

@@ -3,7 +3,9 @@ package kr.seok.lotto.service;
 
 import kr.seok.lotto.domain.Lotto;
 import kr.seok.lotto.domain.LottoNumber;
+import kr.seok.lotto.view.dto.ManualLottoParser;
 
+import java.util.Collection;
 import java.util.Collections;
 import java.util.List;
 import java.util.Set;
@@ -27,29 +29,36 @@ public class LottoFactory {
                 .collect(toList());
     }
 
-    public static List<Lotto> createAutoLottoSet(int totalCount) {
-        return Stream.generate(LottoFactory::makeLottoNumbers)
-                .limit(totalCount)
+    private LottoFactory() { }
+
+    public static List<Lotto> createManualAndAuto(final int totalCount, final ManualLottoParser manualLottoNumbers) {
+        return Stream.of(createManualLottoSet(manualLottoNumbers), createAutoLottoSet(totalCount))
+                .flatMap(Collection::stream)
                 .collect(toList());
     }
 
-    public static List<Lotto> createManualLottoSet(List<Set<Integer>> manualLottoNumbers) {
-        return manualLottoNumbers.stream()
+    protected static List<Lotto> createManualLottoSet(final ManualLottoParser manualLottoNumbers) {
+        List<Set<Integer>> manualNumbers = manualLottoNumbers.getManualNumbers();
+        return manualNumbers.stream()
                 .map(LottoFactory::makeManualLottoSet)
                 .map(Lotto::of)
                 .collect(toList());
     }
 
-    private static Lotto makeLottoNumbers() {
-        Collections.shuffle(LOTTO_NUMBERS);
-        return Lotto.of(
-                LOTTO_NUMBERS.stream()
-                        .limit(LOTTO_MAX_SIZE)
-                        .collect(toList())
-        );
+    protected static List<Lotto> createAutoLottoSet(final int totalCount) {
+        return Stream.generate(LottoFactory::makeLottoNumbers)
+                .limit(totalCount)
+                .collect(toList());
     }
 
-    private static List<LottoNumber> makeManualLottoSet(Set<Integer> integers) {
+    private static Lotto makeLottoNumbers() {
+        Collections.shuffle(LOTTO_NUMBERS);
+        return Lotto.of(LOTTO_NUMBERS.stream()
+                .limit(LOTTO_MAX_SIZE)
+                .collect(toList()));
+    }
+
+    private static List<LottoNumber> makeManualLottoSet(final Set<Integer> integers) {
         return integers.stream()
                 .map(LottoNumber::of)
                 .collect(toList());

@@ -1,4 +1,4 @@
-package kr.seok.lotto.domain;
+package kr.seok.lotto.domain.type;
 
 import java.util.Arrays;
 import java.util.List;

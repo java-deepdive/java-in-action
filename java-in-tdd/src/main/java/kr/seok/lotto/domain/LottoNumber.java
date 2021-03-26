@@ -1,5 +1,6 @@
 package kr.seok.lotto.domain;
 
+
 import kr.seok.lotto.exception.LottoException;
 import kr.seok.lotto.util.Validation;
 
@@ -25,6 +26,10 @@ public class LottoNumber implements Comparable<LottoNumber> {
             throw new LottoException(GUIDE_ERR_NOT_USE_VALUE);
         }
         this.number = number;
+    }
+
+    public static LottoNumber of(final String number) {
+        return new LottoNumber(number);
     }
 
     public static LottoNumber of(final int number) {
