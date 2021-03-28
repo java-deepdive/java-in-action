@@ -31,8 +31,6 @@
 
 ![4차](docs/audience4.png)
 
-
-
 ### 영화 예매
 ![영화 1차](docs/movie1.png)
 
