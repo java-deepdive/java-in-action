@@ -1,6 +1,6 @@
-package kr.seok.movie.condition;
+package kr.seok.movie.responsibility.condition;
 
-import kr.seok.movie.Screening;
+import kr.seok.movie.responsibility.Screening;
 
 import java.time.DayOfWeek;
 import java.time.LocalTime;

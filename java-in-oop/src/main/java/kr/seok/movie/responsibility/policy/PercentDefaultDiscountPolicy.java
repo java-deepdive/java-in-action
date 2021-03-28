@@ -1,8 +1,8 @@
-package kr.seok.movie.policy;
+package kr.seok.movie.responsibility.policy;
 
-import kr.seok.movie.Money;
-import kr.seok.movie.Screening;
-import kr.seok.movie.condition.DiscountCondition;
+import kr.seok.movie.responsibility.Money;
+import kr.seok.movie.responsibility.Screening;
+import kr.seok.movie.responsibility.condition.DiscountCondition;
 
 public class PercentDefaultDiscountPolicy extends DefaultDiscountPolicy {
     private final double percent;

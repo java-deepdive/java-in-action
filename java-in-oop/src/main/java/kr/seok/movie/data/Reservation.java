@@ -1,4 +1,4 @@
-package kr.seok.movie;
+package kr.seok.movie.data;
 
 public class Reservation {
     private final Customer customer;

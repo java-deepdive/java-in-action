@@ -1,7 +1,7 @@
-package kr.seok.movie.policy;
+package kr.seok.movie.responsibility.policy;
 
-import kr.seok.movie.Money;
-import kr.seok.movie.Screening;
+import kr.seok.movie.responsibility.Money;
+import kr.seok.movie.responsibility.Screening;
 
 public class NoneDefaultDiscountPolicy implements DiscountPolicy {
 

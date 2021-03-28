@@ -1,6 +1,6 @@
-package kr.seok.movie;
+package kr.seok.movie.responsibility;
 
-import kr.seok.movie.policy.DiscountPolicy;
+import kr.seok.movie.responsibility.policy.DiscountPolicy;
 
 import java.time.Duration;
 

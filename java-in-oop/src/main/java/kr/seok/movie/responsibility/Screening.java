@@ -1,4 +1,4 @@
-package kr.seok.movie;
+package kr.seok.movie.responsibility;
 
 import java.time.LocalDateTime;
 

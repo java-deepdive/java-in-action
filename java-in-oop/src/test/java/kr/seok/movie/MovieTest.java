@@ -1,11 +1,12 @@
 package kr.seok.movie;
 
-import kr.seok.movie.condition.PeriodCondition;
-import kr.seok.movie.condition.SequenceCondition;
-import kr.seok.movie.policy.AmountDefaultDiscountPolicy;
-import kr.seok.movie.policy.DefaultDiscountPolicy;
-import kr.seok.movie.policy.NoneDefaultDiscountPolicy;
-import kr.seok.movie.policy.PercentDefaultDiscountPolicy;
+import kr.seok.movie.responsibility.condition.PeriodCondition;
+import kr.seok.movie.responsibility.condition.SequenceCondition;
+import kr.seok.movie.responsibility.policy.AmountDefaultDiscountPolicy;
+import kr.seok.movie.responsibility.policy.NoneDefaultDiscountPolicy;
+import kr.seok.movie.responsibility.policy.PercentDefaultDiscountPolicy;
+import kr.seok.movie.responsibility.Money;
+import kr.seok.movie.responsibility.Movie;
 import org.junit.jupiter.api.Test;
 
 import java.time.DayOfWeek;
