@@ -3,6 +3,7 @@ package kr.seok.movie;
 import kr.seok.movie.condition.PeriodCondition;
 import kr.seok.movie.condition.SequenceCondition;
 import kr.seok.movie.policy.AmountDiscountPolicy;
+import kr.seok.movie.policy.NoneDiscountPolicy;
 import kr.seok.movie.policy.PercentDiscountPolicy;
 import org.junit.jupiter.api.Test;
 
@@ -41,6 +42,16 @@ class MovieTest {
                         new SequenceCondition(2),
                         new PeriodCondition(DayOfWeek.THURSDAY, LocalTime.of(10, 0), LocalTime.of(13, 59))
                 )
+        );
+    }
+
+    @Test
+    void testCase3() {
+        Movie movie = new Movie(
+                "스타워즈",
+                Duration.ofMinutes(210),
+                Money.wons(1000),
+                new NoneDiscountPolicy()
         );
     }
 }
