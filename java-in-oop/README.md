@@ -41,3 +41,7 @@
 
 ![영화 3차](docs/movie3.png)
 - 인터페이스 도입
+
+![영화 4차](docs/movie4.png)
+
+![영화 데이터 기반](docs/movie_data.png)
