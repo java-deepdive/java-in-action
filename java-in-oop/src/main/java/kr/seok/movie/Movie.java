@@ -5,10 +5,10 @@ import kr.seok.movie.policy.DiscountPolicy;
 import java.time.Duration;
 
 public class Movie {
-    private String title;
-    private Duration runningTime;
-    private Money fee;
-    private DiscountPolicy discountPolicy;
+    private final String title;
+    private final Duration runningTime;
+    private final Money fee;
+    private final DiscountPolicy discountPolicy;
 
     public Movie(String title, Duration runningTime, Money fee, DiscountPolicy discountPolicy) {
         this.title = title;
