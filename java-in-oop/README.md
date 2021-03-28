@@ -14,7 +14,6 @@
 
 ## 오브젝트
 
-
 - 시나리오 대로 1차 코드 작성
 
 - 문제점
@@ -31,3 +30,7 @@
 ![3차](docs/audience3.png)
 
 ![4차](docs/audience4.png)
+
+
+
+![영화 1차](docs/movie1.png)
