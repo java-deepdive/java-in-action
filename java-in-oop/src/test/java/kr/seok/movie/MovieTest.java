@@ -2,15 +2,15 @@ package kr.seok.movie;
 
 import kr.seok.movie.condition.PeriodCondition;
 import kr.seok.movie.condition.SequenceCondition;
-import kr.seok.movie.policy.AmountDiscountPolicy;
-import kr.seok.movie.policy.NoneDiscountPolicy;
-import kr.seok.movie.policy.PercentDiscountPolicy;
+import kr.seok.movie.policy.AmountDefaultDiscountPolicy;
+import kr.seok.movie.policy.DefaultDiscountPolicy;
+import kr.seok.movie.policy.NoneDefaultDiscountPolicy;
+import kr.seok.movie.policy.PercentDefaultDiscountPolicy;
 import org.junit.jupiter.api.Test;
 
 import java.time.DayOfWeek;
 import java.time.Duration;
 import java.time.LocalTime;
-import java.time.Period;
 
 class MovieTest {
 
@@ -20,7 +20,7 @@ class MovieTest {
                 "아바타",
                 Duration.ofMinutes(120),
                 Money.wons(10000),
-                new AmountDiscountPolicy(
+                new AmountDefaultDiscountPolicy(
                         Money.wons(800),
                         new SequenceCondition(1),
                         new SequenceCondition(10),
@@ -36,7 +36,7 @@ class MovieTest {
                 "타이타닉",
                 Duration.ofMinutes(180),
                 Money.wons(11000),
-                new PercentDiscountPolicy(
+                new PercentDefaultDiscountPolicy(
                         0.1,
                         new PeriodCondition(DayOfWeek.TUESDAY, LocalTime.of(14, 0), LocalTime.of(16, 59)),
                         new SequenceCondition(2),
@@ -51,7 +51,7 @@ class MovieTest {
                 "스타워즈",
                 Duration.ofMinutes(210),
                 Money.wons(1000),
-                new NoneDiscountPolicy()
+                new NoneDefaultDiscountPolicy()
         );
     }
 }

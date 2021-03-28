@@ -4,10 +4,10 @@ import kr.seok.movie.Money;
 import kr.seok.movie.Screening;
 import kr.seok.movie.condition.DiscountCondition;
 
-public class AmountDiscountPolicy extends DiscountPolicy {
+public class AmountDefaultDiscountPolicy extends DefaultDiscountPolicy {
     private final Money discountAmount;
 
-    public AmountDiscountPolicy(Money discountAmount, DiscountCondition... conditions) {
+    public AmountDefaultDiscountPolicy(Money discountAmount, DiscountCondition... conditions) {
         super(conditions);
         this.discountAmount = discountAmount;
     }

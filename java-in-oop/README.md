@@ -35,3 +35,9 @@
 
 ### 영화 예매
 ![영화 1차](docs/movie1.png)
+
+![영화 2차](docs/movie2.png)
+- NoneDiscountPolicy 추가
+
+![영화 3차](docs/movie3.png)
+- 인터페이스 도입
