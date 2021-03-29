@@ -17,13 +17,11 @@ public class CustomStack<E> extends CustomVector<E> {
 
         obj = peek();
         removeElementAt(len - 1);
-
         return obj;
     }
 
     public synchronized E peek() {
         int len = size();
-
         if (len == 0)
             throw new EmptyStackException();
         return elementAt(len - 1);
@@ -35,7 +33,6 @@ public class CustomStack<E> extends CustomVector<E> {
 
     public synchronized int search(Object o) {
         int i = lastIndexOf(o);
-
         if (i >= 0) {
             return size() - i;
         }
