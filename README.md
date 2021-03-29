@@ -1,4 +1,8 @@
-# Java Language based Training
+---
+description: 자바 기반 공부하기
+---
+
+# Contents
 
 ## Study Habit
 - 좋은 학습 습관을 만들기
@@ -15,6 +19,7 @@
     - 알고리즘 분류 별로 정리
     - 알고리즘의 핵심적인 접근 방법에 대한 내용이 많음
     - Cracking the Coding Interview 내용 안에 같은 유형이 많음
+# Initial page
 
 ## [Java8 In Functional](java8-in-functional/README.md)
 - 서술적인 내용이 아닌 함축적인 내용으로 쉽게 이해하기 힘들고 예제 코드도 부족함
