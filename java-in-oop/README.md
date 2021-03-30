@@ -45,3 +45,6 @@
 ![영화 데이터 기반](docs/movie_data.png)
 
 ![영화 데이터 기반 1차 개선](docs/movie_data2.png)
+
+
+![영화 리펙토링](docs/movie_refactor.png)
