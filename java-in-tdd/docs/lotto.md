@@ -46,4 +46,4 @@
 * [인터페이스를 통한 여러 구현체를 사용하는 장점에 대해서 생각해보기](https://github.com/next-step/java-lotto/pull/1273#discussion_r598079685)
 * [static 메서드로 구성된 클래스는 맞는건가?](https://github.com/next-step/java-lotto/pull/1273#discussion_r598080023)
 
-![step4](../.gitbook/assets/lotto-step4.png)
+![step4](../../.gitbook/assets/lotto-step4.png)
