@@ -64,18 +64,43 @@ description: 자바 기반 공부하기
 - TDD 실습 및 습관화를 위한 연습
 
 ### 자동차 경주
-- [1차 - 학습 테스트](https://github.com/next-step/java-racingcar/pull/1847)
-- [2차 - 자동차 경주](https://github.com/next-step/java-racingcar/pull/1914)
-- [3차 - 자동차 경주](https://github.com/next-step/java-racingcar/pull/1960)
-- [4차 - 자동차 경주](https://github.com/next-step/java-racingcar/pull/2013)
-- [5차 - 자동차 경주](https://github.com/next-step/java-racingcar/pull/2037)
+- 경험해야할 학습 목표
+  - Github 기반으로 온라인 코드 리뷰하는 경험
+  - JUnit 사용법을 익혀 단위 테스트하는 경험
+  - 자바 code convention을 지키면서 프로그래밍하는 경험
+  - 메소드를 분리하는 리팩토링 경험
+
+- 경험할 객체지향 생활 체조 원칙
+  - 규칙 1: 한 메서드에 오직 한 단계의 들여쓰기만 한다.
+  - 규칙 2: else 예약어를 쓰지 않는다.
+  - 이 두가지 원칙을 통해 메소드를 분리해 메소드가 한 가지 작업만 담당하도록 구현하는 연습을 목표로 한다.
+  - 이 같은 원칙 아래에서 메소드의 라인 수를 15라인이 넘지 않도록 구현한다.
 
 ### 로또
-- [1차 - 문자열 덧셈 계산기](https://github.com/next-step/java-lotto/pull/1242)
-- [2차 - 로또](https://github.com/next-step/java-lotto/pull/1255)
-- [3차 - 로또](https://github.com/next-step/java-lotto/pull/1261)
-- [4차 - 로또](https://github.com/next-step/java-lotto/pull/1273)
+- 경험해야할 학습 목표
+  - TDD 기반으로 프로그래밍하는 경험
+  - 메소드 분리 + 클래스를 분리하는 리팩토링 경험
+  - 점진적으로 리팩토링하는 경험
 
+- 경험할 객체지향 생활 체조 원칙
+  - 규칙 1: 한 메서드에 오직 한 단계의 들여쓰기만 한다.
+  - 규칙 2: else 예약어를 쓰지 않는다.
+  - 규칙 3: 모든 원시값과 문자열을 포장한다.
+  - 규칙 5: 줄여쓰지 않는다(축약 금지).
+  - 규칙 8: 일급 콜렉션을 쓴다.
+### 사다리타기 - FP, OOP
+- 경험해야할 학습 목표
+  - 자바8의 스트림, 람다를 사용해 함수형 프로그래밍하는 경험
+  - In -> Out, Out -> In 방식으로 도메인 객체를 설계하는 경험
+  - 책임주도설계 기반으로 인터페이스 활용해 프로그래밍하는 연습
+
+- 경험할 객체지향 생활 체조 원칙
+  - 규칙 4: 한 줄에 점을 하나만 찍는다.
+  - Clean Code 가이드의 디미터 법칙을 지키는 것을 의미한다.
+  - 규칙 6: 모든 엔티티를 작게 유지한다.
+  - 규칙 7: 3개 이상의 인스턴스 변수를 가진 클래스를 쓰지 않는다.
+  - 규칙 9: 게터/세터/프로퍼티를 쓰지 않는다.
+  
 ### 참고
 - Git Commit
     - [AngularJS Commit Message Conventions](https://gist.github.com/stephenparish/9941e89d80e2bc58a153)
