@@ -9,7 +9,7 @@ description: 자바 기반 공부하기
 * 좋은 학습 습관을 만들기
 * 개인적인 학습 프로세스를 만들기
 
-### [Cracking the Coding Interview](java-in-interview/)
+### [Cracking the Coding Interview](java-in-interview/README.md)
 
 * 코딩 인터뷰 완전분석 [영문](https://www.crackingthecodinginterview.com/), [번역본](https://blog.insightbook.co.kr/2017/08/07/%ec%bd%94%eb%94%a9-%ec%9d%b8%ed%84%b0%eb%b7%b0-%ec%99%84%ec%a0%84-%eb%b6%84%ec%84%9d-189%ea%b0%80%ec%a7%80-%ed%94%84%eb%a1%9c%ea%b7%b8%eb%9e%98%eb%b0%8d-%eb%ac%b8%ec%a0%9c%ec%99%80-%ed%95%b4%eb%b2%95/)
 * 코딩 테스트에 대한 감이 없어서 공부
@@ -42,7 +42,7 @@ description: 자바 기반 공부하기
 2. RDB
 3. Design Pattern & HTTP, REST API
 
-### [TDD, Clean Code with Java 11기](java-in-tdd/java-in-tdd.md)
+### [TDD, Clean Code with Java 11기](java-in-tdd/README.md)
 
 * nextstep 의 TDD, Clean Code with Java 11기 진행
 * TDD, OOP 관점에 대한 이해
