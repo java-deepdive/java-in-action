@@ -30,13 +30,6 @@ description: 자바 기반 공부하기
 - 단순하게 코딩하기 위해서가 아니라 Java8에서 구현된 코드의 매커니즘을 공부해야 함
 - Java 8이 나오게 된 개발 환경, 상황적인 부분을 고려하여 이해 할 것
 
-## Java Garbage Collection
-- [(Naver D2 - 2011.12.22) Java Garbage Collection 읽기](https://www.notion.so/seokrae/Garbage-Collection-65857d2182e54d2eba7ee9e8c63818f4)
-- Java Reference와 GC
-- Garbage Collection 모니터링 방법
-- Garbage Collection 튜닝
-- 자바 애플리케이션 성능 튜닝의 도
-
 ## [기술이론 정리하기](https://www.notion.so/seokrae/b231ac0ef6cd406d9db051cf08050c58)
 1. JPA
 2. RDB
