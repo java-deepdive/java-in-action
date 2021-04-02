@@ -76,3 +76,11 @@
 - [static 메서드로 구성된 클래스는 맞는건가?](https://github.com/next-step/java-lotto/pull/1273#discussion_r598080023)
 
 ![step4](docs/lotto-step4.png)
+
+## 사다리 타기
+
+- [x] [1차 Java8, 스트림, 함수형 인터페이스에 대한 학습](https://github.com/next-step/java-ladder/pull/829)
+
+- [x] [2차 사다리 타기(생성)](https://github.com/next-step/java-ladder/pull/841)
+
+![ladder - step2](docs/ladder2.png)
