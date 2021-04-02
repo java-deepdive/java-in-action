@@ -42,7 +42,7 @@ description: 자바 기반 공부하기
 2. RDB
 3. Design Pattern & HTTP, REST API
 
-### [TDD, Clean Code with Java 11기](java-in-tdd.md)
+### [TDD, Clean Code with Java 11기](java-in-tdd/java-in-tdd.md)
 
 * nextstep 의 TDD, Clean Code with Java 11기 진행
 * TDD, OOP 관점에 대한 이해

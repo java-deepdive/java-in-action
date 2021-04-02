@@ -23,35 +23,34 @@
 * 해결책
   * 책임의 이동
 
-![1&#xCC28;](.gitbook/assets/audience1.png)
+![1&#xCC28;](../.gitbook/assets/audience1.png)
 
-![2&#xCC28;](.gitbook/assets/audience2.png)
+![2&#xCC28;](../.gitbook/assets/audience2.png)
 
-![3&#xCC28;](.gitbook/assets/audience3.png)
+![3&#xCC28;](../.gitbook/assets/audience3.png)
 
-![4&#xCC28;](.gitbook/assets/audience4.png)
+![4&#xCC28;](../.gitbook/assets/audience4.png)
 
 ### 영화 예매
 
-![&#xC601;&#xD654; 1&#xCC28;](.gitbook/assets/movie1.png)
+![&#xC601;&#xD654; 1&#xCC28;](../.gitbook/assets/movie1.png)
 
-![&#xC601;&#xD654; 2&#xCC28;](.gitbook/assets/movie2.png)
+![&#xC601;&#xD654; 2&#xCC28;](../.gitbook/assets/movie2.png)
 
 * NoneDiscountPolicy 추가
 
-![&#xC601;&#xD654; 3&#xCC28;](.gitbook/assets/movie3.png)
+![&#xC601;&#xD654; 3&#xCC28;](../.gitbook/assets/movie3.png)
 
 * 인터페이스 도입
 
-![&#xC601;&#xD654; 4&#xCC28;](.gitbook/assets/movie4.png)
+![&#xC601;&#xD654; 4&#xCC28;](../.gitbook/assets/movie4.png)
 
-![&#xC601;&#xD654; &#xB370;&#xC774;&#xD130; &#xAE30;&#xBC18;](.gitbook/assets/movie_data.png)
+![&#xC601;&#xD654; &#xB370;&#xC774;&#xD130; &#xAE30;&#xBC18;](../.gitbook/assets/movie_data.png)
 
-![&#xC601;&#xD654; &#xB370;&#xC774;&#xD130; &#xAE30;&#xBC18; 1&#xCC28; &#xAC1C;&#xC120;](.gitbook/assets/movie_data2.png)
+![&#xC601;&#xD654; &#xB370;&#xC774;&#xD130; &#xAE30;&#xBC18; 1&#xCC28; &#xAC1C;&#xC120;](../.gitbook/assets/movie_data2.png)
 
-![&#xC601;&#xD654; &#xB9AC;&#xD399;&#xD1A0;&#xB9C1;](.gitbook/assets/movie_refactor.png)
+![&#xC601;&#xD654; &#xB9AC;&#xD399;&#xD1A0;&#xB9C1;](../.gitbook/assets/movie_refactor.png)
 
 * 리펙토링한 구조도 결국 할인 정책에서 상속을 이용하고 있기 때문에 실행 중에 영화의 할인 정책을 변경하기 위해서 새로운 인스턴스를 생성해야한다.
 * 이 해결 방법으로 합성을 이용한 구조로 변경 해야 한다.
 * DiscountPolicy로 분리한 뒤 Movie에 합성하여 유연한 설계를 해야한다.
-

@@ -9,7 +9,7 @@
   * enum을 사용한 상태 값과 행위에 대한 코드 응집성 증대
   * 하나의 메서드 안에 15줄 이하로 작성하기
 
-![uml](.gitbook/assets/Constants.png)
+![uml](../.gitbook/assets/Constants.png)
 
 * [x] [3단계 자동차 경주](https://github.com/next-step/java-racingcar/pull/1960#pullrequestreview-607170886)
   * [특정 역할이 없는 코드 삭제](https://github.com/next-step/java-racingcar/pull/1960#discussion_r589048328)
@@ -23,19 +23,19 @@
   * [멤버 변수는 2개까지만 사용하기](https://github.com/next-step/java-racingcar/pull/1960#discussion_r590078081)
   * [객체 비교를 위해 equals, hashcode 작성하기](https://github.com/next-step/java-racingcar/pull/1960#discussion_r590105669)
 
-![uml](.gitbook/assets/RequestRacingGame.png)
+![uml](../.gitbook/assets/RequestRacingGame.png)
 
 * [x] [4단계 자동차 경주\(우승자\)](https://github.com/next-step/java-racingcar/pull/2013)
   * [원시 값을 감싸는 클래스로 만들어 객체를 비교 하는 방식으로 개선](https://github.com/next-step/java-racingcar/pull/2013#pullrequestreview-609736875)
 
-![uml](.gitbook/assets/step4.png)
+![uml](../.gitbook/assets/step4.png)
 
 * [x] [5단계 자동차 경주\(리펙토링\)](https://github.com/next-step/java-racingcar/pull/2037)
   * [객체 비교 테스트](https://github.com/next-step/java-racingcar/pull/2037#discussion_r593197783)
   * [메서드 시그니처와 다른 로직](https://github.com/next-step/java-racingcar/pull/2037#discussion_r593202597)
   * [객체의 역할과 책임](https://github.com/next-step/java-racingcar/pull/2037#discussion_r593203847)
 
-![uml](.gitbook/assets/step5.png)
+![uml](../.gitbook/assets/step5.png)
 
 ## 로또
 
@@ -78,12 +78,11 @@
 > * [인터페이스를 통한 여러 구현체를 사용하는 장점에 대해서 생각해보기](https://github.com/next-step/java-lotto/pull/1273#discussion_r598079685)
 > * [static 메서드로 구성된 클래스는 맞는건가?](https://github.com/next-step/java-lotto/pull/1273#discussion_r598080023)
 
-![step4](.gitbook/assets/lotto-step4.png)
+![step4](../.gitbook/assets/lotto-step4.png)
 
 ## 사다리 타기
 
 * [x] [1차 Java8, 스트림, 함수형 인터페이스에 대한 학습](https://github.com/next-step/java-ladder/pull/829)
 * [x] [2차 사다리 타기\(생성\)](https://github.com/next-step/java-ladder/pull/841)
 
-![ladder - step2](.gitbook/assets/ladder2.png)
-
+![ladder - step2](../.gitbook/assets/ladder2.png)
