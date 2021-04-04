@@ -9,4 +9,5 @@
   * [5.그래프](java-in-interview/docs/contents/5.그래프.md)
 * [Object-oriented Programming: OOP](java-in-oop/README.md)
 * [TDD, Clean Code with Java 11기](java-in-tdd/README.md)
-  * [자동차 레이싱]
+  * [자동차 레이싱](java-in-tdd/docs/racingCar.md)
+  * [로또](java-in-tdd/docs/lotto.md)
