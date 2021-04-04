@@ -42,9 +42,7 @@ public class Graph_1 {
         // Queue처럼 사용
         LinkedList<Node> q = new LinkedList<>();
 
-        for (Node u : g.getNodes()) { // 각 노드의 방문 상태를 초기화
-            u.state = State.Unvisited;
-        }
+        initMarks(g);
 
         start.state = State.Visiting; // 방문 체크
 
@@ -63,6 +61,12 @@ public class Graph_1 {
             }
         }
         return false;
+    }
+
+    private void initMarks(Graph g) {
+        for (Node u : g.getNodes()) { // 각 노드의 방문 상태를 초기화
+            u.state = State.Unvisited;
+        }
     }
 
     private boolean searchAdjacent(Node end, LinkedList<Node> q, Node u) {
