@@ -18,7 +18,7 @@
 * [return 로직 위치 변경](https://github.com/next-step/java-lotto/pull/1255#discussion_r595986529)
 * [굳이 없어도 되는 Getter 삭제](https://github.com/next-step/java-lotto/pull/1255#discussion_r595990045)
 
-## 3단계 로또(자동)
+## 3단계 로또(2등)
 
 > 로또 \(2등\) 1차 피드백
 
