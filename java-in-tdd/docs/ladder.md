@@ -21,3 +21,7 @@
 ![ladder step2](../../.gitbook/assets/ladder2.png)
 
 ## 3단계 - 사다리(게임 실행)
+
+* [x] [3차 사다리타기(게임 실행)](https://github.com/next-step/java-ladder/pull/859)
+
+> 사다리(게임 실행)
