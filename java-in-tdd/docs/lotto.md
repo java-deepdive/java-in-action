@@ -31,6 +31,8 @@
 * [메서드 내에 유효성검사 간결하게 표현하기](https://github.com/next-step/java-lotto/pull/1261#discussion_r596825348)
 * [객체의 상태값 관리 생각하기](https://github.com/next-step/java-lotto/pull/1261#discussion_r596829039)
 
+![step3](../../.gitbook/assets/lotto-step3.png)
+
 ## 4단계 로또(수동)
 
 > 로또 \(수동\) 1차 피드백
