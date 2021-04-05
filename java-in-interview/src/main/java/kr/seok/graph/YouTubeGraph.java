@@ -16,7 +16,7 @@ public class YouTubeGraph {
             public Node(int data) {
                 this.data = data;
                 this.marked = false;
-                adjacent = new LinkedList<Node>();
+                adjacent = new LinkedList<>();
             }
         }
 
