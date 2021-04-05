@@ -9,6 +9,7 @@ import java.util.LinkedList;
  *
  */
 public class Graph_1 {
+
     enum State {
         Unvisited,
         Visited,
@@ -17,7 +18,6 @@ public class Graph_1 {
 
     class Graph {
         public Node[] nodes;
-
         public Node[] getNodes() {
             return nodes;
         }

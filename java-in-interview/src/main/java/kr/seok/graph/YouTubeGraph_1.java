@@ -2,6 +2,9 @@ package kr.seok.graph;
 
 import java.util.LinkedList;
 
+/**
+ * 두 노드 간의 경로가 존재하는지 확인
+ */
 public class YouTubeGraph_1 {
 
     static class Graph {
@@ -38,7 +41,7 @@ public class YouTubeGraph_1 {
             }
         }
 
-        void initMarks() {
+        void initMarks() { // 모든 노드에 false
             for (Node n : nodes) {
                 n.marked = false;
             }
@@ -54,19 +57,19 @@ public class YouTubeGraph_1 {
 
             // Queue처럼 사용
             LinkedList<Node> q = new LinkedList<>();
-            q.add(start);
+            q.add(start); // root 넣고
 
-            while (!q.isEmpty()) {
+            while (!q.isEmpty()) { // 큐에 노드가 남아 있지 않을때까지 반복
                 Node root = q.removeFirst();
 
                 if(root == end) {
                     return true;
                 }
 
-                for (Node n : root.adjacent) {
+                for (Node n : root.adjacent) { // 인접한 노드 확인
                     if(!n.marked) {
-                        n.marked = true;
-                        q.add(n);
+                        n.marked = true; // 마킹
+                        q.add(n); // queue 에 넣는다.
                     }
                 }
             }

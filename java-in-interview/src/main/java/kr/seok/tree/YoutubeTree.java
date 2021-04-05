@@ -40,7 +40,7 @@ public class YoutubeTree {
     }
 
     // left -> current -> right
-    public void inOrder(Node node) {
+    public void inOrder(Node node) { // 중위 순회
         if (node != null) {
             inOrder(node.left);
             System.out.print(node.data + " -> ");
@@ -49,7 +49,7 @@ public class YoutubeTree {
     }
 
     // current -> left -> right
-    public void preOrder(Node node) {
+    public void preOrder(Node node) { // 전위 순회
         if (node != null) {
             System.out.print(node.data + " -> ");
             preOrder(node.left);
@@ -58,7 +58,7 @@ public class YoutubeTree {
     }
 
     // left -> right -> current
-    public void postOrder(Node node) {
+    public void postOrder(Node node) { // 후위 순회
         if (node != null) {
             postOrder(node.left);
             postOrder(node.right);
