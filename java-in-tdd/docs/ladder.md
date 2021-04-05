@@ -1,7 +1,7 @@
 # Ladder
 
 ## 1단계 - 자바8 스트림, 람다, Optional
-* [Java8, stream, lambda](https://github.com/next-step/java-ladder/pull/829)
+* [x] [1차 Java8, 스트림, 함수형 인터페이스에 대한 학습](https://github.com/next-step/java-ladder/pull/829)
 
 > 자바8 스트림, 람다, Optional 1차 피드백
 
@@ -9,7 +9,7 @@
 
 ## 2단계 - 사다리(생성)
 
-* [x] [2단계 사다리(생성) PR](https://github.com/next-step/java-ladder/pull/841)
+* [x] [2차 사다리 타기\(생성\)](https://github.com/next-step/java-ladder/pull/841)
 
 > 사다리(생성) 1차 피드백
 

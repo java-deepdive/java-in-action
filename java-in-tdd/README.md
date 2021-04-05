@@ -12,7 +12,4 @@
 
 ## 사다리 타기
 
-* [x] [1차 Java8, 스트림, 함수형 인터페이스에 대한 학습](https://github.com/next-step/java-ladder/pull/829)
-* [x] [2차 사다리 타기\(생성\)](https://github.com/next-step/java-ladder/pull/841)
-
-![ladder - step2](../.gitbook/assets/ladder2.png)
+* [ladder](docs/ladder.md)
