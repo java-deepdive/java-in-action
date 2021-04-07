@@ -1,7 +1,8 @@
 package kr.seok.ladder.wrapper;
 
-import nextstep.ladder.domain.Reward;
-import nextstep.ladder.domain.User;
+
+import kr.seok.ladder.domain.Reward;
+import kr.seok.ladder.domain.User;
 
 import java.util.List;
 import java.util.Map;

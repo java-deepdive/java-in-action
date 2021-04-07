@@ -1,6 +1,7 @@
 package kr.seok.ladder.wrapper;
 
-import nextstep.ladder.domain.User;
+
+import kr.seok.ladder.domain.User;
 
 import java.util.Collections;
 import java.util.LinkedHashSet;

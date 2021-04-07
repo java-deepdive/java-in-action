@@ -1,6 +1,7 @@
 package kr.seok.ladder.wrapper;
 
-import nextstep.ladder.domain.Reward;
+
+import kr.seok.ladder.domain.Reward;
 import org.junit.jupiter.api.DisplayName;
 import org.junit.jupiter.api.Test;
 

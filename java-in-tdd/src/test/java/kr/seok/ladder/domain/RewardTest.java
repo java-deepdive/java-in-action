@@ -8,7 +8,8 @@ import org.junit.jupiter.params.provider.NullAndEmptySource;
 import static org.assertj.core.api.Assertions.assertThat;
 import static org.assertj.core.api.Assertions.assertThatExceptionOfType;
 
-public class RewardTest {
+class RewardTest {
+
     @DisplayName("보상 객체 생성 테스트")
     @Test
     void create_생성테스트() {

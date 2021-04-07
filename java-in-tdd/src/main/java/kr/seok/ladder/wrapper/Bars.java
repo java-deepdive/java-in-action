@@ -1,14 +1,15 @@
 package kr.seok.ladder.wrapper;
 
-import nextstep.ladder.domain.Bar;
-import nextstep.ladder.domain.Position;
+
+import kr.seok.ladder.domain.Bar;
+import kr.seok.ladder.domain.Position;
 
 import java.util.Arrays;
 import java.util.Collections;
 import java.util.List;
 import java.util.Objects;
 
-import static nextstep.ladder.domain.Position.MOVABLE_COUNT;
+import static kr.seok.ladder.domain.Position.MOVABLE_COUNT;
 
 public class Bars {
 

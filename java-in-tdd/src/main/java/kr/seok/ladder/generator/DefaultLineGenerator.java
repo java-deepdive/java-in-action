@@ -1,7 +1,8 @@
 package kr.seok.ladder.generator;
 
-import nextstep.ladder.domain.Bar;
-import nextstep.ladder.wrapper.Line;
+
+import kr.seok.ladder.domain.Bar;
+import kr.seok.ladder.wrapper.Line;
 
 import java.util.ArrayList;
 import java.util.Arrays;
@@ -9,7 +10,7 @@ import java.util.List;
 import java.util.Random;
 import java.util.stream.IntStream;
 
-public class DefaultLineGenerator implements nextstep.ladder.generator.LineGenerator {
+public class DefaultLineGenerator implements LineGenerator {
 
     private static final Random RANDOM = new Random();
 

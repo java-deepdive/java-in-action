@@ -1,11 +1,12 @@
 package kr.seok.ladder.service;
 
-import nextstep.ladder.domain.Height;
-import nextstep.ladder.domain.Position;
-import nextstep.ladder.domain.Reward;
-import nextstep.ladder.domain.User;
-import nextstep.ladder.generator.LineGenerator;
-import nextstep.ladder.wrapper.*;
+
+import kr.seok.ladder.domain.Height;
+import kr.seok.ladder.domain.Position;
+import kr.seok.ladder.domain.Reward;
+import kr.seok.ladder.domain.User;
+import kr.seok.ladder.generator.LineGenerator;
+import kr.seok.ladder.wrapper.*;
 
 import java.util.LinkedHashMap;
 import java.util.Map;

@@ -1,27 +1,32 @@
 package kr.seok.ladder.controller;
 
-import nextstep.ladder.domain.*;
-import nextstep.ladder.generator.DefaultLineGenerator;
-import nextstep.ladder.generator.LineGenerator;
-import nextstep.ladder.service.LadderFactory;
-import nextstep.ladder.view.InputView;
-import nextstep.ladder.view.ResultView;
-import nextstep.ladder.wrapper.*;
 
-import static nextstep.ladder.controller.LadderParameterHelper.parseArgumentResolver;
+import kr.seok.ladder.domain.Height;
+import kr.seok.ladder.domain.User;
+import kr.seok.ladder.generator.DefaultLineGenerator;
+import kr.seok.ladder.generator.LineGenerator;
+import kr.seok.ladder.service.LadderFactory;
+import kr.seok.ladder.view.InputView;
+import kr.seok.ladder.view.ResultView;
+import kr.seok.ladder.wrapper.Ladder;
+import kr.seok.ladder.wrapper.LadderResult;
+import kr.seok.ladder.wrapper.LadderRewards;
+import kr.seok.ladder.wrapper.Participants;
+
+import static kr.seok.ladder.controller.LadderParameterHelper.parseArgumentResolver;
 
 public class LadderGameController {
 
     public static final String GUIDE_LADDER_END_SIGNATURE = "all";
-    private final nextstep.ladder.controller.LadderParameterProcessor processor;
+    private final LadderParameterProcessor processor;
     private final ResultView resultView;
     private final LineGenerator generator;
 
     public LadderGameController(final InputView inputView, final ResultView resultView) {
-        this(new nextstep.ladder.controller.LadderParameterProcessor(inputView), resultView, new DefaultLineGenerator());
+        this(new LadderParameterProcessor(inputView), resultView, new DefaultLineGenerator());
     }
 
-    public LadderGameController(final nextstep.ladder.controller.LadderParameterProcessor processor, final ResultView resultView, final LineGenerator generator) {
+    public LadderGameController(final LadderParameterProcessor processor, final ResultView resultView, final LineGenerator generator) {
         this.processor = processor;
         this.resultView = resultView;
         this.generator = generator;

@@ -1,10 +1,11 @@
 package kr.seok.ladder.controller;
 
-import nextstep.ladder.domain.Height;
-import nextstep.ladder.domain.Reward;
-import nextstep.ladder.view.InputView;
-import nextstep.ladder.wrapper.LadderRewards;
-import nextstep.ladder.wrapper.Participants;
+
+import kr.seok.ladder.domain.Height;
+import kr.seok.ladder.domain.Reward;
+import kr.seok.ladder.view.InputView;
+import kr.seok.ladder.wrapper.LadderRewards;
+import kr.seok.ladder.wrapper.Participants;
 
 import java.util.Arrays;
 import java.util.Objects;

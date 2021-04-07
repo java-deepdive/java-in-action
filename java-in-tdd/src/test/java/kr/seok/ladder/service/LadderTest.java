@@ -1,10 +1,11 @@
 package kr.seok.ladder.service;
 
-import nextstep.ladder.domain.Bar;
-import nextstep.ladder.domain.Height;
-import nextstep.ladder.domain.Position;
-import nextstep.ladder.wrapper.Ladder;
-import nextstep.ladder.wrapper.Line;
+
+import kr.seok.ladder.domain.Bar;
+import kr.seok.ladder.domain.Height;
+import kr.seok.ladder.domain.Position;
+import kr.seok.ladder.wrapper.Ladder;
+import kr.seok.ladder.wrapper.Line;
 import org.junit.jupiter.api.DisplayName;
 import org.junit.jupiter.api.Test;
 import org.junit.jupiter.params.ParameterizedTest;

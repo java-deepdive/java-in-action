@@ -5,17 +5,17 @@ import java.util.Objects;
 public class User {
 
     private final Name name;
-    private final nextstep.ladder.domain.Position position;
+    private final Position position;
 
     private User(final String name) {
-        this(Name.valueOf(name), nextstep.ladder.domain.Position.valueOf(0));
+        this(Name.valueOf(name), Position.valueOf(0));
     }
 
     private User(final String name, final int position) {
-        this(Name.valueOf(name), nextstep.ladder.domain.Position.valueOf(position));
+        this(Name.valueOf(name), Position.valueOf(position));
     }
 
-    private User(final Name name, final nextstep.ladder.domain.Position position) {
+    private User(final Name name, final Position position) {
         this.name = name;
         this.position = position;
     }
@@ -28,7 +28,7 @@ public class User {
         return new User(name, position);
     }
 
-    public nextstep.ladder.domain.Position position() {
+    public Position position() {
         return position;
     }
 

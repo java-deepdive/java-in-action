@@ -1,6 +1,7 @@
 package kr.seok.ladder.generator;
 
-import nextstep.ladder.wrapper.Line;
+
+import kr.seok.ladder.wrapper.Line;
 
 @FunctionalInterface
 public interface LineGenerator {

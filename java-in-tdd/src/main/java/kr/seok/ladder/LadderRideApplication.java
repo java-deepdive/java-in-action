@@ -1,8 +1,9 @@
 package kr.seok.ladder;
 
-import nextstep.ladder.controller.LadderGameController;
-import nextstep.ladder.view.InputView;
-import nextstep.ladder.view.ResultView;
+
+import kr.seok.ladder.controller.LadderGameController;
+import kr.seok.ladder.view.InputView;
+import kr.seok.ladder.view.ResultView;
 
 public class LadderRideApplication {
     public static void main(String[] args) {

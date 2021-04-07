@@ -1,7 +1,8 @@
 package kr.seok.ladder.wrapper;
 
-import nextstep.ladder.domain.Bar;
-import nextstep.ladder.domain.Position;
+
+import kr.seok.ladder.domain.Bar;
+import kr.seok.ladder.domain.Position;
 import org.junit.jupiter.api.DisplayName;
 import org.junit.jupiter.api.Test;
 import org.junit.jupiter.params.ParameterizedTest;
