@@ -36,4 +36,4 @@
 * [x] [다양한 타입으로 구현하는 객체2](https://github.com/next-step/java-ladder/pull/859#discussion_r608275099)
 * [x] [인터페이스의 활용](https://github.com/next-step/java-ladder/pull/859#discussion_r607845484)
 
-![ladder step3 feedback ](../../.gitbook/assets/ladder3_1.png)
+![ladder step3 feedback](../../.gitbook/assets/ladder3_1.png)
