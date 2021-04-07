@@ -24,8 +24,10 @@
 
 * [x] [3차 사다리타기(게임 실행)](https://github.com/next-step/java-ladder/pull/859)
 
-> 사다리(게임 실행) 1차 피드백
+![ladder step3](../../.gitbook/assets/ladder3.png)
 
+> 사다리(게임 실행) 1차 피드백
+ 
 * [x] [AtomicInteger의 사용 목적](https://github.com/next-step/java-ladder/pull/859#discussion_r607832479)
 * [x] [AtomicInteger의 사용 목적 2](https://github.com/next-step/java-ladder/pull/859#discussion_r608274402)
 * [x] [메서드 로직에 따른 명명](https://github.com/next-step/java-ladder/pull/859#discussion_r607838227)
@@ -33,3 +35,5 @@
 * [x] [다양한 타입으로 구현하는 객체](https://github.com/next-step/java-ladder/pull/859#discussion_r607844282)
 * [x] [다양한 타입으로 구현하는 객체2](https://github.com/next-step/java-ladder/pull/859#discussion_r608275099)
 * [x] [인터페이스의 활용](https://github.com/next-step/java-ladder/pull/859#discussion_r607845484)
+
+![ladder step3 feedback ](../../.gitbook/assets/ladder3_1.png)
