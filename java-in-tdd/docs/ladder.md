@@ -37,3 +37,9 @@
 * [x] [인터페이스의 활용](https://github.com/next-step/java-ladder/pull/859#discussion_r607845484)
 
 ![ladder step3 feedback](../../.gitbook/assets/ladder3_1.png)
+
+- [x] [전략 패턴에 대한 이슈](https://github.com/next-step/java-ladder/pull/859#discussion_r609632110)
+- [x] [SRP 규칙 위반](https://github.com/next-step/java-ladder/pull/859#discussion_r609641620)
+- [x] [과연 필요한 클래스인가?](https://github.com/next-step/java-ladder/pull/859#discussion_r609644819)
+
+![ladder step3 feedback2](../../.gitbook/assets/ladder3_2.png)
