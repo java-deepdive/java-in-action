@@ -9,9 +9,10 @@ public class JavaBeansNutritionFacts {
     private int calories = 0;
     private int fat = 0;
     private int sodium = 0;
-    private int carbohydrate= 0;
+    private int carbohydrate = 0;
 
-    public JavaBeansNutritionFacts() { }
+    public JavaBeansNutritionFacts() {
+    }
 
     public void setServingSize(int servingSize) {
         this.servingSize = servingSize;

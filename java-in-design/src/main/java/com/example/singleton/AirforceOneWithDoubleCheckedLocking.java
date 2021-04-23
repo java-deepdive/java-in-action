@@ -1,4 +1,3 @@
-
 package com.example.singleton;
 
 public class AirforceOneWithDoubleCheckedLocking {

@@ -1,4 +1,3 @@
-
 package com.example.builder;
 
 public class F16Builder extends AircraftBuilder {

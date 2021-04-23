@@ -2,7 +2,7 @@ package com.example.builder;
 
 /**
  * Builder Pattern
- *
+ * <p>
  * 불변 클래스, 초기 값에 대한 설정
  * method chaning에 대한 기능 제공
  * type checking
