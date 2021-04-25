@@ -1,20 +1,20 @@
-package com.example.prototype.study;
+package com.example.prototype.dev;
 
-import com.example.prototype.study.concrete.BackEnd;
-import com.example.prototype.study.concrete.FrontEnd;
+import com.example.prototype.dev.concrete.BackEnd;
+import com.example.prototype.dev.concrete.FrontEnd;
 import org.junit.jupiter.api.DisplayName;
 import org.junit.jupiter.api.Test;
 
 import static org.assertj.core.api.Assertions.assertThat;
 
 @DisplayName("팩토리 패턴")
-class DeveloperFactoryTest {
+class EnumDevFactoryTest {
 
     @DisplayName("개발자 생성 테스트")
     @Test
     void testCase1() {
         // given
-        BaseDeveloper developer = DeveloperFactory.create(DevType.BACKEND);
+        BaseDeveloper developer = EnumDevFactory.create(DevType.BACKEND);
         // when
         BackEnd expected = new BackEnd();
         // then
@@ -24,7 +24,7 @@ class DeveloperFactoryTest {
     @DisplayName("클론 테스트")
     @Test
     void testCase2() {
-        BaseDeveloper front = DeveloperFactory.create(DevType.FRONTEND);
+        BaseDeveloper front = EnumDevFactory.create(DevType.FRONTEND);
         FrontEnd frontEnd = (FrontEnd) front;
         assertThat(front).isEqualTo(frontEnd.clone());
     }

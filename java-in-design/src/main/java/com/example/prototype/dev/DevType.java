@@ -1,8 +1,8 @@
-package com.example.prototype.study;
+package com.example.prototype.dev;
 
-import com.example.prototype.study.concrete.BackEnd;
-import com.example.prototype.study.concrete.Client;
-import com.example.prototype.study.concrete.FrontEnd;
+import com.example.prototype.dev.concrete.BackEnd;
+import com.example.prototype.dev.concrete.Client;
+import com.example.prototype.dev.concrete.FrontEnd;
 
 import java.util.Arrays;
 

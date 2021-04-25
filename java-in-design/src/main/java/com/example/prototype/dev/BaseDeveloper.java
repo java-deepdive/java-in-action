@@ -1,4 +1,4 @@
-package com.example.prototype.study;
+package com.example.prototype.dev;
 
 import java.util.Objects;
 
@@ -24,7 +24,13 @@ public abstract class BaseDeveloper implements Cloneable {
     }
 
     @Override
-    protected Object clone() throws CloneNotSupportedException {
-        return super.clone();
+    public Object clone() {
+        Object clone = null;
+        try {
+            clone = super.clone();
+        } catch (CloneNotSupportedException e) {
+            e.printStackTrace();
+        }
+        return clone;
     }
 }

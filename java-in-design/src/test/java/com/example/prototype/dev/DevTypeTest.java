@@ -1,6 +1,6 @@
-package com.example.prototype.study;
+package com.example.prototype.dev;
 
-import com.example.prototype.study.concrete.FrontEnd;
+import com.example.prototype.dev.concrete.FrontEnd;
 import org.junit.jupiter.api.DisplayName;
 import org.junit.jupiter.api.Test;
 
