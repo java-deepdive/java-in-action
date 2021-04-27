@@ -11,7 +11,7 @@ class ColorTest {
     @Test
     void testCase1() {
         // given
-        Color color = new blackColor();
+        Color color = new BlackColor();
         // when
         Object clone = color.clone();
         // then

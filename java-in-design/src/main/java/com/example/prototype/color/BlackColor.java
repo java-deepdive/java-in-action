@@ -1,9 +1,14 @@
 package com.example.prototype.color;
 
-class blackColor extends Color {
+class BlackColor extends Color {
 
-    public blackColor() {
+    public BlackColor() {
         this.colorName = "black";
+    }
+
+    // 정적 팩토리 메서드
+    public static Color of() {
+        return new BlackColor();
     }
 
     @Override

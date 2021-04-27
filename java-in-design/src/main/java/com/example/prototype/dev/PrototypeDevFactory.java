@@ -4,6 +4,9 @@ import com.example.prototype.dev.concrete.BackEnd;
 import com.example.prototype.dev.concrete.Client;
 import com.example.prototype.dev.concrete.FrontEnd;
 
+/**
+ * SimpleFactory
+ */
 public class PrototypeDevFactory {
     private final BackEnd backEnd;
     private final FrontEnd frontEnd;

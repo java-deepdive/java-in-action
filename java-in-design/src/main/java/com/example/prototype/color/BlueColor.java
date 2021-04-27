@@ -1,7 +1,7 @@
 package com.example.prototype.color;
 
-class blueColor extends Color {
-    public blueColor() {
+class BlueColor extends Color {
+    public BlueColor() {
         this.colorName = "blue";
     }
 
