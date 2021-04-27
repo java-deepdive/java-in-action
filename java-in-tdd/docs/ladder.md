@@ -1,6 +1,7 @@
 # Ladder
 
 ## 1단계 - 자바8 스트림, 람다, Optional
+
 * [x] [1차 Java8, 스트림, 함수형 인터페이스에 대한 학습](https://github.com/next-step/java-ladder/pull/829)
 
 > 자바8 스트림, 람다, Optional 1차 피드백
@@ -27,7 +28,7 @@
 ![ladder step3](../../.gitbook/assets/ladder3.png)
 
 > 사다리(게임 실행) 1차 피드백
- 
+
 * [x] [AtomicInteger의 사용 목적](https://github.com/next-step/java-ladder/pull/859#discussion_r607832479)
 * [x] [AtomicInteger의 사용 목적 2](https://github.com/next-step/java-ladder/pull/859#discussion_r608274402)
 * [x] [메서드 로직에 따른 명명](https://github.com/next-step/java-ladder/pull/859#discussion_r607838227)

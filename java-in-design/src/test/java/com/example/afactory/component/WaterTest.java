@@ -11,10 +11,9 @@ class WaterTest {
     @Test
     void testCase1() {
         // given
-        Water water = new Water(50);
+        Water water = Water.small();
         // when
-        Water expected = water.clone();
         // then
-        assertThat(water).isEqualTo(expected);
+        assertThat(water).isEqualTo(Water.small());
     }
 }

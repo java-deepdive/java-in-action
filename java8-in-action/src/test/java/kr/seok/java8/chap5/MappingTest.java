@@ -64,8 +64,8 @@ class MappingTest {
     @Test
     @DisplayName("스트림 평면화")
     void testCase4() {
-        List<Integer> numbers1 = Arrays.asList(1,2,3,4,5);
-        List<Integer> numbers2 = Arrays.asList(6,7,8);
+        List<Integer> numbers1 = Arrays.asList(1, 2, 3, 4, 5);
+        List<Integer> numbers2 = Arrays.asList(6, 7, 8);
 
         // Map: Integer -> +@ 로 number2 스트림으로 new int[]{i, j}으로 변환
         Function<Integer, Stream<? extends int[]>> integerStreamFunction =

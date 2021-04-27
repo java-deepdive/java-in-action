@@ -29,13 +29,12 @@ class FilteringApplesTest {
 
     /**
      * 일반 필터링 방법
-     *
+     * <p>
      * Apple 리스트 -> filter (green) -> Filtering Apple
-     *
+     * <p>
      * 필터링된 리스트
      * Apple{color='green', weight=80}
      * Apple{color='green', weight=155}
-     *
      */
     @Test
     @DisplayName("Apple List 색을 기준으로 필터링 테스트")
@@ -49,9 +48,9 @@ class FilteringApplesTest {
 
     /**
      * 일반 필터링 방법
-     *
+     * <p>
      * Apple 리스트 -> filter (weight::150) -> Filtering Apple
-     *
+     * <p>
      * 필터링된 리스트
      * Apple{color='green', weight=155}
      */
@@ -66,7 +65,7 @@ class FilteringApplesTest {
 
     /**
      * 메서드 파라미터 테스트
-     *
+     * <p>
      * Apple{color='green', weight=80}
      * Apple{color='green', weight=155}
      */
@@ -80,7 +79,7 @@ class FilteringApplesTest {
 
     /**
      * 메서드 파라미터 테스트
-     *
+     * <p>
      * Apple{color='green', weight=155}
      */
     @Test
@@ -93,7 +92,7 @@ class FilteringApplesTest {
 
     /**
      * 람다 테스트
-     *
+     * <p>
      * Apple{color='green', weight=80}
      * Apple{color='green', weight=155}
      */
@@ -107,7 +106,7 @@ class FilteringApplesTest {
 
     /**
      * 람다 테스트
-     *
+     * <p>
      * Apple{color='green', weight=155}
      */
     @Test
@@ -120,7 +119,7 @@ class FilteringApplesTest {
 
     /**
      * 람다 테스트
-     *
+     * <p>
      * Apple{color='brown', weight=50}
      */
     @Test
@@ -135,7 +134,7 @@ class FilteringApplesTest {
     /**
      * 컬렉션을 필터링하는 가장 빠른 방법
      * - 컬렉션을 스트림으로 바꾸고, 병렬로 처리한 다음에 리스트로 다시 복원
-     *
+     * <p>
      * Apple{color='green', weight=155}
      */
     @Test
@@ -151,7 +150,7 @@ class FilteringApplesTest {
 
     /**
      * 스트림 parallelStream 처리
-     *
+     * <p>
      * Apple{color='green', weight=155}
      */
     @Test

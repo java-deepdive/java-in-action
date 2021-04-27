@@ -4,7 +4,7 @@ import org.junit.jupiter.api.BeforeEach;
 import org.junit.jupiter.api.DisplayName;
 import org.junit.jupiter.api.Test;
 
-import static kr.seok.list.List_206.*;
+import static kr.seok.list.List_206.ListNode;
 import static kr.seok.list.List_206Test.ListNodeBuilder.append;
 
 class List_206Test {
@@ -33,7 +33,7 @@ class List_206Test {
         while (listNode.next != null) {
             System.out.println(listNode.val);
             listNode = listNode.next;
-            if(listNode.next == null) {
+            if (listNode.next == null) {
                 System.out.println(listNode.val);
             }
         }
@@ -42,7 +42,8 @@ class List_206Test {
     static class ListNodeBuilder {
         ListNode listNode;
 
-        private ListNodeBuilder() { }
+        private ListNodeBuilder() {
+        }
 
         public static ListNode append(int num) {
             return new ListNode(num);

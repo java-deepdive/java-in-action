@@ -5,11 +5,15 @@
  * courses, books, articles, and the like. Contact us if you are in doubt.
  * We make no guarantees that this code is fit for any purpose.
  * Visit http://www.pragmaticprogrammer.com/titles/vsjava8 for more book information.
-***/
+ ***/
 package kr.seok._6lazy;
 
 public class Heavy {
-  public Heavy() { System.out.println("Heavy created"); }
+    public Heavy() {
+        System.out.println("Heavy created");
+    }
 
-  public String toString() { return "quite heavy"; }
+    public String toString() {
+        return "quite heavy";
+    }
 }

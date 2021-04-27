@@ -5,11 +5,10 @@ import java.util.Map;
 
 /**
  * Factory 패턴이 제공하는 방식
- *
+ * <p>
  * Simple Factory
  * Abstract Factory
  * cache 방식을 통해서 제공
- *
  */
 class ColorStore {
 

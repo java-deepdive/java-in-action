@@ -2,7 +2,8 @@ package kr.seok.racing.step3.util;
 
 public class Constants {
 
-    private Constants() { }
+    private Constants() {
+    }
 
     public static final int NUMBER_ZERO = 0;
     public static final int NUMBER_ONE = 1;

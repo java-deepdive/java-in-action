@@ -37,7 +37,7 @@ public class YoutubeStack {
 
         // 마지막 스택을 조회하기 위한 메서드
         public Stack<Integer> getLastStack() {
-            if(stacks.size() == 0) return null;
+            if (stacks.size() == 0) return null;
             return stacks.get(stacks.size() - 1);
         }
 
@@ -54,7 +54,7 @@ public class YoutubeStack {
         //
         public void push(int data) {
             Stack<Integer> last = getLastStack();
-            if(last == null || last.size() == capacity) {
+            if (last == null || last.size() == capacity) {
                 addStack();
                 last = getLastStack();
             }
@@ -64,12 +64,12 @@ public class YoutubeStack {
         public int pop() {
 
             Stack<Integer> last = getLastStack();
-            if(last == null || last.isEmpty()) throw new EmptyStackException();
+            if (last == null || last.isEmpty()) throw new EmptyStackException();
 
             int data = last.pop();
 
             // pop하고 난 뒤 stack이 비어 있으면 arrayList 삭제
-            if(last.isEmpty()) removeLastStack();
+            if (last.isEmpty()) removeLastStack();
 
             return data;
         }
@@ -83,12 +83,13 @@ public class YoutubeStack {
     static class MinTwoStack extends Stack<Integer> {
 
         Stack<Integer> stack;
+
         public MinTwoStack() {
             this.stack = new Stack<>();
         }
 
         public int min() {
-            if(stack.isEmpty()) return Integer.MAX_VALUE;
+            if (stack.isEmpty()) return Integer.MAX_VALUE;
             else return stack.peek();
         }
 
@@ -101,7 +102,7 @@ public class YoutubeStack {
 
         public Integer pop() {
             int value = super.pop();
-            if(value == min()) {
+            if (value == min()) {
                 stack.pop();
             }
             return value;
@@ -120,7 +121,7 @@ public class YoutubeStack {
         }
 
         public int min() {
-            if(this.isEmpty()) {
+            if (this.isEmpty()) {
                 return Integer.MAX_VALUE;
             } else {
                 return peek().min;
@@ -148,7 +149,7 @@ public class YoutubeStack {
         private Node<T> top;
 
         public T pop() {
-            if(top == null) throw new EmptyStackException();
+            if (top == null) throw new EmptyStackException();
             T item = top.data;
             top = top.next;
             return item;
@@ -161,11 +162,11 @@ public class YoutubeStack {
         }
 
         public T peek() {
-            if(top == null) throw new EmptyStackException();
+            if (top == null) throw new EmptyStackException();
             return top.data;
         }
 
-        public boolean isEmpty () {
+        public boolean isEmpty() {
             return top == null;
         }
     }
@@ -174,12 +175,14 @@ public class YoutubeStack {
     static class ArrayBasedStack {
 
         static class FullStackException extends RuntimeException {
-            public FullStackException() { }
+            public FullStackException() {
+            }
 
             public FullStackException(String message) {
                 super(message);
             }
         }
+
         private int numOfStacks = 3; // 스택의 개수는 3개로 고정
         private int stackSize; // 각 스택에 사이즈 저장
         private int[] values; // 실제 데이터 필드
@@ -207,15 +210,15 @@ public class YoutubeStack {
         }
 
         public void push(int stackNum, int data) {
-            if(isFull(stackNum)) throw new FullStackException();
+            if (isFull(stackNum)) throw new FullStackException();
 
             // top 인덱스를 가져와 하나 증가시킨 후, 그 자리에 data를 대입
             values[getTopIndex(stackNum) + 1] = data;
-            sizes [stackNum]++;
+            sizes[stackNum]++;
         }
 
         public int pop(int stackNum) {
-            if(isEmpty(stackNum)) throw new EmptyStackException();
+            if (isEmpty(stackNum)) throw new EmptyStackException();
 
             int top = getTopIndex(stackNum);
             int data = values[top];
@@ -226,11 +229,9 @@ public class YoutubeStack {
         }
 
         public int peek(int stackNum) {
-            if(isEmpty(stackNum)) throw new EmptyStackException();
+            if (isEmpty(stackNum)) throw new EmptyStackException();
             return values[getTopIndex(stackNum)];
         }
     }
 
 }
-
-

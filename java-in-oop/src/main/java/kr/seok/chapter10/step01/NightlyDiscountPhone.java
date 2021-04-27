@@ -24,7 +24,7 @@ public class NightlyDiscountPhone {
     public Money calculateFee() {
         Money result = Money.ZERO;
 
-        for(Call call : calls) {
+        for (Call call : calls) {
             if (call.getFrom().getHour() >= LATE_NIGHT_HOUR) {
                 result = result.plus(nightlyAmount.times(call.getDuration().getSeconds() / seconds.getSeconds()));
             } else {

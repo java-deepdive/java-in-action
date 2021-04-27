@@ -5,25 +5,25 @@
  * courses, books, articles, and the like. Contact us if you are in doubt.
  * We make no guarantees that this code is fit for any purpose.
  * Visit http://www.pragmaticprogrammer.com/titles/vsjava8 for more book information.
-***/
+ ***/
 package kr.seok._4designing;
 
 public class Asset {
-  public enum AssetType {BOND, STOCK}
+    public enum AssetType {BOND, STOCK}
 
-  private final AssetType type;
-  private final int value;
+    private final AssetType type;
+    private final int value;
 
-  public Asset(final AssetType assetType, final int assetValue) {
-    type = assetType;
-    value = assetValue;
-  }
+    public Asset(final AssetType assetType, final int assetValue) {
+        type = assetType;
+        value = assetValue;
+    }
 
-  public AssetType getType() {
-    return type;
-  }
+    public AssetType getType() {
+        return type;
+    }
 
-  public int getValue() {
-    return value;
-  }
+    public int getValue() {
+        return value;
+    }
 }

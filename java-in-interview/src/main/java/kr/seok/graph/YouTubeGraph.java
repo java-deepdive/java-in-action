@@ -24,7 +24,7 @@ public class YouTubeGraph {
 
         public Graph(int size) { // 초기화
             this.nodes = new Node[size];
-            for (int i = 0 ; i < size ; i++) {
+            for (int i = 0; i < size; i++) {
                 nodes[i] = new Node(i);
             }
         }
@@ -33,10 +33,10 @@ public class YouTubeGraph {
             Node n1 = nodes[node1];
             Node n2 = nodes[node2];
 
-            if(!n1.adjacent.contains(n2)) {
+            if (!n1.adjacent.contains(n2)) {
                 n1.adjacent.add(n2);
             }
-            if(!n2.adjacent.contains(n2)) {
+            if (!n2.adjacent.contains(n2)) {
                 n2.adjacent.add(n1);
             }
         }
@@ -56,7 +56,7 @@ public class YouTubeGraph {
                 Node r = stack.pop(); //
 
                 for (Node n : r.adjacent) { // 0과 인접한 노드 탐색
-                    if(!n.marked) { // false
+                    if (!n.marked) { // false
                         n.marked = true;
                         stack.push(n);
                     }
@@ -80,7 +80,7 @@ public class YouTubeGraph {
                 Node r = queue.poll(); // 1. 꺼낸다
 
                 for (Node n : r.adjacent) { // 2. 인접한 노드를 탐색 및 추가
-                    if(!n.marked) { // 추가되지 않은 노드들을 추가
+                    if (!n.marked) { // 추가되지 않은 노드들을 추가
                         n.marked = true;
                         queue.offer(n);
                     }
@@ -90,13 +90,13 @@ public class YouTubeGraph {
         }
 
         void dfsR(Node r) { // LinkedList 의 주소 값을 가지고 있기 때문에 파라미터로 Node를 전달하는 방식을 사용
-            if(r == null) return;
+            if (r == null) return;
 
             r.marked = true;
             visit(r);
 
             for (Node n : r.adjacent) { // 인접 노드
-                if(!n.marked) { // 마킹 false
+                if (!n.marked) { // 마킹 false
                     dfsR(n);
                 }
             }

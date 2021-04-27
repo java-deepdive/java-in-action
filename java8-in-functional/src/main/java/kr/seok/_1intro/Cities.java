@@ -8,8 +8,8 @@ public class Cities {
     public static void findChicagoImperative(final List<String> cities) {
 
         boolean found = false;
-        for(String city : cities) { // 반복
-            if(city.equals("Chicago")) { // 포함되어 있는지 확인
+        for (String city : cities) { // 반복
+            if (city.equals("Chicago")) { // 포함되어 있는지 확인
                 found = true;
                 break;
             }

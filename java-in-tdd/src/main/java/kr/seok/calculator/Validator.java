@@ -4,13 +4,15 @@ import java.util.Objects;
 
 public final class Validator {
 
-    private Validator() {}
+    private Validator() {
+    }
 
     public static final String PREFIX_STRATEGY_CONDITION = "//";
 
     public static boolean isNotNumericOrIsNegativeNumber(String number) {
         return !isNumeric(number) || isNegativeNumber(number);
     }
+
     public static boolean isNegativeNumber(String text) {
         return Integer.parseInt(text) < 0;
     }

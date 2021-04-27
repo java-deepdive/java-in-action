@@ -25,7 +25,7 @@ public class Numbers {
     }
 
     public static Numbers of(String text) {
-        if(isContainsCustomPatternText(text)) {
+        if (isContainsCustomPatternText(text)) {
             return new Numbers(text, new CustomPattern());
         }
         return new Numbers(text);

@@ -5,9 +5,9 @@ import java.util.Queue;
 
 /**
  * Invert a binary tree.
- *
- *  - 재귀를 통한 방법
- *  - BFS를 통해 swap
+ * <p>
+ * - 재귀를 통한 방법
+ * - BFS를 통해 swap
  */
 public class Tree_226 {
 
@@ -16,8 +16,13 @@ public class Tree_226 {
         TreeNode left;
         TreeNode right;
 
-        TreeNode() { }
-        TreeNode(int val) { this.val = val; }
+        TreeNode() {
+        }
+
+        TreeNode(int val) {
+            this.val = val;
+        }
+
         TreeNode(int val, TreeNode left, TreeNode right) {
             this.val = val;
             this.left = left;

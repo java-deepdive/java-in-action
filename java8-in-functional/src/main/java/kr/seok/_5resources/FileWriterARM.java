@@ -10,7 +10,6 @@ package kr.seok._5resources;
 
 import java.io.FileWriter;
 import java.io.IOException;
-import java.lang.AutoCloseable;
 
 public class FileWriterARM implements AutoCloseable {
     private final FileWriter writer;

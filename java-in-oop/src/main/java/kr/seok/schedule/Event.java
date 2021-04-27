@@ -15,7 +15,7 @@ public class Event {
     }
 
     public boolean isSatisfied(RecurringSchedule schedule) {
-        if(from.getDayOfWeek() != schedule.getDayOfWeek() ||
+        if (from.getDayOfWeek() != schedule.getDayOfWeek() ||
                 !from.toLocalTime().equals(schedule.getFrom()) ||
                 !duration.equals(schedule.getDuration())) {
 //            reschedule(schedule); // 명령과 조회가 함께 있어서 발생하는 문제

@@ -8,11 +8,10 @@
  ***/
 package kr.seok._4designing;
 
-import java.math.BigDecimal;
-import java.net.URL;
 import java.io.BufferedReader;
 import java.io.InputStreamReader;
-import java.util.Random;
+import java.math.BigDecimal;
+import java.net.URL;
 
 public class YahooFinance {
     public static BigDecimal getPrice(final String ticker) {

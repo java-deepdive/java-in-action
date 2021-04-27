@@ -14,6 +14,7 @@ class String_20Test {
     public void setUp() {
         s20 = new String_20();
     }
+
     @Test
     void testCase1() {
         boolean valid = s20.isValid("[{{}}]");

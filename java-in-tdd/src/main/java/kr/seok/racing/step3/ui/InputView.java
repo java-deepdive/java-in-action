@@ -40,7 +40,7 @@ public class InputView {
         out.println(GUIDE_INPUT_CAR_NAMES);
         String participantNames = scanner.nextLine();
         // 분리가 가능한 문자열
-        if(!isNullAndIsBlank(participantNames)
+        if (!isNullAndIsBlank(participantNames)
                 && isValidNames(participantNames)
                 && !greaterThenNameMaxLength(participantNames)) {
             return participantNames.split(SPLIT_DELIMITER);
@@ -59,7 +59,7 @@ public class InputView {
         out.println(GUIDE_HOW_MANY_TRY);
         String attemptCount = scanner.nextLine();
 
-        if(isNumeric(attemptCount) && isNaturalCount(attemptCount)) {
+        if (isNumeric(attemptCount) && isNaturalCount(attemptCount)) {
             return Integer.parseInt(attemptCount);
         }
         return requestAttemptCount();

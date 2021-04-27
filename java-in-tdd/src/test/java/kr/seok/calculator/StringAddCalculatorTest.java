@@ -56,6 +56,7 @@ public class StringAddCalculatorTest {
         int result = StringAddCalculator.splitAndSum(given);
         assertThat(result).isEqualTo(expected);
     }
+
     @ParameterizedTest(name = "{0} 문자열을 합산한 결과물: {1}")
     @MethodSource(value = "customPatternEntry")
     public void splitAndSum_custom_구분자(String given, int expected) {

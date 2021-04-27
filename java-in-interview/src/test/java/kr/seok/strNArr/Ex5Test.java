@@ -10,6 +10,7 @@ import static org.assertj.core.api.Assertions.assertThat;
 
 class Ex5Test {
     Ex5 ex5;
+
     @BeforeEach
     public void setUp() {
         ex5 = new Ex5();

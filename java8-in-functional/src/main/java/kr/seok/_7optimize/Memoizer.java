@@ -8,10 +8,10 @@
  ***/
 package kr.seok._7optimize;
 
-import java.util.Map;
 import java.util.HashMap;
-import java.util.function.Function;
+import java.util.Map;
 import java.util.function.BiFunction;
+import java.util.function.Function;
 
 public class Memoizer {
     public static <T, R> R callMemoized(

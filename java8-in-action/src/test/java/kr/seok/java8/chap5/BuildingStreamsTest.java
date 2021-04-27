@@ -108,10 +108,11 @@ class BuildingStreamsTest {
     @Test
     @DisplayName("불변 상태 기법의 필요성")
     void testCase7() {
-        IntSupplier fib = new IntSupplier(){
+        IntSupplier fib = new IntSupplier() {
             private int previous = 0;
             private int current = 1;
-            public int getAsInt(){
+
+            public int getAsInt() {
                 int nextValue = this.previous + this.current;
                 this.previous = this.current;
                 this.current = nextValue;

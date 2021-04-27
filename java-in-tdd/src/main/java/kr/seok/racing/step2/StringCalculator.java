@@ -15,7 +15,7 @@ public class StringCalculator {
         if (isBlank(input)) {
             throw new IllegalArgumentException(NOT_FOUND_ARGUMENT);
         }
-        if(!isValidation(input)) {
+        if (!isValidation(input)) {
             throw new IllegalArgumentException(Constants.INVALID_FORMULA);
         }
         // 사용자의 입력 값을 관리할 Context

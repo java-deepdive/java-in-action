@@ -4,34 +4,34 @@ import java.util.HashMap;
 
 /**
  * [책] Do it! 자료구조와 함께 배우는 알고리즘
- *
+ * <p>
  * ChainHash 구현
- *
+ * <p>
  * 해시
- *  - 데이터를 저장할 위치를 간단한 연산으로 구하는 것
- *
+ * - 데이터를 저장할 위치를 간단한 연산으로 구하는 것
+ * <p>
  * 해시의 구성 요소
- *  - 해시 함수: key의 해시 값을 해시 테이블의 크기 size로 나눈 나머지 값을 반환
- *  - 버킷: 해시 테이블의 각 요소
- *
+ * - 해시 함수: key의 해시 값을 해시 테이블의 크기 size로 나눈 나머지 값을 반환
+ * - 버킷: 해시 테이블의 각 요소
+ * <p>
  * 충돌
- *  - 저장된 버킷이 중복되는 현상
- *  - 키 값과 해시 값의 대응 관계가 반드시 1:1 이라는 보증이 없음
- *
+ * - 저장된 버킷이 중복되는 현상
+ * - 키 값과 해시 값의 대응 관계가 반드시 1:1 이라는 보증이 없음
+ * <p>
  * 충돌에 대한 대처
- *  1. 체인법: 같은 해시 값을 갖는 요소를 연결 리스트를 관리
- *  2. 오픈 주소법: 빈 버킷을 찾을 때까지 해시를 반복
- *
+ * 1. 체인법: 같은 해시 값을 갖는 요소를 연결 리스트를 관리
+ * 2. 오픈 주소법: 빈 버킷을 찾을 때까지 해시를 반복
+ * <p>
  * 체인법
- *  - 해시 값을 갖는 데이터를 쇠사슬 모양으로 연결 리스트에서 연결하는 방법, 오픈 해시법이라고도 한다.
- *
- *
+ * - 해시 값을 갖는 데이터를 쇠사슬 모양으로 연결 리스트에서 연결하는 방법, 오픈 해시법이라고도 한다.
+ * <p>
+ * <p>
  * 충돌을 피하기 위한 해시 함수
- *  - 해시 테이블 크기 이하의 정수가 되도록 한쪽으로 치우치지 않고 고르게 만들어야 한다.
- *  - 그래서 해시 테이블 크기는 소수가 좋다.
- *  - 키 값이 정수가 아닌 경우
- *      - 실수 키 값: 비트 연산
- *      - 문자열 키 값: 각 문자 코드에 곱셈과 덧셈을 하는 방법
+ * - 해시 테이블 크기 이하의 정수가 되도록 한쪽으로 치우치지 않고 고르게 만들어야 한다.
+ * - 그래서 해시 테이블 크기는 소수가 좋다.
+ * - 키 값이 정수가 아닌 경우
+ * - 실수 키 값: 비트 연산
+ * - 문자열 키 값: 각 문자 코드에 곱셈과 덧셈을 하는 방법
  *
  * @see java.util.Hashtable
  * @see HashMap
@@ -41,7 +41,7 @@ public class ChainHash<K, V> {
 
     /**
      * 버킷용 클래스
-     *  - 해시를 구성하는 노드
+     * - 해시를 구성하는 노드
      */
     class Node<K, V> {
         private K key;  // 키 값
@@ -94,8 +94,8 @@ public class ChainHash<K, V> {
             2. 해시 값을 배열의 인덱스로 하여 Node 탐색
             3. Node의 값을 반환
          */
-        while(p != null) {
-            if(p.getKey().equals(key)) {
+        while (p != null) {
+            if (p.getKey().equals(key)) {
                 return p.getValue();        // 검색에 성공
             }
             p = p.next;                     // 다음 노드 탐색
@@ -109,7 +109,7 @@ public class ChainHash<K, V> {
         Node<K, V> p = table[hash];     // 선택된 노드
 
         while (p != null) { // 해시로 검색된 노드를 키 값으로 탐색
-            if(p.getKey().equals(key)) { // 동일한 키 값이 존재하는 경우 1을 반환
+            if (p.getKey().equals(key)) { // 동일한 키 값이 존재하는 경우 1을 반환
                 return 1;
             }
             p = p.next;
@@ -138,8 +138,8 @@ public class ChainHash<K, V> {
         Node<K, V> pp = null;       // 바로 앞의 선택 노드
 
         while (p != null) { // 배열에서 동일한 키값의 Node를 탐색
-            if(p.getKey().equals(key)) { // 키 값에 해당하는 노드 탐색 완료
-                if(pp == null) {
+            if (p.getKey().equals(key)) { // 키 값에 해당하는 노드 탐색 완료
+                if (pp == null) {
                     table[hash] = p.next; // cur 값을 삭제 후 pointer 값을 table에 저장
                 } else {
                     pp.next = p.next;
@@ -153,10 +153,10 @@ public class ChainHash<K, V> {
     }
 
     public void dump() {
-        for(int i = 0 ; i < size ; i++) {
+        for (int i = 0; i < size; i++) {
             Node<K, V> p = table[i];
             System.out.printf("%02d ", i);
-            while (p !=  null) {
+            while (p != null) {
                 System.out.printf("→ %s (%s) ", p.getKey(), p.getValue());
                 p = p.next;
             }

@@ -31,7 +31,7 @@ public final class LadderParameterProcessor {
     LadderRewards processLadderRewards(final int participantSize) {
         String[] ladderRewards = parseStringToArrays(inputView.inputLadderRewards());
         Reward[] rewards = parseRewards(ladderRewards);
-        if(ladderRewards.length != participantSize) {
+        if (ladderRewards.length != participantSize) {
             throw new IllegalArgumentException(GUIDE_ERR_NOT_EQUALS_SIZE);
         }
         return LadderRewards.valueOf(rewards);

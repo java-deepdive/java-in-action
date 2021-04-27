@@ -14,16 +14,16 @@ class Node {
 public class BinarySearchTree {
     public static boolean contains(Node root, int value) {
 
-        if(value == root.value) {
+        if (value == root.value) {
             return true;
-        } else if(value < root.value) {
-            if(root.left == null) {
+        } else if (value < root.value) {
+            if (root.left == null) {
                 return false;
             } else {
                 return contains(root.left, value);
             }
         } else {
-            if(root.right == null) {
+            if (root.right == null) {
                 return false;
             } else {
                 return contains(root.right, value);

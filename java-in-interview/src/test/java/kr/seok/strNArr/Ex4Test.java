@@ -6,15 +6,15 @@ import org.junit.jupiter.api.Test;
 
 import java.util.Arrays;
 
-import static org.junit.jupiter.api.Assertions.*;
-
 class Ex4Test {
 
     Ex4 ex4;
+
     @BeforeEach
     public void setUp() {
         ex4 = new Ex4();
     }
+
     @Test
     @DisplayName("Palindrome Permutation 테스트")
     void testCase1() {

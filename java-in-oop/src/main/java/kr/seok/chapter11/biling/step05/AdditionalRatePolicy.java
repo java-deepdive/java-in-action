@@ -12,7 +12,7 @@ public abstract class AdditionalRatePolicy implements RatePolicy {
     @Override
     public Money calculateFee(Phone phone) {
         Money fee = next.calculateFee(phone);
-        return afterCalculated(fee) ;
+        return afterCalculated(fee);
     }
 
     abstract protected Money afterCalculated(Money fee);

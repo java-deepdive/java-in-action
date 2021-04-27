@@ -2,27 +2,27 @@ package kr.seok.tree;
 
 /**
  * https://youtu.be/oSWTXtMglKE
- *  - Data Structures: Trees
- *
+ * - Data Structures: Trees
  */
 public class Trees {
 
     class Node {
         Node left, right;
         int data;
+
         public Node(int data) {
             this.data = data;
         }
 
         public void insert(int value) {
-            if(value <= data) { // left
-                if(left == null) {
+            if (value <= data) { // left
+                if (left == null) {
                     left = new Node(value);
                 } else {
                     left.insert(value);
                 }
             } else { // right
-                if(right == null) {
+                if (right == null) {
                     right = new Node(value);
                 } else {
                     right.insert(value);
@@ -31,16 +31,16 @@ public class Trees {
         }
 
         public boolean contains(int value) {
-            if(value == data) {
+            if (value == data) {
                 return true;
-            } else if(value < data) {
-                if(left == null) {
+            } else if (value < data) {
+                if (left == null) {
                     return false;
                 } else {
                     return left.contains(value);
                 }
             } else {
-                if(right == null) {
+                if (right == null) {
                     return false;
                 } else {
                     return right.contains(value);

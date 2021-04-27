@@ -14,7 +14,7 @@ public class CustomVector<E> extends AbstractList<E> implements List<E>, RandomA
     public CustomVector(int initialCapacity, int capacityIncrement) {
         super();
         if (initialCapacity < 0)
-            throw new IllegalArgumentException("Illegal Capacity: "+ initialCapacity);
+            throw new IllegalArgumentException("Illegal Capacity: " + initialCapacity);
         this.elementData = new Object[initialCapacity];
         this.capacityIncrement = capacityIncrement;
     }
@@ -73,11 +73,11 @@ public class CustomVector<E> extends AbstractList<E> implements List<E>, RandomA
 
     public synchronized int indexOf(Object o, int index) {
         if (o == null) {
-            for (int i = index ; i < elementCount ; i++)
-                if (elementData[i]==null)
+            for (int i = index; i < elementCount; i++)
+                if (elementData[i] == null)
                     return i;
         } else {
-            for (int i = index ; i < elementCount ; i++)
+            for (int i = index; i < elementCount; i++)
                 if (o.equals(elementData[i]))
                     return i;
         }
@@ -85,16 +85,16 @@ public class CustomVector<E> extends AbstractList<E> implements List<E>, RandomA
     }
 
     public synchronized int lastIndexOf(Object o) {
-        return lastIndexOf(o, elementCount-1);
+        return lastIndexOf(o, elementCount - 1);
     }
 
     public synchronized int lastIndexOf(Object o, int index) {
         if (index >= elementCount)
-            throw new IndexOutOfBoundsException(index + " >= "+ elementCount);
+            throw new IndexOutOfBoundsException(index + " >= " + elementCount);
 
         if (o == null) {
             for (int i = index; i >= 0; i--)
-                if (elementData[i]==null)
+                if (elementData[i] == null)
                     return i;
         } else {
             for (int i = index; i >= 0; i--)
@@ -117,8 +117,7 @@ public class CustomVector<E> extends AbstractList<E> implements List<E>, RandomA
         if (index >= elementCount) {
             throw new ArrayIndexOutOfBoundsException(index + " >= " +
                     elementCount);
-        }
-        else if (index < 0) {
+        } else if (index < 0) {
             throw new ArrayIndexOutOfBoundsException(index);
         }
         int j = elementCount - index - 1;
@@ -210,7 +209,7 @@ public class CustomVector<E> extends AbstractList<E> implements List<E>, RandomA
 
         int numMoved = elementCount - index - 1;
         if (numMoved > 0)
-            System.arraycopy(elementData, index+1, elementData, index,
+            System.arraycopy(elementData, index + 1, elementData, index,
                     numMoved);
         elementData[--elementCount] = null; // Let gc do its work
 
@@ -239,9 +238,11 @@ public class CustomVector<E> extends AbstractList<E> implements List<E>, RandomA
     public synchronized boolean removeAll(Collection<?> c) {
         return super.removeAll(c);
     }
+
     public synchronized boolean retainAll(Collection<?> c) {
         return super.retainAll(c);
     }
+
     public synchronized boolean addAll(int index, Collection<? extends E> c) {
         modCount++;
         if (index < 0 || index > elementCount)
@@ -264,9 +265,11 @@ public class CustomVector<E> extends AbstractList<E> implements List<E>, RandomA
     public synchronized boolean equals(Object o) {
         return super.equals(o);
     }
+
     public synchronized int hashCode() {
         return super.hashCode();
     }
+
     public synchronized String toString() {
         return super.toString();
     }
@@ -275,10 +278,9 @@ public class CustomVector<E> extends AbstractList<E> implements List<E>, RandomA
     public synchronized void forEach(Consumer<? super E> action) {
         Objects.requireNonNull(action);
         final int expectedModCount = modCount;
-        @SuppressWarnings("unchecked")
-        final E[] elementData = (E[]) this.elementData;
+        @SuppressWarnings("unchecked") final E[] elementData = (E[]) this.elementData;
         final int elementCount = this.elementCount;
-        for (int i=0; modCount == expectedModCount && i < elementCount; i++) {
+        for (int i = 0; modCount == expectedModCount && i < elementCount; i++) {
             action.accept(elementData[i]);
         }
         if (modCount != expectedModCount) {

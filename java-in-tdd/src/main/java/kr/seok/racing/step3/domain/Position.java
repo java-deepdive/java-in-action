@@ -20,7 +20,6 @@ import static kr.seok.racing.step3.util.Constants.NUMBER_ZERO;
  *         return this;
  *     }
  * </pre>
- *
  */
 public class Position implements Comparable<Position> {
 
@@ -33,7 +32,7 @@ public class Position implements Comparable<Position> {
     }
 
     public Position(int position) {
-        if(position < NUMBER_ZERO) {
+        if (position < NUMBER_ZERO) {
             throw new IllegalArgumentException(CANNOT_NEGATIVE_VALUES);
         }
         this.position = position;
@@ -48,7 +47,7 @@ public class Position implements Comparable<Position> {
     }
 
     public Position greaterThan(Position maxPosition) {
-        if(compareTo(maxPosition) >= 0) {
+        if (compareTo(maxPosition) >= 0) {
             return maxPosition;
         }
         return this;

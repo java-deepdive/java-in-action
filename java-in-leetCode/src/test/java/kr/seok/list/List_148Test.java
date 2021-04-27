@@ -22,7 +22,7 @@ class List_148Test {
         List_148.ListNode node1 = new List_148.ListNode(4, node2);
 
         List_148.ListNode listNode = list.sortList_TopDownMergeSort(node1);
-        while(listNode != null) {
+        while (listNode != null) {
             System.out.println(listNode.val);
             listNode = listNode.next;
         }

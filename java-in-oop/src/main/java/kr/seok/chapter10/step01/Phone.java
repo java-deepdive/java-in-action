@@ -37,7 +37,7 @@ public class Phone {
     public Money calculateFee() {
         Money result = Money.ZERO;
 
-        for(Call call : calls) {
+        for (Call call : calls) {
             result = result.plus(amount.times(call.getDuration().getSeconds() / seconds.getSeconds()));
         }
 

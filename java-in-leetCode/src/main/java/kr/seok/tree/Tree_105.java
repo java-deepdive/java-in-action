@@ -4,11 +4,11 @@ import java.util.HashMap;
 
 /**
  * Given two integer arrays preorder and inorder
- *
+ * <p>
  * where preorder is the preorder traversal of a binary tree
- *
+ * <p>
  * and inorder is the inorder traversal of the same tree,
- *
+ * <p>
  * construct and return the binary tree.
  */
 public class Tree_105 {
@@ -16,8 +16,14 @@ public class Tree_105 {
         int val;
         TreeNode left;
         TreeNode right;
-        TreeNode() { }
-        TreeNode(int val) { this.val = val; }
+
+        TreeNode() {
+        }
+
+        TreeNode(int val) {
+            this.val = val;
+        }
+
         TreeNode(int val, TreeNode left, TreeNode right) {
             this.val = val;
             this.left = left;

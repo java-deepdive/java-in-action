@@ -25,7 +25,7 @@ class YoutubeStackTest {
             arrStack.push(1, 14);
             arrStack.push(1, 15);
 
-        } catch(YoutubeStack.ArrayBasedStack.FullStackException e) {
+        } catch (YoutubeStack.ArrayBasedStack.FullStackException e) {
             System.out.println("Exception :: " + e);
         }
 
@@ -48,7 +48,7 @@ class YoutubeStackTest {
             System.out.println("stack : #1 " + arrStack.pop(1));
             System.out.println("stack : #1 " + arrStack.isEmpty(1));
 
-        } catch(EmptyStackException e) {
+        } catch (EmptyStackException e) {
             System.out.println("isEmpty");
         }
     }

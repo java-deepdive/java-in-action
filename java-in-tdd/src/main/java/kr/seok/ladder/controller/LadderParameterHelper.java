@@ -3,7 +3,8 @@ package kr.seok.ladder.controller;
 import java.util.function.Supplier;
 
 public final class LadderParameterHelper {
-    private LadderParameterHelper() {}
+    private LadderParameterHelper() {
+    }
 
     static <T> T parseArgumentResolver(final Supplier<T> method) {
         try {

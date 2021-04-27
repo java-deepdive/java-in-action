@@ -1,27 +1,28 @@
 package kr.seok.java8.chap5;
-public  class Trader{
 
-	private String name;
-	private String city;
+public class Trader {
 
-	public Trader(String n, String c){
-		this.name = n;
-		this.city = c;
-	}
+    private String name;
+    private String city;
 
-	public String getName(){
-		return this.name;
-	}
+    public Trader(String n, String c) {
+        this.name = n;
+        this.city = c;
+    }
 
-	public String getCity(){
-		return this.city;
-	}
+    public String getName() {
+        return this.name;
+    }
 
-	public void setCity(String newCity){
-		this.city = newCity;
-	}
+    public String getCity() {
+        return this.city;
+    }
 
-	public String toString(){
-		return "Trader:"+this.name + " in " + this.city;
-	}
+    public void setCity(String newCity) {
+        this.city = newCity;
+    }
+
+    public String toString() {
+        return "Trader:" + this.name + " in " + this.city;
+    }
 }

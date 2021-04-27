@@ -19,9 +19,9 @@ class MathContextTest {
 
     private static Stream<Arguments> formulaStream() {
         return Stream.of(
-            Arguments.of("2 + 1 * 3 / 2", 4, 3),
-            Arguments.of("2 + 7 / 2 - 1", 4, 3),
-            Arguments.of("2 + 1 / 3 * 2 + 1", 5, 4)
+                Arguments.of("2 + 1 * 3 / 2", 4, 3),
+                Arguments.of("2 + 7 / 2 - 1", 4, 3),
+                Arguments.of("2 + 1 / 3 * 2 + 1", 5, 4)
         );
     }
 

@@ -13,12 +13,13 @@ import java.util.List;
 
 /**
  * 서로 다른 길이의 장작에 대한 가격을 저장하는 클래스
- *
+ * <p>
  * 상당한 시간이 걸리는 로직 -> 22s
  */
 public class RodCutterBasic {
 
     final List<Integer> prices;
+
     public RodCutterBasic(final List<Integer> pricesForLength) {
         prices = pricesForLength;
     }

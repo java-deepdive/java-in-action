@@ -38,9 +38,9 @@ class Ex3Test {
         char[] chars = str.toCharArray();
 
         int cnt = 0;
-        for(char ch : chars) {
+        for (char ch : chars) {
             int c = ch;
-            if(c == 32) {
+            if (c == 32) {
                 cnt++;
             }
         }

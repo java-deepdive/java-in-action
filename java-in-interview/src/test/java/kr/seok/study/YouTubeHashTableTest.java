@@ -10,6 +10,7 @@ import static org.assertj.core.api.Assertions.assertThat;
 
 class YouTubeHashTableTest {
     YouTubeHashTable ht;
+
     @BeforeEach
     void setUp() {
         ht = new YouTubeHashTable(5);

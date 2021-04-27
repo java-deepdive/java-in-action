@@ -30,7 +30,7 @@ public class RequestLottoArgument {
     }
 
     public static RequestLottoArgument of(final String money) {
-        if(isNotNullAndIsBlank(money)) {
+        if (isNotNullAndIsBlank(money)) {
             throw new LottoException(GUIDE_ERR_NOT_FOUND_MONEY);
         }
         return new RequestLottoArgument(Money.of(money));

@@ -4,20 +4,18 @@ import java.util.HashMap;
 import java.util.Stack;
 
 /**
- *
  * Given a string s containing just the characters '(', ')', '{', '}', '[' and ']', determine if the input string is valid.
- *
+ * <p>
  * An input string is valid if:
- *
+ * <p>
  * Open brackets must be closed by the same type of brackets.
  * Open brackets must be closed in the correct order.
- *
+ * <p>
  * 1. 스택 Stack을 초기화
  * 2. Bracket을 한 번에 하나씩 처리
  * 3. 만약 opening bracket을 마주하는 경우 stack에 밀어넣는다.
  * 4. closed bracket에 마주하는 경우 stack top 을 확인, top 에 있는 요소와 closed bracket이 같지 않으면 false, 아니면 계속 진행
  * 5. 스택에 아직 요소가 남아있으면 false
- *
  */
 public class String_20 {
 

@@ -1,13 +1,13 @@
 package kr.seok.java8.chap4;
 
-import java.util.*;
-import java.util.stream.*;
-import static java.util.stream.Collectors.toList;
+import java.util.Arrays;
+import java.util.List;
+import java.util.stream.Stream;
 
 
 public class StreamVsCollection {
 
-    public static void main(String...args){
+    public static void main(String... args) {
         List<String> names = Arrays.asList("Java8", "Lambdas", "In", "Action");
         Stream<String> s = names.stream();
         s.forEach(System.out::println);

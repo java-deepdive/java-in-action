@@ -39,6 +39,7 @@ class CustomPatternTest {
         // then
         assertThat(matches).containsExactly(expected);
     }
+
     @ParameterizedTest(name = "입력 된 문자열이 정규식에 부합하지 않은 경우 예외 테스트")
     @MethodSource(value = "invalidStringEntry")
     void testCase(String given) {

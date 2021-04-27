@@ -9,10 +9,12 @@ import static org.assertj.core.api.Assertions.assertThat;
 class Ex2Test {
 
     Ex2 ex2;
+
     @BeforeEach
     public void setUp() {
         ex2 = new Ex2();
     }
+
     @Test
     @DisplayName("문자열 비교 (길이 다르면 false, 한 글자라도 다르면 -1 값 때문에 false)")
     void testCase1() {

@@ -57,7 +57,7 @@ class RecurringScheduleTest {
                 Duration.ofMinutes(30)
         );
         // 쿼리와 명령을 분리하여 스케줄 재등록 처리
-        if(!event.isSatisfied(schedule)) {
+        if (!event.isSatisfied(schedule)) {
             event.reschedule(schedule);
         }
         assertThat(event.isSatisfied(schedule)).isTrue(); // FALSE 가 반환되어야 함

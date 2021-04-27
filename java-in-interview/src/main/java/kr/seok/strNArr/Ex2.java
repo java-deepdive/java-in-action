@@ -5,11 +5,10 @@ import java.util.Arrays;
 /**
  * - 순열 확인
  * 문자열 두 개가 주어졌을 떄, 이 둘의 순열 관계인지 확인하는 메서드 작성
- *
+ * <p>
  * 순열 관계에 대한 정의?
  * - 서로 다른 n개의 원소 중 r개를 중복하지 않고 선택해 순서대로 나열한 것
  * - 중복하지 않고 나열한다는 점에서 순서가 의미가 있음
- *
  */
 public class Ex2 {
     /*
@@ -26,7 +25,7 @@ public class Ex2 {
 
      */
     public boolean permutation(String s, String t) {
-        if(s.length() != t.length()) {
+        if (s.length() != t.length()) {
             return false;
         }
         return sort(s).equals(sort(t));
@@ -53,7 +52,7 @@ public class Ex2 {
      */
 
     boolean permutation2(String s, String t) {
-        if(s.length() != t.length()) {
+        if (s.length() != t.length()) {
             return false;
         }
 
@@ -62,13 +61,13 @@ public class Ex2 {
 
         // 첫번째 문자열을 char 타입 배열로 변경
         char[] s_array = s.toCharArray();
-        for(char c : s_array) {
+        for (char c : s_array) {
             // 해당 인덱스에 + 1 처리
             letters[c]++;
             System.out.println(" s : " + letters[c]);
         }
 
-        for(int i = 0 ; i < t.length() ; i++) {
+        for (int i = 0; i < t.length(); i++) {
             int c = t.charAt(i);
 
             // letters 라는 공간에 - 1 처리
@@ -76,7 +75,7 @@ public class Ex2 {
 
             System.out.println(" c : " + letters[c]);
             // 0보다 작은 값이 저장? 된다라는 말은 +1 -1 이 아니라는 것
-            if(letters[c] < 0) {
+            if (letters[c] < 0) {
                 return false;
             }
         }

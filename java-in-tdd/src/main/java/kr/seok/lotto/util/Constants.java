@@ -2,7 +2,8 @@ package kr.seok.lotto.util;
 
 public class Constants {
 
-    private Constants() { }
+    private Constants() {
+    }
 
     public static final String GUIDE_LAST_WEEK_WINNING_NUMBER = "지난 주 당첨 번호를 입력해 주세요.";
     public static final String GUIDE_INPUT_BONUS_NUMBER = "보너스 볼을 입력해 주세요.";

@@ -6,6 +6,7 @@ import org.junit.jupiter.api.Test;
 
 class Stack_394Test {
     Stack_394 stack;
+
     @BeforeEach
     void setUp() {
         stack = new Stack_394();

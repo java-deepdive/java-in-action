@@ -9,7 +9,8 @@ import static kr.seok.lotto.util.Constants.GUIDE_ERR_NOT_USE_VALUE;
 
 public class Validation {
 
-    private Validation() { }
+    private Validation() {
+    }
 
     public static boolean isNotNullAndIsBlank(final String inputMoney) {
         return Objects.isNull(inputMoney) || inputMoney.isEmpty();

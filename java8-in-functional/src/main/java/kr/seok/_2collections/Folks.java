@@ -8,8 +8,8 @@
  ***/
 package kr.seok._2collections;
 
-import java.util.List;
 import java.util.Arrays;
+import java.util.List;
 
 public class Folks {
     public static final List<String> friends =

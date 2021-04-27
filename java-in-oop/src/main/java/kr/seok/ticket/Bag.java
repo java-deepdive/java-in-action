@@ -15,7 +15,7 @@ public class Bag {
     }
 
     public Long hold(Ticket ticket) {
-        if(hasInvitation()) {
+        if (hasInvitation()) {
             setTicket(ticket);
             return 0L;
         } else {

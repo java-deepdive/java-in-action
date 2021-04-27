@@ -29,7 +29,8 @@ public class LottoFactory {
                 .collect(toList());
     }
 
-    private LottoFactory() { }
+    private LottoFactory() {
+    }
 
     public static List<Lotto> createManualAndAuto(final int totalCount, final ManualLottoParser manualLottoNumbers) {
         return Stream.of(createManualLottoSet(manualLottoNumbers), createAutoLottoSet(totalCount))

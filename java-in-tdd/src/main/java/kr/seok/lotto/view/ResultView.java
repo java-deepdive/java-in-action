@@ -44,7 +44,7 @@ public class ResultView {
     }
 
     private String printDiffBonus(LottoMatch match) {
-        if(match.equals(LottoMatch.RANK_BONUS)) {
+        if (match.equals(LottoMatch.RANK_BONUS)) {
             return "%s 개 일치, 보너스볼 일치(%s원) - %s개";
         }
         return "%s 개 일치 (%s원) - %s개";

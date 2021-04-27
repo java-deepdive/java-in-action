@@ -5,7 +5,7 @@ import java.util.Arrays;
 
 /**
  * Java 라이브러리 분석 <br>
- *  - Thread safe StringBuffer
+ * - Thread safe StringBuffer
  */
 public final class CustomStringBuffer extends AbstractStringBuilder implements Serializable {
 
@@ -78,4 +78,3 @@ public final class CustomStringBuffer extends AbstractStringBuilder implements S
         return super.capacity();
     }
 }
-

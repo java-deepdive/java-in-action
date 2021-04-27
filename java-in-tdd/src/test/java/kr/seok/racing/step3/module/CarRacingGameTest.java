@@ -16,7 +16,7 @@ class CarRacingGameTest {
 
     private static Stream<Arguments> racingParticipants() {
         return Stream.of(
-            Arguments.of(new String[] {"a", "b", "c"}, 3)
+                Arguments.of(new String[]{"a", "b", "c"}, 3)
         );
     }
 

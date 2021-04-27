@@ -9,9 +9,14 @@ public class YoutubeLinkedList {
     static class Node {
         int data;
         Node next = null;
-        public Node() { }
 
-        public Node(int d) { this.data = d; }
+        public Node() {
+        }
+
+        public Node(int d) {
+            this.data = d;
+        }
+
         public Node(int data, Node next) {
             this.data = data;
             this.next = next;
@@ -39,7 +44,7 @@ public class YoutubeLinkedList {
         public void delete(int d) {
             Node n = this;
             while (n.next != null) {
-                if(n.next.data == d) { // 값을 확인
+                if (n.next.data == d) { // 값을 확인
                     n.next = n.next.next;
                 } else {
                     n = n.next;
@@ -50,7 +55,9 @@ public class YoutubeLinkedList {
 
     private Node head;
 
-    YoutubeLinkedList() { head = new Node(); }
+    YoutubeLinkedList() {
+        head = new Node();
+    }
 
     // ####### Algorithm
     public Node kThToLast(Node head, int k) {
@@ -67,7 +74,7 @@ public class YoutubeLinkedList {
         n = head;
 
         // head 부터 탐색
-        for(int i = 1 ; i < total - k + 1 ; i++) {
+        for (int i = 1; i < total - k + 1; i++) {
             n = n.next; // n = n.next의 특징 상
             System.out.println("데이터 : " + n.data);
         }
@@ -80,13 +87,13 @@ public class YoutubeLinkedList {
 
     // 재귀
     public Node KthToLastRecursive(Node n, int k, Reference r) {
-        if(n == null)
+        if (n == null)
             return null;
 
         Node found = KthToLastRecursive(n.next, k, r);
         r.count++;
 
-        if(r.count == k)
+        if (r.count == k)
             return n;
         return found;
     }
@@ -95,8 +102,8 @@ public class YoutubeLinkedList {
         Node p1 = n;
         Node p2 = n;
 
-        for(int i = 0 ; i < k ; i++) {
-            if(p1 == null) return null;
+        for (int i = 0; i < k; i++) {
+            if (p1 == null) return null;
             p1 = p1.next;
         }
 
@@ -113,18 +120,19 @@ public class YoutubeLinkedList {
         Node fast = head;
         Node slow = head;
 
-        while(fast != null && fast.next != null) {
+        while (fast != null && fast.next != null) {
             slow = slow.next;
             fast = fast.next.next;
-            if(slow == fast) {
+            if (slow == fast) {
                 break;
             }
         }
-        if(fast == null || fast.next == null) {
+        if (fast == null || fast.next == null) {
             return null;
         }
         return slow;
     }
+
     // 루프 찾기
     public Node findLoop(Node head) {
 
@@ -132,7 +140,7 @@ public class YoutubeLinkedList {
         Node fast = findIntersection(head);
         Node slow = head;
 
-        while ( fast != slow ) {
+        while (fast != slow) {
             slow = slow.next;
             fast = fast.next;
         }
@@ -146,7 +154,7 @@ public class YoutubeLinkedList {
         while (n != null && n.next != null) { // 중복 값이 연속적으로 존재하는 경우를 대비한 조건 n != null
             Node r = n;
             while (r.next != null) {
-                if(n.data == r.next.data) { // 앞 노드와 뒤 노드를 비교
+                if (n.data == r.next.data) { // 앞 노드와 뒤 노드를 비교
                     r.next = r.next.next; // 앞 노드의 포인터 값을 뒤 노드 포인터 값으로 override 하여 삭제 처리
                 } else {
                     r = r.next; // 탐색
@@ -158,7 +166,7 @@ public class YoutubeLinkedList {
 
     // 중간 노드 삭제
     public boolean deleteNode(Node n) {
-        if(n == null || n.next == null) {
+        if (n == null || n.next == null) {
             return false;
         }
 
@@ -171,21 +179,21 @@ public class YoutubeLinkedList {
 
     // 숫자의 자리수를 역순으로 담은 두 리스트를 자리수별로 합산 하여 반환
     public Node sumListDesc(Node l1, Node l2, int carry) {
-        if(l1 == null && l2 == null && carry == 0) return null;
+        if (l1 == null && l2 == null && carry == 0) return null;
 
         Node result = new Node();
         int value = carry;
 
-        if(l1 != null) {
+        if (l1 != null) {
             value += l1.data;
         }
-        if(l2 != null) {
+        if (l2 != null) {
             value += l2.data;
         }
 
         result.data = value % 10;
 
-        if(l1 != null || l2 != null) { // 두 노드 중 하나는 null이 아니면 재귀
+        if (l1 != null || l2 != null) { // 두 노드 중 하나는 null이 아니면 재귀
 
             Node next = sumListDesc(
                     l1 == null ? null : l1.next,
@@ -217,7 +225,7 @@ public class YoutubeLinkedList {
     // 노드 앞에 새로운 노드를 추가하는 기능
     private Node insertBefore(Node node, int data) {
         Node before = new Node(data);
-        if(node != null) {
+        if (node != null) {
             before.next = node;
         }
         return before;
@@ -226,7 +234,7 @@ public class YoutubeLinkedList {
     // 0으로 채우는 함수
     public Node LPadList(Node l, int length) {
         Node head = l;
-        for(int i = 0 ; i < length ; i++) {
+        for (int i = 0; i < length; i++) {
             head = insertBefore(head, 0);
         }
         return head;
@@ -237,21 +245,21 @@ public class YoutubeLinkedList {
         int len1 = getListLen(l1);
         int len2 = getListLen(l2);
 
-        if(len1 < len2) {
+        if (len1 < len2) {
             l1 = LPadList(l1, len2 - len1);
         } else {
             l2 = LPadList(l2, len1 - len2);
         }
 
         Num num = addLists(l1, l2);
-        if(num.carry != 0) {
+        if (num.carry != 0) {
             num.result = insertBefore(num.result, num.carry);
         }
         return num.result;
     }
 
     private Num addLists(Node l1, Node l2) {
-        if(l1 == null && l2 == null) {
+        if (l1 == null && l2 == null) {
             return new Num();
         }
         Num num = addLists(l1.next, l2.next);
@@ -263,7 +271,7 @@ public class YoutubeLinkedList {
     }
 
     // 값의 크기에 따라 정렬하기(리스트2개 사용, 포인터가 4개)
-    public Node partition (Node n, int x) {
+    public Node partition(Node n, int x) {
         Node s1 = null;
         Node s2 = null;
         Node e1 = null;
@@ -274,7 +282,7 @@ public class YoutubeLinkedList {
             Node tail = n.next;
             n.next = null;
             if (n.data < x) {
-                if(s1 == null) {
+                if (s1 == null) {
                     s1 = n;
                     e1 = s1;
                 } else {
@@ -283,7 +291,7 @@ public class YoutubeLinkedList {
                 }
 
             } else {
-                if(s2 == null) {
+                if (s2 == null) {
                     s2 = n;
                     e2 = s2;
                 } else {
@@ -293,7 +301,7 @@ public class YoutubeLinkedList {
             }
             n = tail;
         }
-        if(s1 == null) {
+        if (s1 == null) {
             return s2;
         }
         e1.next = s2;
@@ -305,9 +313,9 @@ public class YoutubeLinkedList {
         Node head = n;
         Node tail = n;
 
-        while ( n != null ) {
+        while (n != null) {
             Node next = n.next;
-            if(n.data < x) {
+            if (n.data < x) {
                 n.next = head;
                 head = n;
             } else { // data 가 x보다 크거나 같은 경우 마지막 추가된 노드를 가리킴
@@ -328,7 +336,7 @@ public class YoutubeLinkedList {
 
     private boolean isEqual(Node head, Node reversed) {
         while (head != null && reversed != null) {
-            if(head.data != reversed.data) {
+            if (head.data != reversed.data) {
                 return false;
             }
             head = head.next;
@@ -363,14 +371,14 @@ public class YoutubeLinkedList {
             fast = fast.next.next;
         }
 
-        if(fast != null) {
+        if (fast != null) {
             slow = slow.next;
         }
 
         while (slow != null) {
             int i = stack.pop();
 
-            if(slow.data != i) {
+            if (slow.data != i) {
                 return false;
             }
             slow = slow.next;
@@ -396,14 +404,14 @@ public class YoutubeLinkedList {
 
     // 재귀를 활용한 Palindrome 찾기
     private NodeReference isPalindromeSubRecursive(Node head, int len) {
-        if(head == null || len <= 0) {
+        if (head == null || len <= 0) {
             return new NodeReference(head, true);
-        } else if(len == 1) {
+        } else if (len == 1) {
             return new NodeReference(head.next, true);
         }
         NodeReference ref = isPalindromeSubRecursive(head.next, len - 2);
 
-        if(!ref.result || ref.node == null) {
+        if (!ref.result || ref.node == null) {
             return ref;
         }
 

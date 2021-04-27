@@ -27,7 +27,7 @@ public abstract class Movie {
     }
 
     public Money calculateMovieFee(Screening screening) {
-        if(isDiscountable(screening)) {
+        if (isDiscountable(screening)) {
             return fee.minus(calculateDiscountAmount());
         }
         return fee;

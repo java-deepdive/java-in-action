@@ -12,7 +12,8 @@ public final class Validator {
 
     private static final String VALID_USERNAMES = "[a-zA-Z|,]*";
 
-    private Validator() { }
+    private Validator() {
+    }
 
     public static boolean isNumeric(String number) {
         try {

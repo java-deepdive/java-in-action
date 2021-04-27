@@ -168,7 +168,8 @@ public class CustomLinkedDeque<E> extends AbstractSequentialList<E> implements L
     transient Node<E> first;
     transient Node<E> last;
 
-    public CustomLinkedDeque() { }
+    public CustomLinkedDeque() {
+    }
 
     public CustomLinkedDeque(Collection<? extends E> c) {
         this();
@@ -338,7 +339,7 @@ public class CustomLinkedDeque<E> extends AbstractSequentialList<E> implements L
     }
 
     private String outOfBoundsMsg(int index) {
-        return "Index: "+index+", Size: "+size;
+        return "Index: " + index + ", Size: " + size;
     }
 
     private boolean isPositionIndex(int index) {

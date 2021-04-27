@@ -10,6 +10,7 @@ class CustomStringBufferTest {
 
     CustomStringBuffer sb;
     CustomStringBuffer capacitySb;
+
     @BeforeEach
     public void setUp() {
         sb = new CustomStringBuffer("This is");
@@ -81,7 +82,7 @@ class CustomStringBufferTest {
         System.out.println("초기 버퍼 크기 확인 : " + capacitySb.capacity());
         String str = "zzzzaaskldjaskldjaskljdklasjdklasdjklas";
 
-        for(char ch : str.toCharArray()) {
+        for (char ch : str.toCharArray()) {
             capacitySb.append(ch + "");
             System.out.println(capacitySb.length());
             System.out.println(capacitySb.capacity());

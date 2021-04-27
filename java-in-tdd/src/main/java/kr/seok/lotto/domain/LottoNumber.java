@@ -22,7 +22,7 @@ public class LottoNumber implements Comparable<LottoNumber> {
     }
 
     protected LottoNumber(final int number) {
-        if(isInvalidNumber(number)) {
+        if (isInvalidNumber(number)) {
             throw new LottoException(GUIDE_ERR_NOT_USE_VALUE);
         }
         this.number = number;

@@ -14,7 +14,7 @@ public class TwoSum {
             int complement = sum - list[i];
 
             if (map.containsKey(complement) && map.get(complement) != i) {
-                return new int[] { i, map.get(complement) };
+                return new int[]{i, map.get(complement)};
             }
         }
         throw new IllegalArgumentException("No two sum solution");

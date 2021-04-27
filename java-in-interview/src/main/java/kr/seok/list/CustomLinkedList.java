@@ -1,6 +1,8 @@
 package kr.seok.list;
 
-import java.util.*;
+import java.util.AbstractSequentialList;
+import java.util.List;
+import java.util.ListIterator;
 
 public class CustomLinkedList<E> extends AbstractSequentialList<E> implements List<E> {
 
@@ -20,7 +22,8 @@ public class CustomLinkedList<E> extends AbstractSequentialList<E> implements Li
     transient Node<E> first;
     transient Node<E> last;
 
-    public CustomLinkedList() { }
+    public CustomLinkedList() {
+    }
 
     @Override
     public int size() {

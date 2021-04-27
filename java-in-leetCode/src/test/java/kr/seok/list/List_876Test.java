@@ -10,6 +10,7 @@ class List_876Test {
 
     List_876 list;
     List_876.ListNode node1;
+
     @BeforeEach
     void setUp() {
         list = new List_876();

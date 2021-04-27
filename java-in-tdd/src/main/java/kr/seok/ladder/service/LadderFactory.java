@@ -15,7 +15,8 @@ import java.util.stream.Stream;
 
 public final class LadderFactory {
 
-    private LadderFactory() { }
+    private LadderFactory() {
+    }
 
     public static Ladder valueOf(
             final Participants participants, final Height height, final LineGenerator generator) {

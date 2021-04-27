@@ -14,7 +14,7 @@ public class Height {
     }
 
     public static Height valueOf(final int value) {
-        if(value < MIN_HEIGHT) {
+        if (value < MIN_HEIGHT) {
             throw new IllegalArgumentException(GUIDE_ERR_HEIGHT_LESS_THAN);
         }
         return new Height(value);

@@ -7,10 +7,14 @@ public class List_234 {
     public static class ListNode {
         int val;
         ListNode next;
-        ListNode() { }
+
+        ListNode() {
+        }
+
         ListNode(int val) {
             this.val = val;
         }
+
         ListNode(int val, ListNode next) {
             this.val = val;
             this.next = next;
@@ -19,7 +23,6 @@ public class List_234 {
 
     /**
      * Copy into Array List and then Use Two Pointer Technique
-     *
      */
     public boolean isPalindrome(ListNode head) {
 
@@ -37,7 +40,7 @@ public class List_234 {
 
         // two pointer로 검색
         while (front < back) {
-            if(!visited.get(front).equals(visited.get(back))) {
+            if (!visited.get(front).equals(visited.get(back))) {
                 return false;
             }
             front++;

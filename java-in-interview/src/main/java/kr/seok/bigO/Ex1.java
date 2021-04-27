@@ -12,7 +12,7 @@ public class Ex1 {
             3 + 3 = 6
             6 + 4 = 10
          */
-        for(int i = 0 ; i < array.length ;i++) { // O(n)
+        for (int i = 0; i < array.length; i++) { // O(n)
             sum += array[i];
         }
 
@@ -22,7 +22,7 @@ public class Ex1 {
             2 * 3 = 6
             6 * 4 = 24
          */
-        for(int i = 0 ; i < array.length ;i++) { // O(n)
+        for (int i = 0; i < array.length; i++) { // O(n)
             product *= array[i];
         }
 

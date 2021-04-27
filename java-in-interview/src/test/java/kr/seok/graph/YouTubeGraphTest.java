@@ -8,13 +8,13 @@ class YouTubeGraphTest {
     private YouTubeGraph.Graph g;
 
     /**
-     *    0
-     *   |
-     *  1 -- 3      7
-     *  |  / | ⧵  ⧸
-     *  | /  |  5
-     *  2 -- 4   ⧵
-     *             6 - 8
+     * 0
+     * |
+     * 1 -- 3      7
+     * |  / | ⧵  ⧸
+     * | /  |  5
+     * 2 -- 4   ⧵
+     * 6 - 8
      */
     @BeforeEach
     void setUp() {

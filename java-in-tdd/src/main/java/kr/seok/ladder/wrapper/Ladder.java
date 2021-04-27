@@ -21,7 +21,7 @@ public class Ladder {
     }
 
     public Position findEndPosition(Position movePosition) {
-        for(Line line : lines) {
+        for (Line line : lines) {
             movePosition = line.move(movePosition);
         }
         return movePosition;

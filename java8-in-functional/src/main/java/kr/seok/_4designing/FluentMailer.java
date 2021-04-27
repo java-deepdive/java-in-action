@@ -5,18 +5,30 @@
  * courses, books, articles, and the like. Contact us if you are in doubt.
  * We make no guarantees that this code is fit for any purpose.
  * Visit http://www.pragmaticprogrammer.com/titles/vsjava8 for more book information.
-***/
+ ***/
 package kr.seok._4designing;
 
 import java.util.function.Consumer;
 
 public class FluentMailer {
-    private FluentMailer() {}
+    private FluentMailer() {
+    }
 
-    public FluentMailer from(final String address) { /*... */ return this; }
-    public FluentMailer to(final String address)   { /*... */ return this; }
-    public FluentMailer subject(final String line) { /*... */ return this; }
-    public FluentMailer body(final String message) { /*... */ return this; }
+    public FluentMailer from(final String address) { /*... */
+        return this;
+    }
+
+    public FluentMailer to(final String address) { /*... */
+        return this;
+    }
+
+    public FluentMailer subject(final String line) { /*... */
+        return this;
+    }
+
+    public FluentMailer body(final String message) { /*... */
+        return this;
+    }
 
     public static void send(final Consumer<FluentMailer> block) {
         final FluentMailer mailer = new FluentMailer();
@@ -35,9 +47,9 @@ public class FluentMailer {
                 .send(
                         // send 메서드는 인스턴스를 생성하고 블록을 가져와 리턴한 후에 검증을 완료하고나면 마지막 send 오퍼레이션을 수행한다.
                         mailer ->
-                mailer.from("build@agiledeveloper.com")
-                        .to("venkats@agiledeveloper.com")
-                        .subject("build notification")
-                        .body("...much better..."));
+                                mailer.from("build@agiledeveloper.com")
+                                        .to("venkats@agiledeveloper.com")
+                                        .subject("build notification")
+                                        .body("...much better..."));
     }
 }

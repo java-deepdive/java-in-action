@@ -20,17 +20,16 @@ public class BackTracking_22 {
     }
 
     /**
-     *
      * @param result 최종 결과 값을 담기 위한 템플릿
-     * @param open openBracket 개수
+     * @param open   openBracket 개수
      * @param closed closedBracket 개수
-     * @param cur 현재 bracket
-     * @param max 최대 생성가능한 유요한 pair bracket 개수
+     * @param cur    현재 bracket
+     * @param max    최대 생성가능한 유요한 pair bracket 개수
      */
     private void backtracking(List<String> result, int open, int closed, String cur, int max) {
 
         // terminate check
-        if(open == max && closed == max) {
+        if (open == max && closed == max) {
             result.add(cur);
             return;
         }
@@ -56,19 +55,19 @@ public class BackTracking_22 {
     }
 
     private void backtracking2(List<String> result, int open, int close, StringBuilder sb, int max) {
-        if(open == max && close == max) {
+        if (open == max && close == max) {
             result.add(sb.toString());
             return;
         }
         int len = open + close;
 
-        if(open < max) {
+        if (open < max) {
             sb.append('(');
             backtracking2(result, open + 1, close, sb, max);
             sb.setLength(len);
         }
 
-        if(open > close) {
+        if (open > close) {
             sb.append(')');
             backtracking2(result, open, close + 1, sb, max);
             sb.setLength(len);

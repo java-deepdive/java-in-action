@@ -38,5 +38,6 @@ class MapAlertDAO implements AlertDAO {
 
 interface AlertDAO {
     UUID addAlert(Date time);
+
     Date getAlert(UUID id);
 }

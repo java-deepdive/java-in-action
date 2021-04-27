@@ -4,7 +4,8 @@ import java.util.function.Supplier;
 
 public final class Constants {
 
-    private Constants() { }
+    private Constants() {
+    }
 
     public static final Integer ZERO = 0;
 

@@ -9,7 +9,8 @@ import java.util.List;
 
 public class Phone {
     private static final int LATE_NIGHT_HOUR = 22;
-    enum PhoneType { REGULAR, NIGHTLY }
+
+    enum PhoneType {REGULAR, NIGHTLY}
 
     private PhoneType type;
 
@@ -41,7 +42,7 @@ public class Phone {
     public Money calculateFee() {
         Money result = Money.ZERO;
 
-        for(Call call : calls) {
+        for (Call call : calls) {
             if (type == PhoneType.REGULAR) {
                 result = result.plus(amount.times(call.getDuration().getSeconds() / seconds.getSeconds()));
             } else {

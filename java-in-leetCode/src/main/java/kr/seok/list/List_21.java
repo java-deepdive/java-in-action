@@ -22,10 +22,10 @@ public class List_21 {
         ListNode ret = null;
         ListNode cur = null;
 
-        while(l1 != null || l2 != null) {
-            if(l2 == null || (l1 != null && l1.val < l2.val)) {
+        while (l1 != null || l2 != null) {
+            if (l2 == null || (l1 != null && l1.val < l2.val)) {
                 // pick from l1
-                if(ret == null) { // 데이터를 처음 넣는 경우
+                if (ret == null) { // 데이터를 처음 넣는 경우
                     ret = l1;
                     cur = l1;
                     l1 = l1.next;
@@ -36,7 +36,7 @@ public class List_21 {
                 }
             } else {
                 // pick from l2
-                if(ret == null) { // 데이터 처음 넣는 경우
+                if (ret == null) { // 데이터 처음 넣는 경우
                     ret = l2;
                     cur = l2;
                     l2 = l2.next;

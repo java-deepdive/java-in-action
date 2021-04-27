@@ -9,12 +9,10 @@
 package kr.seok._3compare;
 
 import java.io.File;
-import java.util.List;
 import java.util.ArrayList;
 import java.util.Arrays;
-import java.util.stream.Collectors;
+import java.util.List;
 import java.util.stream.Stream;
-import java.util.function.Function;
 
 import static java.util.stream.Collectors.toList;
 

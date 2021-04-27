@@ -14,13 +14,14 @@ import java.util.stream.Collectors;
 
 /**
  * 동작 파라미터화를 통한 정렬하기
- *  - 익명 클래스
- *  - 람다 포현식
- *  - 메서드 레퍼런스
+ * - 익명 클래스
+ * - 람다 포현식
+ * - 메서드 레퍼런스
  */
 class SortingTest {
     Sorting sort;
     List<Apple> inventory;
+
     @BeforeEach
     void setUp() {
         sort = new Sorting();
@@ -28,7 +29,7 @@ class SortingTest {
 
         inventory.addAll(
                 Arrays.asList(
-                        new Apple(80,"green"),
+                        new Apple(80, "green"),
                         new Apple(155, "green"),
                         new Apple(120, "red"))
         );
@@ -52,7 +53,7 @@ class SortingTest {
         // 코드가 길어짐
         inventory.sort(new Comparator<Apple>() {
             @Override
-            public int compare(Apple a1, Apple a2){
+            public int compare(Apple a1, Apple a2) {
                 return a1.getWeight().compareTo(a2.getWeight());
             }
         });
@@ -137,8 +138,8 @@ class SortingTest {
         // Comparator 에서 제공하는 default 메서드를 chaining으로 연결
         inventory.sort(
                 Comparator.comparing(Apple::getWeight)
-                .reversed() // 무게로 내림차순 정렬
-                .thenComparing(Apple::getColor) // 두 사과의 무게가 같으면 Color 별로 정렬
+                        .reversed() // 무게로 내림차순 정렬
+                        .thenComparing(Apple::getColor) // 두 사과의 무게가 같으면 Color 별로 정렬
         );
 
         // [Apple{color='green', weight=155}, Apple{color='red', weight=120}, Apple{color='black', weight=80}, Apple{color='green', weight=80}]
@@ -195,6 +196,7 @@ class SortingTest {
         System.out.println(" redAndHeavyAppleOrGreen :: " + redAndHeavyAppleOrGreens);
 
     }
+
     Function<Integer, Integer> f = x -> x + 1;
     Function<Integer, Integer> g = x -> x * 2;
     // 주어진 함수를 먼저 적용한 결과를 다른 함수의 입력으로 전달하는 함수를 반환

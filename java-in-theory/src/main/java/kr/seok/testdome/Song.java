@@ -21,11 +21,11 @@ public class Song {
 
         boolean loop = false;
 
-        while(slow != null && fast != null && fast.nextSong != null){
+        while (slow != null && fast != null && fast.nextSong != null) {
             slow = slow.nextSong;
             fast = fast.nextSong.nextSong;
 
-            if(slow == fast){
+            if (slow == fast) {
                 loop = true;
                 break;
             }

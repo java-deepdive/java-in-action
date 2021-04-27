@@ -17,8 +17,8 @@ class BarsTest {
 
     /**
      * user1  user2  user3
-     *      |-----|     |
-     *
+     * |-----|     |
+     * <p>
      * 상황에서 이동 테스트
      */
     private static Stream<Arguments> ladderMovedTestCase() {

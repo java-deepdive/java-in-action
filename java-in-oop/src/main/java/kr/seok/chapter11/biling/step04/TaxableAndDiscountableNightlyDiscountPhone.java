@@ -8,7 +8,7 @@ public class TaxableAndDiscountableNightlyDiscountPhone extends TaxableNightlyDi
     private Money discountAmount;
 
     public TaxableAndDiscountableNightlyDiscountPhone(Money nightlyAmount, Money regularAmount, Duration seconds,
-          double taxRate, Money discountAmount) {
+                                                      double taxRate, Money discountAmount) {
         super(nightlyAmount, regularAmount, seconds, taxRate);
         this.discountAmount = discountAmount;
     }

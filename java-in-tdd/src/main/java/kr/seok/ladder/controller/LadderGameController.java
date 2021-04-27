@@ -50,7 +50,7 @@ public class LadderGameController {
     }
 
     private boolean isOneOrAll(final LadderResult ladderResult, final String user) {
-        if(user.equals(GUIDE_LADDER_END_SIGNATURE)) {
+        if (user.equals(GUIDE_LADDER_END_SIGNATURE)) {
             resultView.printUserResult(ladderResult.findAll());
             return true;
         }

@@ -10,7 +10,6 @@ package kr.seok._5resources;
 
 import java.io.FileWriter;
 import java.io.IOException;
-import java.lang.AutoCloseable;
 
 /**
  * 펙토리 메서드를 이용한 고차 함수 사용
@@ -57,7 +56,7 @@ public class FileWriterEAM {
                 writerEAM -> {
                     writerEAM.writeStuff("how");
                     writerEAM.writeStuff("sweet");
-        });
+                });
 
     }
 

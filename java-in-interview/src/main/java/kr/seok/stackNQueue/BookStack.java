@@ -2,7 +2,7 @@ package kr.seok.stackNQueue;
 
 /**
  * Do it! 자료구조와 함께 배우는 알고리즘 입문 자바 편 <br>
- *
+ * <p>
  * 자료구조 Stack
  */
 public class BookStack {
@@ -13,12 +13,14 @@ public class BookStack {
 
     // 실행 시 예외처리: 스택이 비어 있음
     public class EmptyIntStackException extends RuntimeException {
-        public EmptyIntStackException() { }
+        public EmptyIntStackException() {
+        }
     }
 
     // 실행 시 예외처리: 스택이 가득 참
     public class OverflowIntStackException extends RuntimeException {
-        public OverflowIntStackException() { }
+        public OverflowIntStackException() {
+        }
     }
 
     /*
@@ -45,7 +47,7 @@ public class BookStack {
 
      */
     public int push(int x) throws OverflowIntStackException {
-        if(ptr >= size) // 스택이 가득 참
+        if (ptr >= size) // 스택이 가득 참
             throw new OverflowIntStackException();
         // x를 저장하고 스택 포인터를 증가시킨다.
         return stk[ptr++] = x;
@@ -58,7 +60,7 @@ public class BookStack {
 
      */
     public int pop() throws EmptyIntStackException {
-        if(ptr <= 0) // 스택이 비어 있음
+        if (ptr <= 0) // 스택이 비어 있음
             throw new EmptyIntStackException();
         return stk[--ptr];
     }
@@ -70,7 +72,7 @@ public class BookStack {
 
      */
     public int peek() throws EmptyIntStackException {
-        if(ptr <= 0)
+        if (ptr <= 0)
             throw new EmptyIntStackException();
         return stk[ptr - 1];
     }
@@ -111,10 +113,10 @@ public class BookStack {
     }
 
     public void dump() {
-        if(ptr <= 0) {
+        if (ptr <= 0) {
             System.out.println("스택이 비어 있습니다.");
         } else {
-            for(int i = 0 ; i < ptr ; i++)
+            for (int i = 0; i < ptr; i++)
                 System.out.print(stk[i] + " ");
             System.out.println();
         }

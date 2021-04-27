@@ -12,7 +12,7 @@ public class Money {
     private final int money;
 
     private Money(final int money) {
-        if(money < LOTTO_PRICE) {
+        if (money < LOTTO_PRICE) {
             throw new LottoException(GUIDE_ERR_CANNOT_BUY_LOTTO);
         }
         this.money = money;
@@ -30,7 +30,7 @@ public class Money {
     private static void checkValidation(final String money) {
         try {
             Integer.parseInt(money);
-        } catch(NumberFormatException e) {
+        } catch (NumberFormatException e) {
             throw new LottoException();
         }
     }
@@ -52,7 +52,7 @@ public class Money {
         int totalSize = BigDecimal.valueOf(money)
                 .divide(BigDecimal.valueOf(LOTTO_PRICE))
                 .intValue();
-        if(manualCount > totalSize) {
+        if (manualCount > totalSize) {
             throw new LottoException(GUIDE_ERR_GREATER_THAN_LOTTO_COUNT);
         }
     }

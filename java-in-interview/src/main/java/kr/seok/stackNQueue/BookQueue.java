@@ -11,12 +11,14 @@ public class BookQueue {
 
     // 실행 시 예외처리: 큐가 비어 있음
     public class EmptyIntQueueException extends RuntimeException {
-        public EmptyIntQueueException() { }
+        public EmptyIntQueueException() {
+        }
     }
 
     // 실행 시 예외처리: 큐가 가득 참
     public class OverflowIntQueueException extends RuntimeException {
-        public OverflowIntQueueException() { }
+        public OverflowIntQueueException() {
+        }
     }
 
     // Queue

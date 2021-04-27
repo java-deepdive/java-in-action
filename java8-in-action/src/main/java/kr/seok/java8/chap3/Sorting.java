@@ -9,9 +9,8 @@ import java.util.Comparator;
 public class Sorting {
     // sort 동작 파라미터화를 위한 정렬 전략 작성
     static class AppleComparator implements Comparator<Apple> {
-        public int compare(Apple a1, Apple a2){
+        public int compare(Apple a1, Apple a2) {
             return a1.getWeight().compareTo(a2.getWeight());
         }
     }
 }
-

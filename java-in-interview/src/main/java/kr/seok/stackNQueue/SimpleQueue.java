@@ -10,6 +10,7 @@ public class SimpleQueue<T> {
     private static class QueueNode<T> {
         private T data;
         private QueueNode<T> next;
+
         public QueueNode(T data) {
             this.data = data;
         }
@@ -20,22 +21,22 @@ public class SimpleQueue<T> {
 
     public void add(T item) {
         QueueNode<T> t = new QueueNode<>(item);
-        if(last != null) {
+        if (last != null) {
             last.next = t;
         }
         last = t;
-        if(first == null) {
+        if (first == null) {
             first = last;
         }
     }
 
     public T remove() {
-        if(first == null) throw new NoSuchElementException();
+        if (first == null) throw new NoSuchElementException();
 
         T data = first.data;
         first = first.next;
 
-        if(first == null) {
+        if (first == null) {
             last = null;
         }
 
@@ -43,7 +44,7 @@ public class SimpleQueue<T> {
     }
 
     public T peek() {
-        if(first == null) throw new NoSuchElementException();
+        if (first == null) throw new NoSuchElementException();
         return first.data;
     }
 

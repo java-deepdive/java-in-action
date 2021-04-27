@@ -13,11 +13,25 @@ public class MailBuilder {
     /*
         리턴된 객체를 사용하여 순차적인 호출에 대한 연결을 만들도록 한다.
      */
-    public MailBuilder from(final String address) { /*... */ return this; }
-    public MailBuilder to(final String address) { /*... */ return this; }
-    public MailBuilder subject(final String line) { /*... */ return this; }
-    public MailBuilder body(final String message) { /*... */ return this; }
-    public void send() { System.out.println("sending..."); }
+    public MailBuilder from(final String address) { /*... */
+        return this;
+    }
+
+    public MailBuilder to(final String address) { /*... */
+        return this;
+    }
+
+    public MailBuilder subject(final String line) { /*... */
+        return this;
+    }
+
+    public MailBuilder body(final String message) { /*... */
+        return this;
+    }
+
+    public void send() {
+        System.out.println("sending...");
+    }
 
 
     /*

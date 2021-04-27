@@ -8,9 +8,8 @@ import java.util.Arrays;
 import java.util.List;
 import java.util.function.BinaryOperator;
 
-import static org.assertj.core.api.Assertions.assertThat;
-
 import static kr.seok.java8.chap4.Dish.menu;
+import static org.assertj.core.api.Assertions.assertThat;
 
 class ReducingTest {
 

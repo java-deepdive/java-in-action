@@ -13,8 +13,8 @@ class DefaultPatternTest {
 
     private static Stream<Arguments> defaultEntry() {
         return Stream.of(
-            Arguments.of("1,2:2", new String[]{"1", "2", "2"}),
-            Arguments.of("4,3,2", new String[]{"4", "3", "2"})
+                Arguments.of("1,2:2", new String[]{"1", "2", "2"}),
+                Arguments.of("4,3,2", new String[]{"4", "3", "2"})
         );
     }
 

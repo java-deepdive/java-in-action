@@ -25,15 +25,15 @@ public class Ex4 {
         3, 4
      */
     void printUnorderedPairs(int[] arrayA, int[] arrayB) {
-        for(int i = 0 ; i < arrayA.length ; i++) {
-            for(int j = 0 ; j < arrayB.length ; j++) {
+        for (int i = 0; i < arrayA.length; i++) {
+            for (int j = 0; j < arrayB.length; j++) {
                 /*
                     j = i + 1과 비교
 
                     73p 중간 무슨 내용임?
 
                  */
-                if(arrayA[i] < arrayB[j]) {
+                if (arrayA[i] < arrayB[j]) {
                     System.out.println(arrayA[i] + ", " + arrayB[j]);
                 }
             }
@@ -41,6 +41,6 @@ public class Ex4 {
     }
 
     public static void main(String[] args) {
-        new Ex4().printUnorderedPairs(new int[] {1,2,3,4}, new int[]{3,4});
+        new Ex4().printUnorderedPairs(new int[]{1, 2, 3, 4}, new int[]{3, 4});
     }
 }

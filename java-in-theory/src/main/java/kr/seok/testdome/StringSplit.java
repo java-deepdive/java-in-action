@@ -15,7 +15,7 @@ public class StringSplit {
 
     public String[] split(String s) {
         String[] split = s.replaceAll(FOUR_OPERATION_AND_NUMERIC_REGEXP, "").split("\\s");
-        for(String item : split) {
+        for (String item : split) {
             System.out.println(item);
         }
         return new String[]{};

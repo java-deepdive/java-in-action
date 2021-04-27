@@ -13,17 +13,41 @@ public class MinIntHeap {
 
     int[] items = new int[capacity];
 
-    private int getLeftChildIndex(int parentIndex) { return 2 * parentIndex + 1; }
-    private int getRightChildIndex(int parentIndex) { return 2 * parentIndex + 2; }
-    private int getParentIndex(int childIndex) { return (childIndex - 1) / 2; }
+    private int getLeftChildIndex(int parentIndex) {
+        return 2 * parentIndex + 1;
+    }
 
-    private boolean hasLeftChild(int index) {return getLeftChildIndex(index) < size; }
-    private boolean hasRightChild(int index) { return getRightChildIndex(index) < size; }
-    private boolean hasParent(int index) { return getParentIndex(index) >= 0; }
+    private int getRightChildIndex(int parentIndex) {
+        return 2 * parentIndex + 2;
+    }
 
-    private int leftChild(int index) { return items[getLeftChildIndex(index)]; }
-    private int rightChild(int index) { return items[getRightChildIndex(index)]; }
-    private int parent(int index) { return items[getParentIndex(index)]; }
+    private int getParentIndex(int childIndex) {
+        return (childIndex - 1) / 2;
+    }
+
+    private boolean hasLeftChild(int index) {
+        return getLeftChildIndex(index) < size;
+    }
+
+    private boolean hasRightChild(int index) {
+        return getRightChildIndex(index) < size;
+    }
+
+    private boolean hasParent(int index) {
+        return getParentIndex(index) >= 0;
+    }
+
+    private int leftChild(int index) {
+        return items[getLeftChildIndex(index)];
+    }
+
+    private int rightChild(int index) {
+        return items[getRightChildIndex(index)];
+    }
+
+    private int parent(int index) {
+        return items[getParentIndex(index)];
+    }
 
     private void swap(int idx1, int idx2) {
         int tmp = items[idx1];
@@ -32,19 +56,19 @@ public class MinIntHeap {
     }
 
     private void ensureExtraCapacity() {
-        if(size == capacity) {
+        if (size == capacity) {
             items = Arrays.copyOf(items, capacity * 2);
             capacity *= 2;
         }
     }
 
     public int peek() {
-        if(size == 0) throw new IllegalStateException();
+        if (size == 0) throw new IllegalStateException();
         return items[0];
     }
 
     public int poll() {
-        if(size == 0) throw new IllegalStateException();
+        if (size == 0) throw new IllegalStateException();
         int item = items[0];
         items[0] = items[size - 1];
         items[size - 1] = 0;
@@ -68,11 +92,11 @@ public class MinIntHeap {
         while (hasLeftChild(index)) {
             int smallerChildIndex = getLeftChildIndex(index);
             System.out.println("smallerChildIndex :: " + smallerChildIndex);
-            if(hasRightChild(index) && rightChild(index) < leftChild(index)) {
+            if (hasRightChild(index) && rightChild(index) < leftChild(index)) {
                 smallerChildIndex = getRightChildIndex(index);
             }
 
-            if(items[index] < items[smallerChildIndex]) { // 자식 노드와 부모노드(현재 노드)의 대소 비교
+            if (items[index] < items[smallerChildIndex]) { // 자식 노드와 부모노드(현재 노드)의 대소 비교
                 break; // 부모 노드 가 더 작은 경우 (힙 성질에 부합함)
             } else {
                 swap(index, smallerChildIndex);

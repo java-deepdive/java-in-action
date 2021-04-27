@@ -1,19 +1,20 @@
-package com.example.afactory.domain;
+package com.example.afactory.coffee;
 
 import com.example.afactory.component.Bean;
 import com.example.afactory.component.Milk;
 import com.example.afactory.component.Water;
 
-public class Mocha extends Coffee {
+public class Hazelnut extends Coffee {
 
     private Milk milk;
 
-    public Mocha() {
-        super(new Bean(), new Water(100));
+    public Hazelnut(Milk milk) {
+        super(new Bean(), Water.small());
+        this.milk = milk;
     }
 
     @Override
     public Coffee make() {
-        return new Mocha();
+        return new Hazelnut(milk);
     }
 }

@@ -4,19 +4,18 @@ import java.util.Stack;
 
 /**
  * Design a stack that supports push, pop, top, and retrieving the minimum element in constant time.
- *
+ * <p>
  * push(x) -- Push element x onto stack.
  * pop() -- Removes the element on top of the stack.
  * top() -- Get the top element.
  * getMin() -- Retrieve the minimum element in the stack.
- *
- *
  */
 public class Stack_155 {
     static class CustomStackMinimumPairs {
         private Stack<int[]> stack = new Stack<>();
 
-        public CustomStackMinimumPairs() { }
+        public CustomStackMinimumPairs() {
+        }
 
         public void push(int x) {
 
@@ -49,7 +48,8 @@ public class Stack_155 {
         private Stack<Integer> stack = new Stack<>();
         private Stack<Integer> minStack = new Stack<>();
 
-        public CustomStackTwoStacks() { }
+        public CustomStackTwoStacks() {
+        }
 
         public void push(int x) {
             stack.push(x);
@@ -79,7 +79,8 @@ public class Stack_155 {
         private Stack<Integer> stack = new Stack<>();
         private Stack<int[]> minStack = new Stack<>();
 
-        public CustomStackImprovedTwoStacks() { }
+        public CustomStackImprovedTwoStacks() {
+        }
 
         public void push(int x) {
 
@@ -126,5 +127,3 @@ public class Stack_155 {
         }
     }
 }
-
-

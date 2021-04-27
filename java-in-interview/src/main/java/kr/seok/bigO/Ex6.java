@@ -18,6 +18,6 @@ public class Ex6 {
     }
 
     public static void main(String[] args) {
-        new Ex6().reverse(new int[] {1,2,3,4});
+        new Ex6().reverse(new int[]{1, 2, 3, 4});
     }
 }

@@ -30,7 +30,7 @@ public class DefaultLineGenerator implements LineGenerator {
     }
 
     private Bar point(final boolean point) {
-        if(point) {
+        if (point) {
             return Bar.init();
         }
         return Bar.valueOf(RANDOM.nextBoolean());

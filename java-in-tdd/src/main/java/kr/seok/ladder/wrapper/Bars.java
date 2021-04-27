@@ -34,10 +34,10 @@ public class Bars {
     public Position move(final Position userPosition) {
         int currentPosition = userPosition.currentPosition();
 
-        if(isMoveLeft(currentPosition)) {
+        if (isMoveLeft(currentPosition)) {
             return userPosition.left();
         }
-        if(isMoveRight(currentPosition)) {
+        if (isMoveRight(currentPosition)) {
             return userPosition.right();
         }
         return userPosition;

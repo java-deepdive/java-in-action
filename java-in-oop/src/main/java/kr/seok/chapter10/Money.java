@@ -17,7 +17,7 @@ public class Money {
     }
 
     Money(BigDecimal amount) {
-    	this.amount = amount;
+        this.amount = amount;
     }
 
     public Money plus(Money amount) {
@@ -28,9 +28,9 @@ public class Money {
         return new Money(this.amount.subtract(amount.amount));
     }
 
-	public Money times(double percent) {
-		return new Money(this.amount.multiply(BigDecimal.valueOf(percent)));
-	}
+    public Money times(double percent) {
+        return new Money(this.amount.multiply(BigDecimal.valueOf(percent)));
+    }
 
     public boolean equals(Object object) {
         if (this == object) {
@@ -41,12 +41,12 @@ public class Money {
             return false;
         }
 
-        Money other = (Money)object;
+        Money other = (Money) object;
         return Objects.equals(amount.doubleValue(), other.amount.doubleValue());
     }
 
     public int hashCode() {
-    	return Objects.hashCode(amount);
+        return Objects.hashCode(amount);
     }
 
     public String toString() {

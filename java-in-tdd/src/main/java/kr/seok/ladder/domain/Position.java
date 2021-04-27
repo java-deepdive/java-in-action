@@ -18,7 +18,7 @@ public class Position {
     }
 
     public Position left() {
-        if(isValidPositionBound()) {
+        if (isValidPositionBound()) {
             throw new IllegalArgumentException(GUIDE_ERR_POSITION_BOUND);
         }
         return new Position(value - MOVABLE_COUNT);

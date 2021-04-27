@@ -75,7 +75,7 @@ public class ResultView {
     }
 
     private String renderPerPoint(final Bar bar) {
-        if(bar.isExist()) {
+        if (bar.isExist()) {
             return LADDER_HORIZON;
         }
         return LADDER_EMPTY;

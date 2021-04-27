@@ -62,12 +62,12 @@ public class YouTubeGraph_1 {
             while (!q.isEmpty()) { // 큐에 노드가 남아 있지 않을때까지 반복
                 Node root = q.removeFirst();
 
-                if(root == end) {
+                if (root == end) {
                     return true;
                 }
 
                 for (Node n : root.adjacent) { // 인접한 노드 확인
-                    if(!n.marked) {
+                    if (!n.marked) {
                         n.marked = true; // 마킹
                         q.add(n); // queue 에 넣는다.
                     }

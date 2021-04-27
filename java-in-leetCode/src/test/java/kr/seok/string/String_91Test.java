@@ -21,12 +21,14 @@ class String_91Test {
         int i = s91.numDecodings("12");
         assertThat(i).isEqualTo(2);
     }
+
     @Test
     @DisplayName("이해 ㄴㄴ")
     void testCase2() {
         int i = s91.numDecodings("326");
         assertThat(i).isEqualTo(2);
     }
+
     @Test
     @DisplayName("이해 ㄴㄴ")
     void testCase3() {

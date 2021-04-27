@@ -12,7 +12,7 @@ public class Reward {
     }
 
     public static Reward valueOf(final String reward) {
-        if(isNullOrEmpty(reward)) {
+        if (isNullOrEmpty(reward)) {
             throw new IllegalArgumentException(GUIDE_ERR_REWARD_EMPTY);
         }
         return new Reward(reward);

@@ -29,7 +29,7 @@ public class ManualLottoParser {
     }
 
     private void lottoSizeException(final Set<Integer> integers) {
-        if(integers.size() != LOTTO_MAX_SIZE) {
+        if (integers.size() != LOTTO_MAX_SIZE) {
             throw new LottoException(GUIDE_ERR_LOTTO_SIZE);
         }
     }

@@ -7,7 +7,7 @@ public abstract class BasicRatePolicy implements RatePolicy {
     public Money calculateFee(Phone phone) {
         Money result = Money.ZERO;
 
-        for(Call call : phone.getCalls()) {
+        for (Call call : phone.getCalls()) {
             result.plus(calculateCallFee(call));
         }
 

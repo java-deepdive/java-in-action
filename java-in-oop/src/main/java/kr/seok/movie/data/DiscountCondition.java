@@ -51,7 +51,7 @@ public class DiscountCondition {
     }
 
     public boolean isDiscountable(DayOfWeek dayOfWeek, LocalTime time) {
-        if(type != DiscountConditionType.PERIOD) {
+        if (type != DiscountConditionType.PERIOD) {
             throw new IllegalArgumentException();
         }
         return this.dayOfWeek.equals(dayOfWeek)
@@ -60,7 +60,7 @@ public class DiscountCondition {
     }
 
     public boolean isDiscountable(int sequence) {
-        if(type != DiscountConditionType.SEQUENCE) {
+        if (type != DiscountConditionType.SEQUENCE) {
             throw new IllegalArgumentException();
         }
         return this.sequence == sequence;

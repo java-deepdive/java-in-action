@@ -2,17 +2,16 @@ package kr.seok.java8.chap2;
 
 /**
  * 함수형 인터페이스의 추상 메서드 Signature 는 람다 표현식의 Signature 를 가리킨다. <br/>
- *
+ * <p>
  * 람다 표현식의 시그니처를 서술하는 메서드를 함수 디스크립터(functional descriptor)라고 부른다.
- *
  */
 public class FunctionalDescriptor {
 
     public static void processor(Runnable r) {
         r.run();
     }
+
     /**
-     *
      * @param args
      */
     public static void main(String[] args) {

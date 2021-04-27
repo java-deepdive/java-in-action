@@ -8,9 +8,9 @@
  ***/
 package kr.seok._3compare;
 
+import java.io.IOException;
 import java.nio.file.Files;
 import java.nio.file.Paths;
-import java.io.IOException;
 
 public class ListFiles {
     public static void main(String[] args) throws IOException {

@@ -22,10 +22,10 @@ public enum ProfitMessage {
     }
 
     private static ProfitMessage message(final double rate) {
-        if(rate > 1) {
+        if (rate > 1) {
             return PROFIT;
         }
-        if(rate < 1) {
+        if (rate < 1) {
             return LOSS;
         }
         return BREAK_POINT;

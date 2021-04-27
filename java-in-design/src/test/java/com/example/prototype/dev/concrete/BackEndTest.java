@@ -1,6 +1,5 @@
 package com.example.prototype.dev.concrete;
 
-import com.example.prototype.color.ColorEnumStore;
 import com.example.prototype.dev.BaseDeveloper;
 import com.example.prototype.dev.DevType;
 import com.example.prototype.dev.PrototypeDevCache;

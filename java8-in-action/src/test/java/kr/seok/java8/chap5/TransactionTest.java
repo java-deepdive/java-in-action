@@ -5,7 +5,6 @@ import org.junit.jupiter.api.Test;
 
 import java.util.Arrays;
 import java.util.List;
-import java.util.stream.Collectors;
 
 import static java.util.Comparator.comparing;
 import static java.util.stream.Collectors.*;
@@ -14,9 +13,9 @@ import static org.assertj.core.api.Assertions.assertThat;
 class TransactionTest {
 
     Trader raoul = new Trader("Raoul", "Cambridge");
-    Trader mario = new Trader("Mario","Milan");
-    Trader alan = new Trader("Alan","Cambridge");
-    Trader brian = new Trader("Brian","Cambridge");
+    Trader mario = new Trader("Mario", "Milan");
+    Trader alan = new Trader("Alan", "Cambridge");
+    Trader brian = new Trader("Brian", "Cambridge");
 
     List<Transaction> transactions = Arrays.asList(
             new Transaction(brian, 2011, 300),

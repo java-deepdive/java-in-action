@@ -4,7 +4,8 @@ import java.util.EmptyStackException;
 
 public class CustomStack<E> extends CustomVector<E> {
 
-    public CustomStack() { }
+    public CustomStack() {
+    }
 
     public E push(E item) {
         addElement(item);

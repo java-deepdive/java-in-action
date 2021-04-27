@@ -3,10 +3,7 @@ package kr.seok.string;
 import java.util.HashMap;
 
 /**
- *
  * A - Z이 포함된 문자을 포함한 메시지를 숫자로 매핑되어 인코딩할 수 있다.
- *
- *
  */
 public class String_91 {
 

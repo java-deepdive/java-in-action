@@ -21,7 +21,7 @@ public class NightlyDiscountPhone extends Phone {
         Money result = super.calculateFee();
 
         Money nightlyFee = Money.ZERO;
-        for(Call call : getCalls()) {
+        for (Call call : getCalls()) {
             if (call.getFrom().getHour() >= LATE_NIGHT_HOUR) {
                 nightlyFee = nightlyFee.plus(
                         getAmount().minus(nightlyAmount).times(

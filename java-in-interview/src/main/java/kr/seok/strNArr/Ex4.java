@@ -3,16 +3,16 @@ package kr.seok.strNArr;
 /**
  * 회문 순열
  * 주어진 문자열이 회문(palindrome)의 순열인지 확인하는 함수 작성
- *
+ * <p>
  * 회문이란?
  * - 회문이란 앞으로 읽으나 뒤로 읽으나 같은 단어 혹은 구절을 의미
- *
+ * <p>
  * 순열이란?
  * - 순열이란 문자열을 재배치하는 것
- *
+ * <p>
  * 회문의 순열이란?
  * - 문자열을 배치하여 회문이 가능한 단어
- *
+ * <p>
  * 두 가지 개념을 합쳐 놓은 것
  */
 public class Ex4 {
@@ -36,9 +36,9 @@ public class Ex4 {
     private int[] buildCharFrequencyTable(String phrase) {
         //
         int[] table = new int[Character.getNumericValue('z') - Character.getNumericValue('a') + 1];
-        for(char c : phrase.toCharArray()) {
+        for (char c : phrase.toCharArray()) {
             int x = getCharNumber(c);
-            if(x != -1) {
+            if (x != -1) {
                 table[x]++;
             }
         }
@@ -47,13 +47,14 @@ public class Ex4 {
 
     /**
      * 각 문자에 숫자를 대응
+     *
      * @return a -> 0, b -> 1 ... 대소문자 구분이 없고, 문자가 아닌 경우 -1로 대응
      */
     private int getCharNumber(char c) {
         int a = Character.getNumericValue('a');
         int z = Character.getNumericValue('z');
         int val = Character.getNumericValue(c);
-        if(a <= val && val <= z) {
+        if (a <= val && val <= z) {
             return val - a;
         }
         return -1;
@@ -65,9 +66,9 @@ public class Ex4 {
     private boolean checkMaxOneOdd(int[] table) {
         boolean foundOdd = false;
         // 문자 개수를 저장한 배열의 값을 반복하면서 odd를 찾으면 false를 반환
-        for(int count : table) {
-            if(count % 2 == 1) {
-                if(foundOdd) return false;
+        for (int count : table) {
+            if (count % 2 == 1) {
+                if (foundOdd) return false;
                 foundOdd = true;
             }
         }
@@ -85,11 +86,11 @@ public class Ex4 {
         int[] table = new int[
                 Character.getNumericValue('z') - Character.getNumericValue('a') + 1];
 
-        for(char c : phrase.toCharArray()) {
+        for (char c : phrase.toCharArray()) {
             int x = getCharNumber(c);
-            if(x != -1) { // 해당 문자가 일단 범위 내에 존재.
+            if (x != -1) { // 해당 문자가 일단 범위 내에 존재.
                 table[x]++; // table에 존재하는 문자에 대한 count를 증가
-                if(table[x] % 2 == 1) { // table의 count가 홀수 인경우 count값을 증가
+                if (table[x] % 2 == 1) { // table의 count가 홀수 인경우 count값을 증가
                     countOdd++;
                 } else {
                     countOdd--;
@@ -117,7 +118,7 @@ public class Ex4 {
 
     private int createBitVector(String phrase) {
         int bitVector = 0;
-        for(char c : phrase.toCharArray()) {
+        for (char c : phrase.toCharArray()) {
             int x = getCharNumber(c);
             bitVector = toggle(bitVector, x);
         }
@@ -125,11 +126,11 @@ public class Ex4 {
     }
 
     private int toggle(int bitVector, int x) {
-        if(x < 0) return bitVector;
+        if (x < 0) return bitVector;
         // 쉬프트 이동
         int mask = 1 << x;
         // and 연산 처리
-        if((bitVector & mask) == 0) {
+        if ((bitVector & mask) == 0) {
             bitVector |= mask;
         } else {
             bitVector &= ~mask;

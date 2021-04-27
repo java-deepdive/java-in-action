@@ -21,9 +21,12 @@ class YoutubeTreeTest {
 
         assertThat(tree.getRoot().data).isEqualTo(1);
 
-        tree.preOrder(root); System.out.println("pre-order 전위 순회");
-        tree.inOrder(root); System.out.println("in-order 중위 순회");
-        tree.postOrder(root); System.out.println("post-order 중위 순회");
+        tree.preOrder(root);
+        System.out.println("pre-order 전위 순회");
+        tree.inOrder(root);
+        System.out.println("in-order 중위 순회");
+        tree.postOrder(root);
+        System.out.println("post-order 중위 순회");
 
     }
 }

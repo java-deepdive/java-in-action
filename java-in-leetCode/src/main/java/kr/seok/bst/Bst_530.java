@@ -17,12 +17,12 @@ public class Bst_530 {
      * 이진 트리의 탐색 방법 중 inorder 를 활용한 방법
      */
     public void inorder(TreeNode root) {
-        if(root == null) return;
+        if (root == null) return;
         // left 먼저 처리
         inorder(root.left);
 
         // self 처리
-        if(!flag) {
+        if (!flag) {
             flag = true;
         } else {
             // 차이 값을 계산

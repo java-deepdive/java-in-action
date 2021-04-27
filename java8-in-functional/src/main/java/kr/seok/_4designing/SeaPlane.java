@@ -2,9 +2,9 @@ package kr.seok._4designing;
 
 /**
  * 인터페이스에서 default 메서드를 사용함으로써 확장할 수 있는 예시
- *
+ * <p>
  * 다중 상속으로 인한 충돌 문제를 해결할 수 있는 예시
- *
+ * <p>
  * 추상 클래스를 통해 인터페이스를 사용해야하는 권유사항은 지켜야하는 항목
  */
 public class SeaPlane extends Vehicle implements FastFly, Sail {
@@ -13,7 +13,7 @@ public class SeaPlane extends Vehicle implements FastFly, Sail {
     @Override
     public void cruise() {
         System.out.println("SeaPlane::cruise currently cruise like: ");
-        if(altitude > 0) {
+        if (altitude > 0) {
             FastFly.super.cruise();
         } else {
             Sail.super.cruise();
@@ -41,12 +41,15 @@ interface Fly {
     default void takeOff() {
         System.out.println("Fly::takeOff");
     }
+
     default void land() {
         System.out.println("Fly::land");
     }
+
     default void turn() {
         System.out.println("Fly::turn");
     }
+
     default void cruise() {
         System.out.println("Fly::cruise");
     }
@@ -69,6 +72,7 @@ interface Sail {
     default void cruise() {
         System.out.println("Sail::cruise");
     }
+
     default void turn() {
         System.out.println("Sail::turn");
     }

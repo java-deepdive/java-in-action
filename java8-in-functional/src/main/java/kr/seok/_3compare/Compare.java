@@ -8,13 +8,13 @@
  ***/
 package kr.seok._3compare;
 
-import java.util.List;
 import java.util.Arrays;
 import java.util.Comparator;
+import java.util.List;
 import java.util.function.Function;
 
-import static java.util.stream.Collectors.toList;
 import static java.util.Comparator.comparing;
+import static java.util.stream.Collectors.toList;
 
 public class Compare {
     public static void printPeople(
@@ -161,7 +161,7 @@ public class Compare {
                                     // 이름 먼저 정렬
                                     comparing(byTheirName).
                                             // 이름 정렬 후 나이 정렬
-                                            thenComparing(byAge))
+                                                    thenComparing(byAge))
                             .collect(toList()));
         }
     }

@@ -2,13 +2,12 @@ package kr.seok.strNArr;
 
 /**
  * 문자열 압축
- *
+ * <p>
  * 반복되는 문자의 개수를 세는 방식의 기본적인 문자열 압축 메서드를 작성하기
- *
+ * <p>
  * 압축된 문자열의 길이가 기존 문자열의 길이보다 길다면 기존 문자열을 반환해야 한다.
- *
+ * <p>
  * 문자열은 a - z 로만 이루어져있다.
- *
  */
 public class Ex6 {
 
@@ -19,7 +18,7 @@ public class Ex6 {
         String compressedString = "";
         int countConsecutive = 0;
 
-        for(int i = 0 ; i < str.length() ; i++) {
+        for (int i = 0; i < str.length(); i++) {
             countConsecutive++;
 
             // 매번 현재 문자와 다음 문자를 비교, 같지 않으면 압축된 형태로 문자열에 추가
@@ -31,6 +30,7 @@ public class Ex6 {
         }
         return compressedString.length() < str.length() ? compressedString : str;
     }
+
     /*
         String 으로 작업되는 방식을 StringBuilder로 변경
      */
@@ -38,7 +38,7 @@ public class Ex6 {
         StringBuilder compressedString = new StringBuilder();
         int countConsecutive = 0;
 
-        for(int i = 0 ; i < str.length() ; i++) {
+        for (int i = 0; i < str.length(); i++) {
             countConsecutive++;
 
             // 매번 현재 문자와 다음 문자를 비교, 같지 않으면 압축된 형태로 문자열에 추가
@@ -64,12 +64,12 @@ public class Ex6 {
      */
     private String compressBad3(String str) {
         int finalLength = countCompression(str);
-        if(finalLength >= str.length()) return str;
+        if (finalLength >= str.length()) return str;
 
         StringBuilder compressed = new StringBuilder(finalLength);
         int countConsecutive = 0;
 
-        for(int i = 0 ; i < str.length() ; i++) {
+        for (int i = 0; i < str.length(); i++) {
             countConsecutive++;
 
             // 매번 현재 문자와 다음 문자를 비교, 같지 않으면 압축된 형태로 문자열에 추가
@@ -87,7 +87,7 @@ public class Ex6 {
         int compressedLength = 0;
         int countConsecutive = 0;
 
-        for(int i = 0 ; i < str.length() ; i++) {
+        for (int i = 0; i < str.length(); i++) {
             countConsecutive++;
 
             if (i + 1 >= str.length() || str.charAt(i) != str.charAt(i + 1)) {

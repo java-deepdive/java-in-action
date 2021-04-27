@@ -62,9 +62,9 @@ public class PickALongest {
                          */
                         .reduce("Steve",
                                 (name1, name2) ->
-                                name1.length() >= name2.length()
-                                        ? name1
-                                        : name2);
+                                        name1.length() >= name2.length()
+                                                ? name1
+                                                : name2);
 
         System.out.println(steveOrLonger);
     }

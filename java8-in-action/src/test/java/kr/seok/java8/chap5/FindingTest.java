@@ -68,7 +68,7 @@ class FindingTest {
     @Test
     @DisplayName("검색과 매칭: 첫 번 요소 찾기")
     void testCase5() {
-        List<Integer> someNumbers = Arrays.asList(1,2,3,4,5);
+        List<Integer> someNumbers = Arrays.asList(1, 2, 3, 4, 5);
 
         Function<Integer, Integer> integerIntegerFunction = x -> x * x;
 

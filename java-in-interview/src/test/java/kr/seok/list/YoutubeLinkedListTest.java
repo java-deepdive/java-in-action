@@ -9,6 +9,7 @@ import static org.assertj.core.api.Assertions.assertThat;
 class YoutubeLinkedListTest {
 
     YoutubeLinkedList youtubeLinkedList;
+
     @BeforeEach
     void setUp() {
         youtubeLinkedList = new YoutubeLinkedList();
@@ -47,6 +48,7 @@ class YoutubeLinkedListTest {
 //        YoutubeLinkedList.Node nodeData2 = youtubeLinkedList.KthToLastRecursive(first, k, r);
 //        assertThat(nodeData2.data).isEqualTo(3);
     }
+
     @Test
     @DisplayName("포인터")
     void testCase3() {

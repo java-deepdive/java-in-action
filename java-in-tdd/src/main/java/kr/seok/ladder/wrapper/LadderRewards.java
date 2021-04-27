@@ -36,6 +36,7 @@ public class LadderRewards {
         final LadderRewards that = (LadderRewards) o;
         return Objects.equals(rewards, that.rewards);
     }
+
     @Override
     public int hashCode() {
         return Objects.hash(rewards);

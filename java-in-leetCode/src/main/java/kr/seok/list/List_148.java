@@ -3,17 +3,22 @@ package kr.seok.list;
 /**
  * Given the head of a linked list,
  * return the list after sorting it in ascending order.
- *
+ * <p>
  * Follow up: Can you sort the linked list in O(n logn) time and O(1) memory (i.e. constant space)?
- *
  */
 public class List_148 {
 
     public static class ListNode {
         int val;
         ListNode next;
-        ListNode() { }
-        ListNode(int val) { this.val = val; }
+
+        ListNode() {
+        }
+
+        ListNode(int val) {
+            this.val = val;
+        }
+
         ListNode(int val, ListNode next) {
             this.val = val;
             this.next = next;
@@ -35,7 +40,7 @@ public class List_148 {
 
     private ListNode getMid(ListNode head) {
         ListNode midPrev = null; // 임의 노드 생성
-        while(head != null && head.next != null) { // 헤더 , 헤더 next 가 모두 존재하는 경우
+        while (head != null && head.next != null) { // 헤더 , 헤더 next 가 모두 존재하는 경우
             // 임의노드에 값이 없는 경우 헤더를, 이미 head 값으로 등롣을 한 경우 midPerv의 다음 노드를 저장
             midPrev = (midPrev == null) ? head : midPrev.next;
             // 헤더 값에 next next 노드를 저장?

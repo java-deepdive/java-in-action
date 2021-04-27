@@ -1,2 +1,4 @@
-package com.example.factory.domain;public class IEngine {
+package com.example.factory.domain;
+
+public class IEngine {
 }

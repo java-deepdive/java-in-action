@@ -2,9 +2,9 @@ package kr.seok.tree;
 
 /**
  * Given a binary tree, you need to compute the length of the diameter of the tree.
- *
+ * <p>
  * The diameter of a binary tree is the length of the longest path between any two nodes in a tree.
- *
+ * <p>
  * This path may or may not pass through the root.
  */
 public class Tree_543 {
@@ -12,8 +12,14 @@ public class Tree_543 {
         int val;
         TreeNode left;
         TreeNode right;
-        TreeNode() { }
-        TreeNode(int val) { this.val = val; }
+
+        TreeNode() {
+        }
+
+        TreeNode(int val) {
+            this.val = val;
+        }
+
         TreeNode(int val, TreeNode left, TreeNode right) {
             this.val = val;
             this.left = left;

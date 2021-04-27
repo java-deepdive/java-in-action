@@ -12,7 +12,6 @@ import java.util.function.Supplier;
 
 /**
  * HeavyFactory 클래스
- *
  */
 public class Holder {
     private Supplier<Heavy> heavy = () -> createAndCacheHeavy();

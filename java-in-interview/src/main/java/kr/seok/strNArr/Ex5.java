@@ -3,12 +3,11 @@ package kr.seok.strNArr;
 /**
  * 하나 빼기
  * 문자열을 편집하는 방법
- *  1. 문자 삽입
- *  2. 문자 삭제
- *  3. 문자 교체
- *
- *  문자열이 두 개 주어졌을 떄, 문자열을 같게 만들기 위해 편집 횟수가 1회 이내인지 확인하는 알고리즘
- *
+ * 1. 문자 삽입
+ * 2. 문자 삭제
+ * 3. 문자 교체
+ * <p>
+ * 문자열이 두 개 주어졌을 떄, 문자열을 같게 만들기 위해 편집 횟수가 1회 이내인지 확인하는 알고리즘
  */
 public class Ex5 {
 
@@ -26,19 +25,19 @@ public class Ex5 {
             - 문자열의 길이를 알고 있으면 어떤 연산이 필요한지 알 수 있다.
 
      */
-   boolean oneEditAway(String first, String second) {
-       // 문자열 길이를 통해 필요한 해법을 선택
-       if(first.length() == second.length()) { // 교체
-           return oneEditReplace(first, second);
+    boolean oneEditAway(String first, String second) {
+        // 문자열 길이를 통해 필요한 해법을 선택
+        if (first.length() == second.length()) { // 교체
+            return oneEditReplace(first, second);
 
-       } else if(first.length() + 1 == second.length()) { // 삽입
+        } else if (first.length() + 1 == second.length()) { // 삽입
             return oneEditInsert(first, second);
 
-       } else if(first.length() - 1 == second.length()) { // 삭제
-           return oneEditInsert(second, first);
-       }
-       return false;
-   }
+        } else if (first.length() - 1 == second.length()) { // 삭제
+            return oneEditInsert(second, first);
+        }
+        return false;
+    }
 
     // 교체
     private boolean oneEditReplace(String first, String second) {
@@ -76,7 +75,7 @@ public class Ex5 {
      */
 
     boolean oneEditAway2(String first, String second) {
-        if(Math.abs(first.length() - second.length()) > 1) { // 편집을 위한 삽입, 삭제가 2번 이상이면 false 처리
+        if (Math.abs(first.length() - second.length()) > 1) { // 편집을 위한 삽입, 삭제가 2번 이상이면 false 처리
             return false;
         }
 
@@ -91,13 +90,13 @@ public class Ex5 {
         while (index2 < s2.length() && index1 < s1.length()) {
 
             // 문자 비교. 같지 않은 경우
-            if(s1.charAt(index1) != s2.charAt(index2)) {
+            if (s1.charAt(index1) != s2.charAt(index2)) {
 
-                if(foundDifference) return false;
+                if (foundDifference) return false;
                 foundDifference = true;
 
                 // 교체의 경우 짧은 문자열의 포인터를 증가.
-                if(s1.length() == s2.length()) index1++;
+                if (s1.length() == s2.length()) index1++;
             } else {
                 // 문자가 같은 경우 짧은 문자열의 포인터 증가
                 index1++;

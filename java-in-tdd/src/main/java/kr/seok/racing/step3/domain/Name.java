@@ -17,10 +17,10 @@ public class Name {
     private final String name;
 
     public Name(final String name) {
-        if(isNullAndIsBlank(name)) {
+        if (isNullAndIsBlank(name)) {
             throw new IllegalArgumentException(GUIDE_EMPTY_STRING);
         }
-        if(isValidNameLength(name)) {
+        if (isValidNameLength(name)) {
             throw new IllegalArgumentException(MORE_THAN_FIVE_CHARACTERS);
         }
         this.name = name.trim();

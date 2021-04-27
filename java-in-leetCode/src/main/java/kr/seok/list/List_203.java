@@ -2,21 +2,24 @@ package kr.seok.list;
 
 /**
  * Remove all elements from a linked list of integers that have value val.
- *
+ * <p>
  * Example:
- *
+ * <p>
  * Input:  1->2->6->3->4->5->6, val = 6
  * Output: 1->2->3->4->5
- *
  */
 public class List_203 {
     public class ListNode {
         int val;
         ListNode next;
-        ListNode() { }
+
+        ListNode() {
+        }
+
         ListNode(int val) {
             this.val = val;
         }
+
         ListNode(int val, ListNode next) {
             this.val = val;
             this.next = next;

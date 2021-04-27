@@ -12,7 +12,7 @@ public abstract class Phone {
     public Money calculateFee() {
         Money result = Money.ZERO;
 
-        for(Call call : calls) {
+        for (Call call : calls) {
             result = result.plus(calculateCallFee(call));
         }
 

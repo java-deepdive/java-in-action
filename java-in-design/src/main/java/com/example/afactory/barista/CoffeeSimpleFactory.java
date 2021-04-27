@@ -1,12 +1,15 @@
-package com.example.afactory.factory;
+package com.example.afactory.barista;
 
 import com.example.afactory.component.Milk;
-import com.example.afactory.domain.*;
+import com.example.afactory.coffee.*;
 
+/**
+ * Simple Factory
+ */
 public class CoffeeSimpleFactory {
 
     public static Coffee makeAmericano() {
-        return new Americano();
+        return new Americano.Builder(null, null).build();
     }
 
     public static Coffee makeHazelnut(Milk milk) {
@@ -14,10 +17,10 @@ public class CoffeeSimpleFactory {
     }
 
     public static Coffee makeEspresso() {
-        return new Espresso();
+        return new Espresso.Builder(null, null).build();
     }
 
     public static Coffee makeMocha() {
-        return new Mocha();
+        return new Mocha.Builder(null, null).milk(null).build();
     }
 }

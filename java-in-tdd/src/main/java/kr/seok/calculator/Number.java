@@ -14,7 +14,7 @@ public class Number {
     }
 
     public static Number of(String number) {
-        if(Validator.isNotNumericOrIsNegativeNumber(number)) {
+        if (Validator.isNotNumericOrIsNegativeNumber(number)) {
             throw new CalculatorException("계산할 수 없는 문자 입니다.");
         }
         return new Number(Integer.parseInt(number));

@@ -9,10 +9,10 @@ import static org.assertj.core.api.Assertions.*;
 
 /**
  * 온라인 코드리뷰 요청 1단계 <br/>
- *  - String 클래스에 대한 학습 테스트 <br/>
- *  - JUnit Assertions 클래스의 테스트 API 학습 <br/>
- *  - 예외 발생시 Throw 테스트 처리 학습 <br/>
- *  - DisplayName 어노테이션 학습
+ * - String 클래스에 대한 학습 테스트 <br/>
+ * - JUnit Assertions 클래스의 테스트 API 학습 <br/>
+ * - 예외 발생시 Throw 테스트 처리 학습 <br/>
+ * - DisplayName 어노테이션 학습
  */
 public class StringTest {
 

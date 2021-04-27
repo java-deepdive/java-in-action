@@ -7,11 +7,11 @@ import java.util.Comparator;
  * - 각 노드는 다음 노드를 가리킨다.
  * - 배열처럼 특정 인덱스를 상수 시간에 접근할 순 없다.
  * - 시작 지점에서 아이템을 추가하거나(add(idx, element)), 삭제하는 연산(remove(idx))을 상수 시간에 할 수 있다.
- *
+ * <p>
  * 용어
- *  - 리스트의 데이터: Node 또는 element
- *  - 노드의 구성: 데이터와 다음 노드를 가리키는 포인터
- *  - 처음(head node)과 끝(tail node)에 있는 노드
+ * - 리스트의 데이터: Node 또는 element
+ * - 노드의 구성: 데이터와 다음 노드를 가리키는 포인터
+ * - 처음(head node)과 끝(tail node)에 있는 노드
  *
  * @see java.util.ArrayList
  * @see java.util.LinkedList
@@ -36,6 +36,7 @@ public class PointerLinkedList<E> {
                 return o1.compareTo(o2);
             }
         }
+
         public static final Comparator<Integer> NO_ORDER = new NoOrderComparator();
     }
 
@@ -62,7 +63,7 @@ public class PointerLinkedList<E> {
         while (ptr != null) { // 스캔 중인 노드가 null이 아닌 경우 계속 search
 
             // 검색에 성공하는 경우 0, compare 에 대한 개념 필요
-            if(c.compare(target, ptr.data) == 0) {
+            if (c.compare(target, ptr.data) == 0) {
                 cur = ptr; // 포인터 값을 선택 노드에 저장
                 return cur.data; // 선택된 노드의 데이터를 반환
             }
@@ -76,8 +77,8 @@ public class PointerLinkedList<E> {
         head = cur = new Node<E>(e, ptr);
     }
 
-    public void addLast(E e){
-        if(head == null) addFirst(e);
+    public void addLast(E e) {
+        if (head == null) addFirst(e);
         else {
             Node<E> ptr = head;
             // while 문을 종료 시, ptr은 꼬리 노드를 가리킨다.
@@ -94,7 +95,7 @@ public class PointerLinkedList<E> {
      * 리스트가 비어있지 않은경우에만 삭제를 실행
      */
     public void removeFirst() {
-        if(head != null) {
+        if (head != null) {
             /*
                 현재 head를 없애고, 다음 노드를 head로 덮어쓰기
 
@@ -107,8 +108,8 @@ public class PointerLinkedList<E> {
     }
 
     public void removeLast() {
-        if(head != null) {
-            if(head.next == null) { // 노드가 하나만 있는 경우
+        if (head != null) {
+            if (head.next == null) { // 노드가 하나만 있는 경우
                 removeFirst(); // 머리 노드를 삭제
             } else {
                 Node<E> ptr = head; // 스캔중인 노드
@@ -129,8 +130,8 @@ public class PointerLinkedList<E> {
      * @see List_203
      */
     public void remove(Node p) {
-        if(head != null) {
-            if(p == head) {
+        if (head != null) {
+            if (p == head) {
                 removeFirst();
             } else {
                 Node<E> ptr = head;
@@ -138,7 +139,7 @@ public class PointerLinkedList<E> {
                 while (ptr.next != p) { // 탐색 포인터의 뒤쪽 포인터가 p와 같을 때까지 반복
                     ptr = ptr.next;
 
-                    if(ptr == null) {
+                    if (ptr == null) {
                         return;
                     }
                 } // 탐색 완료
@@ -163,7 +164,7 @@ public class PointerLinkedList<E> {
 
     // 해당 노드가 존재하는지 확인하는 메서드
     public boolean next() {
-        if(cur == null || cur.next == null) {
+        if (cur == null || cur.next == null) {
             return false;
         }
         cur = cur.next;
@@ -172,7 +173,7 @@ public class PointerLinkedList<E> {
 
     // 현재 노드의 데이터를 조회
     public void printCurrentNode() {
-        if(cur == null) {
+        if (cur == null) {
             System.out.println("선택한 노드가 없습니다.");
         } else {
             System.out.println(cur.data);

@@ -13,16 +13,16 @@ class Ex1Test {
 
     @Test
     void testCase1() {
-        ex.foo(new int[] {1, 2});
+        ex.foo(new int[]{1, 2});
     }
 
     @Test
     void testCase2() {
-        ex.foo(new int[] {1, 2, 3});
+        ex.foo(new int[]{1, 2, 3});
     }
 
     @Test
     void testCase3() {
-        ex.foo(new int[] {1, 2, 3, 4});
+        ex.foo(new int[]{1, 2, 3, 4});
     }
 }

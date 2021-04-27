@@ -8,10 +8,10 @@
  ***/
 package kr.seok._4designing;
 
-import java.util.stream.Stream;
-import java.util.function.Function;
-import java.awt.Color;
+import java.awt.*;
 import java.util.function.Consumer;
+import java.util.function.Function;
+import java.util.stream.Stream;
 
 @SuppressWarnings("unchecked")
 public class Camera {

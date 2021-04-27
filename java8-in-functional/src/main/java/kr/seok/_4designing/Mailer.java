@@ -13,19 +13,23 @@ package kr.seok._4designing;
  */
 public class Mailer {
     public void from(final String address) { /*... */ }
+
     public void to(final String address) { /*... */ }
+
     public void subject(final String line) { /*... */ }
+
     public void body(final String message) { /*... */ }
+
     public void send() {
         System.out.println("sending...");
     }
 
     /**
-     *  직관적인 설계가 필요
-     *  문제점 두 가지
-     *  1. 반복해서 사용하는 mailer 레퍼런스
-     *      - 컨텍스트 객체의 상태를 계속 유지하는 메서드 체인 또는 캐스케이드 메서드 패턴을 사용하는 것이 좋음
-     *  2. 명확하지 않은 객체의 라이프타임
+     * 직관적인 설계가 필요
+     * 문제점 두 가지
+     * 1. 반복해서 사용하는 mailer 레퍼런스
+     * - 컨텍스트 객체의 상태를 계속 유지하는 메서드 체인 또는 캐스케이드 메서드 패턴을 사용하는 것이 좋음
+     * 2. 명확하지 않은 객체의 라이프타임
      */
     public static void main(final String[] args) {
         Mailer mailer = new Mailer();
