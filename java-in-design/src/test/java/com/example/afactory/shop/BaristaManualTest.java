@@ -1,6 +1,5 @@
 package com.example.afactory.shop;
 
-import com.example.adapter.MakingAmericanoAdapter;
 import com.example.afactory.barista.StarbucksBarista;
 import com.example.afactory.barista.TomNTomsBarista;
 import com.example.afactory.component.Bean;
@@ -21,7 +20,7 @@ class BaristaManualTest {
     @Test
     void testCase1() {
         // given
-        StarbucksBarista starbucksBarista = new StarbucksBarista(new MakingAmericanoAdapter());
+        StarbucksBarista starbucksBarista = new StarbucksBarista();
         // when
         Coffee coffee = starbucksBarista.makeAmericano(new Bean(), Water.small());
         // then
