@@ -6,7 +6,7 @@ import com.example.afactory.component.Water;
 
 public class Hazelnut extends Coffee {
 
-    private Milk milk;
+    private final Milk milk;
 
     public Hazelnut(Milk milk) {
         super(new Bean(), Water.small());

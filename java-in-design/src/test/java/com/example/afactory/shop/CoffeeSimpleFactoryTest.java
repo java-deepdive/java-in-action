@@ -1,9 +1,9 @@
 package com.example.afactory.shop;
 
 import com.example.afactory.barista.CoffeeSimpleFactory;
-import com.example.afactory.component.Milk;
 import com.example.afactory.coffee.Coffee;
 import com.example.afactory.coffee.Hazelnut;
+import com.example.afactory.component.Milk;
 import org.junit.jupiter.api.DisplayName;
 import org.junit.jupiter.api.Test;
 

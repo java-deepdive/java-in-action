@@ -10,7 +10,7 @@ public class RemoteControl {
     }
 
     public void togglePower() {
-        if(device.isEnabled()) {
+        if (device.isEnabled()) {
             device.disabled();
         } else {
             device.enabled();

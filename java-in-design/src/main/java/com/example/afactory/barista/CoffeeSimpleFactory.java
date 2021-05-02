@@ -1,7 +1,7 @@
 package com.example.afactory.barista;
 
-import com.example.afactory.component.Milk;
 import com.example.afactory.coffee.*;
+import com.example.afactory.component.Milk;
 
 /**
  * Simple Factory

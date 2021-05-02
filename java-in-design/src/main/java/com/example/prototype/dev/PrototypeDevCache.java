@@ -9,7 +9,7 @@ import java.util.Map;
 
 public class PrototypeDevCache {
 
-    private static Map<DevType, BaseDeveloper> cache = new HashMap<>();
+    private static final Map<DevType, BaseDeveloper> cache = new HashMap<>();
 
     static {
         cache.put(DevType.FRONTEND, new FrontEnd());
