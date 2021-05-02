@@ -1,4 +1,4 @@
-package com.example.adapter;
+package com.example.adapter.cash;
 
 import com.example.afactory.barista.StarbucksBarista;
 import com.example.afactory.coffee.Coffee;
