@@ -19,8 +19,7 @@ public class StarbucksBarista implements BaristaManual {
 
     @Override
     public Coffee makeAmericano(Bean bean, Water water) {
-        return new Americano.Builder(bean, water).build()
-                .make();
+        return new Americano.Builder(bean, water).build().make();
     }
 
     @Override

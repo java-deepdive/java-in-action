@@ -1,9 +1,11 @@
 package com.example.adapter.barista;
 
-import com.example.adapter.cash.Cashier;
 import com.example.afactory.barista.StarbucksBarista;
+import com.example.afactory.coffee.Coffee;
+import com.example.afactory.component.Bean;
+import com.example.afactory.component.Water;
 
-public class StarbucksCustomBarista implements Cashier {
+public class StarbucksCustomBarista extends Barista {
 
     private final StarbucksBarista starbucksBarista;
 
@@ -12,12 +14,8 @@ public class StarbucksCustomBarista implements Cashier {
     }
 
     @Override
-    public void calculate() {
-
-    }
-
-    @Override
-    public void greet() {
-
+    public Coffee makeCoffee() {
+        Coffee coffee = starbucksBarista.makeAmericano(new Bean(), Water.regular());
+        return new CustomCoffee(new Bean(), Water.small(), coffee);
     }
 }

@@ -1,5 +1,6 @@
 package com.example.afactory.shop;
 
+import com.example.afactory.barista.BaristaManual;
 import com.example.afactory.barista.StarbucksBarista;
 import com.example.afactory.barista.TomNTomsBarista;
 import com.example.afactory.coffee.Americano;
@@ -15,12 +16,11 @@ import static org.assertj.core.api.Assertions.assertThat;
 
 class BaristaManualTest {
 
-
     @DisplayName("스타벅스 아메리카노 생성 테스트")
     @Test
     void testCase1() {
         // given
-        StarbucksBarista starbucksBarista = new StarbucksBarista();
+        BaristaManual starbucksBarista = new StarbucksBarista();
         // when
         Coffee coffee = starbucksBarista.makeAmericano(new Bean(), Water.small());
         // then
@@ -31,7 +31,7 @@ class BaristaManualTest {
     @Test
     void testCase2() {
         // given
-        TomNTomsBarista barista = new TomNTomsBarista();
+        BaristaManual barista = new TomNTomsBarista();
         // when
         Coffee coffee = barista.makeMocha(new Bean(), Water.small(), Milk.small());
         // then
