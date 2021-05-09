@@ -10,6 +10,14 @@ repositories {
 }
 
 dependencies {
+
+    /* 데이터베이스 라이브러리 */
+    runtimeOnly("mysql:mysql-connector-java:8.0.21")
+
+    /* 엑셀 라이브러리 */
+    implementation("org.apache.poi:poi:4.1.2")          // .xlsx
+    implementation("org.apache.poi:poi-ooxml:4.1.2")    // .xls
+
     testImplementation 'org.junit.jupiter:junit-jupiter-api:5.6.0'
     testRuntimeOnly 'org.junit.jupiter:junit-jupiter-engine'
     testCompileOnly 'junit:junit:4.12'

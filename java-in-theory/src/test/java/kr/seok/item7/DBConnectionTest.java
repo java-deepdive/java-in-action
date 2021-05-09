@@ -1,9 +1,15 @@
 package kr.seok.item7;
 
+import org.junit.jupiter.api.DisplayName;
+import org.junit.jupiter.api.Test;
+
 import java.sql.Connection;
 
-public class MemoryLeekConnection {
-    public static void main(String[] args) {
+class DBConnectionTest {
+
+    @DisplayName("DBConnection 자원 접근 테스트")
+    @Test
+    void testCase1() {
         // DB 자원 접근
         DBConnection conn = new DBConnection.Builder("", "", "", "").build();
 

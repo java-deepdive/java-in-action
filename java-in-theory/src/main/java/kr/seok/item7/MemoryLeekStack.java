@@ -33,12 +33,4 @@ public class MemoryLeekStack {
         return (pointer == maxSize - 1);
     }
 
-    public static void main(String[] args) {
-        MemoryLeekStack stack = new MemoryLeekStack(2_883_000);
-        for (int i = 0; i < 2_883_000; i++) stack.push(i);
-        for (int i = 0; i < 2_883_000; i++) {
-            int element = stack.pop();
-//            System.out.println("Poped element is " + element);
-        }
-    }
 }
