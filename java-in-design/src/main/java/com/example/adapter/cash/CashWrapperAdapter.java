@@ -24,7 +24,7 @@ public class CashWrapperAdapter extends StarbucksBarista implements Cashier {
     }
 
     @Override
-    public void calculate() {
+    public void calculate(int money) {
 
     }
 

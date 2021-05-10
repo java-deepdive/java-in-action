@@ -18,8 +18,8 @@ public class CashAdapter implements Cashier {
     }
 
     @Override
-    public void calculate() {
-        System.out.println("계산해 줄게");
+    public void calculate(int money) {
+        System.out.println("계산해 줄게 : " + money);
     }
 
     @Override

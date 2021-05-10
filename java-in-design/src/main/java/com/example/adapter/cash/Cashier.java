@@ -5,7 +5,7 @@ package com.example.adapter.cash;
  */
 public interface Cashier {
 
-    void calculate();
+    void calculate(int money);
 
     void greet();
 }

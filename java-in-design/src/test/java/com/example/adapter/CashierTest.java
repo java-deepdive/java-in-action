@@ -16,7 +16,7 @@ class CashierTest {
     void testCase1() {
         CashAdapter cashAdapter = new CashAdapter(new StarbucksBarista());
 
-        cashAdapter.calculate();
+        cashAdapter.calculate(3000);
         cashAdapter.greet();
 
         cashAdapter.makeAmericano(Bean.of("쓴 원두"), Water.regular());
