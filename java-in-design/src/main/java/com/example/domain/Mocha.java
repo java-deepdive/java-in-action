@@ -1,4 +1,4 @@
-package com.example.afactory.coffee;
+package com.example.domain;
 
 import com.example.afactory.component.Bean;
 import com.example.afactory.component.Milk;
@@ -11,19 +11,15 @@ public class Mocha extends Coffee {
     private final Milk milk;
 
     private Mocha(Builder builder) {
-        super(builder.bean, builder.water);
-        milk = builder.milk;
-    }
-
-    @Override
-    public Coffee make() {
-        return new Mocha.Builder(bean, water).milk(milk).build();
+        super(builder.bean, builder.water, builder.brand);
+        this.milk = builder.milk;
     }
 
     public static class Builder {
         private final Bean bean;
         private final Water water;
         private Milk milk;
+        private Brand brand;
 
         public Builder(Bean bean, Water water) {
             this.bean = bean;
@@ -32,6 +28,11 @@ public class Mocha extends Coffee {
 
         public Builder milk(Milk milk) {
             this.milk = milk;
+            return this;
+        }
+
+        public Builder brand(Brand brand) {
+            this.brand = brand;
             return this;
         }
 
@@ -52,4 +53,5 @@ public class Mocha extends Coffee {
     public int hashCode() {
         return Objects.hash(milk);
     }
+
 }

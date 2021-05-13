@@ -3,6 +3,7 @@ package com.example.afactory.coffee;
 import com.example.afactory.component.Bean;
 import com.example.afactory.component.Milk;
 import com.example.afactory.component.Water;
+import com.example.domain.Mocha;
 import org.junit.jupiter.api.Test;
 
 import static org.assertj.core.api.Assertions.assertThat;

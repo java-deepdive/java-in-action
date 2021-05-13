@@ -29,4 +29,20 @@ public class Bean {
     public int hashCode() {
         return Objects.hash(name);
     }
+
+    @Override
+    public String toString() {
+        return String.valueOf(name);
+    }
+
+    @Override
+    public Bean clone() {
+        Bean clone = null;
+        try {
+            clone = (Bean) super.clone();
+        } catch (CloneNotSupportedException e) {
+            e.printStackTrace();
+        }
+        return clone;
+    }
 }

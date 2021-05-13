@@ -34,4 +34,20 @@ public class Water {
     public int hashCode() {
         return Objects.hash(size);
     }
+
+    @Override
+    public String toString() {
+        return String.valueOf(size);
+    }
+
+    @Override
+    public Water clone() {
+        Water clone = null;
+        try {
+            clone = (Water) super.clone();
+        } catch (CloneNotSupportedException e) {
+            e.printStackTrace();
+        }
+        return clone;
+    }
 }

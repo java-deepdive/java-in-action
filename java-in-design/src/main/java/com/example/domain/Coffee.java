@@ -1,21 +1,21 @@
-package com.example.afactory.coffee;
+package com.example.domain;
 
 import com.example.afactory.component.Bean;
 import com.example.afactory.component.Water;
 
 import java.util.Objects;
 
-public abstract class Coffee {
+public abstract class Coffee implements Cloneable {
 
     protected final Bean bean;
     protected final Water water;
+    protected final Brand brand;
 
-    protected Coffee(Bean bean, Water water) {
+    protected Coffee(Bean bean, Water water, Brand brand) {
         this.bean = bean;
         this.water = water;
+        this.brand = brand;
     }
-
-    protected abstract Coffee make();
 
     @Override
     public boolean equals(Object o) {
@@ -29,5 +29,16 @@ public abstract class Coffee {
     @Override
     public int hashCode() {
         return Objects.hash(bean, water);
+    }
+
+    @Override
+    public Coffee clone() {
+        Coffee clone = null;
+        try {
+            clone = (Coffee) super.clone();
+        } catch (CloneNotSupportedException e) {
+            e.printStackTrace();
+        }
+        return clone;
     }
 }

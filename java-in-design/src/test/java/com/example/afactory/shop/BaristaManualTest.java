@@ -3,12 +3,12 @@ package com.example.afactory.shop;
 import com.example.afactory.barista.BaristaManual;
 import com.example.afactory.barista.StarbucksBarista;
 import com.example.afactory.barista.TomNTomsBarista;
-import com.example.afactory.coffee.Americano;
-import com.example.afactory.coffee.Coffee;
-import com.example.afactory.coffee.Mocha;
 import com.example.afactory.component.Bean;
 import com.example.afactory.component.Milk;
 import com.example.afactory.component.Water;
+import com.example.domain.Americano;
+import com.example.domain.Coffee;
+import com.example.domain.Mocha;
 import org.junit.jupiter.api.DisplayName;
 import org.junit.jupiter.api.Test;
 

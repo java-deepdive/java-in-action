@@ -1,5 +1,7 @@
 package com.example.factory.coffee;
 
+import com.example.domain.Coffee;
+
 /**
  * Creator
  */

@@ -4,8 +4,8 @@ import com.example.adapter.gui.button.Button;
 import com.example.adapter.gui.button.CheckBox;
 
 public class Application {
-    private CheckBox checkBox;
-    private Button button;
+    private final CheckBox checkBox;
+    private final Button button;
 
     public Application(GUIFactory factory) {
         button = factory.createButton();

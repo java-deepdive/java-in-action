@@ -1,11 +1,11 @@
 package com.example.afactory.shop;
 
-import com.example.afactory.menu.MenuItem;
+import com.example.domain.Menu;
 
 public class CoffeeBean extends CoffeeShop {
 
     @Override
-    public void order(MenuItem menu) {
+    public void order(Menu menu) {
 
     }
 }

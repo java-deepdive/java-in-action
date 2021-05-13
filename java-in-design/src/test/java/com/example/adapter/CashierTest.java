@@ -2,7 +2,6 @@ package com.example.adapter;
 
 import com.example.adapter.cash.CashAdapter;
 import com.example.afactory.barista.StarbucksBarista;
-import com.example.afactory.coffee.Americano;
 import com.example.afactory.component.Bean;
 import com.example.afactory.component.Milk;
 import com.example.afactory.component.Water;

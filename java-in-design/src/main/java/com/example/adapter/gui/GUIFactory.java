@@ -5,5 +5,6 @@ import com.example.adapter.gui.button.CheckBox;
 
 public interface GUIFactory {
     Button createButton();
+
     CheckBox createCheckBox();
 }

@@ -1,10 +1,10 @@
 package com.example.adapter.cash;
 
 import com.example.afactory.barista.StarbucksBarista;
-import com.example.afactory.coffee.Coffee;
 import com.example.afactory.component.Bean;
 import com.example.afactory.component.Milk;
 import com.example.afactory.component.Water;
+import com.example.domain.Coffee;
 
 public class CashWrapperAdapter extends StarbucksBarista implements Cashier {
 

@@ -1,4 +1,4 @@
-package com.example.afactory.shop;
+package com.example.domain;
 
 import java.util.Arrays;
 

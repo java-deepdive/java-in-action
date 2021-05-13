@@ -10,7 +10,6 @@ class ApplicationTest {
     @Test
     void testCase1() {
         Application application = new Application(new WinFactory());
-        application.createUI();
         application.paint();
     }
 
