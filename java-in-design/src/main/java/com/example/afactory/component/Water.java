@@ -1,12 +1,17 @@
 package com.example.afactory.component;
 
 
+import java.io.Serializable;
 import java.util.Objects;
 
-public class Water {
+public class Water implements Serializable {
     private final int size;
 
-    private Water(int size) {
+    private Water() {
+        this(0);
+    }
+
+    public Water(int size) {
         this.size = size;
     }
 

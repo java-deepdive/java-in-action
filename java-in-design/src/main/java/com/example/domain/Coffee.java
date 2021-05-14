@@ -3,9 +3,10 @@ package com.example.domain;
 import com.example.afactory.component.Bean;
 import com.example.afactory.component.Water;
 
+import java.io.Serializable;
 import java.util.Objects;
 
-public abstract class Coffee implements Cloneable {
+public abstract class Coffee implements Cloneable, Serializable {
 
     protected final Bean bean;
     protected final Water water;
@@ -23,12 +24,13 @@ public abstract class Coffee implements Cloneable {
         if (!(o instanceof Coffee)) return false;
         final Coffee coffee = (Coffee) o;
         return Objects.equals(bean, coffee.bean)
-                && Objects.equals(water, coffee.water);
+                && Objects.equals(water, coffee.water)
+                && brand == coffee.brand;
     }
 
     @Override
     public int hashCode() {
-        return Objects.hash(bean, water);
+        return Objects.hash(bean, water, brand);
     }
 
     @Override

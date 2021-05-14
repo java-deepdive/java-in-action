@@ -1,15 +1,16 @@
 package com.example.afactory.component;
 
+import java.io.Serializable;
 import java.util.Objects;
 
-public class Bean {
+public class Bean implements Serializable {
     private final String name;
 
     public Bean() {
         this("default");
     }
 
-    public Bean(String name) {
+    private Bean(String name) {
         this.name = name;
     }
 
