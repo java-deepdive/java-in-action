@@ -1,11 +1,8 @@
-package com.example.domain;
-
-import com.example.afactory.component.Bean;
-import com.example.afactory.component.Water;
+package kr.seok.item13.constructor;
 
 public class ConstructorCopyCoffee extends Coffee {
 
-    protected ConstructorCopyCoffee(Bean bean, Water water, Brand brand) {
+    public ConstructorCopyCoffee(Bean bean, Water water, Brand brand) {
         super(bean, water, brand);
     }
 

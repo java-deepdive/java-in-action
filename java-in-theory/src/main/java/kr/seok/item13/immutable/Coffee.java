@@ -1,15 +1,21 @@
 package kr.seok.item13.immutable;
 
-import kr.seok.item13.Bean;
+import kr.seok.item13.domain.Bean;
+import kr.seok.item13.domain.Brand;
+import kr.seok.item13.domain.Water;
 
 import java.util.Objects;
 
 public class Coffee implements Cloneable {
 
-    private final Bean bean;
+    protected final Bean bean;
+    protected final Water water;
+    protected final Brand brand;
 
-    public Coffee(Bean bean) {
+    public Coffee(Bean bean, Water water, Brand brand) {
         this.bean = bean;
+        this.water = water;
+        this.brand = brand;
     }
 
     /**
@@ -37,11 +43,13 @@ public class Coffee implements Cloneable {
         if (this == o) return true;
         if (!(o instanceof Coffee)) return false;
         final Coffee coffee = (Coffee) o;
-        return Objects.equals(bean, coffee.bean);
+        return Objects.equals(bean, coffee.bean)
+                && Objects.equals(water, coffee.water)
+                && brand == coffee.brand;
     }
 
     @Override
     public int hashCode() {
-        return Objects.hash(bean);
+        return Objects.hash(bean, water, brand);
     }
 }

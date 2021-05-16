@@ -1,13 +1,8 @@
-package com.example.domain;
-
-import com.example.afactory.component.Bean;
-import com.example.afactory.component.Water;
+package kr.seok.item13.external.jackson;
 
 public class JacksonCoffee extends Coffee {
 
-    private JacksonCoffee() {
-        this(null, null, null);
-    }
+    private JacksonCoffee() { this(null, null, null); }
 
     protected JacksonCoffee(Bean bean, Water water, Brand brand) {
         super(bean, water, brand);

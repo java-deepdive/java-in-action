@@ -1,7 +1,5 @@
-package com.example.domain;
+package kr.seok.item13.external.jackson;
 
-import com.example.afactory.component.Bean;
-import com.example.afactory.component.Water;
 import com.fasterxml.jackson.annotation.JsonAutoDetect;
 import com.fasterxml.jackson.annotation.PropertyAccessor;
 import com.fasterxml.jackson.core.JsonProcessingException;
@@ -12,10 +10,11 @@ import org.junit.jupiter.api.Test;
 import static org.assertj.core.api.Assertions.assertThat;
 
 class JacksonCoffeeTest {
+
     @DisplayName("Jackson 객체 복사")
     @Test
     void testCase1() {
-        JacksonCoffee coffee = new JacksonCoffee(new Bean(), Water.regular(), Brand.NONE);
+        JacksonCoffee coffee = new JacksonCoffee(Bean.of("빈"), Water.regular(), Brand.NONE);
 
         ObjectMapper mapper = new ObjectMapper();
 
@@ -28,7 +27,6 @@ class JacksonCoffeeTest {
         } catch (JsonProcessingException e) {
             e.printStackTrace();
         }
-        System.out.println(deepCopy);
         assertThat(coffee).isEqualTo(deepCopy);
     }
 }

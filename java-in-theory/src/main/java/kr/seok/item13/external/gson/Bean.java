@@ -1,27 +1,17 @@
-package kr.seok.item13;
+package kr.seok.item13.external.gson;
 
 import java.util.Objects;
 
-public class Bean implements Cloneable {
+public class Bean {
+
     private final String name;
 
-    public Bean(String name) {
+    private Bean(String name) {
         this.name = name;
     }
 
     public static Bean of(String name) {
         return new Bean(name);
-    }
-
-    @Override
-    public Bean clone() {
-        Bean clone = null;
-        try {
-            clone = (Bean) super.clone();
-        } catch (CloneNotSupportedException e) {
-            e.printStackTrace();
-        }
-        return clone;
     }
 
     @Override
@@ -39,8 +29,7 @@ public class Bean implements Cloneable {
 
     @Override
     public String toString() {
-        return "Bean{" +
-                "name='" + name + '\'' +
-                '}';
+        return String.valueOf(name);
     }
+
 }

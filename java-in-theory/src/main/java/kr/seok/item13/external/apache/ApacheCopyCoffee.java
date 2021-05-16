@@ -1,7 +1,4 @@
-package com.example.domain;
-
-import com.example.afactory.component.Bean;
-import com.example.afactory.component.Water;
+package kr.seok.item13.external.apache;
 
 import java.io.Serializable;
 

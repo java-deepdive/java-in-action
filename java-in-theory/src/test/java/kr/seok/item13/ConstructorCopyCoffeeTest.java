@@ -1,7 +1,9 @@
-package com.example.domain;
+package kr.seok.item13;
 
-import com.example.afactory.component.Bean;
-import com.example.afactory.component.Water;
+import kr.seok.item13.constructor.Bean;
+import kr.seok.item13.constructor.Brand;
+import kr.seok.item13.constructor.ConstructorCopyCoffee;
+import kr.seok.item13.constructor.Water;
 import org.junit.jupiter.api.DisplayName;
 import org.junit.jupiter.api.Test;
 
@@ -13,7 +15,7 @@ class ConstructorCopyCoffeeTest {
     @Test
     void testCase1() {
         // given
-        ConstructorCopyCoffee coffee = new ConstructorCopyCoffee(new Bean(), Water.small(), Brand.NONE);
+        ConstructorCopyCoffee coffee = new ConstructorCopyCoffee(Bean.of("빈"), Water.small(), Brand.NONE);
         // when
         ConstructorCopyCoffee constructorCopy = new ConstructorCopyCoffee(coffee);
         // then
