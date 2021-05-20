@@ -5,9 +5,9 @@ import java.util.Objects;
 
 public abstract class Coffee {
 
-    protected final Bean bean;
-    protected final Water water;
-    protected final Brand brand;
+    protected Bean bean;
+    protected Water water;
+    protected Brand brand;
 
     protected Coffee(Bean bean, Water water, Brand brand) {
         this.bean = bean;

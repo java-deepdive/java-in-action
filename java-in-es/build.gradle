@@ -1,0 +1,50 @@
+buildscript {
+    ext {
+        springBootVersion = '2.3.4.RELEASE'
+    }
+    repositories {
+        mavenCentral()
+    }
+    dependencies {
+        classpath("org.springframework.boot:spring-boot-gradle-plugin:${springBootVersion}")
+        classpath "io.spring.gradle:dependency-management-plugin:0.6.0.RELEASE"
+    }
+}
+
+apply plugin: 'java'
+apply plugin: 'io.spring.dependency-management'
+apply plugin: 'org.springframework.boot'
+
+group 'kr.seok'
+version '1.0-SNAPSHOT'
+
+repositories {
+    mavenCentral()
+}
+
+configurations {
+    compileOnly {
+        extendsFrom annotationProcessor
+    }
+}
+
+dependencies {
+
+    implementation 'org.springframework.boot:spring-boot-starter-web'
+
+    compileOnly 'org.projectlombok:lombok'
+    annotationProcessor 'org.projectlombok:lombok'
+
+    // https://mvnrepository.com/artifact/org.elasticsearch/elasticsearch
+    implementation group: 'org.elasticsearch', name: 'elasticsearch', version: '7.9.3'
+
+    // https://mvnrepository.com/artifact/org.elasticsearch.client/elasticsearch-rest-high-level-client
+    implementation group: 'org.elasticsearch.client', name: 'elasticsearch-rest-high-level-client', version: '7.9.3'
+
+    testCompile('org.junit.jupiter:junit-jupiter:5.4.2')
+    testCompile('org.assertj:assertj-core:3.11.1')
+}
+
+test {
+    useJUnitPlatform()
+}

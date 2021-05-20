@@ -16,7 +16,7 @@ class DeepCopyCoffeeTest {
     void testCase1() {
         DeepCopyCoffee coffee = new DeepCopyCoffee(Bean.of("빈"), Water.regular(), Brand.NONE);
 
-        // clone을 활용한 깊은 복사
+        // immutable Object의 복사
         DeepCopyCoffee deepCopy = coffee.clone();
 
         assertThat(coffee).isEqualTo(deepCopy);
