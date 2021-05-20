@@ -1,4 +1,4 @@
-package kr.seok.document;
+package kr.seok.document.search;
 
 import lombok.extern.slf4j.Slf4j;
 import org.apache.http.HttpHost;
@@ -67,7 +67,7 @@ public class EsDocumentSearch {
         return searchRequest;
     }
 
-    private static RestHighLevelClient getRestHighLevelClient() {
+    private RestHighLevelClient getRestHighLevelClient() {
         return new RestHighLevelClient(
                 RestClient.builder(new HttpHost("127.0.0.1", 9200, "http")));
     }

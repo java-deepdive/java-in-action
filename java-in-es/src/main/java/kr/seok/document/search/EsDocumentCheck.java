@@ -1,4 +1,4 @@
-package kr.seok.document;
+package kr.seok.document.search;
 
 import lombok.extern.slf4j.Slf4j;
 import org.apache.http.HttpHost;
@@ -14,8 +14,7 @@ public class EsDocumentCheck {
 
     private static RestHighLevelClient getRestHighLevelClient() {
         return new RestHighLevelClient(
-                RestClient.builder(
-                        new HttpHost("127.0.0.1", 9200, "http")));
+                RestClient.builder(new HttpHost("127.0.0.1", 9200, "http")));
     }
 
     public boolean isDoc(String indexName, String id) {
@@ -33,6 +32,7 @@ public class EsDocumentCheck {
             }
 
             client.close();
+
             return exists;
         } catch (IOException e) {
             e.printStackTrace();

@@ -1,5 +1,6 @@
 package kr.seok.document;
 
+import kr.seok.document.search.EsDocumentCheck;
 import org.junit.jupiter.api.DisplayName;
 import org.junit.jupiter.api.Test;
 
