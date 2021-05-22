@@ -1,8 +1,8 @@
 package kr.seok.item7;
 
 public class MemoryLeekStack {
-    private int maxSize;
-    private int[] stackArray;
+    private final int maxSize;
+    private final int[] stackArray;
     private int pointer;
 
     public MemoryLeekStack(int s) {
@@ -17,7 +17,7 @@ public class MemoryLeekStack {
 
     public int pop() {
         int size = pointer--;
-        int element= stackArray[size];
+        int element = stackArray[size];
         return element;
     }
 

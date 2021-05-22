@@ -1,7 +1,7 @@
 package kr.seok.testdome;
 
 public class Song {
-    private String name;
+    private final String name;
     private Song nextSong;
 
     public Song(String name) {

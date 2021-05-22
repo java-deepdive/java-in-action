@@ -6,7 +6,7 @@ import org.junit.jupiter.api.Test;
 import static org.junit.jupiter.api.Assertions.*;
 
 public class AccountTest {
-    private double epsilon = 1e-6;
+    private final double epsilon = 1e-6;
 
     @Test
     public void accountCannotHaveNegativeOverdraftLimit() {

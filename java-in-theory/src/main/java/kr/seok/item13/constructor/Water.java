@@ -1,7 +1,6 @@
 package kr.seok.item13.constructor;
 
 
-import java.io.Serializable;
 import java.util.Objects;
 
 public class Water {

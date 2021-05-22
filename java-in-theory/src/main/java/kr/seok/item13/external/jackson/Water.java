@@ -9,6 +9,7 @@ public class Water {
     private Water() {
         this(0);
     }
+
     public Water(int size) {
         this.size = size;
     }

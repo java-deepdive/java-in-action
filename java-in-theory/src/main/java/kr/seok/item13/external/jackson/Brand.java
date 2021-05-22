@@ -5,5 +5,5 @@ public enum Brand {
     COFFEE_BEAN,
     TOM_N_TOMS,
     LOCAL_SHOP,
-    NONE;
+    NONE
 }

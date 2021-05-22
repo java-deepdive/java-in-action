@@ -21,10 +21,10 @@ public class DBConnection {
     }
 
     public static class Builder {
-        private String driver;
-        private String url;
-        private String user;
-        private String password;
+        private final String driver;
+        private final String url;
+        private final String user;
+        private final String password;
 
         public Builder(String driver, String url, String user, String password) {
             this.driver = driver;
@@ -50,18 +50,18 @@ public class DBConnection {
     }
 
     public void getMetaDataInfo(Connection con) {
-         try {
-             DatabaseMetaData metaData = con.getMetaData();
-             System.out.println("=============== DB ===============");
-             System.out.println(metaData.getDatabaseProductVersion());
-             String driverName = metaData.getDriverName();
-             String driverVersion = metaData.getDriverVersion();
-             System.out.println("driverName : " + driverName);
-             System.out.println("driverVersion : " + driverVersion);
-             System.out.println("=============== DB ===============");
-         } catch (SQLException e) {
-             e.printStackTrace();
-         }
+        try {
+            DatabaseMetaData metaData = con.getMetaData();
+            System.out.println("=============== DB ===============");
+            System.out.println(metaData.getDatabaseProductVersion());
+            String driverName = metaData.getDriverName();
+            String driverVersion = metaData.getDriverVersion();
+            System.out.println("driverName : " + driverName);
+            System.out.println("driverVersion : " + driverVersion);
+            System.out.println("=============== DB ===============");
+        } catch (SQLException e) {
+            e.printStackTrace();
+        }
     }
 
     public int executeStatement(String query) {

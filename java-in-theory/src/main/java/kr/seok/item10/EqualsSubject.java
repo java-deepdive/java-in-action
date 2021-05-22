@@ -2,7 +2,7 @@ package kr.seok.item10;
 
 public class EqualsSubject {
 
-    private Float aFloat;
+    private final Float aFloat;
 
     public EqualsSubject(Float aFloat) {
         this.aFloat = aFloat;

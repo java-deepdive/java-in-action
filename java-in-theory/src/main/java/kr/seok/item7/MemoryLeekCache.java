@@ -4,7 +4,7 @@ import java.util.HashMap;
 import java.util.Map;
 
 public class MemoryLeekCache {
-    private Map<String, String> map = new HashMap<>();
+    private final Map<String, String> map = new HashMap<>();
 
     public void initCache() {
         map.put("Anil", "Work as Engineer");
