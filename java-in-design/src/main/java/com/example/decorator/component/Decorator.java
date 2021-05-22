@@ -1,8 +1,9 @@
 package com.example.decorator.component;
 
 import com.example.decorator.Coffee;
+import com.example.decorator.addtive.Component;
 
-public abstract class Decorator implements Coffee {
+public abstract class Decorator extends Component implements Coffee {
 
     protected final String name;
 
