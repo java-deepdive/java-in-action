@@ -1,10 +1,10 @@
 package com.example.decorator.addtive;
 
-public abstract class Syrup implements CoffeeDecorator {
+public abstract class Component implements CoffeeDecorator {
 
     protected final String name;
 
-    protected Syrup(String name) {
+    protected Component(String name) {
         this.name = name;
     }
 

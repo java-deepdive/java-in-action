@@ -1,19 +1,19 @@
 package com.example.decorator.component;
 
-import com.example.decorator.addtive.Syrup;
+import com.example.decorator.addtive.Component;
 
 public class MochaLatte extends Latte {
 
-    private final Syrup syrup;
+    private final Component component;
 
-    public MochaLatte(Latte latte, Syrup syrup) {
+    public MochaLatte(Latte latte, Component component) {
         super(latte.espresso, latte.milk);
-        this.syrup = syrup;
+        this.component = component;
     }
 
     @Override
     public double cost() {
-        return super.cost() + syrup.cost();
+        return super.cost() + component.cost();
     }
 
     @Override

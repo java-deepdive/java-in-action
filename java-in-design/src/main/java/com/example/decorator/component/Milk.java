@@ -1,8 +1,8 @@
 package com.example.decorator.component;
 
-import com.example.decorator.addtive.Syrup;
+import com.example.decorator.addtive.Component;
 
-public class Milk extends Syrup {
+public class Milk extends Component {
 
     public Milk() {
         super("우유");

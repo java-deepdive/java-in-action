@@ -1,8 +1,8 @@
 package com.example.decorator.component;
 
-import com.example.decorator.addtive.Syrup;
+import com.example.decorator.addtive.Component;
 
-public class Espresso extends Syrup {
+public class Espresso extends Component {
 
     public Espresso() {
         super("에소프레소");

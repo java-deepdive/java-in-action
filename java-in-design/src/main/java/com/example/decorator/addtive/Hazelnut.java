@@ -1,6 +1,6 @@
 package com.example.decorator.addtive;
 
-public class Hazelnut extends Syrup {
+public class Hazelnut extends Component {
 
     protected Hazelnut() {
         super("헤이즐넛");

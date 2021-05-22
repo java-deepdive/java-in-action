@@ -1,6 +1,6 @@
 package com.example.decorator.addtive;
 
-public class Mocha extends Syrup {
+public class Mocha extends Component {
 
     public Mocha() {
         super("모카");
