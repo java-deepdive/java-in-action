@@ -12,7 +12,7 @@ public class Hazelnut extends Syrup {
     }
 
     @Override
-    public String desc() {
+    public String toString() {
         return super.toString();
     }
 }

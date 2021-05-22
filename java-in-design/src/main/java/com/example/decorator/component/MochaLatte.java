@@ -15,4 +15,9 @@ public class MochaLatte extends Latte {
     public double cost() {
         return super.cost() + syrup.cost();
     }
+
+    @Override
+    public String toString() {
+        return "모카" + super.toString();
+    }
 }

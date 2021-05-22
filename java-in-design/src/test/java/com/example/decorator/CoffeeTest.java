@@ -29,4 +29,13 @@ class CoffeeTest {
         // then
         assertThat(cost).isEqualTo(5500);
     }
+
+    @DisplayName("커피 생성 테스트")
+    @Test
+    void testCase3() {
+        Latte latte = new Latte(new Espresso(), new Milk());
+        Coffee mochaLatte = new MochaLatte(latte, new Mocha());
+
+        assertThat(mochaLatte.toString()).contains("모카라떼");
+    }
 }

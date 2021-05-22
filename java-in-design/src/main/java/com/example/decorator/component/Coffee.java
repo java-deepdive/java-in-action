@@ -1,9 +1,6 @@
 package com.example.decorator.component;
 
-import com.example.decorator.Cost;
-import com.example.decorator.component.Espresso;
-
-public abstract class Coffee implements Cost {
+public abstract class Coffee {
 
     protected final String name;
     protected final Espresso espresso;
@@ -12,6 +9,8 @@ public abstract class Coffee implements Cost {
         this.name = name;
         this.espresso = espresso;
     }
+
+    public abstract double cost();
 
     @Override
     public String toString() {
