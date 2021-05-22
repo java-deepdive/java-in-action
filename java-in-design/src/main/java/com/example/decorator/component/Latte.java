@@ -1,11 +1,15 @@
 package com.example.decorator.component;
 
-public class Latte extends Coffee {
+import com.example.decorator.addtive.Component;
 
-    protected final Milk milk;
+public class Latte extends Decorator {
 
-    public Latte(Espresso espresso, Milk milk) {
-        super("라떼", espresso);
+    protected final Component milk;
+    protected final Component espresso;
+
+    public Latte(Component espresso, Component milk) {
+        super("라떼");
+        this.espresso = espresso;
         this.milk = milk;
     }
 

@@ -1,15 +1,7 @@
 package com.example.decorator.addtive;
 
-public abstract class Component implements CoffeeDecorator {
+import com.example.decorator.Coffee;
 
-    protected final String name;
+public abstract class Component implements Coffee {
 
-    protected Component(String name) {
-        this.name = name;
-    }
-
-    @Override
-    public String toString() {
-        return name + " 시럽";
-    }
 }

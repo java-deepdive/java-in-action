@@ -2,8 +2,10 @@ package com.example.decorator.addtive;
 
 public class Mocha extends Component {
 
+    private final String name;
+
     public Mocha() {
-        super("모카");
+        this.name = "모카";
     }
 
     @Override
@@ -13,6 +15,6 @@ public class Mocha extends Component {
 
     @Override
     public String toString() {
-        return super.toString();
+        return name;
     }
 }

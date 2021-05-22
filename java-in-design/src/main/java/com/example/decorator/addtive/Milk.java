@@ -1,11 +1,11 @@
 package com.example.decorator.addtive;
 
-public class Hazelnut extends Component {
+public class Milk extends Component {
 
     private final String name;
 
-    public Hazelnut() {
-        this.name = "헤이즐넛";
+    public Milk() {
+        this.name = "우유";
     }
 
     @Override

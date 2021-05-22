@@ -1,19 +1,24 @@
 package com.example.decorator.component;
 
 
-public class Americano extends Coffee {
+import com.example.decorator.addtive.Component;
 
-    protected Americano(Espresso espresso) {
-        super("아메리카노", espresso);
+public class Americano extends Decorator {
+
+    private final Component espresso;
+
+    protected Americano(Component espresso) {
+        super("아메리카노");
+        this.espresso = espresso;
     }
 
     @Override
     public double cost() {
-        return 4_000;
+        return espresso.cost() + 1_000;
     }
 
     @Override
     public String toString() {
-        return String.format("%s 커피", name);
+        return name;
     }
 }

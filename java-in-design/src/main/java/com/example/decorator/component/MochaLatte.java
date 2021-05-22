@@ -4,20 +4,20 @@ import com.example.decorator.addtive.Component;
 
 public class MochaLatte extends Latte {
 
-    private final Component component;
+    private final Component mocha;
 
-    public MochaLatte(Latte latte, Component component) {
+    public MochaLatte(Latte latte, Component mocha) {
         super(latte.espresso, latte.milk);
-        this.component = component;
+        this.mocha = mocha;
     }
 
     @Override
     public double cost() {
-        return super.cost() + component.cost();
+        return super.cost() + mocha.cost();
     }
 
     @Override
     public String toString() {
-        return "모카" + super.toString();
+        return mocha + name;
     }
 }
