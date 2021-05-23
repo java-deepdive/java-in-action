@@ -1,4 +1,4 @@
-package kr.seok.item16;
+package kr.seok.item16.book;
 
 import java.awt.geom.Point2D;
 import java.beans.Transient;

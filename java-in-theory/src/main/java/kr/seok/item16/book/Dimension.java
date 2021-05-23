@@ -1,4 +1,4 @@
-package kr.seok.item16;
+package kr.seok.item16.book;
 
 import java.awt.*;
 import java.awt.geom.Dimension2D;
