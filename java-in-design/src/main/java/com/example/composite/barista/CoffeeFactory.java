@@ -9,10 +9,11 @@ import com.example.composite.order.MenuItem;
 
 public class CoffeeFactory {
 
-    private CoffeeFactory() {}
+    private CoffeeFactory() {
+    }
 
     public static Coffee menu(MenuItem menu) {
-        switch(menu) {
+        switch (menu) {
             case AMERICANO:
                 return new Americano();
             case ESPRESSO:

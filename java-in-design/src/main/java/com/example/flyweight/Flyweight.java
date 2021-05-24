@@ -2,5 +2,5 @@ package com.example.flyweight;
 
 public interface Flyweight {
 
-  void operation(Object extrinsicState);
+    void operation(Object extrinsicState);
 }
