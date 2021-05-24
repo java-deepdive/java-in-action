@@ -1,8 +1,8 @@
 package com.example.domain;
 
-import com.example.afactory.component.Bean;
-import com.example.afactory.component.Milk;
-import com.example.afactory.component.Water;
+import com.example.creational.afactory.component.Bean;
+import com.example.creational.afactory.component.Milk;
+import com.example.creational.afactory.component.Water;
 
 import java.util.Objects;
 
