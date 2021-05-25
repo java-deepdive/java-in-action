@@ -2,6 +2,7 @@ package com.example.structural.composite.order;
 
 import com.example.structural.composite.coffee.Coffees;
 
+// view에 관련된 내용을 담을 클래스
 public class Serve {
 
     private final Coffees coffee;

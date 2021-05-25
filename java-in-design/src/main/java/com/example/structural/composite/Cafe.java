@@ -16,6 +16,7 @@ public class Cafe {
         return new Cafe(menuItems);
     }
 
+    // Extractor
     public Serve menuServe() {
         return new Serve(coffee);
     }

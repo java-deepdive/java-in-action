@@ -3,6 +3,8 @@ package com.example.creational.prototype;
 import org.junit.jupiter.api.DisplayName;
 import org.junit.jupiter.api.Test;
 
+import static org.assertj.core.api.Assertions.assertThat;
+
 class CarTest {
 
     @DisplayName("클론 테스트")

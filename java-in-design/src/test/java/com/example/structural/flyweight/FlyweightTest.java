@@ -21,7 +21,6 @@ class FlyweightTest {
 
     @BeforeEach
     void setUp() {
-
         flyweight1 = FlyweightFactory.getFlyweight("key1", "value1");
         flyweight2 = FlyweightFactory.getFlyweight("key2", "value2");
         flyweight3 = FlyweightFactory.getFlyweight("key1", "value3");
@@ -29,14 +28,16 @@ class FlyweightTest {
         unsharedFlyweight1 = FlyweightFactory.getFlyweight("unsharedKey1", "value1");
         unsharedFlyweight2 = FlyweightFactory.getFlyweight("unsharedKey2", "value2");
         unsharedFlyweight3 = FlyweightFactory.getFlyweight("unsharedKey1", "value3");
-
     }
 
     @DisplayName("인스턴스 비교 테스트")
     @Test
     void testCase1() {
+        // 동일하지 않은 객체
         assertThat(flyweight1).isNotSameAs(flyweight2);
+        // 키 값이 같으므로 동일한 객체
         assertThat(flyweight1).isEqualTo(flyweight3);
+        // 동일하지 않은 키 값
         assertThat(flyweight2).isNotSameAs(flyweight3);
     }
 
@@ -44,8 +45,13 @@ class FlyweightTest {
     @Test
     void testCase2() {
 
+        // 공유하지 않은 객체들
         assertThat(unsharedFlyweight1).isNotSameAs(unsharedFlyweight2);
+
+        // 동일하지 않은 객체
         assertThat(unsharedFlyweight1).isNotSameAs(unsharedFlyweight3);
+
+        // 동일하지 않은 객체
         assertThat(unsharedFlyweight2).isNotSameAs(unsharedFlyweight3);
     }
 

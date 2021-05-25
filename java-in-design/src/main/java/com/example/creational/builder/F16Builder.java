@@ -26,6 +26,6 @@ public class F16Builder extends AircraftBuilder {
     }
 
     public IAircraft getResult() {
-        return f16;
+        return null;
     }
 }
