@@ -5,7 +5,7 @@ import com.example.structural.proxy.domain.Video;
 import java.util.HashMap;
 
 public class YouTubeDownloader {
-    private ThirdPartyYouTubeLib api;
+    private final ThirdPartyYouTubeLib api;
 
     public YouTubeDownloader(ThirdPartyYouTubeLib api) {
         this.api = api;

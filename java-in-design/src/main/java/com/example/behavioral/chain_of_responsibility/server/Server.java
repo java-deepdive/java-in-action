@@ -1,6 +1,6 @@
-package com.example.behavioral.server;
+package com.example.behavioral.chain_of_responsibility.server;
 
-import com.example.behavioral.middleware.Middleware;
+import com.example.behavioral.chain_of_responsibility.middleware.Middleware;
 
 import java.util.HashMap;
 import java.util.Map;

@@ -1,4 +1,4 @@
-package com.example.behavioral.middleware;
+package com.example.behavioral.chain_of_responsibility.middleware;
 
 /**
  * Base middleware class.

@@ -1,10 +1,10 @@
-package com.example.behavioral;
+package com.example.behavioral.chain_of_responsibility;
 
-import com.example.behavioral.middleware.Middleware;
-import com.example.behavioral.middleware.RoleCheckMiddleware;
-import com.example.behavioral.middleware.ThrottlingMiddleware;
-import com.example.behavioral.middleware.UserExistsMiddleware;
-import com.example.behavioral.server.Server;
+import com.example.behavioral.chain_of_responsibility.middleware.Middleware;
+import com.example.behavioral.chain_of_responsibility.middleware.RoleCheckMiddleware;
+import com.example.behavioral.chain_of_responsibility.middleware.ThrottlingMiddleware;
+import com.example.behavioral.chain_of_responsibility.middleware.UserExistsMiddleware;
+import com.example.behavioral.chain_of_responsibility.server.Server;
 
 import java.io.BufferedReader;
 import java.io.IOException;

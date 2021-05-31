@@ -1,12 +1,12 @@
-package com.example.behavioral.middleware;
+package com.example.behavioral.chain_of_responsibility.middleware;
 
-import com.example.behavioral.server.Server;
+import com.example.behavioral.chain_of_responsibility.server.Server;
 
 /**
  * ConcreteHandler. Checks whether a user with the given credentials exists.
  */
 public class UserExistsMiddleware extends Middleware {
-    private Server server;
+    private final Server server;
 
     public UserExistsMiddleware(Server server) {
         this.server = server;
