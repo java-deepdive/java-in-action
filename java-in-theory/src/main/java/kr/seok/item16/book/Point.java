@@ -5,7 +5,6 @@ import java.beans.Transient;
 
 public class Point extends Point2D implements java.io.Serializable {
     public int x;
-
     public int y;
 
     private static final long serialVersionUID = -5276940640259749850L;
