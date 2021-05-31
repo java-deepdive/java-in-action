@@ -6,7 +6,7 @@ import java.util.stream.Collectors;
 
 public class Manager extends Employee {
 
-    List<Employee> managingEmployees = new ArrayList<Employee>();
+    List<Employee> managingEmployees = new ArrayList<>();
 
     public Manager(long employeeId, String employeeName, String designation, Department department, int salary) {
         super(employeeId, employeeName, designation, department, salary);
@@ -37,13 +37,14 @@ public class Manager extends Employee {
     @Override
     public String teamNames() {
         StringBuilder builder = new StringBuilder();
-        builder.append("{").append(String.join(", ", managingEmployees.stream().map(employee -> {
-            if (employee.isManager()) {
-                return employee.getEmployeeName() + " " + employee.teamNames();
-            } else {
-                return employee.getEmployeeName();
-            }
-        }).collect(Collectors.toList()))).append("}");
+        builder.append("{").append(String.join(", ", managingEmployees.stream()
+                .map(employee -> {
+                    if (employee.isManager()) {
+                        return employee.getEmployeeName() + " " + employee.teamNames();
+                    } else {
+                        return employee.getEmployeeName();
+                    }
+                }).collect(Collectors.toList()))).append("}");
         return builder.toString();
     }
 }

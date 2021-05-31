@@ -13,10 +13,13 @@ public class Main {
         Engineer vijay = new Engineer(1002l, "Vijay", "Sr. Developer", Department.ENG, 90000);
         Engineer jay = new Engineer(1003l, "Jay", "Lead", Department.ENG, 100000);
         Engineer martin = new Engineer(1004l, "Martin", "QA", Department.ENG, 70000);
+
         Manager kim = new Manager(1005l, "Kim", "Manager", Department.ENG, 110000);
         Engineer andersen = new Engineer(1006l, "Andersen", "Developer", Department.ENG, 95000);
+
         Manager niels = new Manager(1007l, "Niels", "Sr. Manager", Department.ENG, 140000);
         Engineer robert = new Engineer(1008l, "Robert", "Developer", Department.ENG, 85000);
+
         Manager rachelle = new Manager(1009l, "Rachelle", "Product Manager", Department.ENG, 150000);
         Engineer shailesh = new Engineer(1010l, "Shailesh", "Engineer", Department.ENG, 80000);
 
