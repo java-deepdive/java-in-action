@@ -4,10 +4,12 @@ import com.example.structural.proxy.domain.Video;
 
 import java.util.HashMap;
 
+// Wrapper 클래스
 public class YouTubeCacheProxy implements ThirdPartyYouTubeLib {
+
     private final ThirdPartyYouTubeLib youtubeService;
-    private HashMap<String, Video> cachePopular = new HashMap<String, Video>();
-    private final HashMap<String, Video> cacheAll = new HashMap<String, Video>();
+    private HashMap<String, Video> cachePopular = new HashMap<>();
+    private final HashMap<String, Video> cacheAll = new HashMap<>();
 
     public YouTubeCacheProxy() {
         this.youtubeService = new ThirdPartyYouTubeClass();

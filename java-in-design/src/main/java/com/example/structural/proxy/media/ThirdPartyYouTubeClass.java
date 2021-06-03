@@ -5,6 +5,7 @@ import com.example.structural.proxy.domain.Video;
 import java.util.HashMap;
 
 public class ThirdPartyYouTubeClass implements ThirdPartyYouTubeLib {
+
     @Override
     public HashMap<String, Video> popularVideos() {
         connectToServer("http://www.youtube.com");

@@ -1,6 +1,6 @@
 package kr.seok.chapter11.biling.step04;
 
-import org.eternity.money.Money;
+import kr.seok.chapter10.Money;
 
 import java.time.Duration;
 

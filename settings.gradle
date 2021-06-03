@@ -4,4 +4,5 @@ include 'java-in-tdd'
 include 'java-in-oop'
 include 'java-in-design'
 include 'java-in-es'
+include 'java-solution'
 

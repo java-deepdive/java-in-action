@@ -1,6 +1,7 @@
 package kr.seok.item28;
 
 import java.util.ArrayList;
+import java.util.List;
 
 public class Item28 {
 
@@ -16,8 +17,12 @@ public class Item28 {
 //        objects[0] = intList;
 //        String s = stringsLists[0].get(0);
 
+
+        List<?>[] lists = new List<?>[1];
+
         Object obj = new Object();
         Object[] objArr = new String[2];
         Object[] objLong = new Long[1];
+        System.out.println(Constants.data);
     }
 }
