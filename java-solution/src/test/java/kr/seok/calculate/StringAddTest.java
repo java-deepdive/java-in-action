@@ -12,8 +12,17 @@ class StringAddTest {
     void testCase1() {
         StringAdd stringAdd = new StringAdd();
 
-        String sum = stringAdd.solution1("123400", "567800");
+        String sum = stringAdd.solution1("1234", "5678");
 
-        assertThat(sum).isEqualTo("69120");
+        assertThat(sum).isEqualTo("6912");
+    }
+
+    @DisplayName("테스트 2")
+    @Test
+    void testCase2() {
+        StringAdd add = new StringAdd();
+        String num = add.solution1("0000", "00");
+
+        assertThat(num).isEqualTo("0");
     }
 }
