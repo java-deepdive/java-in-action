@@ -2,9 +2,13 @@ package com.example.behavioral.memento.history;
 
 import com.example.behavioral.memento.editor.Editor;
 
+/**
+ * 스냅 샷
+ */
 public class Memento {
-    private String backup;
-    private Editor editor;
+
+    private final String backup;
+    private final Editor editor;
 
     public Memento(Editor editor) {
         this.editor = editor;

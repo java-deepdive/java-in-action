@@ -22,9 +22,9 @@ public class Editor implements Mediator {
     private List list;
     private Filter filter;
 
-    private JLabel titleLabel = new JLabel("Title:");
-    private JLabel textLabel = new JLabel("Text:");
-    private JLabel label = new JLabel("Add or select existing note to proceed...");
+    private final JLabel titleLabel = new JLabel("Title:");
+    private final JLabel textLabel = new JLabel("Text:");
+    private final JLabel label = new JLabel("Add or select existing note to proceed...");
 
     /**
      * Here the registration of components by the mediator.
@@ -62,6 +62,8 @@ public class Editor implements Mediator {
             case "Title":
                 title = (Title)component;
                 break;
+            default:
+                throw new IllegalStateException("Unexpected value: " + component.getName());
         }
     }
 
@@ -115,13 +117,13 @@ public class Editor implements Mediator {
     }
 
     @Override
-    public void sendToFilter(ListModel listModel) {
+    public void sendToFilter(ListModel<?> listModel) {
         filter.setList(listModel);
     }
 
     @SuppressWarnings("unchecked")
     @Override
-    public void setElementsList(ListModel list) {
+    public void setElementsList(ListModel<?> list) {
         this.list.setModel(list);
         this.list.repaint();
     }

@@ -16,10 +16,12 @@ public class SocialSpammer {
     public void sendSpamToFriends(String profileEmail, String message) {
         System.out.println("\nIterating over friends...\n");
         iterator = network.createFriendsIterator(profileEmail);
+
         while (iterator.hasNext()) {
             Profile profile = iterator.getNext();
             sendMessage(profile.getEmail(), message);
         }
+
     }
 
     public void sendSpamToCoworkers(String profileEmail, String message) {

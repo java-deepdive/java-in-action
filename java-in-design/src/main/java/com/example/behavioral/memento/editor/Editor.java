@@ -10,10 +10,15 @@ import javax.swing.*;
 import java.io.*;
 import java.util.Base64;
 
+/**
+ * Originator
+ */
 public class Editor extends JComponent {
-    private Canvas canvas;
+
+    private final Canvas canvas;
+    private final History history;
+
     private CompoundShape allShapes = new CompoundShape();
-    private History history;
 
     public Editor() {
         canvas = new Canvas(this);

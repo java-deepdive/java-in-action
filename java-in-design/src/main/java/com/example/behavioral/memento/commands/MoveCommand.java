@@ -4,7 +4,7 @@ import com.example.behavioral.memento.editor.Editor;
 import com.example.behavioral.memento.shapes.Shape;
 
 public class MoveCommand implements Command {
-    private Editor editor;
+    private final Editor editor;
     private int startX, startY;
     private int endX, endY;
 

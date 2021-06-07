@@ -3,8 +3,8 @@ package com.example.behavioral.memento.shapes;
 import java.awt.*;
 
 public class Rectangle extends BaseShape {
-    private int width;
-    private int height;
+    private final int width;
+    private final int height;
 
     public Rectangle(int x, int y, int width, int height, Color color) {
         super(x, y, color);

@@ -7,12 +7,14 @@ import java.util.ArrayList;
 import java.util.List;
 
 public class LinkedInIterator implements ProfileIterator {
-    private LinkedIn linkedIn;
-    private String type;
-    private String email;
+
+    private final List<String> emails = new ArrayList<>();
+    private final List<Profile> contacts = new ArrayList<>();
+    private final LinkedIn linkedIn;
+    private final String type;
+    private final String email;
+
     private int currentPosition = 0;
-    private List<String> emails = new ArrayList<>();
-    private List<Profile> contacts = new ArrayList<>();
 
     public LinkedInIterator(LinkedIn linkedIn, String type, String email) {
         this.linkedIn = linkedIn;
@@ -21,7 +23,7 @@ public class LinkedInIterator implements ProfileIterator {
     }
 
     private void lazyLoad() {
-        if (emails.size() == 0) {
+        if (emails.isEmpty()) {
             List<String> profiles = linkedIn.requestRelatedContactsFromLinkedInAPI(this.email, this.type);
             for (String profile : profiles) {
                 this.emails.add(profile);

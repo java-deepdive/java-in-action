@@ -5,11 +5,15 @@ import com.example.behavioral.memento.commands.Command;
 import java.util.ArrayList;
 import java.util.List;
 
+/**
+ * Caretacker
+ */
 public class History {
-    private List<Pair> history = new ArrayList<Pair>();
+
+    private List<Pair> history = new ArrayList<>();
     private int virtualSize = 0;
 
-    private class Pair {
+    private static class Pair {
         Command command;
         Memento memento;
         Pair(Command c, Memento m) {

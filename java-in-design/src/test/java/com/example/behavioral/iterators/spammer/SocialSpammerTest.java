@@ -24,11 +24,13 @@ class SocialSpammerTest {
         data.add(new Profile("avanger@ukr.net", "John Day", "coworkers:bill@microsoft.eu"));
         data.add(new Profile("sam@amazon.com", "Sam Kitting", "coworkers:anna.smith@bing.com", "coworkers:mad_max@ya.com", "friends:catwoman@yahoo.com"));
         data.add(new Profile("catwoman@yahoo.com", "Liza", "friends:anna.smith@bing.com", "friends:sam@amazon.com"));
+
         String friendEmail = "anna.smith@bing.com";
         String sendMsg = "Hey! This is Anna's friend Josh. Can you do me a favor and like this post [link]?";
+
         return Stream.of(
-                Arguments.of(new LinkedIn(data), friendEmail, sendMsg),
-                Arguments.of(new Facebook(data), friendEmail, sendMsg)
+                Arguments.of(new LinkedIn(data), friendEmail, sendMsg), // 링크드인
+                Arguments.of(new Facebook(data), friendEmail, sendMsg) // 페이스북
         );
     }
 
@@ -36,6 +38,7 @@ class SocialSpammerTest {
     @ParameterizedTest(name = "SendEmail Test ==> Platform: {0}, Friend : {1}, SendMsg : {2}")
     @MethodSource(value = "createProfile")
     void testCase1(SocialNetwork socialNetwork, String friend, String sendMsg) {
+
         SocialSpammer social = new SocialSpammer(socialNetwork);
 
         social.sendSpamToFriends(friend, sendMsg);
@@ -43,6 +46,4 @@ class SocialSpammerTest {
 
         System.out.println(social);
     }
-
-
 }

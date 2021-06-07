@@ -3,7 +3,7 @@ package com.example.behavioral.memento.shapes;
 import java.awt.*;
 
 public class Circle extends BaseShape {
-    private int radius;
+    private final int radius;
 
     public Circle(int x, int y, int radius, Color color) {
         super(x, y, color);

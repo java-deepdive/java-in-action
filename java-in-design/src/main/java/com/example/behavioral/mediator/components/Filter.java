@@ -12,8 +12,9 @@ import java.util.ArrayList;
  * communication channel–sending requests to the mediator.
  */
 public class Filter extends JTextField implements Component {
+
     private Mediator mediator;
-    private ListModel listModel;
+    private ListModel<?> listModel;
 
     public Filter() {}
 
@@ -28,7 +29,7 @@ public class Filter extends JTextField implements Component {
         searchElements(start);
     }
 
-    public void setList(ListModel listModel) {
+    public void setList(ListModel<?> listModel) {
         this.listModel = listModel;
     }
 
