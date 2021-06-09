@@ -14,7 +14,6 @@ public class GenericErrorStack<E> {
         // 실체화 불가 타입으로는 배열을 만들 수 없음.
     }
 
-
     public void push(E e) {
         ensureCapacity();
         elements[size++] = e;
