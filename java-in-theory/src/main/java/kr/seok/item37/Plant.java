@@ -1,5 +1,7 @@
 package kr.seok.item37;
 
+import java.util.Objects;
+
 /**
  * 식물을 나타내는 클래스
  */
@@ -22,5 +24,19 @@ public class Plant {
     @Override
     public String toString() {
         return name;
+    }
+
+    @Override
+    public boolean equals(Object o) {
+        if (this == o) return true;
+        if (!(o instanceof Plant)) return false;
+        final Plant plant = (Plant) o;
+        return Objects.equals(name, plant.name)
+                && lifeCycle == plant.lifeCycle;
+    }
+
+    @Override
+    public int hashCode() {
+        return Objects.hash(name, lifeCycle);
     }
 }

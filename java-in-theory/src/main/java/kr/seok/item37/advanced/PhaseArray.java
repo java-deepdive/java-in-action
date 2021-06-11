@@ -1,20 +1,12 @@
 package kr.seok.item37.advanced;
 
 public enum PhaseArray {
-    SOLID,
-    LIQUID,
-    GAS,
-	PLASMA;
+    SOLID, LIQUID,
+    GAS, PLASMA;
 
     public enum Transition {
-        MELT,
-        FREEZE,
-        BOIL,
-        CONDENSE,
-        SUBLIME,
-        DEPOSIT,
-	    IONIZE,
-	    DEIONIZE;
+        MELT, FREEZE, BOIL, CONDENSE,
+        SUBLIME, DEPOSIT, IONIZE, DEIONIZE;
 
         private static final Transition[][] TRANSITIONS = {
                 {null, MELT, SUBLIME, null}, // SOLID

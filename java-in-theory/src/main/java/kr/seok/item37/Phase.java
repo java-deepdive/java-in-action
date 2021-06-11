@@ -1,16 +1,11 @@
 package kr.seok.item37;
 
 public enum Phase {
-    SOLID,
-    LIQUID,
-    GAS;
+    SOLID, LIQUID, GAS;
 
     public enum Transition {
-        MELT,
-        FREEZE, BOIL,
-        CONDENSE,
-        SUBLIME,
-        DEPOSIT;
+        MELT, FREEZE, BOIL,
+        CONDENSE, SUBLIME, DEPOSIT;
 
         private static final Transition[][] TRANSITIONS = {
                 {null, MELT, SUBLIME},
