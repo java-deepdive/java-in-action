@@ -14,7 +14,7 @@ public class RegularPolicy extends BasicRatePolicy {
     }
 
     @Override
-    protected Money calculateCallFee(Call call) {
+    public Money calculateCallFee(Call call) {
         return amount.times(call.getDuration().getSeconds() / seconds.getSeconds());
     }
 }

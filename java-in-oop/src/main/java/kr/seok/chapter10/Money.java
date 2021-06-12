@@ -32,24 +32,33 @@ public class Money {
         return new Money(this.amount.multiply(BigDecimal.valueOf(percent)));
     }
 
-    public boolean equals(Object object) {
-        if (this == object) {
+    public boolean isLessThan(Money other) {
+        return amount.compareTo(other.amount) < 0;
+    }
+
+    public boolean isGreaterThanOrEqual(Money other) {
+        return amount.compareTo(other.amount) >= 0;
+    }
+
+    @Override
+    public boolean equals(Object o) {
+        if (this == o) {
             return true;
         }
-
-        if (!(object instanceof Money)) {
+        if (o == null || getClass() != o.getClass()) {
             return false;
         }
-
-        Money other = (Money) object;
-        return Objects.equals(amount.doubleValue(), other.amount.doubleValue());
+        Money money = (Money) o;
+        return amount.compareTo(money.amount) == 0;
     }
 
+    @Override
     public int hashCode() {
-        return Objects.hashCode(amount);
+        return Objects.hash(amount);
     }
 
+    @Override
     public String toString() {
-        return amount.toString() + "원";
+        return amount.toString();
     }
 }

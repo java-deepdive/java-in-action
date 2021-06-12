@@ -20,4 +20,11 @@ public class Call {
         return from;
     }
 
+    @Override
+    public String toString() {
+        return "Call{" +
+                "from=" + from +
+                ", to=" + to +
+                '}';
+    }
 }
