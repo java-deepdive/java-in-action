@@ -5,7 +5,7 @@ import kr.seok.chapter10.Money;
 public abstract class AdditionalRatePolicy implements RatePolicy {
     private RatePolicy next;
 
-    public AdditionalRatePolicy(RatePolicy next) {
+    AdditionalRatePolicy(RatePolicy next) {
         this.next = next;
     }
 
