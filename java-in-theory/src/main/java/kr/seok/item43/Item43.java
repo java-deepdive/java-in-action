@@ -1,5 +1,7 @@
 package kr.seok.item43;
 
+import lombok.Data;
+
 import java.util.function.BiFunction;
 
 /**
