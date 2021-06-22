@@ -2,10 +2,7 @@ package kr.seok.item43;
 
 import java.time.Clock;
 import java.time.Instant;
-import java.util.Arrays;
-import java.util.List;
-import java.util.Locale;
-import java.util.TreeMap;
+import java.util.*;
 
 public class MethodReferenceTypes<K, V> {
     // 메서드 참조 유형 - 정적 메서드
@@ -33,5 +30,45 @@ public class MethodReferenceTypes<K, V> {
     public String[] methodReferenceConstructorArray() {
         List<String> numbers = Arrays.asList("1", "2");
         return numbers.toArray(new String[0]);
+    }
+
+    static class DataContainer {
+        enum DataId {
+            ID_1,
+            ID_2,
+            ID_3;
+        }
+        private DataId id;
+        private String data;
+
+        public DataContainer(DataId id, String data) {
+            this.id = id;
+            this.data = data;
+        }
+
+        public DataId getId() {
+            return id;
+        }
+
+        @Override
+        public boolean equals(Object o) {
+            if (this == o) return true;
+            if (o == null || getClass() != o.getClass()) return false;
+            DataContainer that = (DataContainer) o;
+            return id == that.id && Objects.equals(data, that.data);
+        }
+
+        @Override
+        public int hashCode() {
+            return Objects.hash(id, data);
+        }
+
+        @Override
+        public String toString() {
+            return "DataContainer{" +
+                    "id=" + id +
+                    ", data='" + data + '\'' +
+                    '}';
+        }
     }
 }

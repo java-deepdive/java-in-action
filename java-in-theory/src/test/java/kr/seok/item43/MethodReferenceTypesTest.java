@@ -1,18 +1,16 @@
 package kr.seok.item43;
 
+import kr.seok.item43.MethodReferenceTypes.DataContainer;
+import kr.seok.item43.MethodReferenceTypes.DataContainer.DataId;
 import org.apache.commons.collections4.Factory;
 import org.junit.jupiter.api.DisplayName;
 import org.junit.jupiter.api.Test;
 
 import java.time.Instant;
-import java.util.Arrays;
-import java.util.List;
-import java.util.TreeMap;
-import java.util.concurrent.Callable;
-import java.util.function.BinaryOperator;
+import java.util.*;
 import java.util.function.Supplier;
-import java.util.stream.Collectors;
 
+import static java.util.stream.Collectors.*;
 import static org.assertj.core.api.Assertions.assertThat;
 import static org.junit.jupiter.api.Assertions.assertAll;
 
