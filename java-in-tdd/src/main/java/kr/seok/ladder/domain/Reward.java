@@ -2,8 +2,14 @@ package kr.seok.ladder.domain;
 
 import java.util.Objects;
 
+/**
+ * The type Reward.
+ */
 public class Reward {
 
+    /**
+     * The constant GUIDE_ERR_REWARD_EMPTY.
+     */
     public static final String GUIDE_ERR_REWARD_EMPTY = "값이 존재하지 않습니다.";
     private final String value;
 
@@ -11,6 +17,12 @@ public class Reward {
         this.value = value;
     }
 
+    /**
+     * Value of reward.
+     *
+     * @param reward the reward
+     * @return the reward
+     */
     public static Reward valueOf(final String reward) {
         if (isNullOrEmpty(reward)) {
             throw new IllegalArgumentException(GUIDE_ERR_REWARD_EMPTY);

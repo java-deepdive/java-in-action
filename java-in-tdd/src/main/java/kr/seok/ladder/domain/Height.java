@@ -2,6 +2,9 @@ package kr.seok.ladder.domain;
 
 import java.util.Objects;
 
+/**
+ * The type Height.
+ */
 public class Height {
 
     private static final String GUIDE_ERR_HEIGHT_LESS_THAN = "높이가 1보다 작을 수는 없습니다.";
@@ -13,6 +16,12 @@ public class Height {
         this.value = value;
     }
 
+    /**
+     * Value of height.
+     *
+     * @param value the value
+     * @return the height
+     */
     public static Height valueOf(final int value) {
         if (value < MIN_HEIGHT) {
             throw new IllegalArgumentException(GUIDE_ERR_HEIGHT_LESS_THAN);
@@ -20,6 +29,11 @@ public class Height {
         return new Height(value);
     }
 
+    /**
+     * Size int.
+     *
+     * @return the int
+     */
     public int size() {
         return value;
     }

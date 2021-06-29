@@ -1,16 +1,15 @@
 package kr.seok.item43;
 
-import kr.seok.item43.MethodReferenceTypes.DataContainer;
-import kr.seok.item43.MethodReferenceTypes.DataContainer.DataId;
 import org.apache.commons.collections4.Factory;
 import org.junit.jupiter.api.DisplayName;
 import org.junit.jupiter.api.Test;
 
 import java.time.Instant;
-import java.util.*;
+import java.util.Arrays;
+import java.util.List;
+import java.util.TreeMap;
 import java.util.function.Supplier;
 
-import static java.util.stream.Collectors.*;
 import static org.assertj.core.api.Assertions.assertThat;
 import static org.junit.jupiter.api.Assertions.assertAll;
 
@@ -86,7 +85,7 @@ class MethodReferenceTypesTest {
     @Test
     void testCase6() {
 
-        Supplier<TreeMap> treeMapSupplier = () -> new TreeMap<>();
+        Supplier<TreeMap> treeMapSupplier = TreeMap::new;
         Factory<TreeMap> treeMapFactory = () -> new TreeMap<>();
 
         assertThat(treeMapSupplier).isInstanceOf(Supplier.class);

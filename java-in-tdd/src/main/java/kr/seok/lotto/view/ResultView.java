@@ -9,6 +9,7 @@ import kr.seok.lotto.service.Lottos;
 import kr.seok.lotto.view.dto.RequestLottoArgument;
 
 import java.io.PrintStream;
+import java.util.Arrays;
 import java.util.List;
 
 public class ResultView {
@@ -29,8 +30,9 @@ public class ResultView {
     }
 
     public void printResult(final LottoResult lottoResult) {
-        LottoMatch.all()
-                .forEach(lottoMatch -> out.println(format(lottoMatch, lottoResult)));
+        for(LottoMatch item : LottoMatch.all()) {
+            out.println(format(item, lottoResult));
+        }
         double rate = lottoResult.winningRate();
         out.printf(GUIDE_PROFIT, rate, ProfitMessage.of(rate));
     }

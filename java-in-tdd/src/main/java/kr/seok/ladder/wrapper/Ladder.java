@@ -8,6 +8,9 @@ import java.util.Collections;
 import java.util.List;
 import java.util.Objects;
 
+/**
+ * The type Ladder.
+ */
 public class Ladder {
 
     private final List<Line> lines;
@@ -16,10 +19,22 @@ public class Ladder {
         this.lines = Arrays.asList(lines);
     }
 
+    /**
+     * Value of ladder.
+     *
+     * @param lines the lines
+     * @return the ladder
+     */
     public static Ladder valueOf(final Line... lines) {
         return new Ladder(lines);
     }
 
+    /**
+     * Find end position position.
+     *
+     * @param movePosition the move position
+     * @return the position
+     */
     public Position findEndPosition(Position movePosition) {
         for (Line line : lines) {
             movePosition = line.move(movePosition);
@@ -27,6 +42,11 @@ public class Ladder {
         return movePosition;
     }
 
+    /**
+     * Lines list.
+     *
+     * @return the list
+     */
     public List<Line> lines() {
         return Collections.unmodifiableList(lines);
     }

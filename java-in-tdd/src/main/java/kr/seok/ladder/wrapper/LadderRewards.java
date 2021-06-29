@@ -9,6 +9,9 @@ import java.util.Collections;
 import java.util.List;
 import java.util.Objects;
 
+/**
+ * The type Ladder rewards.
+ */
 public class LadderRewards {
 
     private final List<Reward> rewards;
@@ -17,14 +20,31 @@ public class LadderRewards {
         this.rewards = Arrays.asList(rewards);
     }
 
+    /**
+     * Value of ladder rewards.
+     *
+     * @param ladderRewards the ladder rewards
+     * @return the ladder rewards
+     */
     public static LadderRewards valueOf(final Reward... ladderRewards) {
         return new LadderRewards(ladderRewards);
     }
 
+    /**
+     * Find reward reward.
+     *
+     * @param endPosition the end position
+     * @return the reward
+     */
     public Reward findReward(final Position endPosition) {
         return rewards.get(endPosition.currentPosition());
     }
 
+    /**
+     * Gets rewards.
+     *
+     * @return the rewards
+     */
     public List<Reward> getRewards() {
         return Collections.unmodifiableList(rewards);
     }

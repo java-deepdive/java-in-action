@@ -2,9 +2,15 @@ package kr.seok.ladder.domain;
 
 import java.util.Objects;
 
+/**
+ * The type Position.
+ */
 public class Position {
 
     private static final String GUIDE_ERR_POSITION_BOUND = "왼쪽으로 이동할 수 없습니다.";
+    /**
+     * The constant MOVABLE_COUNT.
+     */
     public static final int MOVABLE_COUNT = 1;
 
     private final int value;
@@ -13,10 +19,21 @@ public class Position {
         this.value = value;
     }
 
+    /**
+     * Value of position.
+     *
+     * @param position the position
+     * @return the position
+     */
     public static Position valueOf(final int position) {
         return new Position(position);
     }
 
+    /**
+     * Left position.
+     *
+     * @return the position
+     */
     public Position left() {
         if (isValidPositionBound()) {
             throw new IllegalArgumentException(GUIDE_ERR_POSITION_BOUND);
@@ -24,6 +41,11 @@ public class Position {
         return new Position(value - MOVABLE_COUNT);
     }
 
+    /**
+     * Right position.
+     *
+     * @return the position
+     */
     public Position right() {
         return new Position(value + MOVABLE_COUNT);
     }
@@ -32,6 +54,11 @@ public class Position {
         return value < 1;
     }
 
+    /**
+     * Current position int.
+     *
+     * @return the int
+     */
     public int currentPosition() {
         return value;
     }

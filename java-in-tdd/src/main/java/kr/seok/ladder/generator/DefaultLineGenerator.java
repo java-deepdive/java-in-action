@@ -10,6 +10,9 @@ import java.util.List;
 import java.util.Random;
 import java.util.stream.IntStream;
 
+/**
+ * The type Default line generator.
+ */
 public class DefaultLineGenerator implements LineGenerator {
 
     private static final Random RANDOM = new Random();

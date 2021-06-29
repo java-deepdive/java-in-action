@@ -3,11 +3,11 @@ package com.example.behavioral.visitors.shapes;
 import com.example.behavioral.visitors.visitor.Visitor;
 
 public class Rectangle implements Shape {
-    private int id;
+    private final int id;
+    private final int width;
+    private final int height;
     private int x;
     private int y;
-    private int width;
-    private int height;
 
     public Rectangle(int id, int x, int y, int width, int height) {
         this.id = id;

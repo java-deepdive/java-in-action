@@ -13,11 +13,22 @@ import java.util.Map;
 import java.util.Set;
 import java.util.stream.Stream;
 
+/**
+ * 사다리 만들어주는 Factory 클래스
+ */
 public final class LadderFactory {
 
     private LadderFactory() {
     }
 
+    /**
+     * Value of ladder.
+     *
+     * @param participants 참여자
+     * @param height       높이
+     * @param generator    사다리 만드는 알고리즘
+     * @return the ladder
+     */
     public static Ladder valueOf(
             final Participants participants, final Height height, final LineGenerator generator) {
         Line[] lines = Stream.generate(() -> generator.createLine(participants.size()))
@@ -26,6 +37,14 @@ public final class LadderFactory {
         return Ladder.valueOf(lines);
     }
 
+    /**
+     * Ride ladder ladder result.
+     *
+     * @param participants  참여자
+     * @param ladder        사다리
+     * @param ladderRewards 보상
+     * @return the ladder result
+     */
     public static LadderResult rideLadder(
             final Participants participants, final Ladder ladder, final LadderRewards ladderRewards) {
 

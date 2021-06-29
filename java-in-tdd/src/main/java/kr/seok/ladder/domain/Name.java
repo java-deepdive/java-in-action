@@ -2,8 +2,14 @@ package kr.seok.ladder.domain;
 
 import java.util.Objects;
 
+/**
+ * The type Name.
+ */
 public class Name {
 
+    /**
+     * The constant GUIDE_ERR_USER_MAX_SIZE.
+     */
     public static final String GUIDE_ERR_USER_MAX_SIZE = "이름은 한 글자 이상 최대 5글자까지 부여할 수 있습니다.";
     private static final int NAME_MAX_SIZE = 5;
     private static final int NAME_MIN_SIZE = 1;
@@ -13,6 +19,12 @@ public class Name {
         this.value = name;
     }
 
+    /**
+     * Value of name.
+     *
+     * @param name the name
+     * @return the name
+     */
     public static Name valueOf(final String name) {
         if (name.length() > NAME_MAX_SIZE || name.length() < NAME_MIN_SIZE) {
             throw new IllegalArgumentException(GUIDE_ERR_USER_MAX_SIZE);

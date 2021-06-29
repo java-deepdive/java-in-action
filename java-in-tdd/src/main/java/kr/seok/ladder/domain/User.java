@@ -2,6 +2,9 @@ package kr.seok.ladder.domain;
 
 import java.util.Objects;
 
+/**
+ * The type User.
+ */
 public class User {
 
     private final Name name;
@@ -20,18 +23,42 @@ public class User {
         this.position = position;
     }
 
+    /**
+     * Value of user.
+     *
+     * @param name the name
+     * @return the user
+     */
     public static User valueOf(final String name) {
         return new User(name);
     }
 
+    /**
+     * Value of user.
+     *
+     * @param name     the name
+     * @param position the position
+     * @return the user
+     */
     public static User valueOf(final String name, final int position) {
         return new User(name, position);
     }
 
+    /**
+     * Position position.
+     *
+     * @return the position
+     */
     public Position position() {
         return position;
     }
 
+    /**
+     * Match boolean.
+     *
+     * @param user the user
+     * @return the boolean
+     */
     public boolean match(final User user) {
         return name.equals(user.name);
     }

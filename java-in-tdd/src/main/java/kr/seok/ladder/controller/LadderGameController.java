@@ -15,23 +15,45 @@ import kr.seok.ladder.wrapper.Participants;
 
 import static kr.seok.ladder.controller.LadderParameterHelper.parseArgumentResolver;
 
+/**
+ * 사다리 타기 컨트롤러
+ */
 public class LadderGameController {
 
+    /**
+     * The constant GUIDE_LADDER_END_SIGNATURE.
+     */
     public static final String GUIDE_LADDER_END_SIGNATURE = "all";
     private final LadderParameterProcessor processor;
     private final ResultView resultView;
     private final LineGenerator generator;
 
+    /**
+     * Instantiates a new Ladder game controller.
+     *
+     * @param inputView  the input view
+     * @param resultView the result view
+     */
     public LadderGameController(final InputView inputView, final ResultView resultView) {
         this(new LadderParameterProcessor(inputView), resultView, new DefaultLineGenerator());
     }
 
+    /**
+     * Instantiates a new Ladder game controller.
+     *
+     * @param processor  the processor
+     * @param resultView the result view
+     * @param generator  the generator
+     */
     public LadderGameController(final LadderParameterProcessor processor, final ResultView resultView, final LineGenerator generator) {
         this.processor = processor;
         this.resultView = resultView;
         this.generator = generator;
     }
 
+    /**
+     * Start.
+     */
     public void start() {
         Participants participants = parseArgumentResolver(processor::processUsers);
         LadderRewards rewards =

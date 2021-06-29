@@ -11,6 +11,9 @@ import java.util.Objects;
 
 import static kr.seok.ladder.domain.Position.MOVABLE_COUNT;
 
+/**
+ * The type Bars.
+ */
 public class Bars {
 
     private final List<Bar> line;
@@ -19,18 +22,41 @@ public class Bars {
         this.line = bars;
     }
 
+    /**
+     * Value of bars.
+     *
+     * @param bars the bars
+     * @return the bars
+     */
     public static Bars valueOf(final List<Bar> bars) {
         return new Bars(bars);
     }
 
+    /**
+     * Value of bars.
+     *
+     * @param bars the bars
+     * @return the bars
+     */
     public static Bars valueOf(final Bar... bars) {
         return new Bars(Arrays.asList(bars));
     }
 
+    /**
+     * Bars list.
+     *
+     * @return the list
+     */
     public List<Bar> bars() {
         return Collections.unmodifiableList(line);
     }
 
+    /**
+     * Move position.
+     *
+     * @param userPosition the user position
+     * @return the position
+     */
     public Position move(final Position userPosition) {
         int currentPosition = userPosition.currentPosition();
 

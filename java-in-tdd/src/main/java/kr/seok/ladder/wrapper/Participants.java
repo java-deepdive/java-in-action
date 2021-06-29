@@ -10,6 +10,9 @@ import java.util.Set;
 import java.util.stream.Collectors;
 import java.util.stream.IntStream;
 
+/**
+ * The type Participants.
+ */
 public class Participants {
 
     private final Set<User> users;
@@ -24,14 +27,30 @@ public class Participants {
                 .collect(Collectors.toCollection(LinkedHashSet::new));
     }
 
+    /**
+     * Value of participants.
+     *
+     * @param users the users
+     * @return the participants
+     */
     public static Participants valueOf(final String... users) {
         return new Participants(users);
     }
 
+    /**
+     * Size int.
+     *
+     * @return the int
+     */
     public int size() {
         return users.size();
     }
 
+    /**
+     * Gets users.
+     *
+     * @return the users
+     */
     public Set<User> getUsers() {
         return Collections.unmodifiableSet(users);
     }

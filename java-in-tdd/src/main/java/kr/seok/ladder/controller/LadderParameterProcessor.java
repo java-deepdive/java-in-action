@@ -10,6 +10,9 @@ import kr.seok.ladder.wrapper.Participants;
 import java.util.Arrays;
 import java.util.Objects;
 
+/**
+ * The type Ladder parameter processor.
+ */
 public final class LadderParameterProcessor {
 
     private static final String GUIDE_ERR_NOT_EQUALS_SIZE = "참여자 수에 일치하는 결과 값을 입력해야 합니다.";
@@ -18,16 +21,32 @@ public final class LadderParameterProcessor {
 
     private final InputView inputView;
 
+    /**
+     * Instantiates a new Ladder parameter processor.
+     *
+     * @param inputView the input view
+     */
     LadderParameterProcessor(final InputView inputView) {
         this.inputView = inputView;
     }
 
+    /**
+     * Process users participants.
+     *
+     * @return the participants
+     */
     Participants processUsers() {
         String participants = inputView.inputParticipants();
         checkNullOrEmpty(participants);
         return Participants.valueOf(parseStringToArrays(participants));
     }
 
+    /**
+     * Process ladder rewards ladder rewards.
+     *
+     * @param participantSize the participant size
+     * @return the ladder rewards
+     */
     LadderRewards processLadderRewards(final int participantSize) {
         String[] ladderRewards = parseStringToArrays(inputView.inputLadderRewards());
         Reward[] rewards = parseRewards(ladderRewards);
@@ -37,6 +56,11 @@ public final class LadderParameterProcessor {
         return LadderRewards.valueOf(rewards);
     }
 
+    /**
+     * Process height height.
+     *
+     * @return the height
+     */
     Height processHeight() {
         String ladderHeight = inputView.inputLadderHeight();
         checkNullOrEmpty(ladderHeight);
@@ -44,6 +68,11 @@ public final class LadderParameterProcessor {
     }
 
 
+    /**
+     * Input user result string.
+     *
+     * @return the string
+     */
     String inputUserResult() {
         String userResult = inputView.inputUserResult();
         checkNullOrEmpty(userResult);
