@@ -31,11 +31,10 @@ public abstract class BaseFrame implements Frame {
     }
 
     /**
-     * {@inheritDoc} Change bowling state state.
+     * Change bowling state state.
      *
      * @param score the score
      * @return the state
-     * @implSpec Change  bowling state state.
      */
     public State changeBowlingState(final Score score) {
         return StateSymbol.ready(score);

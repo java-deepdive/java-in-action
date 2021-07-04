@@ -80,6 +80,10 @@ public class FinalScore extends Score {
         return first(downPins);
     }
 
+
+    /**
+     * {@inheritDoc}
+     */
     @Override
     public State state() {
         return StateSymbol.ready(this);
@@ -100,6 +104,9 @@ public class FinalScore extends Score {
         return first() + second() + bonusPin.value();
     }
 
+    /**
+     * {@inheritDoc}
+     */
     @Override
     public String toString() {
         return String.valueOf(totalScore());

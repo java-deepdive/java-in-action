@@ -3,10 +3,6 @@ package kr.seok.ladder.generator;
 
 import kr.seok.ladder.wrapper.Line;
 
-
-/**
- * {@inheritDoc The interface Line generator.}
- */
 @FunctionalInterface
 public interface LineGenerator {
     /**
