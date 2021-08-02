@@ -8,7 +8,8 @@ package kr.seok.java8.chap2;
 public class InnerClass extends ActionClass {
     {
         actionMethod1();
-    }}
+    }
+}
 
 class ActionClass {
     public void actionMethod1() {

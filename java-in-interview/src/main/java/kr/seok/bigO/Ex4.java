@@ -1,6 +1,10 @@
 package kr.seok.bigO;
 
 public class Ex4 {
+    public static void main(String[] args) {
+        new Ex4().printUnorderedPairs(new int[]{1, 2, 3, 4}, new int[]{3, 4});
+    }
+
     /*
         바깥 루프가 반복한다는 것은 분명함
 
@@ -38,9 +42,5 @@ public class Ex4 {
                 }
             }
         }
-    }
-
-    public static void main(String[] args) {
-        new Ex4().printUnorderedPairs(new int[]{1, 2, 3, 4}, new int[]{3, 4});
     }
 }

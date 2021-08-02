@@ -23,20 +23,6 @@ import java.util.List;
 @Slf4j
 public class EsDocumentBulkInsert {
 
-    @Getter
-    static class Movie {
-        private final String id;
-        private final String fieldName;
-        private final String movieNm;
-
-        @Builder
-        public Movie(String id, String fieldName, String movieNm) {
-            this.id = id;
-            this.fieldName = fieldName;
-            this.movieNm = movieNm;
-        }
-    }
-
     public void addBulk(String indexName, List<Movie> data) {
         RestHighLevelClient client = getRestHighLevelClient();
 
@@ -94,6 +80,20 @@ public class EsDocumentBulkInsert {
         return new RestHighLevelClient(
                 RestClient.builder(
                         new HttpHost("127.0.0.1", 9200, "http")));
+    }
+
+    @Getter
+    static class Movie {
+        private final String id;
+        private final String fieldName;
+        private final String movieNm;
+
+        @Builder
+        public Movie(String id, String fieldName, String movieNm) {
+            this.id = id;
+            this.fieldName = fieldName;
+            this.movieNm = movieNm;
+        }
     }
 
 }

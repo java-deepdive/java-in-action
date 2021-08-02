@@ -52,7 +52,7 @@ public class FinalScore extends Score {
     }
 
     private FinalScore first(final int firstPin) {
-        if(firstPin > BOWLING_PIN_MAX_SIZE) {
+        if (firstPin > BOWLING_PIN_MAX_SIZE) {
             throw new PinsOutOfSizeException();
         }
         return new FinalScore(Pin.of(firstPin), Pin.init(), Pin.init(), left.decrease());
@@ -71,10 +71,10 @@ public class FinalScore extends Score {
 
     @Override
     public FinalScore bowl(int downPins) {
-        if((firstPin.isStrike() || (firstPin.isSpare(secondPin.value()))) && left.value() == BOWLING_PIN_LAST_LEFT) {
+        if ((firstPin.isStrike() || (firstPin.isSpare(secondPin.value()))) && left.value() == BOWLING_PIN_LAST_LEFT) {
             return last(downPins);
         }
-        if(left.value() == BOWLING_PIN_TWO_LEFT) {
+        if (left.value() == BOWLING_PIN_TWO_LEFT) {
             return second(downPins);
         }
         return first(downPins);

@@ -1,12 +1,9 @@
 package kr.seok.item62;
 
-import org.apache.poi.ss.formula.functions.T;
-
-import java.util.HashMap;
 import java.util.Map;
 import java.util.WeakHashMap;
 
-import static java.lang.Integer.*;
+import static java.lang.Integer.parseInt;
 
 public class InputInterface {
 
@@ -20,7 +17,7 @@ public class InputInterface {
         int tmpData = 0;
         try {
             tmpData = parseInt(input);
-        } catch(NumberFormatException e) {
+        } catch (NumberFormatException e) {
             System.out.println(e.getMessage());
         }
         return tmpData;
@@ -74,17 +71,17 @@ public class InputInterface {
         B(1688213),
         ETC(0);
 
-        private int field;
-
-        Type(int field) {
-            this.field = field;
-        }
-
         static final Map<Integer, Type> data = new WeakHashMap<>();
 
         static {
             data.put(1682489, Type.A);
             data.put(1688213, Type.B);
+        }
+
+        private int field;
+
+        Type(int field) {
+            this.field = field;
         }
 
         public static Type findByField(int fieldNm) {

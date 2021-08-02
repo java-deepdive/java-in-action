@@ -2,31 +2,14 @@ package kr.seok.tree;
 
 public class YoutubeTree {
 
-    // Binary Heap (min, max)
-    // 힙이란?
-    static class Node {
-        int data;
-        Node left;
-        Node right;
-
-        public Node() {
-        }
-
-        public Node(int data, Node left, Node right) {
-            this.data = data;
-            this.left = left;
-            this.right = right;
-        }
-    }
-
     public Node root;
-
-    public void setRoot(Node root) {
-        this.root = root;
-    }
 
     public Node getRoot() {
         return root;
+    }
+
+    public void setRoot(Node root) {
+        this.root = root;
     }
 
     public Node makeNode(Node left, int data, Node right) {
@@ -63,6 +46,23 @@ public class YoutubeTree {
             postOrder(node.left);
             postOrder(node.right);
             System.out.print(node.data + " -> ");
+        }
+    }
+
+    // Binary Heap (min, max)
+    // 힙이란?
+    static class Node {
+        int data;
+        Node left;
+        Node right;
+
+        public Node() {
+        }
+
+        public Node(int data, Node left, Node right) {
+            this.data = data;
+            this.left = left;
+            this.right = right;
         }
     }
 

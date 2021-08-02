@@ -22,18 +22,6 @@ public class BowlingRunner {
         this.resultView = resultView;
     }
 
-    private void run() {
-        String name = inputView.inputPlayer();
-        resultView.printBoard(name);
-
-        BowlingGame game = BowlingGame.init(name);
-
-        while(!game.isEnd()) {
-            game.bowl(inputView.bowl(game.round()));
-            resultView.printBoard(game);
-        }
-    }
-
     /**
      * The entry point of application.
      *
@@ -42,5 +30,17 @@ public class BowlingRunner {
     public static void main(String[] args) {
         BowlingRunner bowlingRunner = new BowlingRunner(new InputView(), new ResultView());
         bowlingRunner.run();
+    }
+
+    private void run() {
+        String name = inputView.inputPlayer();
+        resultView.printBoard(name);
+
+        BowlingGame game = BowlingGame.init(name);
+
+        while (!game.isEnd()) {
+            game.bowl(inputView.bowl(game.round()));
+            resultView.printBoard(game);
+        }
     }
 }

@@ -1,6 +1,10 @@
 package kr.seok.bigO;
 
 public class Ex2 {
+    public static void main(String[] args) {
+        new Ex2().printPairs(new int[]{1, 2, 3, 4});
+    }
+
     /*
         1, 1
         1, 2
@@ -28,9 +32,5 @@ public class Ex2 {
                 System.out.println(array[i] + ", " + array[j]);
             }
         }
-    }
-
-    public static void main(String[] args) {
-        new Ex2().printPairs(new int[]{1, 2, 3, 4});
     }
 }

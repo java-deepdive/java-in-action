@@ -20,24 +20,6 @@ public class DBConnection {
         this.user = builder.user;
     }
 
-    public static class Builder {
-        private final String driver;
-        private final String url;
-        private final String user;
-        private final String password;
-
-        public Builder(String driver, String url, String user, String password) {
-            this.driver = driver;
-            this.url = url;
-            this.user = user;
-            this.password = password;
-        }
-
-        public DBConnection build() {
-            return new DBConnection(this);
-        }
-    }
-
     public Connection getConnection() {
         try {
             Class.forName(driver);
@@ -135,6 +117,24 @@ public class DBConnection {
             if (pre != null) pre.close();
         } catch (Exception e) {
             e.printStackTrace();
+        }
+    }
+
+    public static class Builder {
+        private final String driver;
+        private final String url;
+        private final String user;
+        private final String password;
+
+        public Builder(String driver, String url, String user, String password) {
+            this.driver = driver;
+            this.url = url;
+            this.user = user;
+            this.password = password;
+        }
+
+        public DBConnection build() {
+            return new DBConnection(this);
         }
     }
 }

@@ -18,31 +18,8 @@ import java.util.Comparator;
  */
 public class PointerLinkedList<E> {
 
-    /**
-     * 연결리스트(LinkedList)에서 사용되는 데이터를 저장하는 컨테이너 역할을 하는 Node 클래스
-     */
-    static class Node<E> {
-        E data;         // 데이터
-        Node<E> next;   // 다음 노드를 가리키는 포인터
-
-        Node(E element, Node<E> next) {
-            this.data = element;
-            this.next = next;
-        }
-
-        private static class NoOrderComparator implements Comparator<Integer> {
-            @Override
-            public int compare(Integer o1, Integer o2) {
-                return o1.compareTo(o2);
-            }
-        }
-
-        public static final Comparator<Integer> NO_ORDER = new NoOrderComparator();
-    }
-
     Node<E> head; // 헤더 노드
     Node<E> cur; // 선택 노드
-
     /*
         생성자는 머리 노드를 가리키는 변수 head에 null을 대입
         그 결과 노드가 하나도 없는 비어있는 연결리스트를 생성
@@ -187,6 +164,27 @@ public class PointerLinkedList<E> {
         while (ptr != null) {
             System.out.println(ptr.data);
             ptr = ptr.next;
+        }
+    }
+
+    /**
+     * 연결리스트(LinkedList)에서 사용되는 데이터를 저장하는 컨테이너 역할을 하는 Node 클래스
+     */
+    static class Node<E> {
+        public static final Comparator<Integer> NO_ORDER = new NoOrderComparator();
+        E data;         // 데이터
+        Node<E> next;   // 다음 노드를 가리키는 포인터
+
+        Node(E element, Node<E> next) {
+            this.data = element;
+            this.next = next;
+        }
+
+        private static class NoOrderComparator implements Comparator<Integer> {
+            @Override
+            public int compare(Integer o1, Integer o2) {
+                return o1.compareTo(o2);
+            }
         }
     }
 }

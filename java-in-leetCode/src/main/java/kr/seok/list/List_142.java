@@ -14,16 +14,6 @@ import java.util.Set;
  * Notice that you should not modify the linked list.
  */
 public class List_142 {
-    class ListNode {
-        int val;
-        ListNode next;
-
-        ListNode(int x) {
-            val = x;
-            next = null;
-        }
-    }
-
     /*
         탐색한 노드 리스트를 Set에 저장하여 중복 노드를 반환 할 수 있다.
 
@@ -92,5 +82,15 @@ public class List_142 {
         }
 
         return ptr1;
+    }
+
+    class ListNode {
+        int val;
+        ListNode next;
+
+        ListNode(int x) {
+            val = x;
+            next = null;
+        }
     }
 }

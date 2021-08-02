@@ -11,25 +11,6 @@ import java.util.Queue;
  */
 public class Tree_226 {
 
-    public class TreeNode {
-        int val;
-        TreeNode left;
-        TreeNode right;
-
-        TreeNode() {
-        }
-
-        TreeNode(int val) {
-            this.val = val;
-        }
-
-        TreeNode(int val, TreeNode left, TreeNode right) {
-            this.val = val;
-            this.left = left;
-            this.right = right;
-        }
-    }
-
     public TreeNode invertTreeRecursive(TreeNode root) {
         if (root == null) return null;
         TreeNode right = invertTreeRecursive(root.right);
@@ -60,5 +41,24 @@ public class Tree_226 {
             if (current.right != null) queue.add(current.right);
         }
         return root;
+    }
+
+    public class TreeNode {
+        int val;
+        TreeNode left;
+        TreeNode right;
+
+        TreeNode() {
+        }
+
+        TreeNode(int val) {
+            this.val = val;
+        }
+
+        TreeNode(int val, TreeNode left, TreeNode right) {
+            this.val = val;
+            this.left = left;
+            this.right = right;
+        }
     }
 }

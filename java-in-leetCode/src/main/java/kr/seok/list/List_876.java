@@ -24,23 +24,6 @@ package kr.seok.list;
  */
 public class List_876 {
 
-    public static class ListNode {
-        int val;
-        ListNode next;
-
-        ListNode() {
-        }
-
-        ListNode(int val) {
-            this.val = val;
-        }
-
-        ListNode(int val, ListNode next) {
-            this.val = val;
-            this.next = next;
-        }
-    }
-
     /*
         임시 배열을 생성하여 배열에 데이터를 넣고, 그 절반의 리스트를 반환
      */
@@ -66,5 +49,22 @@ public class List_876 {
             fast = fast.next.next;
         }
         return slow;
+    }
+
+    public static class ListNode {
+        int val;
+        ListNode next;
+
+        ListNode() {
+        }
+
+        ListNode(int val) {
+            this.val = val;
+        }
+
+        ListNode(int val, ListNode next) {
+            this.val = val;
+            this.next = next;
+        }
     }
 }

@@ -24,23 +24,23 @@ public class AdvancedPoint extends Point2D implements Serializable {
         this.y = y;
     }
 
-    // 수정자를 제공
-    public void setX(int x) {
-        this.x = x;
-    }
-
-    public void setY(int y) {
-        this.y = y;
-    }
-
     @Override
     public double getX() {
         return x;
     }
 
+    // 수정자를 제공
+    public void setX(int x) {
+        this.x = x;
+    }
+
     @Override
     public double getY() {
         return y;
+    }
+
+    public void setY(int y) {
+        this.y = y;
     }
 
     @Transient

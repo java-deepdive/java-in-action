@@ -8,25 +8,6 @@ package kr.seok.tree;
  * This path may or may not pass through the root.
  */
 public class Tree_543 {
-    static class TreeNode {
-        int val;
-        TreeNode left;
-        TreeNode right;
-
-        TreeNode() {
-        }
-
-        TreeNode(int val) {
-            this.val = val;
-        }
-
-        TreeNode(int val, TreeNode left, TreeNode right) {
-            this.val = val;
-            this.left = left;
-            this.right = right;
-        }
-    }
-
     // Depth-First Search
     /*
         모든 경로는 일부 노드에서 두 개의 화살표로 작성될 수 있다.
@@ -61,5 +42,24 @@ public class Tree_543 {
         System.out.println("ans :: " + ans);
 
         return Math.max(L, R) + 1;
+    }
+
+    static class TreeNode {
+        int val;
+        TreeNode left;
+        TreeNode right;
+
+        TreeNode() {
+        }
+
+        TreeNode(int val) {
+            this.val = val;
+        }
+
+        TreeNode(int val, TreeNode left, TreeNode right) {
+            this.val = val;
+            this.left = left;
+            this.right = right;
+        }
     }
 }

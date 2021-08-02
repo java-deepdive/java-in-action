@@ -10,10 +10,11 @@ public class Process {
         this.stamps = new ArrayList<>();
     }
 
-    public void add() {
-        //stamps.add(new Coin());
-    }
     public static void main(String[] args) {
         new Process();
+    }
+
+    public void add() {
+        //stamps.add(new Coin());
     }
 }

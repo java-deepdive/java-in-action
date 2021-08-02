@@ -5,13 +5,12 @@ import java.util.Arrays;
 public class MinIntHeap {
 
     private int capacity = 10;
+    int[] items = new int[capacity];
     private int size = 0;
 
     public int getSize() {
         return size;
     }
-
-    int[] items = new int[capacity];
 
     private int getLeftChildIndex(int parentIndex) {
         return 2 * parentIndex + 1;

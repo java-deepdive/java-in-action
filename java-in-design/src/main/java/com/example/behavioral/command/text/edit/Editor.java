@@ -1,4 +1,3 @@
-
 package com.example.behavioral.command.text.edit;
 
 import com.example.behavioral.command.text.commands.*;

@@ -22,12 +22,12 @@ public enum ColorEnumStore {
         }
     };
 
-    protected abstract Color newInstance();
-
     public static ColorEnumStore find(ColorEnumStore type) {
         return Arrays.stream(ColorEnumStore.values())
                 .filter(colorEnumStore -> colorEnumStore.equals(type))
                 .findFirst()
                 .orElse(DEFAULT);
     }
+
+    protected abstract Color newInstance();
 }

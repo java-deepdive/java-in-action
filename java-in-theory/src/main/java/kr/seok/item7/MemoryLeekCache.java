@@ -6,6 +6,12 @@ import java.util.Map;
 public class MemoryLeekCache {
     private final Map<String, String> map = new HashMap<>();
 
+    public static void main(String[] args) {
+        MemoryLeekCache cache = new MemoryLeekCache();
+        cache.initCache();
+        cache.forEachDisplay();
+    }
+
     public void initCache() {
         map.put("Anil", "Work as Engineer");
         map.put("Shamik", "Work as Java Engineer");
@@ -21,11 +27,5 @@ public class MemoryLeekCache {
             String val = map.get(key);
             System.out.println(key + " :: " + val);
         });
-    }
-
-    public static void main(String[] args) {
-        MemoryLeekCache cache = new MemoryLeekCache();
-        cache.initCache();
-        cache.forEachDisplay();
     }
 }

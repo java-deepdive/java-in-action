@@ -15,6 +15,25 @@ public class Hazelnut extends Coffee {
         this.milk = builder.milk;
     }
 
+    @Override
+    public boolean equals(Object o) {
+        if (this == o) return true;
+        if (!(o instanceof Hazelnut)) return false;
+        if (!super.equals(o)) return false;
+        final Hazelnut hazelnut = (Hazelnut) o;
+        return Objects.equals(milk, hazelnut.milk);
+    }
+
+    @Override
+    public int hashCode() {
+        return Objects.hash(super.hashCode(), milk);
+    }
+
+    @Override
+    public String toString() {
+        return String.format("%s, %s, %s", bean, water, milk);
+    }
+
     public static class Builder {
         private final Bean bean;
         private final Water water;
@@ -39,24 +58,5 @@ public class Hazelnut extends Coffee {
         public Hazelnut build() {
             return new Hazelnut(this);
         }
-    }
-
-    @Override
-    public boolean equals(Object o) {
-        if (this == o) return true;
-        if (!(o instanceof Hazelnut)) return false;
-        if (!super.equals(o)) return false;
-        final Hazelnut hazelnut = (Hazelnut) o;
-        return Objects.equals(milk, hazelnut.milk);
-    }
-
-    @Override
-    public int hashCode() {
-        return Objects.hash(super.hashCode(), milk);
-    }
-
-    @Override
-    public String toString() {
-        return String.format("%s, %s, %s", bean, water, milk);
     }
 }

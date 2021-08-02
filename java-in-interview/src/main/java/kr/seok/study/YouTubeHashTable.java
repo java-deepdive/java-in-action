@@ -18,37 +18,6 @@ import java.util.LinkedList;
  */
 public class YouTubeHashTable {
 
-    /**
-     * String 타입의 key, value 를 관리할 수 있는 Container
-     * <p>
-     * 데이터를 입력하거나 조회 하는경우에 대한 setter or getter 만을 생성
-     */
-    static class Node {
-        String key;
-        private String value;
-
-        public Node(String key, String value) {
-            this.key = key;
-            this.value = value;
-        }
-
-        public String getValue() {
-            return value;
-        }
-
-        public void setValue(String value) {
-            this.value = value;
-        }
-
-        @Override
-        public String toString() {
-            return "Node{" +
-                    "key='" + key + '\'' +
-                    ", value='" + value + '\'' +
-                    '}';
-        }
-    }
-
     LinkedList<Node>[] data;
 
     public YouTubeHashTable(int size) {
@@ -119,6 +88,37 @@ public class YouTubeHashTable {
             } else {
                 System.out.println("LinkedList: 비어있는 배열");
             }
+        }
+    }
+
+    /**
+     * String 타입의 key, value 를 관리할 수 있는 Container
+     * <p>
+     * 데이터를 입력하거나 조회 하는경우에 대한 setter or getter 만을 생성
+     */
+    static class Node {
+        String key;
+        private String value;
+
+        public Node(String key, String value) {
+            this.key = key;
+            this.value = value;
+        }
+
+        public String getValue() {
+            return value;
+        }
+
+        public void setValue(String value) {
+            this.value = value;
+        }
+
+        @Override
+        public String toString() {
+            return "Node{" +
+                    "key='" + key + '\'' +
+                    ", value='" + value + '\'' +
+                    '}';
         }
     }
 }

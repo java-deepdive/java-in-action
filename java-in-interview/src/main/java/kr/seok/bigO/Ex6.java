@@ -2,6 +2,10 @@ package kr.seok.bigO;
 
 public class Ex6 {
 
+    public static void main(String[] args) {
+        new Ex6().reverse(new int[]{1, 2, 3, 4});
+    }
+
     void reverse(int[] array) {
 
         for (int i = 0; i < array.length / 2; i++) {
@@ -15,9 +19,5 @@ public class Ex6 {
             array[i] = array[other];
             array[other] = temp;
         }
-    }
-
-    public static void main(String[] args) {
-        new Ex6().reverse(new int[]{1, 2, 3, 4});
     }
 }

@@ -6,12 +6,7 @@ import java.beans.Transient;
 
 public class Dimension extends Dimension2D implements java.io.Serializable {
 
-    public int width;
-    public int height;
-
     private static final long serialVersionUID = 4723952579491349524L;
-
-    private static native void initIDs();
 
     static {
         /* ensure that the necessary native libraries are loaded */
@@ -20,6 +15,9 @@ public class Dimension extends Dimension2D implements java.io.Serializable {
             initIDs();
         }
     }
+
+    public int width;
+    public int height;
 
     // 부 생성자들
     public Dimension() {
@@ -35,6 +33,8 @@ public class Dimension extends Dimension2D implements java.io.Serializable {
         this.width = width;
         this.height = height;
     }
+
+    private static native void initIDs();
 
     public double getWidth() {
         return width;

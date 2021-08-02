@@ -9,7 +9,7 @@ class GenericSolution2_1StackTest {
     @Test
     void testCase1() {
         GenericSolution2_1Stack<String> stack = new GenericSolution2_1Stack<>();
-        for(String arg : new String[] {}) {
+        for (String arg : new String[]{}) {
             stack.push(arg);
         }
         while (!stack.isEmpty()) {

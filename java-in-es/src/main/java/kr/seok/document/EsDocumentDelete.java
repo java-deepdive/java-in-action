@@ -24,7 +24,7 @@ public class EsDocumentDelete {
 
             RestStatus status = deleteResponse.status();
 
-            if(status.getStatus() == 200) {
+            if (status.getStatus() == 200) {
                 log.info("삭제 성공");
             } else {
                 log.info("삭제 실패");

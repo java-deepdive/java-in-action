@@ -11,6 +11,11 @@ package kr.seok.strNArr;
  */
 public class Ex6 {
 
+    public static void main(String[] args) {
+        String str = "aabccccaaa";
+        System.out.println(new Ex6().compressBad(str));
+    }
+
     /*
         문자열을 합치는데 효율적으로 느림
      */
@@ -96,10 +101,5 @@ public class Ex6 {
             }
         }
         return compressedLength;
-    }
-
-    public static void main(String[] args) {
-        String str = "aabccccaaa";
-        System.out.println(new Ex6().compressBad(str));
     }
 }

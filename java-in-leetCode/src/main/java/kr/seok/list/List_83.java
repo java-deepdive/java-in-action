@@ -9,6 +9,19 @@ package kr.seok.list;
  */
 public class List_83 {
 
+    // Straight-Forward Approach
+    public ListNode deleteDuplicates(ListNode head) {
+        ListNode current = head;
+        while (current != null && current.next != null) {
+            if (current.next.val == current.val) {
+                current.next = current.next.next; // 값이 동일하면 한칸 당겨서 없애기
+            } else {
+                current = current.next; // 다음 노드 저장
+            }
+        }
+        return head;
+    }
+
     // singly-linked list
     public class ListNode {
         int val;
@@ -25,19 +38,6 @@ public class List_83 {
             this.val = val;
             this.next = next;
         }
-    }
-
-    // Straight-Forward Approach
-    public ListNode deleteDuplicates(ListNode head) {
-        ListNode current = head;
-        while (current != null && current.next != null) {
-            if (current.next.val == current.val) {
-                current.next = current.next.next; // 값이 동일하면 한칸 당겨서 없애기
-            } else {
-                current = current.next; // 다음 노드 저장
-            }
-        }
-        return head;
     }
 
 }

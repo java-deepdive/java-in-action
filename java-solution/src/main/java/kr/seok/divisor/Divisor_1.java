@@ -6,11 +6,11 @@ public class Divisor_1 {
         int answer = 0;
         int[] range = new int[right - left + 1];
 
-        for(int i = left ; i <= right ; i++) {
+        for (int i = left; i <= right; i++) {
             range[right - i] = i;
         }
 
-        for(int item : range) {
+        for (int item : range) {
             answer += divisor(item);
         }
 
@@ -19,8 +19,8 @@ public class Divisor_1 {
 
     private int divisor(int item) {
         int cnt = 0;
-        for(int i = 1 ; i <= item ; i++) {
-            if(item % i == 0) {
+        for (int i = 1; i <= item; i++) {
+            if (item % i == 0) {
                 cnt++;
             }
         }

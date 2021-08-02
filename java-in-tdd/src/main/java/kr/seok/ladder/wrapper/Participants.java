@@ -21,12 +21,6 @@ public class Participants {
         this.users = parseUsers(users);
     }
 
-    private Set<User> parseUsers(final String... users) {
-        return IntStream.range(0, users.length)
-                .mapToObj(value -> User.valueOf(users[value], value))
-                .collect(Collectors.toCollection(LinkedHashSet::new));
-    }
-
     /**
      * Value of participants.
      *
@@ -35,6 +29,12 @@ public class Participants {
      */
     public static Participants valueOf(final String... users) {
         return new Participants(users);
+    }
+
+    private Set<User> parseUsers(final String... users) {
+        return IntStream.range(0, users.length)
+                .mapToObj(value -> User.valueOf(users[value], value))
+                .collect(Collectors.toCollection(LinkedHashSet::new));
     }
 
     /**

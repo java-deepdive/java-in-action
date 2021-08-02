@@ -10,10 +10,6 @@ public class EagerInitializationAirforceOne {
     private EagerInitializationAirforceOne() {
     }
 
-    public void fly() {
-        System.out.println("Airforce one is flying...");
-    }
-
     // Create a static method for object creation
     public static EagerInitializationAirforceOne getInstance() {
 
@@ -23,5 +19,9 @@ public class EagerInitializationAirforceOne {
         }
 
         return onlyInstance;
+    }
+
+    public void fly() {
+        System.out.println("Airforce one is flying...");
     }
 }

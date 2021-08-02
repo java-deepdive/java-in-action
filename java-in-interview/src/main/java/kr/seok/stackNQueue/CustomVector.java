@@ -5,11 +5,11 @@ import java.util.function.Consumer;
 
 public class CustomVector<E> extends AbstractList<E> implements List<E>, RandomAccess, Cloneable, java.io.Serializable {
 
+    private static final long serialVersionUID = -2767605614048989439L;
+    private static final int MAX_ARRAY_SIZE = Integer.MAX_VALUE - 8;
     protected Object[] elementData;
     protected int capacityIncrement;
     protected int elementCount;
-
-    private static final long serialVersionUID = -2767605614048989439L;
 
     public CustomVector(int initialCapacity, int capacityIncrement) {
         super();
@@ -27,13 +27,19 @@ public class CustomVector<E> extends AbstractList<E> implements List<E>, RandomA
         this(10);
     }
 
+    private static int hugeCapacity(int minCapacity) {
+        if (minCapacity < 0) // overflow
+            throw new OutOfMemoryError();
+        return (minCapacity > MAX_ARRAY_SIZE) ?
+                Integer.MAX_VALUE :
+                MAX_ARRAY_SIZE;
+    }
+
     private void ensureCapacityHelper(int minCapacity) {
         // overflow-conscious code
         if (minCapacity - elementData.length > 0)
             grow(minCapacity);
     }
-
-    private static final int MAX_ARRAY_SIZE = Integer.MAX_VALUE - 8;
 
     private void grow(int minCapacity) {
         // overflow-conscious code
@@ -45,14 +51,6 @@ public class CustomVector<E> extends AbstractList<E> implements List<E>, RandomA
         if (newCapacity - MAX_ARRAY_SIZE > 0)
             newCapacity = hugeCapacity(minCapacity);
         elementData = Arrays.copyOf(elementData, newCapacity);
-    }
-
-    private static int hugeCapacity(int minCapacity) {
-        if (minCapacity < 0) // overflow
-            throw new OutOfMemoryError();
-        return (minCapacity > MAX_ARRAY_SIZE) ?
-                Integer.MAX_VALUE :
-                MAX_ARRAY_SIZE;
     }
 
     public synchronized int size() {

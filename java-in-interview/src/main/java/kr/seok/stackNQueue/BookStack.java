@@ -11,18 +11,6 @@ public class BookStack {
     private int[] stk; // 스택의 본체
 
 
-    // 실행 시 예외처리: 스택이 비어 있음
-    public class EmptyIntStackException extends RuntimeException {
-        public EmptyIntStackException() {
-        }
-    }
-
-    // 실행 시 예외처리: 스택이 가득 참
-    public class OverflowIntStackException extends RuntimeException {
-        public OverflowIntStackException() {
-        }
-    }
-
     /*
         스택이 비어있으면 ptr은 0
         가득 차 있으면 max 값과 같다.
@@ -119,6 +107,18 @@ public class BookStack {
             for (int i = 0; i < ptr; i++)
                 System.out.print(stk[i] + " ");
             System.out.println();
+        }
+    }
+
+    // 실행 시 예외처리: 스택이 비어 있음
+    public class EmptyIntStackException extends RuntimeException {
+        public EmptyIntStackException() {
+        }
+    }
+
+    // 실행 시 예외처리: 스택이 가득 참
+    public class OverflowIntStackException extends RuntimeException {
+        public OverflowIntStackException() {
         }
     }
 }

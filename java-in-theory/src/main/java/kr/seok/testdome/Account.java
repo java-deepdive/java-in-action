@@ -1,8 +1,8 @@
 package kr.seok.testdome;
 
 public class Account {
-    private double balance;
     private final double overdraftLimit;
+    private double balance;
 
     public Account(double overdraftLimit) {
         this.balance = 0;

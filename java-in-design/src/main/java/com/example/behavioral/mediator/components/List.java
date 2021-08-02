@@ -11,8 +11,8 @@ import javax.swing.*;
  */
 @SuppressWarnings("unchecked")
 public class List extends JList implements Component {
-    private Mediator mediator;
     private final DefaultListModel LIST_MODEL;
+    private Mediator mediator;
 
     public List(DefaultListModel listModel) {
         super(listModel);
@@ -41,11 +41,12 @@ public class List extends JList implements Component {
         try {
             LIST_MODEL.remove(index);
             mediator.sendToFilter(LIST_MODEL);
-        } catch (ArrayIndexOutOfBoundsException ignored) {}
+        } catch (ArrayIndexOutOfBoundsException ignored) {
+        }
     }
 
     public Note getCurrentElement() {
-        return (Note)getSelectedValue();
+        return (Note) getSelectedValue();
     }
 
     @Override

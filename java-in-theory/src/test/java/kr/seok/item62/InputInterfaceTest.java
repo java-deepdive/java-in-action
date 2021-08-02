@@ -4,6 +4,8 @@ import org.junit.jupiter.api.BeforeEach;
 import org.junit.jupiter.api.DisplayName;
 import org.junit.jupiter.api.Test;
 
+import java.util.Comparator;
+
 import static org.assertj.core.api.Assertions.assertThat;
 
 class InputInterfaceTest {
@@ -57,5 +59,15 @@ class InputInterfaceTest {
 
         assertThat(type).isEqualTo(InputInterface.Type.A);
         assertThat(type).isInstanceOf(InputInterface.Type.class);
+    }
+
+    @Test
+    void testCase5() {
+
+        Integer a = new Integer(1);
+        Integer b = 1;
+        Comparator<Integer> naturalOrder = (i, j) -> (i < j) ? -1 : (i == j ? 0 : 1);
+        int compare = naturalOrder.compare(a, b);
+        System.out.println(compare);
     }
 }

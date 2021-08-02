@@ -9,17 +9,12 @@ import java.util.List;
 
 public class Phone {
     private static final int LATE_NIGHT_HOUR = 22;
-
-    enum PhoneType {REGULAR, NIGHTLY}
-
     private PhoneType type;
-
     private Money amount;
     private Money regularAmount;
     private Money nightlyAmount;
     private Duration seconds;
     private List<Call> calls = new ArrayList<>();
-
     public Phone(Money amount, Duration seconds) {
         this(PhoneType.REGULAR, amount, Money.ZERO, Money.ZERO, seconds);
     }
@@ -56,4 +51,6 @@ public class Phone {
 
         return result;
     }
+
+    enum PhoneType {REGULAR, NIGHTLY}
 }

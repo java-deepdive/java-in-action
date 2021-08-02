@@ -5,11 +5,6 @@ import java.util.List;
 
 public class Item28 {
 
-    public void arr() {
-        ArrayList<String> items = new ArrayList<>();
-        items.add("data");
-    }
-
     public static void main(String[] args) {
 //        List<String>[] stringsLists = new List<String>[1];
 //        List<Integer> intList = List.of(42);
@@ -24,5 +19,10 @@ public class Item28 {
         Object[] objArr = new String[2];
         Object[] objLong = new Long[1];
         System.out.println(Constants.data);
+    }
+
+    public void arr() {
+        ArrayList<String> items = new ArrayList<>();
+        items.add("data");
     }
 }

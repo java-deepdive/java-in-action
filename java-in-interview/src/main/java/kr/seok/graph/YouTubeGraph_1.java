@@ -8,18 +8,6 @@ import java.util.LinkedList;
 public class YouTubeGraph_1 {
 
     static class Graph {
-        static class Node {
-            private final int data;
-            private final LinkedList<Node> adjacent;
-            private boolean marked;
-
-            public Node(int data) {
-                this.data = data;
-                this.marked = false;
-                adjacent = new LinkedList<>();
-            }
-        }
-
         Node[] nodes;
 
         public Graph(int size) {
@@ -74,6 +62,18 @@ public class YouTubeGraph_1 {
                 }
             }
             return false;
+        }
+
+        static class Node {
+            private final int data;
+            private final LinkedList<Node> adjacent;
+            private boolean marked;
+
+            public Node(int data) {
+                this.data = data;
+                this.marked = false;
+                adjacent = new LinkedList<>();
+            }
         }
     }
 }

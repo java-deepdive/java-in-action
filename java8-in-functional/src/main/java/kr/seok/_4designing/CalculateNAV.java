@@ -13,14 +13,8 @@ import java.util.function.Function;
 
 public class CalculateNAV {
 
-    public BigDecimal computeStockWorth(
-            final String ticker, final int shares) {
-        return priceFinder.apply(ticker)
-                .multiply(BigDecimal.valueOf(shares));
-    }
-    //... other methods that use the priceFinder ...
-
     private Function<String, BigDecimal> priceFinder;
+    //... other methods that use the priceFinder ...
 
     public CalculateNAV(final Function<String, BigDecimal> aPriceFinder) {
         priceFinder = aPriceFinder;
@@ -33,5 +27,11 @@ public class CalculateNAV {
         System.out.println(String.format("100 shares of Google worth: $%.2f",
                 // 웹 서비스에서 받은 데이터를 사용하여 재무 연산
                 calculateNav.computeStockWorth("GOOG", 100)));
+    }
+
+    public BigDecimal computeStockWorth(
+            final String ticker, final int shares) {
+        return priceFinder.apply(ticker)
+                .multiply(BigDecimal.valueOf(shares));
     }
 }

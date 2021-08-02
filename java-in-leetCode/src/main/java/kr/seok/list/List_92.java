@@ -2,23 +2,6 @@ package kr.seok.list;
 
 // 흠..
 public class List_92 {
-    public class ListNode {
-        int val;
-        ListNode next;
-
-        ListNode() {
-        }
-
-        ListNode(int val) {
-            this.val = val;
-        }
-
-        ListNode(int val, ListNode next) {
-            this.val = val;
-            this.next = next;
-        }
-    }
-
     private boolean stop;
     private ListNode left;
 
@@ -67,7 +50,6 @@ public class List_92 {
         return head;
     }
 
-
     public ListNode reverseBetweenItr(ListNode head, int m, int n) {
 
         // Empty list
@@ -110,5 +92,22 @@ public class List_92 {
 
         tail.next = cur;
         return head;
+    }
+
+    public class ListNode {
+        int val;
+        ListNode next;
+
+        ListNode() {
+        }
+
+        ListNode(int val) {
+            this.val = val;
+        }
+
+        ListNode(int val, ListNode next) {
+            this.val = val;
+            this.next = next;
+        }
     }
 }

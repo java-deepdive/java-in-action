@@ -15,6 +15,19 @@ public class Mocha extends Coffee {
         this.milk = builder.milk;
     }
 
+    @Override
+    public boolean equals(Object o) {
+        if (this == o) return true;
+        if (!(o instanceof Mocha)) return false;
+        final Mocha mocha = (Mocha) o;
+        return Objects.equals(milk, mocha.milk);
+    }
+
+    @Override
+    public int hashCode() {
+        return Objects.hash(milk);
+    }
+
     public static class Builder {
         private final Bean bean;
         private final Water water;
@@ -39,19 +52,6 @@ public class Mocha extends Coffee {
         public Mocha build() {
             return new Mocha(this);
         }
-    }
-
-    @Override
-    public boolean equals(Object o) {
-        if (this == o) return true;
-        if (!(o instanceof Mocha)) return false;
-        final Mocha mocha = (Mocha) o;
-        return Objects.equals(milk, mocha.milk);
-    }
-
-    @Override
-    public int hashCode() {
-        return Objects.hash(milk);
     }
 
 }

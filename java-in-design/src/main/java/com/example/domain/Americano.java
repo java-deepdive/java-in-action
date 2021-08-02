@@ -9,6 +9,16 @@ public class Americano extends Coffee {
         super(builder.bean, builder.water, builder.brand);
     }
 
+    @Override
+    public Coffee clone() {
+        return new Americano.Builder(bean, water).build();
+    }
+
+    @Override
+    public String toString() {
+        return String.format("%s, %s, %s", bean, water, brand);
+    }
+
     public static class Builder {
         private final Bean bean;
         private final Water water;
@@ -27,15 +37,5 @@ public class Americano extends Coffee {
         public Americano build() {
             return new Americano(this);
         }
-    }
-
-    @Override
-    public Coffee clone() {
-        return new Americano.Builder(bean, water).build();
-    }
-
-    @Override
-    public String toString() {
-        return String.format("%s, %s, %s", bean, water, brand);
     }
 }

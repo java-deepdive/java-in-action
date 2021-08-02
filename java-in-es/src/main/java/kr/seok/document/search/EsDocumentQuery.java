@@ -34,7 +34,7 @@ public class EsDocumentQuery {
 
                 log.info("response String : {} :: version : {}", response.getSourceAsString(), version);
 
-                for(Map.Entry<String, Object> entity : sourceAsMap.entrySet()) {
+                for (Map.Entry<String, Object> entity : sourceAsMap.entrySet()) {
                     log.info("response entity : {}", entity);
                 }
 

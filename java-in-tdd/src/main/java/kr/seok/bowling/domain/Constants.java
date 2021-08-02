@@ -5,9 +5,6 @@ package kr.seok.bowling.domain;
  */
 public class Constants {
 
-    private Constants() {
-    }
-
     /**
      * The constant BOWLING_STATE_SPLIT_DELIMITER.
      */
@@ -24,4 +21,6 @@ public class Constants {
      * The constant BOWLING_STATE_STRIKE.
      */
     public static final String BOWLING_STATE_STRIKE = "X";
+    private Constants() {
+    }
 }

@@ -4,55 +4,6 @@ import java.util.Stack;
 
 public class YoutubeLinkedList {
 
-    // ######## DataStructure
-    // 단방향 linked list
-    static class Node {
-        int data;
-        Node next = null;
-
-        public Node() {
-        }
-
-        public Node(int d) {
-            this.data = d;
-        }
-
-        public Node(int data, Node next) {
-            this.data = data;
-            this.next = next;
-        }
-
-        public void retrieve() {
-            Node n = this;
-            while (n.next != null) {
-                System.out.print(n.data + " -> ");
-                n = n.next;
-            }
-            System.out.println(n.data);
-        }
-
-        public void append(int d) {
-            Node end = new Node(d); // 마지막 노드를 신규 생성
-            // head로 부터 tail 노드를 찾기
-            Node n = this;
-            while (n.next != null) {
-                n = n.next;
-            }
-            n.next = end; // 신규 생성했던 노드를 tail 노드 뒤로 붙이기
-        }
-
-        public void delete(int d) {
-            Node n = this;
-            while (n.next != null) {
-                if (n.next.data == d) { // 값을 확인
-                    n.next = n.next.next;
-                } else {
-                    n = n.next;
-                }
-            }
-        }
-    }
-
     private Node head;
 
     YoutubeLinkedList() {
@@ -79,10 +30,6 @@ public class YoutubeLinkedList {
             System.out.println("데이터 : " + n.data);
         }
         return n;
-    }
-
-    static class Reference {
-        public int count = 0;
     }
 
     // 재귀
@@ -205,13 +152,6 @@ public class YoutubeLinkedList {
         return result;
     }
 
-    class Num {
-        int carry = 0; // 연산된 결과가 10이상이 되어 앞의 자리수로 넘기기 위한 필드
-        Node result = null; // 결과 값을 저장할 필드
-    }
-
-    // 숫자의 자리 수를 순차적으로 담은 두 리스트를 자리수 별로 합산하기
-
     // 리스트를 받아서 길이를 반환하는 함수
     private int getListLen(Node l) {
         int total = 0;
@@ -239,6 +179,8 @@ public class YoutubeLinkedList {
         }
         return head;
     }
+
+    // 숫자의 자리 수를 순차적으로 담은 두 리스트를 자리수 별로 합산하기
 
     public Node sumListAsc(Node l1, Node l2) {
         // 알고리즘 처리를 위한 전처리 작업
@@ -386,16 +328,6 @@ public class YoutubeLinkedList {
         return true;
     }
 
-    class NodeReference {
-        public Node node;
-        public boolean result;
-
-        public NodeReference(Node node, boolean result) {
-            this.node = node;
-            this.result = result;
-        }
-    }
-
     public boolean isPalindromeRecursive(Node head) {
         int len = getListLen(head); // 리스트의 길이를 계산
         NodeReference nodeRef = isPalindromeSubRecursive(head, len);
@@ -418,5 +350,73 @@ public class YoutubeLinkedList {
         ref.result = (head.data == ref.node.data);
         ref.node = ref.node.next;
         return ref;
+    }
+
+    // ######## DataStructure
+    // 단방향 linked list
+    static class Node {
+        int data;
+        Node next = null;
+
+        public Node() {
+        }
+
+        public Node(int d) {
+            this.data = d;
+        }
+
+        public Node(int data, Node next) {
+            this.data = data;
+            this.next = next;
+        }
+
+        public void retrieve() {
+            Node n = this;
+            while (n.next != null) {
+                System.out.print(n.data + " -> ");
+                n = n.next;
+            }
+            System.out.println(n.data);
+        }
+
+        public void append(int d) {
+            Node end = new Node(d); // 마지막 노드를 신규 생성
+            // head로 부터 tail 노드를 찾기
+            Node n = this;
+            while (n.next != null) {
+                n = n.next;
+            }
+            n.next = end; // 신규 생성했던 노드를 tail 노드 뒤로 붙이기
+        }
+
+        public void delete(int d) {
+            Node n = this;
+            while (n.next != null) {
+                if (n.next.data == d) { // 값을 확인
+                    n.next = n.next.next;
+                } else {
+                    n = n.next;
+                }
+            }
+        }
+    }
+
+    static class Reference {
+        public int count = 0;
+    }
+
+    class Num {
+        int carry = 0; // 연산된 결과가 10이상이 되어 앞의 자리수로 넘기기 위한 필드
+        Node result = null; // 결과 값을 저장할 필드
+    }
+
+    class NodeReference {
+        public Node node;
+        public boolean result;
+
+        public NodeReference(Node node, boolean result) {
+            this.node = node;
+            this.result = result;
+        }
     }
 }

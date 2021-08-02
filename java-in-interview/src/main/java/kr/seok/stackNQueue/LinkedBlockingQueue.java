@@ -13,40 +13,23 @@ import java.util.concurrent.locks.ReentrantLock;
 public class LinkedBlockingQueue<E> extends AbstractQueue<E> implements BlockingQueue<E>, java.io.Serializable {
 
     private static final long serialVersionUID = -6903933977591709194L;
-
-    static class Node<E> {
-        E item;
-        Node<E> next;
-
-        Node(E x) {
-            item = x;
-        }
-
-        @Override
-        public boolean equals(Object o) {
-            if (this == o) return true;
-            if (!(o instanceof Node)) return false;
-            final Node<?> node = (Node<?>) o;
-            return Objects.equals(item, node.item)
-                    && Objects.equals(next, node.next);
-        }
-
-        @Override
-        public int hashCode() {
-            return Objects.hash(item, next);
-        }
-    }
-
     private final int capacity;
-
     private final AtomicInteger count = new AtomicInteger();
-
-    transient Node<E> head;
-    private transient Node<E> last;
     private final ReentrantLock takeLock = new ReentrantLock();
     private final Condition notEmpty = takeLock.newCondition();
     private final ReentrantLock putLock = new ReentrantLock();
     private final Condition notFull = putLock.newCondition();
+    transient Node<E> head;
+    private transient Node<E> last;
+    public LinkedBlockingQueue() {
+        this(Integer.MAX_VALUE);
+    }
+
+    public LinkedBlockingQueue(int capacity) {
+        if (capacity <= 0) throw new IllegalArgumentException();
+        this.capacity = capacity;
+        last = head = new Node<E>(null);
+    }
 
     private void enqueue(Node<E> node) {
         last = last.next = node;
@@ -61,16 +44,6 @@ public class LinkedBlockingQueue<E> extends AbstractQueue<E> implements Blocking
         E x = first.item;
         first.item = null;
         return x;
-    }
-
-    public LinkedBlockingQueue() {
-        this(Integer.MAX_VALUE);
-    }
-
-    public LinkedBlockingQueue(int capacity) {
-        if (capacity <= 0) throw new IllegalArgumentException();
-        this.capacity = capacity;
-        last = head = new Node<E>(null);
     }
 
     private void signalNotEmpty() {
@@ -316,6 +289,29 @@ public class LinkedBlockingQueue<E> extends AbstractQueue<E> implements Blocking
                 return first.item;
         } finally {
             takeLock.unlock();
+        }
+    }
+
+    static class Node<E> {
+        E item;
+        Node<E> next;
+
+        Node(E x) {
+            item = x;
+        }
+
+        @Override
+        public boolean equals(Object o) {
+            if (this == o) return true;
+            if (!(o instanceof Node)) return false;
+            final Node<?> node = (Node<?>) o;
+            return Objects.equals(item, node.item)
+                    && Objects.equals(next, node.next);
+        }
+
+        @Override
+        public int hashCode() {
+            return Objects.hash(item, next);
         }
     }
 }

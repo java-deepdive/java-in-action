@@ -21,6 +21,20 @@ import java.util.stream.Collectors;
 class SortingTest {
     Sorting sort;
     List<Apple> inventory;
+    // Apple{color='red', weight=120}
+    Predicate<Apple> redApple = apple -> "red".equals(apple.getColor());
+    Predicate<Apple> greenApple = apple -> "green".equals(apple.getColor());
+    Predicate<Apple> notRedApple = redApple.negate();
+    Predicate<Apple> redAndHeavyApple = redApple.and(a -> a.getWeight() > 150);
+    Predicate<Apple> redAndHeavyAppleOrGreen = redApple
+            .and(a -> a.getWeight() > 150)
+            .or(a -> "green".equals(a.getColor()));
+    Function<Integer, Integer> f = x -> x + 1;
+    Function<Integer, Integer> g = x -> x * 2;
+    // 주어진 함수를 먼저 적용한 결과를 다른 함수의 입력으로 전달하는 함수를 반환
+    Function<Integer, Integer> h = f.andThen(g);
+    // compose 메서드는 인수로 주어진 함수를 먼저 실행한 다음 그 결과를 외부 함수의 인수로 제공한다.
+    Function<Integer, Integer> i = f.compose(g);
 
     @BeforeEach
     void setUp() {
@@ -146,12 +160,6 @@ class SortingTest {
         System.out.println(inventory);
     }
 
-
-    // Apple{color='red', weight=120}
-    Predicate<Apple> redApple = apple -> "red".equals(apple.getColor());
-    Predicate<Apple> greenApple = apple -> "green".equals(apple.getColor());
-    Predicate<Apple> notRedApple = redApple.negate();
-
     @Test
     @DisplayName("Predicate 를 정의하여 조건 별로 출력해보기")
     void testCase10() {
@@ -168,11 +176,6 @@ class SortingTest {
                 .filter(notRedApple).collect(Collectors.toList());
         System.out.println(" notRedApple :: " + greenApples2);
     }
-
-    Predicate<Apple> redAndHeavyApple = redApple.and(a -> a.getWeight() > 150);
-    Predicate<Apple> redAndHeavyAppleOrGreen = redApple
-            .and(a -> a.getWeight() > 150)
-            .or(a -> "green".equals(a.getColor()));
 
     @Test
     @DisplayName("Predicate 조합하기")
@@ -197,11 +200,6 @@ class SortingTest {
 
     }
 
-    Function<Integer, Integer> f = x -> x + 1;
-    Function<Integer, Integer> g = x -> x * 2;
-    // 주어진 함수를 먼저 적용한 결과를 다른 함수의 입력으로 전달하는 함수를 반환
-    Function<Integer, Integer> h = f.andThen(g);
-
     @Test
     @DisplayName("Function 인터페이스를 이용한 조합")
     void testCase12() {
@@ -210,9 +208,6 @@ class SortingTest {
         // 4를 반환
         System.out.println(result);
     }
-
-    // compose 메서드는 인수로 주어진 함수를 먼저 실행한 다음 그 결과를 외부 함수의 인수로 제공한다.
-    Function<Integer, Integer> i = f.compose(g);
 
     @Test
     @DisplayName("Functon 인터페이스를 이용한 조합 compose")

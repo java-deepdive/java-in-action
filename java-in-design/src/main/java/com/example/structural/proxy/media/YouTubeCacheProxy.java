@@ -8,8 +8,8 @@ import java.util.HashMap;
 public class YouTubeCacheProxy implements ThirdPartyYouTubeLib {
 
     private final ThirdPartyYouTubeLib youtubeService;
-    private HashMap<String, Video> cachePopular = new HashMap<>();
     private final HashMap<String, Video> cacheAll = new HashMap<>();
+    private HashMap<String, Video> cachePopular = new HashMap<>();
 
     public YouTubeCacheProxy() {
         this.youtubeService = new ThirdPartyYouTubeClass();

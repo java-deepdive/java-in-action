@@ -71,8 +71,8 @@ class BuildingStreamsTest {
 
         // iterate 로 피보나치 수열을 생성
         Stream.iterate(new int[]{0, 1},
-                // 배열을 전달하며 새로운 배열을 생성
-                t -> new int[]{t[1], t[0] + t[1]})
+                        // 배열을 전달하며 새로운 배열을 생성
+                        t -> new int[]{t[1], t[0] + t[1]})
                 .limit(10)
                 .map(t -> t[0])
                 .forEach(i -> System.out.print(i + " -> "));

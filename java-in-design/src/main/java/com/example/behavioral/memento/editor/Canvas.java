@@ -13,9 +13,9 @@ import java.awt.image.BufferedImage;
 
 
 class Canvas extends java.awt.Canvas {
+    private static final int PADDING = 10;
     private final Editor editor;
     private JFrame frame;
-    private static final int PADDING = 10;
 
     Canvas(Editor editor) {
         this.editor = editor;

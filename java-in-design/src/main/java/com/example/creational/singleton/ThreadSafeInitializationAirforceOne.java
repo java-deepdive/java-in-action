@@ -10,10 +10,6 @@ public class ThreadSafeInitializationAirforceOne {
     private ThreadSafeInitializationAirforceOne() {
     }
 
-    public void fly() {
-        System.out.println("Airforce one is flying...");
-    }
-
     // Create a static method for object creation
     public synchronized static ThreadSafeInitializationAirforceOne getInstance() {
 
@@ -23,5 +19,9 @@ public class ThreadSafeInitializationAirforceOne {
         }
 
         return onlyInstance;
+    }
+
+    public void fly() {
+        System.out.println("Airforce one is flying...");
     }
 }

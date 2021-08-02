@@ -4,22 +4,7 @@ import java.util.ArrayList;
 import java.util.List;
 
 public class List_234 {
-    public static class ListNode {
-        int val;
-        ListNode next;
-
-        ListNode() {
-        }
-
-        ListNode(int val) {
-            this.val = val;
-        }
-
-        ListNode(int val, ListNode next) {
-            this.val = val;
-            this.next = next;
-        }
-    }
+    private ListNode frontPointer;
 
     /**
      * Copy into Array List and then Use Two Pointer Technique
@@ -49,8 +34,6 @@ public class List_234 {
         return true;
     }
 
-    private ListNode frontPointer;
-
     public boolean isPalindromeRecursive(ListNode head) {
         frontPointer = head;
         return recursivelyCheck(head);
@@ -63,5 +46,22 @@ public class List_234 {
             frontPointer = frontPointer.next;
         }
         return true;
+    }
+
+    public static class ListNode {
+        int val;
+        ListNode next;
+
+        ListNode() {
+        }
+
+        ListNode(int val) {
+            this.val = val;
+        }
+
+        ListNode(int val, ListNode next) {
+            this.val = val;
+            this.next = next;
+        }
     }
 }

@@ -9,18 +9,6 @@ public class BookQueue {
     private int[] que; // 큐의 본체
 
 
-    // 실행 시 예외처리: 큐가 비어 있음
-    public class EmptyIntQueueException extends RuntimeException {
-        public EmptyIntQueueException() {
-        }
-    }
-
-    // 실행 시 예외처리: 큐가 가득 참
-    public class OverflowIntQueueException extends RuntimeException {
-        public OverflowIntQueueException() {
-        }
-    }
-
     // Queue
     public BookQueue(int capacity) {
         size = 0; // 데이터가 없는 비어있는 상태를 0으로 초기화
@@ -101,6 +89,18 @@ public class BookQueue {
             for (int i = 0; i < size; i++)
                 System.out.print(que[i] + " ");
             System.out.println();
+        }
+    }
+
+    // 실행 시 예외처리: 큐가 비어 있음
+    public class EmptyIntQueueException extends RuntimeException {
+        public EmptyIntQueueException() {
+        }
+    }
+
+    // 실행 시 예외처리: 큐가 가득 참
+    public class OverflowIntQueueException extends RuntimeException {
+        public OverflowIntQueueException() {
         }
     }
 }

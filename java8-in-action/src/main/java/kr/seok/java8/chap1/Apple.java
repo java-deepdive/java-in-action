@@ -9,6 +9,14 @@ public class Apple {
         this.color = color;
     }
 
+    public static boolean isGreenApple(Apple apple) {
+        return "green".equals(apple.getColor());
+    }
+
+    public static boolean isHeavyApple(Apple apple) {
+        return apple.getWeight() > 150;
+    }
+
     public Integer getWeight() {
         return weight;
     }
@@ -30,13 +38,5 @@ public class Apple {
                 "color='" + color + '\'' +
                 ", weight=" + weight +
                 '}';
-    }
-
-    public static boolean isGreenApple(Apple apple) {
-        return "green".equals(apple.getColor());
-    }
-
-    public static boolean isHeavyApple(Apple apple) {
-        return apple.getWeight() > 150;
     }
 }

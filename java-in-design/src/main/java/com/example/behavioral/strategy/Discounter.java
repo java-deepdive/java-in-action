@@ -3,8 +3,6 @@ package com.example.behavioral.strategy;
 import java.math.BigDecimal;
 
 public interface Discounter {
-    BigDecimal applyDiscount(BigDecimal amount);
-
     static Discounter christmasDiscounter() {
         return amount -> amount.multiply(BigDecimal.valueOf(0.9));
     }
@@ -16,4 +14,6 @@ public interface Discounter {
     static Discounter easterDiscounter() {
         return amount -> amount.multiply(BigDecimal.valueOf(0.5));
     }
+
+    BigDecimal applyDiscount(BigDecimal amount);
 }

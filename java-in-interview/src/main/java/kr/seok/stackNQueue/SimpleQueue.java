@@ -7,15 +7,6 @@ import java.util.NoSuchElementException;
  */
 public class SimpleQueue<T> {
 
-    private static class QueueNode<T> {
-        private T data;
-        private QueueNode<T> next;
-
-        public QueueNode(T data) {
-            this.data = data;
-        }
-    }
-
     private QueueNode<T> first;
     private QueueNode<T> last;
 
@@ -50,5 +41,14 @@ public class SimpleQueue<T> {
 
     public boolean isEmpty() {
         return first == null;
+    }
+
+    private static class QueueNode<T> {
+        private T data;
+        private QueueNode<T> next;
+
+        public QueueNode(T data) {
+            this.data = data;
+        }
     }
 }

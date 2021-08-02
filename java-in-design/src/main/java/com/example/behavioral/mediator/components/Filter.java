@@ -16,7 +16,8 @@ public class Filter extends JTextField implements Component {
     private Mediator mediator;
     private ListModel<?> listModel;
 
-    public Filter() {}
+    public Filter() {
+    }
 
     @Override
     public void setMediator(Mediator mediator) {

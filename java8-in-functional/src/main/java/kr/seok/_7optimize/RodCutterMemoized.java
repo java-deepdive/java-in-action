@@ -19,6 +19,15 @@ public class RodCutterMemoized extends RodCutterBasic {
         super(pricesForLength);
     }
 
+    public static void main(final String[] args) {
+        final RodCutterMemoized rodCutterMomoized
+                = new RodCutterMemoized(RodCutterBasic.priceValues);
+        //run(foo);
+
+        System.out.println(rodCutterMomoized.maxProfit(5));
+        System.out.println(rodCutterMomoized.maxProfit(22));
+    }
+
     public int maxProfit(final int rodLength) {
         BiFunction<Function<Integer, Integer>, Integer, Integer> compute =
                 (func, length) -> {
@@ -30,14 +39,5 @@ public class RodCutterMemoized extends RodCutterBasic {
                     return profit;
                 };
         return callMemoized(compute, rodLength);
-    }
-
-    public static void main(final String[] args) {
-        final RodCutterMemoized rodCutterMomoized
-                = new RodCutterMemoized(RodCutterBasic.priceValues);
-        //run(foo);
-
-        System.out.println(rodCutterMomoized.maxProfit(5));
-        System.out.println(rodCutterMomoized.maxProfit(22));
     }
 }

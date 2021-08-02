@@ -4,10 +4,10 @@ import java.util.Arrays;
 import java.util.EmptyStackException;
 
 public class GenericSolution1_2Stack<E> {
+    private static final int DEFAULT_INITIAL_CAPACITY = 16;
     // Object -> E
     private E[] elements;
     private int size = 0;
-    private static final int DEFAULT_INITIAL_CAPACITY = 16;
 
     public GenericSolution1_2Stack() {
         elements = (E[]) new Object[DEFAULT_INITIAL_CAPACITY]; // 오류 대신 경고
@@ -32,8 +32,9 @@ public class GenericSolution1_2Stack<E> {
     public boolean isEmpty() {
         return size == 0;
     }
+
     private void ensureCapacity() {
-        if(elements.length == size) {
+        if (elements.length == size) {
             elements = Arrays.copyOf(elements, 2 * size + 1);
         }
     }

@@ -11,6 +11,6 @@ public class TerminalExpression implements Expression {
     @Override
     public boolean interpret(String context) {
 
-       return context.contains(data);
+        return context.contains(data);
     }
 }

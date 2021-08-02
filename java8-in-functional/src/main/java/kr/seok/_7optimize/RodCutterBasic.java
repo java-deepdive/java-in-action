@@ -18,10 +18,24 @@ import java.util.List;
  */
 public class RodCutterBasic {
 
+    // 1인치부터 시작하여 서로 다른 길이를 갖는 장작의 가격에 대한 작업
+    static final List<Integer> priceValues =
+            Arrays.asList(2, 1, 1, 2, 2, 2, 1, 8, 9, 15);
     final List<Integer> prices;
 
     public RodCutterBasic(final List<Integer> pricesForLength) {
         prices = pricesForLength;
+    }
+
+    public static void run(final RodCutterBasic rodCutter) {
+
+        System.out.println(rodCutter.maxProfit(5));
+        System.out.println(rodCutter.maxProfit(22));
+    }
+
+    public static void main(final String[] args) {
+        final RodCutterBasic rodCutter = new RodCutterBasic(priceValues);
+        run(rodCutter);
     }
 
     public int maxProfit(final int length) {
@@ -34,20 +48,5 @@ public class RodCutterBasic {
         }
 
         return profit;
-    }
-
-    // 1인치부터 시작하여 서로 다른 길이를 갖는 장작의 가격에 대한 작업
-    static final List<Integer> priceValues =
-            Arrays.asList(2, 1, 1, 2, 2, 2, 1, 8, 9, 15);
-
-    public static void run(final RodCutterBasic rodCutter) {
-
-        System.out.println(rodCutter.maxProfit(5));
-        System.out.println(rodCutter.maxProfit(22));
-    }
-
-    public static void main(final String[] args) {
-        final RodCutterBasic rodCutter = new RodCutterBasic(priceValues);
-        run(rodCutter);
     }
 }

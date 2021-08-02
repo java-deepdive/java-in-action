@@ -12,6 +12,21 @@ public class MemoryLeekMutableCustomKey {
         this.name = name;
     }
 
+    public static void main(String[] args) {
+        MemoryLeekMutableCustomKey key = new MemoryLeekMutableCustomKey("Shamik");
+
+        Map<MemoryLeekMutableCustomKey, String> map = new HashMap<>();
+        map.put(key, "Shamik Mitra");
+
+        MemoryLeekMutableCustomKey refKey = new MemoryLeekMutableCustomKey("Shamik");
+        String val = map.get(refKey);
+        System.out.println("Value Found " + val);
+        key.setName("Bubun");
+
+        String val1 = map.get(refKey);
+        System.out.println("Due to MutableKey value not found " + val1);
+    }
+
     public String getName() {
         return name;
     }
@@ -31,20 +46,5 @@ public class MemoryLeekMutableCustomKey {
     @Override
     public int hashCode() {
         return Objects.hash(getName());
-    }
-
-    public static void main(String[] args) {
-        MemoryLeekMutableCustomKey key = new MemoryLeekMutableCustomKey("Shamik");
-
-        Map<MemoryLeekMutableCustomKey, String> map = new HashMap<>();
-        map.put(key, "Shamik Mitra");
-
-        MemoryLeekMutableCustomKey refKey = new MemoryLeekMutableCustomKey("Shamik");
-        String val = map.get(refKey);
-        System.out.println("Value Found " + val);
-        key.setName("Bubun");
-
-        String val1 = map.get(refKey);
-        System.out.println("Due to MutableKey value not found " + val1);
     }
 }

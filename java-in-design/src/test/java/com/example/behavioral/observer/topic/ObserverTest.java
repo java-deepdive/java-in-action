@@ -3,8 +3,6 @@ package com.example.behavioral.observer.topic;
 import org.junit.jupiter.api.DisplayName;
 import org.junit.jupiter.api.Test;
 
-import static org.junit.jupiter.api.Assertions.*;
-
 
 class ObserverTest {
     @DisplayName("관찰자 패턴 테스트")

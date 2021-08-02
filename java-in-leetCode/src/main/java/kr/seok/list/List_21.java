@@ -1,23 +1,6 @@
 package kr.seok.list;
 
 public class List_21 {
-    public class ListNode {
-        int val;
-        ListNode next;
-
-        ListNode() {
-        }
-
-        ListNode(int val) {
-            this.val = val;
-        }
-
-        ListNode(int val, ListNode next) {
-            this.val = val;
-            this.next = next;
-        }
-    }
-
     public ListNode mergeTwoLists(ListNode l1, ListNode l2) {
         ListNode ret = null;
         ListNode cur = null;
@@ -48,5 +31,22 @@ public class List_21 {
             }
         }
         return ret;
+    }
+
+    public class ListNode {
+        int val;
+        ListNode next;
+
+        ListNode() {
+        }
+
+        ListNode(int val) {
+            this.val = val;
+        }
+
+        ListNode(int val, ListNode next) {
+            this.val = val;
+            this.next = next;
+        }
     }
 }

@@ -14,10 +14,15 @@ import java.util.function.Supplier;
  * HeavyFactory 클래스
  */
 public class Holder {
-    private Supplier<Heavy> heavy = () -> createAndCacheHeavy();
-
     public Holder() {
         System.out.println("Holder created");
+    }    private Supplier<Heavy> heavy = () -> createAndCacheHeavy();
+
+    public static void main(final String[] args) {
+        final Holder holder = new Holder();
+        System.out.println("deferring heavy creation...");
+        System.out.println(holder.getHeavy());
+        System.out.println(holder.getHeavy());
     }
 
     public Heavy getHeavy() {
@@ -40,10 +45,5 @@ public class Holder {
         return heavy.get();
     }
 
-    public static void main(final String[] args) {
-        final Holder holder = new Holder();
-        System.out.println("deferring heavy creation...");
-        System.out.println(holder.getHeavy());
-        System.out.println(holder.getHeavy());
-    }
+
 }

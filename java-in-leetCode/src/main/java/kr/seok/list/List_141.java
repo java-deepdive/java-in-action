@@ -20,16 +20,6 @@ package kr.seok.list;
  * Otherwise, return false.
  */
 public class List_141 {
-    class ListNode {
-        int val;
-        ListNode next;
-
-        ListNode(int x) {
-            val = x;
-            next = null;
-        }
-    }
-
     public boolean hasCycle(ListNode head) {
         if (head == null) return false;
 
@@ -44,5 +34,15 @@ public class List_141 {
         }
 
         return true;
+    }
+
+    class ListNode {
+        int val;
+        ListNode next;
+
+        ListNode(int x) {
+            val = x;
+            next = null;
+        }
     }
 }

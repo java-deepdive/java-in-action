@@ -14,6 +14,10 @@ import static kr.seok._7optimize.TailCalls.call;
 import static kr.seok._7optimize.TailCalls.done;
 
 public class BigFactorial {
+    final static BigInteger ONE = BigInteger.ONE;
+    final static BigInteger FIVE = new BigInteger("5");
+    final static BigInteger TWENTYK = new BigInteger("20000");
+
     public static BigInteger decrement(final BigInteger number) {
         return number.subtract(BigInteger.ONE);
     }
@@ -22,10 +26,6 @@ public class BigFactorial {
             final BigInteger first, final BigInteger second) {
         return first.multiply(second);
     }
-
-    final static BigInteger ONE = BigInteger.ONE;
-    final static BigInteger FIVE = new BigInteger("5");
-    final static BigInteger TWENTYK = new BigInteger("20000");
 
     //...
 

@@ -10,10 +10,6 @@ public class AirforceOneWithDoubleCheckedLocking {
     private AirforceOneWithDoubleCheckedLocking() {
     }
 
-    public void fly() {
-        System.out.println("Airforce one is flying...");
-    }
-
     // Create a static method for object creation
     synchronized public static AirforceOneWithDoubleCheckedLocking getInstance() {
 
@@ -28,5 +24,9 @@ public class AirforceOneWithDoubleCheckedLocking {
         }
 
         return onlyInstance;
+    }
+
+    public void fly() {
+        System.out.println("Airforce one is flying...");
     }
 }

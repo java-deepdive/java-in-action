@@ -1,6 +1,10 @@
 package kr.seok.bigO;
 
 public class Ex3 {
+    public static void main(String[] args) {
+        new Ex3().printUnorderedPairs(new int[]{1, 2, 3, 4});
+    }
+
     /*
         1, 2
         1, 3
@@ -47,9 +51,5 @@ public class Ex3 {
                 System.out.println(array[i] + ", " + array[j]);
             }
         }
-    }
-
-    public static void main(String[] args) {
-        new Ex3().printUnorderedPairs(new int[]{1, 2, 3, 4});
     }
 }

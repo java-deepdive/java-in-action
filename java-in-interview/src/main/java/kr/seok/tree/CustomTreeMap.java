@@ -17,6 +17,41 @@ public class CustomTreeMap<K, V> extends AbstractMap<K, V> {
         this.comparator = comparator;
     }
 
+    static <K> K key(Entry<K, ?> e) {
+        if (e == null)
+            throw new NoSuchElementException();
+        return e.key;
+    }
+
+    static <K, V> Map.Entry<K, V> exportEntry(Entry<K, V> e) {
+        return (e == null) ? null :
+                new AbstractMap.SimpleImmutableEntry<>(e);
+    }
+
+    static <K, V> Entry<K, V> successor(Entry<K, V> t) {
+        if (t == null)
+            return null;
+        else if (t.right != null) {
+            Entry<K, V> p = t.right;
+
+            while (p.left != null)
+                p = p.left;
+            return p;
+        } else {
+            Entry<K, V> p = t.parent;
+            Entry<K, V> ch = t;
+
+            while (p != null && ch == p.right) {
+                ch = p;
+                p = p.parent;
+            }
+            return p;
+        }
+    }
+
+    static final boolean valEquals(Object o1, Object o2) {
+        return (o1 == null ? o2 == null : o1.equals(o2));
+    }
 
     public int size() {
         return size;
@@ -41,12 +76,6 @@ public class CustomTreeMap<K, V> extends AbstractMap<K, V> {
 
     public K lastKey() {
         return key(getLastEntry());
-    }
-
-    static <K> K key(Entry<K, ?> e) {
-        if (e == null)
-            throw new NoSuchElementException();
-        return e.key;
     }
 
     final Entry<K, V> getFirstEntry() {
@@ -182,11 +211,6 @@ public class CustomTreeMap<K, V> extends AbstractMap<K, V> {
         return result;
     }
 
-    static <K, V> Map.Entry<K, V> exportEntry(Entry<K, V> e) {
-        return (e == null) ? null :
-                new AbstractMap.SimpleImmutableEntry<>(e);
-    }
-
     private void deleteEntry(Entry<K, V> p) {
         modCount++;
         size--;
@@ -230,30 +254,14 @@ public class CustomTreeMap<K, V> extends AbstractMap<K, V> {
         }
     }
 
-    static <K, V> Entry<K, V> successor(Entry<K, V> t) {
-        if (t == null)
-            return null;
-        else if (t.right != null) {
-            Entry<K, V> p = t.right;
-
-            while (p.left != null)
-                p = p.left;
-            return p;
-        } else {
-            Entry<K, V> p = t.parent;
-            Entry<K, V> ch = t;
-
-            while (p != null && ch == p.right) {
-                ch = p;
-                p = p.parent;
-            }
-            return p;
-        }
-    }
-
     final int compare(Object k1, Object k2) {
         return comparator == null ? ((Comparable<? super K>) k1).compareTo((K) k2)
                 : comparator.compare((K) k1, (K) k2);
+    }
+
+    @Override
+    public Set<Map.Entry<K, V>> entrySet() {
+        return null;
     }
 
     static final class Entry<K, V> implements Map.Entry<K, V> {
@@ -301,14 +309,5 @@ public class CustomTreeMap<K, V> extends AbstractMap<K, V> {
         public String toString() {
             return key + "=" + value;
         }
-    }
-
-    static final boolean valEquals(Object o1, Object o2) {
-        return (o1 == null ? o2 == null : o1.equals(o2));
-    }
-
-    @Override
-    public Set<Map.Entry<K, V>> entrySet() {
-        return null;
     }
 }

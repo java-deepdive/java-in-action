@@ -18,26 +18,6 @@ public class FileWriterExample {
         writer = new FileWriter(fileName);
     }
 
-    public void writeStuff(final String message) throws IOException {
-        writer.write(message);
-    }
-
-    public void finalize() throws IOException {
-        writer.close();
-    }
-
-    //...
-    public void close() throws IOException {
-        writer.close();
-    }
-
-//
-//    public static void main(final String[] args) throws IOException {
-//        final FileWriterExample writerExample =
-//                new FileWriterExample("peekaboo.txt");
-//        writerExample.writeStuff("peek-a-boo");
-//    }
-
     public static void callClose(final String[] args) throws IOException {
         final FileWriterExample writerExample =
                 new FileWriterExample("peekaboo.txt");
@@ -54,6 +34,26 @@ public class FileWriterExample {
         } finally {
             writerExample.close();
         }
+    }
+
+    public void writeStuff(final String message) throws IOException {
+        writer.write(message);
+    }
+
+//
+//    public static void main(final String[] args) throws IOException {
+//        final FileWriterExample writerExample =
+//                new FileWriterExample("peekaboo.txt");
+//        writerExample.writeStuff("peek-a-boo");
+//    }
+
+    public void finalize() throws IOException {
+        writer.close();
+    }
+
+    //...
+    public void close() throws IOException {
+        writer.close();
     }
 
 }

@@ -5,6 +5,12 @@ import java.util.HashMap;
 import java.util.Map;
 import java.util.UUID;
 
+interface AlertDAO {
+    UUID addAlert(Date time);
+
+    Date getAlert(UUID id);
+}
+
 class AlertService {
 
     private final AlertDAO storage;
@@ -34,10 +40,4 @@ class MapAlertDAO implements AlertDAO {
     public Date getAlert(UUID id) {
         return this.alerts.get(id);
     }
-}
-
-interface AlertDAO {
-    UUID addAlert(Date time);
-
-    Date getAlert(UUID id);
 }

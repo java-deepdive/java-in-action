@@ -4,15 +4,6 @@ import java.util.EmptyStackException;
 
 public class SimpleStack<T> {
 
-    private static class StackNode<T> {
-        private T data;
-        private StackNode<T> next;
-
-        public StackNode(T data) {
-            this.data = data;
-        }
-    }
-
     private StackNode<T> top;
 
     public T pop() {
@@ -35,5 +26,14 @@ public class SimpleStack<T> {
 
     public boolean isEmpty() {
         return top == null;
+    }
+
+    private static class StackNode<T> {
+        private T data;
+        private StackNode<T> next;
+
+        public StackNode(T data) {
+            this.data = data;
+        }
     }
 }

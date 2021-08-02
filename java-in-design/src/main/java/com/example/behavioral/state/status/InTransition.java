@@ -2,12 +2,12 @@ package com.example.behavioral.state.status;
 
 import com.example.behavioral.state.context.DeliveryContext;
 
-public class InTransition implements PackageState
-{
+public class InTransition implements PackageState {
     //Singleton
     private static InTransition instance = new InTransition();
 
-    private InTransition() {}
+    private InTransition() {
+    }
 
     public static InTransition instance() {
         return instance;
@@ -15,8 +15,7 @@ public class InTransition implements PackageState
 
     //Business logic and state transition
     @Override
-    public void updateState(DeliveryContext ctx)
-    {
+    public void updateState(DeliveryContext ctx) {
         System.out.println("Package is in transition !!");
         ctx.setCurrentState(OutForDelivery.instance());
     }

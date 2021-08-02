@@ -56,7 +56,7 @@ public class NormalScore extends Score {
 
     @Override
     public NormalScore bowl(final int downPins) {
-        if(left.value() == NORMAL_LEFT_SIZE) {
+        if (left.value() == NORMAL_LEFT_SIZE) {
             return first(downPins);
         }
         return second(downPins);

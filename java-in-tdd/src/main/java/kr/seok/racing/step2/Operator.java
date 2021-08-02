@@ -27,20 +27,12 @@ public enum Operator {
         this.formula = formula;
     }
 
-    public Integer calculate(Integer a, Integer b) {
-        return formula.apply(a, b);
-    }
-
     // 넘어온 문자가 사칙 연산에 존재하는 경우 해당 연산자를 반환
     public static Operator getOperator(String operation) {
         return Arrays.stream(Operator.values())
                 .filter(o -> isEquals(operation, o))
                 .findAny()
                 .orElseThrow(ILLEGAL_ARGUMENT_EXCEPTION_SUPPLIER);
-    }
-
-    private String getOperator() {
-        return operator;
     }
 
     // 사칙연산에 대한 리스트를 반환할 필요없이 유효성 검사 코드를 여기서 관리
@@ -51,6 +43,14 @@ public enum Operator {
 
     private static boolean isEquals(String operation, Operator o) {
         return o.getOperator().equals(operation);
+    }
+
+    public Integer calculate(Integer a, Integer b) {
+        return formula.apply(a, b);
+    }
+
+    private String getOperator() {
+        return operator;
     }
 
 }

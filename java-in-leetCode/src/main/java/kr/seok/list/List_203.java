@@ -9,23 +9,6 @@ package kr.seok.list;
  * Output: 1->2->3->4->5
  */
 public class List_203 {
-    public class ListNode {
-        int val;
-        ListNode next;
-
-        ListNode() {
-        }
-
-        ListNode(int val) {
-            this.val = val;
-        }
-
-        ListNode(int val, ListNode next) {
-            this.val = val;
-            this.next = next;
-        }
-    }
-
     public ListNode removeElements(ListNode head, int val) {
         ListNode sentinel = new ListNode(0); // 일단 기본 값 0을 넣고 노드를 생성
         sentinel.next = head; // head 노드를 생성한 노드의 next에 저장하여 head로 정의
@@ -51,5 +34,22 @@ public class List_203 {
             curr = curr.next; // 다음 노드를 curr 노드로 저장하여 ( ) ( ) ( ) 모양을 유지
         }
         return sentinel.next;
+    }
+
+    public class ListNode {
+        int val;
+        ListNode next;
+
+        ListNode() {
+        }
+
+        ListNode(int val) {
+            this.val = val;
+        }
+
+        ListNode(int val, ListNode next) {
+            this.val = val;
+            this.next = next;
+        }
     }
 }

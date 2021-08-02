@@ -8,18 +8,6 @@ public class YouTubeGraph {
 
     static class Graph { // 그래프
 
-        static class Node { // 그래프 안에 노드
-            private final int data;
-            private final LinkedList<Node> adjacent;
-            private boolean marked;
-
-            public Node(int data) {
-                this.data = data;
-                this.marked = false;
-                adjacent = new LinkedList<>();
-            }
-        }
-
         Node[] nodes;
 
         public Graph(int size) { // 초기화
@@ -114,6 +102,18 @@ public class YouTubeGraph {
 
         private void visit(Node node) {
             System.out.print(node.data + " ");
+        }
+
+        static class Node { // 그래프 안에 노드
+            private final int data;
+            private final LinkedList<Node> adjacent;
+            private boolean marked;
+
+            public Node(int data) {
+                this.data = data;
+                this.marked = false;
+                adjacent = new LinkedList<>();
+            }
         }
     }
 }

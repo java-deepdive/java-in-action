@@ -8,6 +8,7 @@ import static org.assertj.core.api.Assertions.assertThat;
 
 class ChainHashTest {
     ChainHash<Integer, Data> chainHash;
+    Data data;
 
     @BeforeEach
     public void setUp() {
@@ -20,30 +21,6 @@ class ChainHashTest {
         // 기본 용량이 11
         chainHash.dump();
     }
-
-    static class Data {
-        private int key;
-        private String value;
-
-        public Data(int key, String value) {
-            this.key = key;
-            this.value = value;
-        }
-
-        public String getValue() {
-            return value;
-        }
-
-        @Override
-        public String toString() {
-            return "Data{" +
-                    "key=" + key +
-                    ", value='" + value + '\'' +
-                    '}';
-        }
-    }
-
-    Data data;
 
     // 00 → 323232 (Data{key=3, value='data3'}) → 2 (Data{key=1, value='data1'}) → 1 (Data{key=1, value='data1'})
     @Test
@@ -95,5 +72,27 @@ class ChainHashTest {
 
         int removed3 = chainHash.remove(3);
         assertThat(removed3).isEqualTo(1); // 해당 키 값은 존재하지 않음
+    }
+
+    static class Data {
+        private int key;
+        private String value;
+
+        public Data(int key, String value) {
+            this.key = key;
+            this.value = value;
+        }
+
+        public String getValue() {
+            return value;
+        }
+
+        @Override
+        public String toString() {
+            return "Data{" +
+                    "key=" + key +
+                    ", value='" + value + '\'' +
+                    '}';
+        }
     }
 }

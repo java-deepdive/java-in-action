@@ -22,7 +22,7 @@ public class Publisher implements Subject {
 
     @Override
     public void notifyUpdate(Message m) {
-        for(Observer o: observers) {
+        for (Observer o : observers) {
             o.update(m);
         }
     }

@@ -6,16 +6,16 @@ import com.example.behavioral.command.stock.order.SellStock;
 import com.example.behavioral.command.stock.order.Stock;
 
 public class CommandPatternDemo {
-   public static void main(String[] args) {
-      Stock abcStock = new Stock();
+    public static void main(String[] args) {
+        Stock abcStock = new Stock();
 
-      BuyStock buyStockOrder = new BuyStock(abcStock);
-      SellStock sellStockOrder = new SellStock(abcStock);
+        BuyStock buyStockOrder = new BuyStock(abcStock);
+        SellStock sellStockOrder = new SellStock(abcStock);
 
-      Broker broker = new Broker();
-      broker.takeOrder(buyStockOrder);
-      broker.takeOrder(sellStockOrder);
+        Broker broker = new Broker();
+        broker.takeOrder(buyStockOrder);
+        broker.takeOrder(sellStockOrder);
 
-      broker.placeOrders();
-   }
+        broker.placeOrders();
+    }
 }

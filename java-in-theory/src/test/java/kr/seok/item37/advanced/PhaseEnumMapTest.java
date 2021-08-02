@@ -3,9 +3,6 @@ package kr.seok.item37.advanced;
 import org.junit.jupiter.api.DisplayName;
 import org.junit.jupiter.api.Test;
 
-import java.util.Arrays;
-
-import static kr.seok.item37.advanced.PhaseEnumMap.Transition.from;
 import static org.assertj.core.api.Assertions.assertThat;
 
 class PhaseEnumMapTest {

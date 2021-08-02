@@ -15,23 +15,23 @@ public class AdvancedDimension extends Dimension2D implements Serializable {
         this.height = height;
     }
 
-    // 수정자를 제공
-    public void setWidth(int width) {
-        this.width = width;
-    }
-
-    public void setHeight(int height) {
-        this.height = height;
-    }
-
     @Override
     public double getWidth() {
         return width;
     }
 
+    // 수정자를 제공
+    public void setWidth(int width) {
+        this.width = width;
+    }
+
     @Override
     public double getHeight() {
         return height;
+    }
+
+    public void setHeight(int height) {
+        this.height = height;
     }
 
     public void setSize(Dimension d) {

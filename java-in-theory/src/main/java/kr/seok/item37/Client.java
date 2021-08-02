@@ -8,12 +8,12 @@ class Client {
         Map<Plant.LifeCycle, Set<Plant>> plantByLifeCycle = new EnumMap<>(Plant.LifeCycle.class);
 
         // EnumMap 내에 Set 컬렉션 생성
-        for(Plant.LifeCycle lc : Plant.LifeCycle.values()) {
+        for (Plant.LifeCycle lc : Plant.LifeCycle.values()) {
             plantByLifeCycle.put(lc, new HashSet<>());
         }
 
         // 사용자가 등록한 식물을 LifeCycle 에 따라 Set을 조회 후 등록
-        for(Plant p : garden) {
+        for (Plant p : garden) {
             plantByLifeCycle.get(p.lifeCycle).add(p);
         }
 
@@ -27,17 +27,17 @@ class Client {
         Set<Plant>[] plantsByLifeCycle = new Set[lifeCycleMaxLength];
 
         // 2. 배열을 초기화 하기 위해 Set 구현체 생성
-        for(int i = 0 ; i < plantsByLifeCycle.length ; i++) {
+        for (int i = 0; i < plantsByLifeCycle.length; i++) {
             plantsByLifeCycle[i] = new HashSet<>();
         }
 
         // 3. 사용자가 등록한 데이터를 Set 컨테이너에 등록
-        for(Plant p : garden) {
+        for (Plant p : garden) {
             plantsByLifeCycle[p.lifeCycle.ordinal()].add(p);
         }
 
         // 인덱스의 의미를 알 수 없어 직접 레이블을 달아 데이터 확인 작업 필요
-        for(int i = 0 ; i < plantsByLifeCycle.length ; i++) {
+        for (int i = 0; i < plantsByLifeCycle.length; i++) {
             System.out.printf("%s: %s%n", Plant.LifeCycle.values()[i], plantsByLifeCycle[i]);
         }
     }

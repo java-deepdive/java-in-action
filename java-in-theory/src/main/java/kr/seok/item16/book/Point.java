@@ -4,10 +4,9 @@ import java.awt.geom.Point2D;
 import java.beans.Transient;
 
 public class Point extends Point2D implements java.io.Serializable {
+    private static final long serialVersionUID = -5276940640259749850L;
     public int x;
     public int y;
-
-    private static final long serialVersionUID = -5276940640259749850L;
 
     public Point() {
         this(0, 0);

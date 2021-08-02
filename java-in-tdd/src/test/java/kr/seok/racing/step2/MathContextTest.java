@@ -17,6 +17,8 @@ import static org.assertj.core.api.Assertions.assertThat;
  */
 class MathContextTest {
 
+    private MathContext mathContext;
+
     private static Stream<Arguments> formulaStream() {
         return Stream.of(
                 Arguments.of("2 + 1 * 3 / 2", 4, 3),
@@ -24,8 +26,6 @@ class MathContextTest {
                 Arguments.of("2 + 1 / 3 * 2 + 1", 5, 4)
         );
     }
-
-    private MathContext mathContext;
 
     @DisplayName("사칙연산 Context에 입력해서 Queue 생성되는지 확인")
     @ParameterizedTest(name = "{0} 연산 입력시 필드 null 체크 테스트")

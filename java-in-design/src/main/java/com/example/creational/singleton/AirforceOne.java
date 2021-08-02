@@ -10,10 +10,6 @@ public class AirforceOne {
     private AirforceOne() {
     }
 
-    public void fly() {
-        System.out.println("Airforce one is flying...");
-    }
-
     // Create a static method for object creation
     public static AirforceOne getInstance() {
 
@@ -23,5 +19,9 @@ public class AirforceOne {
         }
 
         return onlyInstance;
+    }
+
+    public void fly() {
+        System.out.println("Airforce one is flying...");
     }
 }

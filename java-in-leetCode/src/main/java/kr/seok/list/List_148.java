@@ -8,22 +8,9 @@ package kr.seok.list;
  */
 public class List_148 {
 
-    public static class ListNode {
-        int val;
-        ListNode next;
-
-        ListNode() {
-        }
-
-        ListNode(int val) {
-            this.val = val;
-        }
-
-        ListNode(int val, ListNode next) {
-            this.val = val;
-            this.next = next;
-        }
-    }
+    // ###### Bottom Up Merge Sort
+    ListNode tail = new ListNode();
+    ListNode nextSubList = new ListNode();
 
     // Top Down Merge Sort
     public ListNode sortList_TopDownMergeSort(ListNode head) {
@@ -70,10 +57,6 @@ public class List_148 {
         tail.next = (list1 != null) ? list1 : list2;
         return dummyHead.next;
     }
-
-    // ###### Bottom Up Merge Sort
-    ListNode tail = new ListNode();
-    ListNode nextSubList = new ListNode();
 
     public ListNode sortList_bottomUpMergeSort(ListNode head) {
         if (head == null || head.next == null)
@@ -152,5 +135,22 @@ public class List_148 {
             cnt++;
         }
         return cnt;
+    }
+
+    public static class ListNode {
+        int val;
+        ListNode next;
+
+        ListNode() {
+        }
+
+        ListNode(int val) {
+            this.val = val;
+        }
+
+        ListNode(int val, ListNode next) {
+            this.val = val;
+            this.next = next;
+        }
     }
 }

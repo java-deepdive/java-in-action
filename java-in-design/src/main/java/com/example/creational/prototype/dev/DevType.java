@@ -27,12 +27,12 @@ public enum DevType {
         }
     };
 
-    protected abstract BaseDeveloper create();
-
     public static DevType create(DevType type) {
         return Arrays.stream(DevType.values())
                 .filter(devType -> devType.equals(type))
                 .findFirst()
                 .orElse(CLIENT);
     }
+
+    protected abstract BaseDeveloper create();
 }

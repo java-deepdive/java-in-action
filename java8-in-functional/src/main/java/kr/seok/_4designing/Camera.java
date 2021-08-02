@@ -17,26 +17,11 @@ import java.util.stream.Stream;
 public class Camera {
     private Function<Color, Color> filter;
 
-    public Color capture(final Color inputColor) {
-        final Color processedColor = filter.apply(inputColor);
-        //... more processing of color...
-        return processedColor;
-    }
-
-    //... other functions that use the filter ...
-
-    public void setFilters(final Function<Color, Color>... filters) {
-        filter =
-                Stream.of(filters)
-                        .reduce((filter, next) -> filter.compose(next))
-                        .orElse(color -> color)
-//                        .orElseGet(Function::identity)
-        ;
-    }
-
     public Camera() {
         setFilters();
     }
+
+    //... other functions that use the filter ...
 
     public static void main(final String[] args) {
         final Camera camera = new Camera();
@@ -63,6 +48,21 @@ public class Camera {
         camera.setFilters(Color::brighter, Color::darker);
         printCaptured.accept("brighter & darker filter");
         System.out.println("//" + "END:BOTH_OUTPUT");
+    }
+
+    public Color capture(final Color inputColor) {
+        final Color processedColor = filter.apply(inputColor);
+        //... more processing of color...
+        return processedColor;
+    }
+
+    public void setFilters(final Function<Color, Color>... filters) {
+        filter =
+                Stream.of(filters)
+                        .reduce((filter, next) -> filter.compose(next))
+                        .orElse(color -> color)
+//                        .orElseGet(Function::identity)
+        ;
     }
 
 }

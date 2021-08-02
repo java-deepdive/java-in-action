@@ -26,7 +26,7 @@ class PhoneTest {
         phone.call(new Call(
                 LocalDateTime.of(2021, 6, 12, 18, 0, 0),
                 LocalDateTime.of(2021, 6, 12, 18, 10, 0)
-                ));
+        ));
 
         Money actual = phone.calculateFee();
         assertThat(actual).hasToString("1080.0");

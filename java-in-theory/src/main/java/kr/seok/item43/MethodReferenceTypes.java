@@ -5,13 +5,19 @@ import java.time.Instant;
 import java.util.*;
 
 public class MethodReferenceTypes<K, V> {
+    // 메서드 참조 유형 - 클래스 생성자
+    Supplier<Object> treeMap = () -> new TreeMap<K, V>();
+
     // 메서드 참조 유형 - 정적 메서드
-    public static int parseInt(String s) throws NumberFormatException { return 0; }
+    public static int parseInt(String s) throws NumberFormatException {
+        return 0;
+    }
 
     // 메서드 참조 유형 - 한정적 (인스턴스)
     public static Instant now() {
         return Clock.systemUTC().instant();
     }
+
     // 함수 객체가 받는 인수와 참조되는 메서드가 받는 인수가 같음
     public boolean isAfter(Instant otherInstant) {
         return false;
@@ -23,9 +29,6 @@ public class MethodReferenceTypes<K, V> {
         return "";
     }
 
-    // 메서드 참조 유형 - 클래스 생성자
-    Supplier<Object> treeMap = () -> new TreeMap<K, V>();
-
     // 메서드 참조 유형 - 배열 생성자
     public String[] methodReferenceConstructorArray() {
         List<String> numbers = Arrays.asList("1", "2");
@@ -33,14 +36,8 @@ public class MethodReferenceTypes<K, V> {
     }
 
     static class DataContainer {
-        enum DataId {
-            ID_1,
-            ID_2,
-            ID_3;
-        }
         private DataId id;
         private String data;
-
         public DataContainer(DataId id, String data) {
             this.id = id;
             this.data = data;
@@ -69,6 +66,12 @@ public class MethodReferenceTypes<K, V> {
                     "id=" + id +
                     ", data='" + data + '\'' +
                     '}';
+        }
+
+        enum DataId {
+            ID_1,
+            ID_2,
+            ID_3;
         }
     }
 }

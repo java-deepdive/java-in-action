@@ -38,7 +38,7 @@ public class EsDocumentSearch {
         // 요청
         SearchRequest searchRequest = searchRequest(indexName, searchSourceBuilder);
 
-        try  {
+        try {
             // 응답
             SearchResponse searchResponse = client.search(searchRequest, RequestOptions.DEFAULT);
             SearchHits searchHits = searchResponse.getHits();

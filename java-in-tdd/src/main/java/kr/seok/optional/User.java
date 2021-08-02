@@ -11,18 +11,6 @@ public class User {
         this.age = age;
     }
 
-    public String getName() {
-        return name;
-    }
-
-    public Integer getAge() {
-        return age;
-    }
-
-    public boolean matchName(String name) {
-        return this.name.equals(name);
-    }
-
     public static boolean ageIsInRange1(User user) {
         boolean isInRange = false;
 
@@ -48,6 +36,18 @@ public class User {
 
     private static boolean isExistUserAge(User u) {
         return u.getAge() != null;
+    }
+
+    public String getName() {
+        return name;
+    }
+
+    public Integer getAge() {
+        return age;
+    }
+
+    public boolean matchName(String name) {
+        return this.name.equals(name);
     }
 
     @Override

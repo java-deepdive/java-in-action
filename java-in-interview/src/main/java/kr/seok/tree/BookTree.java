@@ -9,32 +9,8 @@ import java.util.Comparator;
  * @param <V>
  */
 public class BookTree<K, V> {
-    static class Node<K, V> {
-        private K key;
-        private V data;
-
-        private Node<K, V> left;
-        private Node<K, V> right;
-
-        public Node(K key, V data, Node<K, V> left, Node<K, V> right) {
-            this.key = key;
-            this.data = data;
-            this.left = left;
-            this.right = right;
-        }
-
-        public K getKey() {
-            return key;
-        }
-
-        public V getData() {
-            return data;
-        }
-    }
-
     private Node<K, V> root;
     private Comparator<? super K> comparator = null;
-
     public BookTree() {
         this.root = null;
     }
@@ -162,5 +138,28 @@ public class BookTree<K, V> {
 
     public void print() {
         printSubTree(root);
+    }
+
+    static class Node<K, V> {
+        private K key;
+        private V data;
+
+        private Node<K, V> left;
+        private Node<K, V> right;
+
+        public Node(K key, V data, Node<K, V> left, Node<K, V> right) {
+            this.key = key;
+            this.data = data;
+            this.left = left;
+            this.right = right;
+        }
+
+        public K getKey() {
+            return key;
+        }
+
+        public V getData() {
+            return data;
+        }
     }
 }

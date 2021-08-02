@@ -21,15 +21,6 @@ public class FileWriterEAM {
         writer = new FileWriter(fileName);
     }
 
-    private void close() throws IOException {
-        System.out.println("close called automatically...");
-        writer.close();
-    }
-
-    public void writeStuff(final String message) throws IOException {
-        writer.write(message);
-    }
-
     /*
 
      */
@@ -58,6 +49,15 @@ public class FileWriterEAM {
                     writerEAM.writeStuff("sweet");
                 });
 
+    }
+
+    private void close() throws IOException {
+        System.out.println("close called automatically...");
+        writer.close();
+    }
+
+    public void writeStuff(final String message) throws IOException {
+        writer.write(message);
     }
 
 }

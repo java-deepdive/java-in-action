@@ -12,19 +12,6 @@ public class MemoryLeekCustomKey {
         this.name = name;
     }
 
-    @Override
-    public boolean equals(Object o) {
-        if (this == o) return true;
-        if (o == null || getClass() != o.getClass()) return false;
-        MemoryLeekCustomKey that = (MemoryLeekCustomKey) o;
-        return Objects.equals(name, that.name);
-    }
-
-    @Override
-    public int hashCode() {
-        return Objects.hash(name);
-    }
-
     public static void main(String[] args) {
         Map<MemoryLeekCustomKey, String> map = new HashMap<>();
 
@@ -38,5 +25,18 @@ public class MemoryLeekCustomKey {
 
         // 해당 객체의 hashCode가 동일하지 않아 찾을 수 없음
         System.out.println("Missing equals and hascode so value is not accessible from Map " + value);
+    }
+
+    @Override
+    public boolean equals(Object o) {
+        if (this == o) return true;
+        if (o == null || getClass() != o.getClass()) return false;
+        MemoryLeekCustomKey that = (MemoryLeekCustomKey) o;
+        return Objects.equals(name, that.name);
+    }
+
+    @Override
+    public int hashCode() {
+        return Objects.hash(name);
     }
 }

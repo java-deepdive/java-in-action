@@ -31,27 +31,27 @@ public class EsIndexCreate {
         try {
             indexBuilder = jsonBuilder()
                     .startObject()
-                        .startObject("properties")
-                            .startObject("movieCd")
-                                .field("type", "keyword")
-                                .field("store", "true")
-                                .field("index_options", "docs")
-                            .endObject()
-                            .startObject("movieNm")
-                                /* Search API 사용시 text 타입이라고 오류가 남 keyword로 수정 테스트*/
-                                .field("type", "text")
-                                .field("fielddata", true)
-                //                                .field("type", "keyword")
-                                .field("store", "true")
-                                .field("index_options", "docs")
-                            .endObject()
-                            .startObject("movieNmEn")
-                                .field("type", "text")
-                                .field("fielddata", true)
-                                .field("store", "true")
-                                .field("index_options", "docs")
-                            .endObject()
-                        .endObject()
+                    .startObject("properties")
+                    .startObject("movieCd")
+                    .field("type", "keyword")
+                    .field("store", "true")
+                    .field("index_options", "docs")
+                    .endObject()
+                    .startObject("movieNm")
+                    /* Search API 사용시 text 타입이라고 오류가 남 keyword로 수정 테스트*/
+                    .field("type", "text")
+                    .field("fielddata", true)
+                    //                                .field("type", "keyword")
+                    .field("store", "true")
+                    .field("index_options", "docs")
+                    .endObject()
+                    .startObject("movieNmEn")
+                    .field("type", "text")
+                    .field("fielddata", true)
+                    .field("store", "true")
+                    .field("index_options", "docs")
+                    .endObject()
+                    .endObject()
                     .endObject();
 
             // 요청 정보 생성, index 명, json body, alias 명
@@ -63,7 +63,7 @@ public class EsIndexCreate {
 
             boolean acknowledged = createIndexResponse.isAcknowledged();
 
-            if(acknowledged) {
+            if (acknowledged) {
                 log.info("acknowledged {}", true);
             }
 

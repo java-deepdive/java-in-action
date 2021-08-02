@@ -38,17 +38,17 @@ public enum StateSymbol {
      * @return the state
      */
     public static State ready(Score pins) {
-        if(pins.isSecond() && pins.isStrike()) {
+        if (pins.isSecond() && pins.isStrike()) {
             return new Strike();
         }
         return running(pins);
     }
 
     private static State running(Score pins) {
-        if(pins.isEnd() && pins.isMaxSize()) {
+        if (pins.isEnd() && pins.isMaxSize()) {
             return new Spare(pins.first(), pins.second());
         }
-        if(pins.isEnd() && pins.isMiss()) {
+        if (pins.isEnd() && pins.isMiss()) {
             return new Miss(pins.first(), pins.second());
         }
         return new Hit(pins.first());

@@ -5,6 +5,18 @@ import java.util.LinkedList;
 import java.util.List;
 
 public class Hash_706 {
+    public static void main(String[] args) {
+        MyHashMap hashMap = new MyHashMap();
+        hashMap.put(1, 1);
+        hashMap.put(2, 2);
+        hashMap.get(1);            // returns 1
+        hashMap.get(3);            // returns -1 (not found)
+        hashMap.put(2, 1);          // update the existing value
+        hashMap.get(2);            // returns 1
+        hashMap.remove(2);          // remove the mapping for 2
+        hashMap.get(2);            // returns -1 (not found)
+    }
+
     static class Pair<K, V> {
         public K first;
         public V second;
@@ -82,17 +94,5 @@ public class Hash_706 {
         private int getHashCode(int key) {
             return key % this.key_space;
         }
-    }
-
-    public static void main(String[] args) {
-        MyHashMap hashMap = new MyHashMap();
-        hashMap.put(1, 1);
-        hashMap.put(2, 2);
-        hashMap.get(1);            // returns 1
-        hashMap.get(3);            // returns -1 (not found)
-        hashMap.put(2, 1);          // update the existing value
-        hashMap.get(2);            // returns 1
-        hashMap.remove(2);          // remove the mapping for 2
-        hashMap.get(2);            // returns -1 (not found)
     }
 }

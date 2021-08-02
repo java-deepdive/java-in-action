@@ -110,16 +110,6 @@ public class YoutubeStack {
     }
 
     static class MinStack extends Stack<MinStack.MinNode> {
-        static class MinNode {
-            int value;
-            int min;
-
-            public MinNode(int value, int min) {
-                this.value = value;
-                this.min = min;
-            }
-        }
-
         public int min() {
             if (this.isEmpty()) {
                 return Integer.MAX_VALUE;
@@ -133,18 +123,19 @@ public class YoutubeStack {
             System.out.println("현재 값: " + value + " :: 최소값: " + newMin);
             super.push(new MinNode(value, newMin));
         }
+
+        static class MinNode {
+            int value;
+            int min;
+
+            public MinNode(int value, int min) {
+                this.value = value;
+                this.min = min;
+            }
+        }
     }
 
     static class LinkedListBasedStack<T> {
-
-        static class Node<T> {
-            private T data;
-            private Node<T> next;
-
-            public Node(T data) {
-                this.data = data;
-            }
-        }
 
         private Node<T> top;
 
@@ -169,25 +160,24 @@ public class YoutubeStack {
         public boolean isEmpty() {
             return top == null;
         }
+
+        static class Node<T> {
+            private T data;
+            private Node<T> next;
+
+            public Node(T data) {
+                this.data = data;
+            }
+        }
     }
 
     // 고정 길이 배열 스택
     static class ArrayBasedStack {
 
-        static class FullStackException extends RuntimeException {
-            public FullStackException() {
-            }
-
-            public FullStackException(String message) {
-                super(message);
-            }
-        }
-
         private int numOfStacks = 3; // 스택의 개수는 3개로 고정
         private int stackSize; // 각 스택에 사이즈 저장
         private int[] values; // 실제 데이터 필드
         private int[] sizes; // 각 스택의 데이터 사이즈를 저장할 공간
-
         public ArrayBasedStack(int stackSize) {
             this.stackSize = stackSize;
             this.sizes = new int[numOfStacks]; // 각 스택에 데이터 사이즈를 저장
@@ -231,6 +221,15 @@ public class YoutubeStack {
         public int peek(int stackNum) {
             if (isEmpty(stackNum)) throw new EmptyStackException();
             return values[getTopIndex(stackNum)];
+        }
+
+        static class FullStackException extends RuntimeException {
+            public FullStackException() {
+            }
+
+            public FullStackException(String message) {
+                super(message);
+            }
         }
     }
 

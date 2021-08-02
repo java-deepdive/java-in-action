@@ -5,8 +5,8 @@ import java.util.Arrays;
 import java.util.List;
 
 public class TicketOffice {
-    private Long amount;
     private final List<Ticket> tickets = new ArrayList<>();
+    private Long amount;
 
     public TicketOffice(Long amount, Ticket... tickets) {
         this.amount = amount;

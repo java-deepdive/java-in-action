@@ -5,15 +5,6 @@ import java.util.NoSuchElementException;
 public class YoutubeQueue<T> {
 
     static class BasicQueue<T> {
-        static class Node<T> {
-            private T data;
-            private Node<T> next;
-
-            public Node(T data) {
-                this.data = data;
-            }
-        }
-
         private Node<T> first;
         private Node<T> last;
 
@@ -53,6 +44,15 @@ public class YoutubeQueue<T> {
 
         public boolean isEmpty() {
             return first == null;
+        }
+
+        static class Node<T> {
+            private T data;
+            private Node<T> next;
+
+            public Node(T data) {
+                this.data = data;
+            }
         }
     }
 }

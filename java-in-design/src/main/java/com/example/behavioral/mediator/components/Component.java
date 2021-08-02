@@ -7,5 +7,6 @@ import com.example.behavioral.mediator.mediators.Mediator;
  */
 public interface Component {
     void setMediator(Mediator mediator);
+
     String getName();
 }

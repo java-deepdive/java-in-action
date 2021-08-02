@@ -14,6 +14,6 @@ class InsertSortTest {
         InsertSort sort = new InsertSort();
         int[] actual = sort.sort(items, items.length);
 
-        assertThat(actual).isEqualTo(new int[] {1, 2, 4, 5, 6, 7, 8, 23});
+        assertThat(actual).isEqualTo(new int[]{1, 2, 4, 5, 6, 7, 8, 23});
     }
 }

@@ -4,6 +4,8 @@ import java.util.EmptyStackException;
 
 public class CustomStack<E> extends CustomVector<E> {
 
+    private static final long serialVersionUID = 1224463164541339165L;
+
     public CustomStack() {
     }
 
@@ -39,6 +41,4 @@ public class CustomStack<E> extends CustomVector<E> {
         }
         return -1;
     }
-
-    private static final long serialVersionUID = 1224463164541339165L;
 }

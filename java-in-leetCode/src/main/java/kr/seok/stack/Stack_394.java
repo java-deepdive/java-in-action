@@ -36,6 +36,8 @@ import java.util.Stack;
  * Output: "abccdcdcdxyz"
  */
 public class Stack_394 {
+    int index = 0;
+
     public String decodeString_oneStack(String s) {
         Stack<Character> stack = new Stack<>();
 
@@ -111,8 +113,6 @@ public class Stack_394 {
         }
         return currentString.toString();
     }
-
-    int index = 0;
 
     String decodeString_recursive(String s) {
         StringBuilder result = new StringBuilder();

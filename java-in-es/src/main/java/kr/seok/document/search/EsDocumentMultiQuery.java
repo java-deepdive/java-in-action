@@ -57,7 +57,7 @@ public class EsDocumentMultiQuery {
             /* 다중 조건 쿼리 요청 */
             MultiSearchResponse multiSearchResponse = client.msearch(request, RequestOptions.DEFAULT);
             List<SearchResponse> searchResponses = new ArrayList<>();
-            for(MultiSearchResponse.Item multiSearchResponseItem : multiSearchResponse.getResponses()){
+            for (MultiSearchResponse.Item multiSearchResponseItem : multiSearchResponse.getResponses()) {
                 searchResponses.add(multiSearchResponseItem.getResponse());
             }
 

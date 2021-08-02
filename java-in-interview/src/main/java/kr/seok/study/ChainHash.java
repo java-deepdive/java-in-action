@@ -39,37 +39,8 @@ import java.util.HashMap;
  */
 public class ChainHash<K, V> {
 
-    /**
-     * 버킷용 클래스
-     * - 해시를 구성하는 노드
-     */
-    class Node<K, V> {
-        private K key;  // 키 값
-        private V data; // 데이터
-        private Node<K, V> next; // 다음 노드에 대한 참조
-
-        public Node(K key, V data, Node<K, V> next) {
-            this.key = key;
-            this.data = data;
-            this.next = next;
-        }
-
-        K getKey() {
-            return key;
-        }
-
-        V getValue() {
-            return data;
-        }
-
-        public int hashCode() {
-            return key.hashCode();
-        }
-    }
-
     private int size;           // 해시 테이블의 크기
     private Node<K, V>[] table; // 해시 테이블을 저장하는 배열
-
     // ChainHash 클래스 생성자
     public ChainHash(int capacity) {
         try {
@@ -161,6 +132,34 @@ public class ChainHash<K, V> {
                 p = p.next;
             }
             System.out.println();
+        }
+    }
+
+    /**
+     * 버킷용 클래스
+     * - 해시를 구성하는 노드
+     */
+    class Node<K, V> {
+        private K key;  // 키 값
+        private V data; // 데이터
+        private Node<K, V> next; // 다음 노드에 대한 참조
+
+        public Node(K key, V data, Node<K, V> next) {
+            this.key = key;
+            this.data = data;
+            this.next = next;
+        }
+
+        K getKey() {
+            return key;
+        }
+
+        V getValue() {
+            return data;
+        }
+
+        public int hashCode() {
+            return key.hashCode();
         }
     }
 }

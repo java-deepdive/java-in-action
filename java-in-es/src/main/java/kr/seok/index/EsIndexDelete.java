@@ -13,6 +13,12 @@ import java.io.IOException;
 @Slf4j
 public class EsIndexDelete {
 
+    private static RestHighLevelClient getRestHighLevelClient() {
+        return new RestHighLevelClient(
+                RestClient.builder(
+                        new HttpHost("127.0.0.1", 9200, "http")));
+    }
+
     public boolean deleteIndex(String indexName) {
         RestHighLevelClient client = getRestHighLevelClient();
         // 인덱스 삭제
@@ -26,7 +32,7 @@ public class EsIndexDelete {
 
             boolean acknowledged = deleteIndexResponse.isAcknowledged();
 
-            if(acknowledged) log.info("삭제 확인");
+            if (acknowledged) log.info("삭제 확인");
 
             client.close();
 
@@ -36,11 +42,5 @@ public class EsIndexDelete {
         }
 
         return false;
-    }
-
-    private static RestHighLevelClient getRestHighLevelClient() {
-        return new RestHighLevelClient(
-                RestClient.builder(
-                        new HttpHost("127.0.0.1", 9200, "http")));
     }
 }

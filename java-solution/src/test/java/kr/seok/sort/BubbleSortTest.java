@@ -12,6 +12,6 @@ class BubbleSortTest {
         BubbleSort sort = new BubbleSort();
         int[] actual = sort.sort3(items, items.length);
 
-        assertThat(actual).isEqualTo(new int[] {1, 2, 4, 5, 6, 7, 8, 23});
+        assertThat(actual).isEqualTo(new int[]{1, 2, 4, 5, 6, 7, 8, 23});
     }
 }

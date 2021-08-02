@@ -13,23 +13,6 @@ public class History {
     private List<Pair> history = new ArrayList<>();
     private int virtualSize = 0;
 
-    private static class Pair {
-        Command command;
-        Memento memento;
-        Pair(Command c, Memento m) {
-            command = c;
-            memento = m;
-        }
-
-        private Command getCommand() {
-            return command;
-        }
-
-        private Memento getMemento() {
-            return memento;
-        }
-    }
-
     public void push(Command c, Memento m) {
         if (virtualSize != history.size() && virtualSize > 0) {
             history = history.subList(0, virtualSize - 1);
@@ -73,5 +56,23 @@ public class History {
         }
         virtualSize = Math.min(history.size(), virtualSize + 1);
         return history.get(virtualSize - 1);
+    }
+
+    private static class Pair {
+        Command command;
+        Memento memento;
+
+        Pair(Command c, Memento m) {
+            command = c;
+            memento = m;
+        }
+
+        private Command getCommand() {
+            return command;
+        }
+
+        private Memento getMemento() {
+            return memento;
+        }
     }
 }

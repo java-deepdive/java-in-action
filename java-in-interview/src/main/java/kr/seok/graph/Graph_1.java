@@ -9,30 +9,6 @@ import java.util.LinkedList;
  */
 public class Graph_1 {
 
-    enum State {
-        Unvisited,
-        Visited,
-        Visiting
-    }
-
-    class Graph {
-        public Node[] nodes;
-
-        public Node[] getNodes() {
-            return nodes;
-        }
-    }
-
-    class Node {
-        public Node[] children;
-        public String name;
-        public State state;
-
-        public Node[] getAdjacent() {
-            return children;
-        }
-    }
-
     boolean search(Graph g, Node start, Node end) {
 
         if (start == end) { // 두 노드가 같다는 건 접점을 찾으므로 true를 반환
@@ -86,5 +62,29 @@ public class Graph_1 {
 
         } // end for
         return false;
+    }
+
+    enum State {
+        Unvisited,
+        Visited,
+        Visiting
+    }
+
+    class Graph {
+        public Node[] nodes;
+
+        public Node[] getNodes() {
+            return nodes;
+        }
+    }
+
+    class Node {
+        public Node[] children;
+        public String name;
+        public State state;
+
+        public Node[] getAdjacent() {
+            return children;
+        }
     }
 }

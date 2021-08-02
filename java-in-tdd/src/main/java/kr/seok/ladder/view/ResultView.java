@@ -19,12 +19,12 @@ import static java.lang.System.out;
  */
 public class ResultView {
 
-    private static final String LADDER_VERTICAL_LINE = "|";
-    private static final String STRING_FORMAT_RENDER = "%6s";
     /**
      * The constant GUIDE_LADDER_RESULT.
      */
     public static final String GUIDE_LADDER_RESULT = "\n실행 결과";
+    private static final String LADDER_VERTICAL_LINE = "|";
+    private static final String STRING_FORMAT_RENDER = "%6s";
     private static final String GUIDE_HEAD_LINE = "\n사다리 타기 결과\n";
     private static final String LADDER_HORIZON = "-----";
     private static final String LADDER_EMPTY = "     ";

@@ -9,11 +9,8 @@
 package kr.seok._4designing;
 
 public class Asset {
-    public enum AssetType {BOND, STOCK}
-
     private final AssetType type;
     private final int value;
-
     public Asset(final AssetType assetType, final int assetValue) {
         type = assetType;
         value = assetValue;
@@ -26,4 +23,6 @@ public class Asset {
     public int getValue() {
         return value;
     }
+
+    public enum AssetType {BOND, STOCK}
 }

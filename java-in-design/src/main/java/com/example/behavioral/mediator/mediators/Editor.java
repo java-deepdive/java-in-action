@@ -1,8 +1,8 @@
 package com.example.behavioral.mediator.mediators;
 
-import com.example.behavioral.mediator.components.*;
 import com.example.behavioral.mediator.components.Component;
 import com.example.behavioral.mediator.components.List;
+import com.example.behavioral.mediator.components.*;
 
 import javax.swing.*;
 import javax.swing.border.LineBorder;
@@ -14,6 +14,9 @@ import java.awt.*;
  * mediator, which knows who has to handle a request.
  */
 public class Editor implements Mediator {
+    private final JLabel titleLabel = new JLabel("Title:");
+    private final JLabel textLabel = new JLabel("Text:");
+    private final JLabel label = new JLabel("Add or select existing note to proceed...");
     private Title title;
     private TextBox textBox;
     private AddButton add;
@@ -21,10 +24,6 @@ public class Editor implements Mediator {
     private SaveButton save;
     private List list;
     private Filter filter;
-
-    private final JLabel titleLabel = new JLabel("Title:");
-    private final JLabel textLabel = new JLabel("Text:");
-    private final JLabel label = new JLabel("Add or select existing note to proceed...");
 
     /**
      * Here the registration of components by the mediator.
@@ -34,18 +33,18 @@ public class Editor implements Mediator {
         component.setMediator(this);
         switch (component.getName()) {
             case "AddButton":
-                add = (AddButton)component;
+                add = (AddButton) component;
                 break;
             case "DelButton":
-                del = (DeleteButton)component;
+                del = (DeleteButton) component;
                 break;
             case "Filter":
-                filter = (Filter)component;
+                filter = (Filter) component;
                 break;
             case "List":
-                list = (List)component;
+                list = (List) component;
                 this.list.addListSelectionListener(listSelectionEvent -> {
-                    Note note = (Note)list.getSelectedValue();
+                    Note note = (Note) list.getSelectedValue();
                     if (note != null) {
                         getInfoFromList(note);
                     } else {
@@ -54,13 +53,13 @@ public class Editor implements Mediator {
                 });
                 break;
             case "SaveButton":
-                save = (SaveButton)component;
+                save = (SaveButton) component;
                 break;
             case "TextBox":
-                textBox = (TextBox)component;
+                textBox = (TextBox) component;
                 break;
             case "Title":
-                title = (Title)component;
+                title = (Title) component;
                 break;
             default:
                 throw new IllegalStateException("Unexpected value: " + component.getName());
@@ -95,7 +94,8 @@ public class Editor implements Mediator {
             note.setName(title.getText());
             note.setText(textBox.getText());
             list.repaint();
-        } catch (NullPointerException ignored) {}
+        } catch (NullPointerException ignored) {
+        }
     }
 
     @Override
@@ -107,7 +107,8 @@ public class Editor implements Mediator {
                 note.setName(note.getName() + "*");
             }
             list.repaint();
-        } catch (NullPointerException ignored) {}
+        } catch (NullPointerException ignored) {
+        }
     }
 
     @Override

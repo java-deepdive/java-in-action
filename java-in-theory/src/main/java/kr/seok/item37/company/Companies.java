@@ -25,8 +25,8 @@ public enum Companies {
 
     public static String of(Companies company, String fieldName, String condition) {
         List<CompanyTypes> comp = findOfCompany(company).list;
-        for(CompanyTypes item : comp) {
-            if(item.toString().equals(fieldName)) {
+        for (CompanyTypes item : comp) {
+            if (item.toString().equals(fieldName)) {
                 return item.value(fieldName, condition);
             }
         }

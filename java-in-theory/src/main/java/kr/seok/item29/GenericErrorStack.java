@@ -4,10 +4,10 @@ import java.util.Arrays;
 import java.util.EmptyStackException;
 
 public class GenericErrorStack<E> {
+    private static final int DEFAULT_INITIAL_CAPACITY = 16;
     // Object -> E
     private E[] elements;
     private int size = 0;
-    private static final int DEFAULT_INITIAL_CAPACITY = 16;
 
     public GenericErrorStack() {
         //elements = new E[DEFAULT_INITIAL_CAPACITY]; // 에러 발생!
@@ -34,7 +34,7 @@ public class GenericErrorStack<E> {
     }
 
     private void ensureCapacity() {
-        if(elements.length == size) {
+        if (elements.length == size) {
             elements = Arrays.copyOf(elements, 2 * size + 1);
         }
     }

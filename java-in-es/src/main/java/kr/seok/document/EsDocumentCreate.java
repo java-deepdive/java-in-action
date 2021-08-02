@@ -40,10 +40,10 @@ public class EsDocumentCreate {
 
             XContentBuilder sourceBuilder = jsonBuilder()
                     .startObject()
-                        .field("movieCd", "20173732")
-                        .field("movieNm", "살아남은 아이")
-                        .field("movieNmEn", "Last Child")
-                        .field("prdtYear", 1)
+                    .field("movieCd", "20173732")
+                    .field("movieNm", "살아남은 아이")
+                    .field("movieNmEn", "Last Child")
+                    .field("prdtYear", 1)
                     .endObject();
 
             request.source(sourceBuilder);
@@ -53,7 +53,7 @@ public class EsDocumentCreate {
 
             RestStatus status = response.status();
 
-            if(status.getStatus() == 201) {
+            if (status.getStatus() == 201) {
                 log.info("정상 생성");
             }
             /* ID 충돌로 인한 오류 발생 시 예외처리라고 되어 있는데 문서 내용이 변하기만 함 */
@@ -61,7 +61,7 @@ public class EsDocumentCreate {
 
         } catch (IOException e) {
             e.getMessage();
-        } catch(ElasticsearchException e) {
+        } catch (ElasticsearchException e) {
             if (e.status() == RestStatus.CONFLICT) {
                 System.out.println("문서 생성에 실패하였습니다.");
             }

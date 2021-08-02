@@ -14,6 +14,11 @@ import kr.seok.lotto.view.dto.RequestLottoArgument;
 
 public class LottoApplication {
 
+    public static void main(String[] args) {
+        LottoApplication lottoApplication = new LottoApplication();
+        lottoApplication.step4();
+    }
+
     public void step4() {
         InputView inputView = new InputView();
         LottoStore lottoStore = new LottoStore();
@@ -36,10 +41,5 @@ public class LottoApplication {
 
         LottoResult lottoResult = LottoResult.of(lottos, winningLotto);
         resultView.printResult(lottoResult);
-    }
-
-    public static void main(String[] args) {
-        LottoApplication lottoApplication = new LottoApplication();
-        lottoApplication.step4();
     }
 }

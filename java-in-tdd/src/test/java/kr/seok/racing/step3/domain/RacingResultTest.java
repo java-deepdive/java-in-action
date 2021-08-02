@@ -20,6 +20,8 @@ import static org.assertj.core.api.Assertions.assertThat;
  */
 class RacingResultTest {
 
+    private RacingResult racingResult;
+
     // 자동차 생성 시 움직임 전략을 설정
     private static MoveStrategy getMoveStrategy(boolean flag) {
         return () -> flag;
@@ -56,8 +58,6 @@ class RacingResultTest {
                 Arguments.of(Arrays.asList(car1, car2, car3), new String[]{"win1", "win2"})
         );
     }
-
-    private RacingResult racingResult;
 
     @BeforeEach
     void setUp() {

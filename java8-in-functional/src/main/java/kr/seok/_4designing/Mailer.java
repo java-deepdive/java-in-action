@@ -12,18 +12,6 @@ package kr.seok._4designing;
  * 지루한 클래스
  */
 public class Mailer {
-    public void from(final String address) { /*... */ }
-
-    public void to(final String address) { /*... */ }
-
-    public void subject(final String line) { /*... */ }
-
-    public void body(final String message) { /*... */ }
-
-    public void send() {
-        System.out.println("sending...");
-    }
-
     /**
      * 직관적인 설계가 필요
      * 문제점 두 가지
@@ -38,5 +26,17 @@ public class Mailer {
         mailer.subject("build notification");
         mailer.body("...your code sucks...");
         mailer.send();
+    }
+
+    public void from(final String address) { /*... */ }
+
+    public void to(final String address) { /*... */ }
+
+    public void subject(final String line) { /*... */ }
+
+    public void body(final String message) { /*... */ }
+
+    public void send() {
+        System.out.println("sending...");
     }
 }

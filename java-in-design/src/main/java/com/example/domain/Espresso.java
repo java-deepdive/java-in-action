@@ -9,6 +9,11 @@ public class Espresso extends Coffee {
         super(builder.bean, builder.water, builder.brand);
     }
 
+    @Override
+    public Espresso clone() {
+        return (Espresso) super.clone();
+    }
+
     public static class Builder {
         private final Bean bean;
         private final Water water;
@@ -27,10 +32,5 @@ public class Espresso extends Coffee {
         public Espresso build() {
             return new Espresso(this);
         }
-    }
-
-    @Override
-    public Espresso clone() {
-        return (Espresso) super.clone();
     }
 }
