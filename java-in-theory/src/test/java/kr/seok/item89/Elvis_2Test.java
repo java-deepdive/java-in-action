@@ -17,6 +17,7 @@ class Elvis_2Test {
 
         // when
         byte[] serialized = serialize(instance);
+
         Elvis_2 deserializedElvis = (Elvis_2) deserialize(serialized);
         System.out.printf("old : %s , new : %s%n", instance, deserializedElvis);
 

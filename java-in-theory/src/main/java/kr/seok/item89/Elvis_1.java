@@ -15,9 +15,4 @@ public class Elvis_1 {
 
     public void leaveTheBuilding() {
     }
-
-    // 기존의 인스턴스를 반환, 역직렬화한 객체는 무시
-    private Object readResolve() {
-        return INSTANCE;
-    }
 }
