@@ -8,7 +8,7 @@ public class ElvisStealer implements Serializable {
 
     private Object readResolve() {
         impersonator = payload;
-        return new String[] { "A Fool Such as I" };
+        return new String[]{"A Fool Such as I"};
     }
 
     private static final long serialVersionUID = 0;

@@ -11,6 +11,7 @@ package kr.seok._4designing;
 public class Asset {
     private final AssetType type;
     private final int value;
+
     public Asset(final AssetType assetType, final int assetValue) {
         type = assetType;
         value = assetValue;

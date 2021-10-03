@@ -38,6 +38,7 @@ public class MethodReferenceTypes<K, V> {
     static class DataContainer {
         private DataId id;
         private String data;
+
         public DataContainer(DataId id, String data) {
             this.id = id;
             this.data = data;

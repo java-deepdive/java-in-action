@@ -6,7 +6,7 @@ public enum ElvisType {
 
     INSTANCE;
 
-    private String[] favoriteSongs = { "Hound Dog", "Heartbreak Hotel" };
+    private String[] favoriteSongs = {"Hound Dog", "Heartbreak Hotel"};
 
     public void printFavorites() {
         System.out.println(Arrays.toString(favoriteSongs));

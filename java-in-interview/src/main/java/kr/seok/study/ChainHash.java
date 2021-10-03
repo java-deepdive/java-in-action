@@ -41,6 +41,7 @@ public class ChainHash<K, V> {
 
     private int size;           // 해시 테이블의 크기
     private Node<K, V>[] table; // 해시 테이블을 저장하는 배열
+
     // ChainHash 클래스 생성자
     public ChainHash(int capacity) {
         try {

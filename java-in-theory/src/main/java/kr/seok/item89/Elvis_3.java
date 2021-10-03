@@ -9,9 +9,12 @@ import java.util.Arrays;
 public class Elvis_3 implements Serializable {
 
     public static final Elvis_3 INSTANCE = new Elvis_3();
-    private Elvis_3() {}
+
+    private Elvis_3() {
+    }
 
     private String[] favoriteSongs = {"Hound Dog", "Heartbreak Hotel"};
+
     public void printFavorites() {
         System.out.println(Arrays.toString(favoriteSongs));
     }

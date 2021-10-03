@@ -16,7 +16,9 @@ import java.util.function.Supplier;
 public class Holder {
     public Holder() {
         System.out.println("Holder created");
-    }    private Supplier<Heavy> heavy = () -> createAndCacheHeavy();
+    }
+
+    private Supplier<Heavy> heavy = () -> createAndCacheHeavy();
 
     public static void main(final String[] args) {
         final Holder holder = new Holder();

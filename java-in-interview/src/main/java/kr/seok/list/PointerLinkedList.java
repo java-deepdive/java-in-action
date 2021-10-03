@@ -20,6 +20,7 @@ public class PointerLinkedList<E> {
 
     Node<E> head; // 헤더 노드
     Node<E> cur; // 선택 노드
+
     /*
         생성자는 머리 노드를 가리키는 변수 head에 null을 대입
         그 결과 노드가 하나도 없는 비어있는 연결리스트를 생성

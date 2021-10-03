@@ -9,6 +9,7 @@ public class CustomLinkedList<E> extends AbstractSequentialList<E> implements Li
     transient int size = 0;
     transient Node<E> first;
     transient Node<E> last;
+
     public CustomLinkedList() {
     }
 

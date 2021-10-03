@@ -21,6 +21,7 @@ public class Constants {
      * The constant BOWLING_STATE_STRIKE.
      */
     public static final String BOWLING_STATE_STRIKE = "X";
+
     private Constants() {
     }
 }

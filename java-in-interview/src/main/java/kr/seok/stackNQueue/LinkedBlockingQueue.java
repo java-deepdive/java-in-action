@@ -21,6 +21,7 @@ public class LinkedBlockingQueue<E> extends AbstractQueue<E> implements Blocking
     private final Condition notFull = putLock.newCondition();
     transient Node<E> head;
     private transient Node<E> last;
+
     public LinkedBlockingQueue() {
         this(Integer.MAX_VALUE);
     }

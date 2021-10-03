@@ -3,8 +3,6 @@ package kr.seok.item89;
 import org.junit.jupiter.api.DisplayName;
 import org.junit.jupiter.api.Test;
 
-import java.io.*;
-
 import static kr.seok.item89.Util.deserialize;
 import static kr.seok.item89.Util.serialize;
 import static org.assertj.core.api.Assertions.assertThat;

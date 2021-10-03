@@ -18,6 +18,7 @@ public class Constants {
     public static final String SPLIT_DELIMITER = ",";
     public static final String WHITE_SPACE = "";
     public static final int LOTTO_PRICE = 1000;
+
     private Constants() {
     }
 

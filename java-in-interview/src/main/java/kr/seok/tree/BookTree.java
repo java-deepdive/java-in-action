@@ -11,6 +11,7 @@ import java.util.Comparator;
 public class BookTree<K, V> {
     private Node<K, V> root;
     private Comparator<? super K> comparator = null;
+
     public BookTree() {
         this.root = null;
     }

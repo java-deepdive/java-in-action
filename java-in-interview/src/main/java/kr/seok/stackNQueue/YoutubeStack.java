@@ -178,6 +178,7 @@ public class YoutubeStack {
         private int stackSize; // 각 스택에 사이즈 저장
         private int[] values; // 실제 데이터 필드
         private int[] sizes; // 각 스택의 데이터 사이즈를 저장할 공간
+
         public ArrayBasedStack(int stackSize) {
             this.stackSize = stackSize;
             this.sizes = new int[numOfStacks]; // 각 스택에 데이터 사이즈를 저장
