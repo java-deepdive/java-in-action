@@ -18,14 +18,12 @@ public class Holder {
         System.out.println("Holder created");
     }
 
-    private Supplier<Heavy> heavy = () -> createAndCacheHeavy();
-
     public static void main(final String[] args) {
         final Holder holder = new Holder();
         System.out.println("deferring heavy creation...");
         System.out.println(holder.getHeavy());
         System.out.println(holder.getHeavy());
-    }
+    }    private Supplier<Heavy> heavy = () -> createAndCacheHeavy();
 
     public Heavy getHeavy() {
         return heavy.get();
@@ -46,6 +44,8 @@ public class Holder {
 
         return heavy.get();
     }
+
+
 
 
 }

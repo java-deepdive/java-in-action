@@ -1,13 +1,12 @@
 package kr.seok.string;
 
-import java.util.HashMap;
-import java.util.Map;
-import java.util.Set;
+import java.util.*;
 
 public class String_1048 {
 
     public int longestStrChain(String[] words) {
-        Set<String> wordsPresent = Set.of(words);
+        Set<String> wordsPresent = new HashSet<>();
+        Collections.addAll(wordsPresent, words);
         Map<String, Integer> memoization = new HashMap<>();
 
         int answer = 0;

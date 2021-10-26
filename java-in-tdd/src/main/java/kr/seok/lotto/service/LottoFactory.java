@@ -20,7 +20,7 @@ public class LottoFactory {
     public static final int MIN_NUMBER_BOUND = 1;
     public static final int LOTTO_MAX_SIZE = 6;
 
-    public static final List<LottoNumber> LOTTO_NUMBERS;
+    private static final List<LottoNumber> LOTTO_NUMBERS;
 
     static {
         LOTTO_NUMBERS = IntStream.rangeClosed(MIN_NUMBER_BOUND, MAX_NUMBER_BOUND)

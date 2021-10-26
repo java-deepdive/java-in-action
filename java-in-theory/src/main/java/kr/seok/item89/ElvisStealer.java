@@ -3,6 +3,7 @@ package kr.seok.item89;
 import java.io.Serializable;
 
 public class ElvisStealer implements Serializable {
+    private static final long serialVersionUID = 0;
     static Elvis impersonator;
     private Elvis payload;
 
@@ -10,6 +11,4 @@ public class ElvisStealer implements Serializable {
         impersonator = payload;
         return new String[]{"A Fool Such as I"};
     }
-
-    private static final long serialVersionUID = 0;
 }
