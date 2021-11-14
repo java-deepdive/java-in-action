@@ -3,6 +3,7 @@ package kr.seok.racing.step3.module;
 
 import kr.seok.racing.step3.domain.CarManager;
 import kr.seok.racing.step3.domain.RacingResult;
+import kr.seok.racing.step3.move.MoveStrategy;
 import kr.seok.racing.step3.ui.dto.RequestRacingGame;
 
 import java.util.stream.IntStream;
@@ -32,11 +33,11 @@ public class CarRacingGame {
     }
 
     // 레이스
-    public void race() {
+    public void race(MoveStrategy moveStrategy) {
         IntStream.range(NUMBER_ZERO, attemptCount)
                 .forEach(value ->
                         // 라운드 별 기록 저장
-                        racingResult.addRacingRound(carManager.run())
+                        racingResult.addRacingRound(carManager.run(moveStrategy))
                 );
     }
 

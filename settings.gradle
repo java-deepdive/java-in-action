@@ -6,4 +6,5 @@ include 'java-in-design'
 include 'java-in-es'
 include 'java-solution'
 include 'java-in-generic'
+include 'java-in-thread'
 

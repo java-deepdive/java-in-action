@@ -39,7 +39,7 @@ class CarManagerTest {
     @MethodSource("getCarManagement")
     void createCarManageTest(final String[] participants, final int expected) {
         // participants
-        CarManager carManager = new CarManager(participants, MOVE_STRATEGY);
+        CarManager carManager = new CarManager(participants);
         // when
         List<Car> cars = carManager.getCars();
         // then
@@ -51,10 +51,10 @@ class CarManagerTest {
     @MethodSource("getCarManagement")
     void carManager_RunningCarsTest(final String[] participants, final int expected) {
         // given
-        CarManager carManager = new CarManager(participants, MOVE_STRATEGY);
+        CarManager carManager = new CarManager(participants);
 
         // when
-        RacingRound run = carManager.run();
+        RacingRound run = carManager.run(MOVE_STRATEGY);
         List<Car> cars = run.getCars();
         int racingResult = cars.size();
 
@@ -67,13 +67,13 @@ class CarManagerTest {
     @MethodSource("racingCarList")
     void carManager_moveCarTest(final String[] participants, final int expected) {
         // given
-        CarManager carManager = new CarManager(participants, MOVE_STRATEGY);
+        CarManager carManager = new CarManager(participants);
         // when
-        RacingRound run = carManager.run();
+        RacingRound run = carManager.run(MOVE_STRATEGY);
         List<Car> cars = run.getCars();
         List<Integer> collect = cars.stream()
                 .map(Car::getPosition)
-                .mapToInt(Position::getPosition).boxed()
+                .mapToInt(Position::getValue).boxed()
                 .collect(Collectors.toList());
 
         // then

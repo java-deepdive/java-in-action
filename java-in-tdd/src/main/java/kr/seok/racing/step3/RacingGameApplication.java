@@ -2,6 +2,7 @@ package kr.seok.racing.step3;
 
 import kr.seok.racing.step3.domain.RacingResult;
 import kr.seok.racing.step3.module.CarRacingGame;
+import kr.seok.racing.step3.move.ConditionMoveStrategy;
 import kr.seok.racing.step3.ui.InputView;
 import kr.seok.racing.step3.ui.ResultView;
 import kr.seok.racing.step3.ui.dto.RequestRacingGame;
@@ -17,7 +18,7 @@ public class RacingGameApplication {
 
         // 레이싱 게임 시작
         CarRacingGame racingGame = new CarRacingGame(requestUserInput);
-        racingGame.race();
+        racingGame.race(new ConditionMoveStrategy());
         RacingResult racingResult = racingGame.getRacingResult();
 
         ResultView resultView = new ResultView();

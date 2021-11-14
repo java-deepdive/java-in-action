@@ -1,8 +1,8 @@
 package kr.seok.racing.step2;
 
 import java.util.Arrays;
-import java.util.LinkedList;
 import java.util.Queue;
+import java.util.concurrent.ConcurrentLinkedQueue;
 
 import static java.util.stream.Collectors.toCollection;
 import static kr.seok.racing.step2.Constants.SPLIT_DELIMITER;
@@ -30,19 +30,19 @@ public final class MathContext {
     }
 
     // 사용자의 입력 값 -> Operator로 파싱 -> LinkedList 타입으로 반환
-    public LinkedList<Operator> setOperations(String[] userInput) {
+    public Queue<Operator> setOperations(String[] userInput) {
         return Arrays.stream(userInput)
                 .filter(Operator::isOperation)
                 .map(Operator::getOperator)
-                .collect(toCollection(LinkedList::new));
+                .collect(toCollection(ConcurrentLinkedQueue::new));
     }
 
     // 사용자의 입력 값 -> 숫자만 필터링 -> 숫자로 파싱 ->  LinkedList 타입으로 반환
-    public LinkedList<Integer> setNumbers(String[] userInput) {
+    public Queue<Integer> setNumbers(String[] userInput) {
         return Arrays.stream(userInput)
                 .filter(Validator::isNumeric)
                 .map(Integer::parseInt)
-                .collect(toCollection(LinkedList::new));
+                .collect(toCollection(ConcurrentLinkedQueue::new));
     }
 
     public Queue<Integer> getNumbers() {

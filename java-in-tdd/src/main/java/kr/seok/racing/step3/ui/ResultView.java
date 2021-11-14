@@ -50,7 +50,7 @@ public class ResultView {
 
     // 자동차 별 거리 출력
     private String printDistancePerRecord(final Car car) {
-        int position = car.getPosition().getPosition();
+        int position = car.getPosition().getValue();
         String carDistance = IntStream.range(NUMBER_ZERO, position)
                 .mapToObj(i -> hyphen)
                 .reduce(EMPTY, (acc, cur) -> acc + cur);

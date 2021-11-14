@@ -43,17 +43,17 @@ class RacingResultTest {
 
     private static Stream<Arguments> winnerEntry() {
         return Stream.of(
-                Arguments.of(new Car(new Name("kim"), new Position(0), getMoveStrategy(true)), new Position(0), true),
-                Arguments.of(new Car(new Name("seok"), new Position(3), getMoveStrategy(true)), new Position(3), true),
-                Arguments.of(new Car(new Name("rae"), new Position(1), getMoveStrategy(true)), new Position(2), false)
+                Arguments.of(new Car(new Name("kim"), new Position(0)), new Position(0), true),
+                Arguments.of(new Car(new Name("seok"), new Position(3)), new Position(3), true),
+                Arguments.of(new Car(new Name("rae"), new Position(1)), new Position(2), false)
 
         );
     }
 
     private static Stream<Arguments> findWinner() {
-        Car car1 = new Car(new Name("a"), new Position(2), getMoveStrategy(true));
-        Car car2 = new Car(new Name("win1"), new Position(3), getMoveStrategy(true));
-        Car car3 = new Car(new Name("win2"), new Position(3), getMoveStrategy(true));
+        Car car1 = new Car(new Name("a"), new Position(2));
+        Car car2 = new Car(new Name("win1"), new Position(3));
+        Car car3 = new Car(new Name("win2"), new Position(3));
         return Stream.of(
                 Arguments.of(Arrays.asList(car1, car2, car3), new String[]{"win1", "win2"})
         );
@@ -75,7 +75,7 @@ class RacingResultTest {
         Name expectedName = new Name(expected);
         // then
         assertThat(carName).isEqualTo(expectedName);
-        assertThat(carName.hashCode()).isEqualTo(expectedName.hashCode());
+        assertThat(carName).hasSameHashCodeAs(expectedName);
     }
 
     @DisplayName("move(): 자동차의 이동하는지 확인하는 테스트")
@@ -83,9 +83,9 @@ class RacingResultTest {
     @MethodSource(value = "carPosition")
     void moveCarPosition(final String name, final boolean moveFlag, final int position) {
         // given
-        Car car = new Car(name, getMoveStrategy(moveFlag));
+        Car car = new Car(name);
         // when
-        car.move();
+        car.move(getMoveStrategy(moveFlag));
         Position carPosition = car.getPosition();
         // then
         assertThat(carPosition).isEqualTo(new Position(position));
@@ -96,10 +96,10 @@ class RacingResultTest {
     @CsvSource(value = {"user1, true, 2", "user2, false, 0"})
     void movesCarPosition(final String name, final boolean moveFlag, final int expected) {
         // given
-        Car car = new Car(name, getMoveStrategy(moveFlag));
+        Car car = new Car(name);
         // when
-        car.move();
-        car.move();
+        car.move(getMoveStrategy(moveFlag));
+        car.move(getMoveStrategy(moveFlag));
         Position carPosition = car.getPosition();
         // then
         assertThat(carPosition).isEqualTo(new Position(expected));

@@ -29,7 +29,7 @@ class CarRacingGameTest {
         CarRacingGame racingGame = new CarRacingGame(request);
 
         // when
-        racingGame.race();
+        racingGame.race(() -> true);
 
         RacingResult result = racingGame.getRacingResult();
         int roundCount = result.getRacingRounds().size();

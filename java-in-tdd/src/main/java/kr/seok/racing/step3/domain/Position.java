@@ -25,7 +25,7 @@ public class Position implements Comparable<Position> {
 
     public static final String CANNOT_NEGATIVE_VALUES = "Position 은 음수 값을 가질 수 없다.";
 
-    private final int position;
+    private final int value;
 
     public Position() {
         this(NUMBER_ZERO);
@@ -35,15 +35,15 @@ public class Position implements Comparable<Position> {
         if (position < NUMBER_ZERO) {
             throw new IllegalArgumentException(CANNOT_NEGATIVE_VALUES);
         }
-        this.position = position;
+        this.value = position;
     }
 
     public Position move() {
-        return new Position(position + NUMBER_ONE);
+        return new Position(value + NUMBER_ONE);
     }
 
-    public int getPosition() {
-        return position;
+    public int getValue() {
+        return value;
     }
 
     public Position greaterThan(Position maxPosition) {
@@ -58,21 +58,21 @@ public class Position implements Comparable<Position> {
         if (this == o) return true;
         if (o == null || getClass() != o.getClass()) return false;
         final Position position1 = (Position) o;
-        return position == position1.position;
+        return value == position1.value;
     }
 
     @Override
     public int hashCode() {
-        return Objects.hash(getPosition());
+        return Objects.hash(getValue());
     }
 
     @Override
     public int compareTo(Position o) {
-        return o.position - position;
+        return o.value - value;
     }
 
     @Override
     public String toString() {
-        return position + "";
+        return value + "";
     }
 }
