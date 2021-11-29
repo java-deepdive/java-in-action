@@ -23,15 +23,7 @@ public class WinningLotto {
         this.bonusNumber = bonusNumber;
     }
 
-    public static WinningLotto of(final String winningLotto) {
-        return new WinningLotto(parseLotto(winningLotto), null);
-    }
-
-    public static WinningLotto of(final String winningLotto, final LottoNumber bonusNumber) {
-        return new WinningLotto(parseLotto(winningLotto), bonusNumber);
-    }
-
-    private static Lotto parseLotto(final String winningLotto) {
+    static Lotto parseLotto(final String winningLotto) {
         String[] split = parseSplit(winningLotto);
         return Lotto.of(Arrays.stream(split)
                 .map(LottoNumber::new)

@@ -18,6 +18,7 @@ import static kr.seok.lotto.util.Constants.LOTTO_PRICE;
  */
 public class Lottos {
 
+    public static final long DEFAULT_VALUE = 0L;
     // 전체 로또 생성
     private final List<Lotto> lottoList;
 
@@ -28,7 +29,7 @@ public class Lottos {
     public long matchStatics(final LottoMatch lottoMatch, final WinningLotto winningLotto) {
         return lottoList.stream()
                 .collect(groupingBy(winningLotto::match, counting()))
-                .getOrDefault(lottoMatch, 0L);
+                .getOrDefault(lottoMatch, DEFAULT_VALUE);
     }
 
     public double winningRate(final WinningLotto winningLotto) {

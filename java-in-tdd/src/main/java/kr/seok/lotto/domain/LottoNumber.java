@@ -28,14 +28,6 @@ public class LottoNumber implements Comparable<LottoNumber> {
         this.number = number;
     }
 
-    public static LottoNumber of(final String number) {
-        return new LottoNumber(number);
-    }
-
-    public static LottoNumber of(final int number) {
-        return new LottoNumber(number);
-    }
-
     private boolean isInvalidNumber(final int number) {
         return MIN_NUMBER_BOUND > number || MAX_NUMBER_BOUND < number;
     }

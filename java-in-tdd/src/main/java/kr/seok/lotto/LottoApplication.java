@@ -2,10 +2,7 @@ package kr.seok.lotto;
 
 
 import kr.seok.lotto.controller.LottoStore;
-import kr.seok.lotto.domain.LottoNumber;
-import kr.seok.lotto.domain.LottoResult;
-import kr.seok.lotto.domain.Money;
-import kr.seok.lotto.domain.WinningLotto;
+import kr.seok.lotto.domain.*;
 import kr.seok.lotto.service.Lottos;
 import kr.seok.lotto.view.InputView;
 import kr.seok.lotto.view.ResultView;
@@ -35,9 +32,9 @@ public class LottoApplication {
         resultView.printLottos(lottos);
 
         String winningNumbers = inputView.requestWinningNumbers();
-        LottoNumber bonusNumber = LottoNumber.of(inputView.requestBonusNumber());
+        LottoNumber bonusNumber = LottoNumberFactory.of(inputView.requestBonusNumber());
 
-        WinningLotto winningLotto = WinningLotto.of(winningNumbers, bonusNumber);
+        WinningLotto winningLotto = WinningLottoFactory.of(winningNumbers, bonusNumber);
 
         LottoResult lottoResult = LottoResult.of(lottos, winningLotto);
         resultView.printResult(lottoResult);

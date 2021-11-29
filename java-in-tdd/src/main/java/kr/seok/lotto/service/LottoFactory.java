@@ -3,6 +3,7 @@ package kr.seok.lotto.service;
 
 import kr.seok.lotto.domain.Lotto;
 import kr.seok.lotto.domain.LottoNumber;
+import kr.seok.lotto.domain.LottoNumberFactory;
 import kr.seok.lotto.view.dto.ManualLottoParser;
 
 import java.util.Collection;
@@ -25,20 +26,20 @@ public class LottoFactory {
     static {
         LOTTO_NUMBERS = IntStream.rangeClosed(MIN_NUMBER_BOUND, MAX_NUMBER_BOUND)
                 .boxed()
-                .map(LottoNumber::of)
+                .map(LottoNumberFactory::of)
                 .collect(toList());
     }
 
     private LottoFactory() {
     }
 
-    public static List<Lotto> createManualAndAuto(final int totalCount, final ManualLottoParser manualLottoNumbers) {
+    public static List<Lotto> mergeManualAndAuto(final int totalCount, final ManualLottoParser manualLottoNumbers) {
         return Stream.of(createManualLottoSet(manualLottoNumbers), createAutoLottoSet(totalCount))
                 .flatMap(Collection::stream)
                 .collect(toList());
     }
 
-    protected static List<Lotto> createManualLottoSet(final ManualLottoParser manualLottoNumbers) {
+    private static List<Lotto> createManualLottoSet(final ManualLottoParser manualLottoNumbers) {
         List<Set<Integer>> manualNumbers = manualLottoNumbers.getManualNumbers();
         return manualNumbers.stream()
                 .map(LottoFactory::makeManualLottoSet)
@@ -46,7 +47,7 @@ public class LottoFactory {
                 .collect(toList());
     }
 
-    protected static List<Lotto> createAutoLottoSet(final int totalCount) {
+    private static List<Lotto> createAutoLottoSet(final int totalCount) {
         return Stream.generate(LottoFactory::makeLottoNumbers)
                 .limit(totalCount)
                 .collect(toList());
@@ -61,7 +62,7 @@ public class LottoFactory {
 
     private static List<LottoNumber> makeManualLottoSet(final Set<Integer> integers) {
         return integers.stream()
-                .map(LottoNumber::of)
+                .map(LottoNumberFactory::of)
                 .collect(toList());
     }
 }

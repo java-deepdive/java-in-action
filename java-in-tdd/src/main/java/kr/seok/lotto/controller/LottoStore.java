@@ -19,6 +19,6 @@ public class LottoStore {
     }
 
     private List<Lotto> getManualAndAuto(final int totalCount, final ManualLottoParser manualLottoParser) {
-        return LottoFactory.createManualAndAuto(totalCount, manualLottoParser);
+        return LottoFactory.mergeManualAndAuto(totalCount, manualLottoParser);
     }
 }
