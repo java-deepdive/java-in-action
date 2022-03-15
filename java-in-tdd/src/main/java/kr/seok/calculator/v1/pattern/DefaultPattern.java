@@ -1,4 +1,4 @@
-package kr.seok.calculator.pattern;
+package kr.seok.calculator.v1.pattern;
 
 public class DefaultPattern implements PatternSeparator {
 

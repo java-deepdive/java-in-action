@@ -1,8 +1,8 @@
-package kr.seok.calculator;
+package kr.seok.calculator.v1;
 
-import kr.seok.calculator.pattern.CustomPattern;
-import kr.seok.calculator.pattern.DefaultPattern;
-import kr.seok.calculator.pattern.PatternSeparator;
+import kr.seok.calculator.v1.pattern.CustomPattern;
+import kr.seok.calculator.v1.pattern.DefaultPattern;
+import kr.seok.calculator.v1.pattern.PatternSeparator;
 
 import java.util.Arrays;
 import java.util.List;

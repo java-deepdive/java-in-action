@@ -1,7 +1,7 @@
-package kr.seok.calculator;
+package kr.seok.calculator.v1;
 
 
-import kr.seok.calculator.exception.CalculatorException;
+import kr.seok.calculator.v1.exception.CalculatorException;
 
 import java.util.Objects;
 

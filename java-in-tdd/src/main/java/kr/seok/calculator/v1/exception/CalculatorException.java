@@ -1,4 +1,4 @@
-package kr.seok.calculator.exception;
+package kr.seok.calculator.v1.exception;
 
 public class CalculatorException extends RuntimeException {
     public CalculatorException() {

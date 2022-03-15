@@ -1,4 +1,4 @@
-package kr.seok.calculator;
+package kr.seok.calculator.v1;
 
 import java.util.Objects;
 

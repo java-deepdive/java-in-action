@@ -1,9 +1,10 @@
 package kr.seok.calculator;
 
 
-import kr.seok.calculator.pattern.CustomPattern;
-import kr.seok.calculator.pattern.DefaultPattern;
-import kr.seok.calculator.pattern.PatternSeparator;
+import kr.seok.calculator.v1.Numbers;
+import kr.seok.calculator.v1.pattern.CustomPattern;
+import kr.seok.calculator.v1.pattern.DefaultPattern;
+import kr.seok.calculator.v1.pattern.PatternSeparator;
 import org.junit.jupiter.api.DisplayName;
 import org.junit.jupiter.params.ParameterizedTest;
 import org.junit.jupiter.params.provider.Arguments;
