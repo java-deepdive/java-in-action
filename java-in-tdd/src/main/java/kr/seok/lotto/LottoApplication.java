@@ -11,32 +11,32 @@ import kr.seok.lotto.view.dto.RequestLottoArgument;
 
 public class LottoApplication {
 
-    public static void main(String[] args) {
-        LottoApplication lottoApplication = new LottoApplication();
-        lottoApplication.step4();
-    }
+	public static void main(String[] args) {
+		LottoApplication lottoApplication = new LottoApplication();
+		lottoApplication.step4();
+	}
 
-    public void step4() {
-        InputView inputView = new InputView();
-        LottoStore lottoStore = new LottoStore();
-        ResultView resultView = new ResultView();
+	public void step4() {
+		InputView inputView = new InputView();
+		LottoStore lottoStore = new LottoStore();
+		ResultView resultView = new ResultView();
 
-        Money money = Money.of(inputView.requestPurchasedLotto());
-        String manualCount = inputView.requestManual();
-        RequestLottoArgument lottoArgument = RequestLottoArgument.of(money, manualCount);
+		Money money = Money.of(inputView.requestPurchasedLotto());
+		String manualCount = inputView.requestManual();
+		RequestLottoArgument lottoArgument = RequestLottoArgument.of(money, manualCount);
 
-        ManualLottoParser manualArgument = ManualLottoParser.of(inputView.makeManualLottoNumbers(manualCount));
-        resultView.printLottoCount(lottoArgument);
+		ManualLottoParser manualArgument = ManualLottoParser.of(inputView.makeManualLottoNumbers(manualCount));
+		resultView.printLottoCount(lottoArgument);
 
-        Lottos lottos = lottoStore.issueLotto(lottoArgument, manualArgument);
-        resultView.printLottos(lottos);
+		Lottos lottos = lottoStore.issueLotto(lottoArgument, manualArgument);
+		resultView.printLottos(lottos);
 
-        String winningNumbers = inputView.requestWinningNumbers();
-        LottoNumber bonusNumber = LottoNumberFactory.of(inputView.requestBonusNumber());
+		String winningNumbers = inputView.requestWinningNumbers();
+		LottoNumber bonusNumber = LottoNumberFactory.of(inputView.requestBonusNumber());
 
-        WinningLotto winningLotto = WinningLottoFactory.of(winningNumbers, bonusNumber);
+		WinningLotto winningLotto = WinningLottoFactory.of(winningNumbers, bonusNumber);
 
-        LottoResult lottoResult = LottoResult.of(lottos, winningLotto);
-        resultView.printResult(lottoResult);
-    }
+		LottoResult lottoResult = LottoResult.of(lottos, winningLotto);
+		resultView.printResult(lottoResult);
+	}
 }

@@ -8,37 +8,37 @@ import kr.seok.bowling.domain.score.NormalScore;
  */
 public class NormalFrame extends BaseFrame {
 
-    /**
-     * Instantiates a new Normal frame.
-     */
-    public NormalFrame() {
-        super(NormalScore.init());
-    }
+	/**
+	 * Instantiates a new Normal frame.
+	 */
+	public NormalFrame() {
+		super(NormalScore.init());
+	}
 
-    @Override
-    public void bowl(final int downPins) {
-        score = score.bowl(downPins);
-        state = changeBowlingState(score);
-    }
+	@Override
+	public void bowl(final int downPins) {
+		score = score.bowl(downPins);
+		state = changeBowlingState(score);
+	}
 
-    @Override
-    public boolean isNextFrame() {
-        return score.isMaxSize() || score.isNoneChance();
-    }
+	@Override
+	public boolean isNextFrame() {
+		return score.isMaxSize() || score.isNoneChance();
+	}
 
-    @Override
-    public boolean isEnd() {
-        return score.isSecond();
-    }
+	@Override
+	public boolean isEnd() {
+		return score.isSecond();
+	}
 
-    @Override
-    public State state() {
-        return null;
-    }
+	@Override
+	public State state() {
+		return null;
+	}
 
-    @Override
-    public String toString() {
-        return String.format("%s, %s", state, score);
-    }
+	@Override
+	public String toString() {
+		return String.format("%s, %s", state, score);
+	}
 
 }

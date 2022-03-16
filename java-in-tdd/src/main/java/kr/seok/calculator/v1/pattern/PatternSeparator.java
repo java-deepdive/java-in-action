@@ -6,5 +6,5 @@ package kr.seok.calculator.v1.pattern;
  */
 @FunctionalInterface
 public interface PatternSeparator {
-    String[] matches(String text);
+	String[] matches(String text);
 }

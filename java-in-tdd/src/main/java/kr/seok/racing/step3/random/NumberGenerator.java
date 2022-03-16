@@ -5,5 +5,5 @@ package kr.seok.racing.step3.random;
  */
 @FunctionalInterface
 public interface NumberGenerator {
-    int generate();
+	int generate();
 }

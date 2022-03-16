@@ -9,31 +9,31 @@ import kr.seok.lotto.service.Lottos;
  */
 public class LottoResult {
 
-    private final Lottos resultLotto;
-    private final WinningLotto winningLotto;
+	private final Lottos resultLotto;
+	private final WinningLotto winningLotto;
 
-    protected LottoResult(final Lottos lotto) {
-        this(lotto, null);
-    }
+	protected LottoResult(final Lottos lotto) {
+		this(lotto, null);
+	}
 
-    protected LottoResult(final Lottos resultLotto, final WinningLotto winningLotto) {
-        this.winningLotto = winningLotto;
-        this.resultLotto = resultLotto;
-    }
+	protected LottoResult(final Lottos resultLotto, final WinningLotto winningLotto) {
+		this.winningLotto = winningLotto;
+		this.resultLotto = resultLotto;
+	}
 
-    public static LottoResult of(final Lottos lotto) {
-        return new LottoResult(lotto);
-    }
+	public static LottoResult of(final Lottos lotto) {
+		return new LottoResult(lotto);
+	}
 
-    public static LottoResult of(final Lottos lotto, final WinningLotto winningLotto) {
-        return new LottoResult(lotto, winningLotto);
-    }
+	public static LottoResult of(final Lottos lotto, final WinningLotto winningLotto) {
+		return new LottoResult(lotto, winningLotto);
+	}
 
-    public long count(final LottoMatch lottoMatch) {
-        return resultLotto.matchStatics(lottoMatch, winningLotto);
-    }
+	public long count(final LottoMatch lottoMatch) {
+		return resultLotto.matchStatics(lottoMatch, winningLotto);
+	}
 
-    public double winningRate() {
-        return resultLotto.winningRate(winningLotto);
-    }
+	public double winningRate() {
+		return resultLotto.winningRate(winningLotto);
+	}
 }

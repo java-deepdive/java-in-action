@@ -14,38 +14,38 @@ import static java.util.stream.Collectors.toList;
  */
 public class Numbers {
 
-    private final List<Number> numbers;
+	private final List<Number> numbers;
 
-    private Numbers(String text) {
-        this(text, new DefaultPattern());
-    }
+	private Numbers(String text) {
+		this(text, new DefaultPattern());
+	}
 
-    protected Numbers(String text, PatternSeparator patternSeparator) {
-        numbers = getExtractNumbers(text, patternSeparator);
-    }
+	protected Numbers(String text, PatternSeparator patternSeparator) {
+		numbers = getExtractNumbers(text, patternSeparator);
+	}
 
-    public static Numbers of(String text) {
-        if (isContainsCustomPatternText(text)) {
-            return new Numbers(text, new CustomPattern());
-        }
-        return new Numbers(text);
-    }
+	public static Numbers of(String text) {
+		if (isContainsCustomPatternText(text)) {
+			return new Numbers(text, new CustomPattern());
+		}
+		return new Numbers(text);
+	}
 
-    private static boolean isContainsCustomPatternText(String text) {
-        return text.startsWith(Validator.PREFIX_STRATEGY_CONDITION);
-    }
+	private static boolean isContainsCustomPatternText(String text) {
+		return text.startsWith(Validator.PREFIX_STRATEGY_CONDITION);
+	}
 
-    protected List<Number> getExtractNumbers(String text, PatternSeparator patternSeparator) {
-        String[] stringsSeparatedBySeparator = patternSeparator.matches(text);
+	protected List<Number> getExtractNumbers(String text, PatternSeparator patternSeparator) {
+		String[] stringsSeparatedBySeparator = patternSeparator.matches(text);
 
-        return Arrays.stream(stringsSeparatedBySeparator)
-                .map(Number::of)
-                .collect(toList());
-    }
+		return Arrays.stream(stringsSeparatedBySeparator)
+				.map(Number::of)
+				.collect(toList());
+	}
 
-    public int sumNumbers() {
-        return numbers.stream()
-                .mapToInt(Number::getNumber)
-                .sum();
-    }
+	public int sumNumbers() {
+		return numbers.stream()
+				.mapToInt(Number::getNumber)
+				.sum();
+	}
 }

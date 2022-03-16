@@ -14,11 +14,11 @@ import java.util.List;
  */
 public class LottoStore {
 
-    public Lottos issueLotto(final RequestLottoArgument argument, final ManualLottoParser manualLottoParser) {
-        return new Lottos(getManualAndAuto(argument.autoSize(), manualLottoParser));
-    }
+	public Lottos issueLotto(final RequestLottoArgument argument, final ManualLottoParser manualLottoParser) {
+		return new Lottos(getManualAndAuto(argument.autoSize(), manualLottoParser));
+	}
 
-    private List<Lotto> getManualAndAuto(final int totalCount, final ManualLottoParser manualLottoParser) {
-        return LottoFactory.mergeManualAndAuto(totalCount, manualLottoParser);
-    }
+	private List<Lotto> getManualAndAuto(final int totalCount, final ManualLottoParser manualLottoParser) {
+		return LottoFactory.mergeManualAndAuto(totalCount, manualLottoParser);
+	}
 }

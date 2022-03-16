@@ -5,19 +5,19 @@ package kr.seok.racing.step3.ui.dto;
  */
 public class RequestRacingGame {
 
-    private final String[] participants;
-    private final int attemptCount;
+	private final String[] participants;
+	private final int attemptCount;
 
-    public RequestRacingGame(String[] participants, int attemptCount) {
-        this.participants = participants;
-        this.attemptCount = attemptCount;
-    }
+	public RequestRacingGame(String[] participants, int attemptCount) {
+		this.participants = participants;
+		this.attemptCount = attemptCount;
+	}
 
-    public int getAttemptCount() {
-        return attemptCount;
-    }
+	public int getAttemptCount() {
+		return attemptCount;
+	}
 
-    public String[] getParticipants() {
-        return participants;
-    }
+	public String[] getParticipants() {
+		return participants;
+	}
 }

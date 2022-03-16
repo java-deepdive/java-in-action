@@ -7,14 +7,14 @@ import kr.seok.bowling.domain.engine.State;
  */
 public class Strike implements State {
 
-    /**
-     * Instantiates a new Strike.
-     */
-    public Strike() {
-    }
+	/**
+	 * Instantiates a new Strike.
+	 */
+	public Strike() {
+	}
 
-    @Override
-    public String toString() {
-        return "X";
-    }
+	@Override
+	public String toString() {
+		return "X";
+	}
 }

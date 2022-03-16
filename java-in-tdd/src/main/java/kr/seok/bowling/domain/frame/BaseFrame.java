@@ -11,37 +11,39 @@ import kr.seok.bowling.domain.state.run.Ready;
  */
 public abstract class BaseFrame implements Frame {
 
-    /**
-     * The State.
-     */
-    protected State state;
-    /**
-     * The Score.
-     */
-    protected Score score;
+	/**
+	 * The State.
+	 */
+	protected State state;
+	/**
+	 * The Score.
+	 */
+	protected Score score;
 
-    /**
-     * Instantiates a new Base frame.
-     *
-     * @param score the score
-     */
-    BaseFrame(Score score) {
-        this.score = score;
-        this.state = new Ready();
-    }
+	/**
+	 * Instantiates a new Base frame.
+	 *
+	 * @param score
+	 * 		the score
+	 */
+	BaseFrame(Score score) {
+		this.score = score;
+		this.state = new Ready();
+	}
 
-    /**
-     * Change bowling state state.
-     *
-     * @param score the score
-     * @return the state
-     */
-    public State changeBowlingState(final Score score) {
-        return StateSymbol.ready(score);
-    }
+	/**
+	 * Change bowling state state.
+	 *
+	 * @param score
+	 * 		the score
+	 * @return the state
+	 */
+	public State changeBowlingState(final Score score) {
+		return StateSymbol.ready(score);
+	}
 
-    @Override
-    public int score() {
-        return score.totalScore();
-    }
+	@Override
+	public int score() {
+		return score.totalScore();
+	}
 }

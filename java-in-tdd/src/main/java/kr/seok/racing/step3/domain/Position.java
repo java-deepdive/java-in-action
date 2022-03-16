@@ -23,56 +23,56 @@ import static kr.seok.racing.step3.util.Constants.NUMBER_ZERO;
  */
 public class Position implements Comparable<Position> {
 
-    public static final String CANNOT_NEGATIVE_VALUES = "Position 은 음수 값을 가질 수 없다.";
+	public static final String CANNOT_NEGATIVE_VALUES = "Position 은 음수 값을 가질 수 없다.";
 
-    private final int value;
+	private final int value;
 
-    public Position() {
-        this(NUMBER_ZERO);
-    }
+	public Position() {
+		this(NUMBER_ZERO);
+	}
 
-    public Position(int position) {
-        if (position < NUMBER_ZERO) {
-            throw new IllegalArgumentException(CANNOT_NEGATIVE_VALUES);
-        }
-        this.value = position;
-    }
+	public Position(int position) {
+		if (position < NUMBER_ZERO) {
+			throw new IllegalArgumentException(CANNOT_NEGATIVE_VALUES);
+		}
+		this.value = position;
+	}
 
-    public Position move() {
-        return new Position(value + NUMBER_ONE);
-    }
+	public Position move() {
+		return new Position(value + NUMBER_ONE);
+	}
 
-    public int getValue() {
-        return value;
-    }
+	public int getValue() {
+		return value;
+	}
 
-    public Position greaterThan(Position maxPosition) {
-        if (compareTo(maxPosition) >= 0) {
-            return maxPosition;
-        }
-        return this;
-    }
+	public Position greaterThan(Position maxPosition) {
+		if (compareTo(maxPosition) >= 0) {
+			return maxPosition;
+		}
+		return this;
+	}
 
-    @Override
-    public boolean equals(Object o) {
-        if (this == o) return true;
-        if (o == null || getClass() != o.getClass()) return false;
-        final Position position1 = (Position) o;
-        return value == position1.value;
-    }
+	@Override
+	public boolean equals(Object o) {
+		if (this == o) return true;
+		if (o == null || getClass() != o.getClass()) return false;
+		final Position position1 = (Position) o;
+		return value == position1.value;
+	}
 
-    @Override
-    public int hashCode() {
-        return Objects.hash(getValue());
-    }
+	@Override
+	public int hashCode() {
+		return Objects.hash(getValue());
+	}
 
-    @Override
-    public int compareTo(Position o) {
-        return o.value - value;
-    }
+	@Override
+	public int compareTo(Position o) {
+		return o.value - value;
+	}
 
-    @Override
-    public String toString() {
-        return value + "";
-    }
+	@Override
+	public String toString() {
+		return value + "";
+	}
 }

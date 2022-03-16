@@ -17,26 +17,26 @@ import static org.assertj.core.api.Assertions.assertThat;
  */
 class RacingRoundTest {
 
-    private static Stream<Arguments> racingEntry() {
-        Car car1 = new Car("a");
-        Car car2 = new Car("b");
-        Car car3 = new Car("c");
-        Car car4 = new Car("d");
-        return Stream.of(
-                Arguments.of(Arrays.asList(car1, car2, car3), 3),
-                Arguments.of(Arrays.asList(car1, car2, car3, car4), 4)
-        );
-    }
+	private static Stream<Arguments> racingEntry() {
+		Car car1 = new Car("a");
+		Car car2 = new Car("b");
+		Car car3 = new Car("c");
+		Car car4 = new Car("d");
+		return Stream.of(
+				Arguments.of(Arrays.asList(car1, car2, car3), 3),
+				Arguments.of(Arrays.asList(car1, car2, car3, car4), 4)
+		);
+	}
 
-    @DisplayName("레이싱 라운드 기록 테스트")
-    @ParameterizedTest(name = "레이싱 참여 한 인원 {1} 체크")
-    @MethodSource(value = "racingEntry")
-    void racingOfRoundTest(List<Car> entry, int participants) {
-        // given
-        RacingRound racingRound = new RacingRound(entry);
-        // when
-        int participantCount = racingRound.getCars().size();
-        // then
-        assertThat(participantCount).isEqualTo(participants);
-    }
+	@DisplayName("레이싱 라운드 기록 테스트")
+	@ParameterizedTest(name = "레이싱 참여 한 인원 {1} 체크")
+	@MethodSource(value = "racingEntry")
+	void racingOfRoundTest(List<Car> entry, int participants) {
+		// given
+		RacingRound racingRound = new RacingRound(entry);
+		// when
+		int participantCount = racingRound.getCars().size();
+		// then
+		assertThat(participantCount).isEqualTo(participants);
+	}
 }

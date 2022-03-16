@@ -5,38 +5,39 @@ package kr.seok.bowling.domain.engine;
  */
 public interface Frame {
 
-    /**
-     * Bowl.
-     *
-     * @param pins the pins
-     */
-    void bowl(final int pins);
+	/**
+	 * Bowl.
+	 *
+	 * @param pins
+	 * 		the pins
+	 */
+	void bowl(final int pins);
 
-    /**
-     * Is next frame boolean.
-     *
-     * @return the boolean
-     */
-    boolean isNextFrame();
+	/**
+	 * Is next frame boolean.
+	 *
+	 * @return the boolean
+	 */
+	boolean isNextFrame();
 
-    /**
-     * Score int.
-     *
-     * @return the int
-     */
-    int score();
+	/**
+	 * Score int.
+	 *
+	 * @return the int
+	 */
+	int score();
 
-    /**
-     * Is end boolean.
-     *
-     * @return the boolean
-     */
-    boolean isEnd();
+	/**
+	 * Is end boolean.
+	 *
+	 * @return the boolean
+	 */
+	boolean isEnd();
 
-    /**
-     * State state.
-     *
-     * @return the state
-     */
-    State state();
+	/**
+	 * State state.
+	 *
+	 * @return the state
+	 */
+	State state();
 }

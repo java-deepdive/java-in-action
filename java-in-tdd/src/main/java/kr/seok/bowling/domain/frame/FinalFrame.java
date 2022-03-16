@@ -13,63 +13,63 @@ import java.util.List;
  */
 public class FinalFrame extends BaseFrame {
 
-    private final States status;
+	private final States status;
 
-    /**
-     * Instantiates a new Final frame.
-     */
-    public FinalFrame() {
-        super(FinalScore.init());
-        this.status = new States();
-    }
+	/**
+	 * Instantiates a new Final frame.
+	 */
+	public FinalFrame() {
+		super(FinalScore.init());
+		this.status = new States();
+	}
 
-    private void checkBonusChance() {
-        if (isNotBonusChance()) {
-            throw new CanNotBonusException();
-        }
-    }
+	private void checkBonusChance() {
+		if (isNotBonusChance()) {
+			throw new CanNotBonusException();
+		}
+	}
 
-    private boolean isNotBonusChance() {
-        return score.isOneChance() && status.isBonusState();
-    }
+	private boolean isNotBonusChance() {
+		return score.isOneChance() && status.isBonusState();
+	}
 
-    /**
-     * Status list.
-     *
-     * @return the list
-     */
-    public List<State> status() {
-        return status.values();
-    }
+	/**
+	 * Status list.
+	 *
+	 * @return the list
+	 */
+	public List<State> status() {
+		return status.values();
+	}
 
-    @Override
-    public void bowl(final int downPins) {
-        checkBonusChance();
+	@Override
+	public void bowl(final int downPins) {
+		checkBonusChance();
 
-        score = score.bowl(downPins);
+		score = score.bowl(downPins);
 
-        state = changeBowlingState(score);
-        status.add(state);
-    }
+		state = changeBowlingState(score);
+		status.add(state);
+	}
 
-    @Override
-    public boolean isNextFrame() {
-        return false;
-    }
+	@Override
+	public boolean isNextFrame() {
+		return false;
+	}
 
-    @Override
-    public boolean isEnd() {
-        return score.isOneChance() && score.isMiss() || score.isLast();
-    }
+	@Override
+	public boolean isEnd() {
+		return score.isOneChance() && score.isMiss() || score.isLast();
+	}
 
-    @Override
-    public State state() {
-        return null;
-    }
+	@Override
+	public State state() {
+		return null;
+	}
 
-    @Override
-    public String toString() {
-        return String.format("%s, %s", state, score);
-    }
+	@Override
+	public String toString() {
+		return String.format("%s, %s", state, score);
+	}
 
 }

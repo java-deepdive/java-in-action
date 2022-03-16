@@ -11,29 +11,29 @@ import static kr.seok.racing.step2.Constants.ZERO;
  */
 public final class Validator {
 
-    private Validator() {
-    }
+	private Validator() {
+	}
 
-    public static boolean isBlank(String input) {
-        return Objects.isNull(input) || input.trim().isEmpty();
-    }
+	public static boolean isBlank(String input) {
+		return Objects.isNull(input) || input.trim().isEmpty();
+	}
 
-    public static boolean isNumeric(String item) {
-        try {
-            Integer.parseInt(item);
-        } catch (NumberFormatException e) {
-            return false;
-        }
-        return true;
-    }
+	public static boolean isNumeric(String item) {
+		try {
+			Integer.parseInt(item);
+		} catch (NumberFormatException e) {
+			return false;
+		}
+		return true;
+	}
 
-    public static void isDivideByZero(Integer a) {
-        if (a.equals(ZERO)) {
-            throw new IllegalArgumentException("divide 연산이 불가합니다.");
-        }
-    }
+	public static void isDivideByZero(Integer a) {
+		if (a.equals(ZERO)) {
+			throw new IllegalArgumentException("divide 연산이 불가합니다.");
+		}
+	}
 
-    public static boolean isValidation(String input) {
-        return Pattern.matches(REGEXP, input);
-    }
+	public static boolean isValidation(String input) {
+		return Pattern.matches(REGEXP, input);
+	}
 }

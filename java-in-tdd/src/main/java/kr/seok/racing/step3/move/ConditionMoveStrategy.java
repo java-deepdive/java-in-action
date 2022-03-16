@@ -9,22 +9,22 @@ import kr.seok.racing.step3.random.RandomNumberGenerator;
  */
 public class ConditionMoveStrategy implements MoveStrategy {
 
-    private static final int STANDARD_NUMBER = 4;
+	private static final int STANDARD_NUMBER = 4;
 
-    private final NumberGenerator numberStrategy;
+	private final NumberGenerator numberStrategy;
 
-    // default 전략은 RandomNumber
-    public ConditionMoveStrategy() {
-        this(new RandomNumberGenerator());
-    }
+	// default 전략은 RandomNumber
+	public ConditionMoveStrategy() {
+		this(new RandomNumberGenerator());
+	}
 
-    // 인터페이스를 파라미터로 설정, 구현체를 파라미터로 받아 생성
-    public ConditionMoveStrategy(final NumberGenerator numberStrategy) {
-        this.numberStrategy = numberStrategy;
-    }
+	// 인터페이스를 파라미터로 설정, 구현체를 파라미터로 받아 생성
+	public ConditionMoveStrategy(final NumberGenerator numberStrategy) {
+		this.numberStrategy = numberStrategy;
+	}
 
-    @Override
-    public boolean isMovable() {
-        return numberStrategy.generate() >= STANDARD_NUMBER;
-    }
+	@Override
+	public boolean isMovable() {
+		return numberStrategy.generate() >= STANDARD_NUMBER;
+	}
 }

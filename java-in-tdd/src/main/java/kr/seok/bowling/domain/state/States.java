@@ -13,44 +13,45 @@ import java.util.List;
  */
 public class States {
 
-    private final List<State> status;
+	private final List<State> status;
 
-    /**
-     * Instantiates a new States.
-     */
-    public States() {
-        this.status = new LinkedList<>();
-    }
+	/**
+	 * Instantiates a new States.
+	 */
+	public States() {
+		this.status = new LinkedList<>();
+	}
 
-    /**
-     * Add.
-     *
-     * @param state the state
-     */
-    public void add(State state) {
-        status.add(state);
-    }
+	/**
+	 * Add.
+	 *
+	 * @param state
+	 * 		the state
+	 */
+	public void add(State state) {
+		status.add(state);
+	}
 
-    /**
-     * Is bonus state boolean.
-     *
-     * @return the boolean
-     */
-    public boolean isBonusState() {
-        return status.stream()
-                .noneMatch(s -> isState(s, Strike.class) || isState(s, Spare.class));
-    }
+	/**
+	 * Is bonus state boolean.
+	 *
+	 * @return the boolean
+	 */
+	public boolean isBonusState() {
+		return status.stream()
+				.noneMatch(s -> isState(s, Strike.class) || isState(s, Spare.class));
+	}
 
-    private boolean isState(final State state, Class<?> classType) {
-        return state.getClass().isAssignableFrom(classType);
-    }
+	private boolean isState(final State state, Class<?> classType) {
+		return state.getClass().isAssignableFrom(classType);
+	}
 
-    /**
-     * Values list.
-     *
-     * @return the list
-     */
-    public List<State> values() {
-        return Collections.unmodifiableList(status);
-    }
+	/**
+	 * Values list.
+	 *
+	 * @return the list
+	 */
+	public List<State> values() {
+		return Collections.unmodifiableList(status);
+	}
 }

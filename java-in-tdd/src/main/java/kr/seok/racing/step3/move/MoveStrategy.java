@@ -5,5 +5,5 @@ package kr.seok.racing.step3.move;
  */
 @FunctionalInterface
 public interface MoveStrategy {
-    boolean isMovable();
+	boolean isMovable();
 }

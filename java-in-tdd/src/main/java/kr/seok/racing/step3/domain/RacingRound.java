@@ -8,21 +8,21 @@ import java.util.List;
  */
 public class RacingRound {
 
-    private final List<Car> cars;
+	private final List<Car> cars;
 
-    public RacingRound(final List<Car> movedCars) {
-        cars = movedCars;
-    }
+	public RacingRound(final List<Car> movedCars) {
+		cars = movedCars;
+	}
 
-    // 읽기 전용으로 조회
-    public List<Car> getCars() {
-        return Collections.unmodifiableList(cars);
-    }
+	// 읽기 전용으로 조회
+	public List<Car> getCars() {
+		return Collections.unmodifiableList(cars);
+	}
 
-    public Position getMaxPosition() {
-        return cars.stream()
-                .map(Car::getPosition)
-                .reduce(Position::greaterThan)
-                .orElseGet(Position::new);
-    }
+	public Position getMaxPosition() {
+		return cars.stream()
+				.map(Car::getPosition)
+				.reduce(Position::greaterThan)
+				.orElseGet(Position::new);
+	}
 }

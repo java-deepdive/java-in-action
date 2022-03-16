@@ -15,27 +15,27 @@ import java.util.stream.IntStream;
  */
 public class DefaultLineGenerator implements LineGenerator {
 
-    private static final Random RANDOM = new Random();
+	private static final Random RANDOM = new Random();
 
-    @Override
-    public Line createLine(final int countOfPerson) {
+	@Override
+	public Line createLine(final int countOfPerson) {
 
-        List<Bar> bars = new ArrayList<>(Arrays.asList(Bar.init()));
-        IntStream.range(bars.size(), countOfPerson)
-                .forEach(value -> addNextPoint(bars, value));
+		List<Bar> bars = new ArrayList<>(Arrays.asList(Bar.init()));
+		IntStream.range(bars.size(), countOfPerson)
+				.forEach(value -> addNextPoint(bars, value));
 
-        return Line.valueOf(bars);
-    }
+		return Line.valueOf(bars);
+	}
 
-    private void addNextPoint(final List<Bar> bars, final int value) {
-        Bar bar = bars.get(value - 1);
-        bars.add(point(bar.isExist()));
-    }
+	private void addNextPoint(final List<Bar> bars, final int value) {
+		Bar bar = bars.get(value - 1);
+		bars.add(point(bar.isExist()));
+	}
 
-    private Bar point(final boolean point) {
-        if (point) {
-            return Bar.init();
-        }
-        return Bar.valueOf(RANDOM.nextBoolean());
-    }
+	private Bar point(final boolean point) {
+		if (point) {
+			return Bar.init();
+		}
+		return Bar.valueOf(RANDOM.nextBoolean());
+	}
 }
