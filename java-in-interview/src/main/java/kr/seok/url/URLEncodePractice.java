@@ -22,5 +22,22 @@ public class URLEncodePractice {
 		System.out.println(URLEncoder.encode("This=String=has=equals=signs", StandardCharsets.UTF_8.name()));
 		System.out.println(URLEncoder.encode("This&String&has&ampersands", StandardCharsets.UTF_8.name()));
 		System.out.println(URLEncoder.encode("ThisèStringèhasènon-ASCII characters", StandardCharsets.UTF_8.name()));
+		String query = URLEncoder.encode("https://www.google.com/search?hl=en&as_q=Java&as_epq=I/O", StandardCharsets.UTF_8.name());
+		System.out.println(query);
+		
+		String url = "https://www.google.com/search?";
+		url += URLEncoder.encode("hl", StandardCharsets.UTF_8.name());
+		url += "=";
+		url += URLEncoder.encode("en", StandardCharsets.UTF_8.name());
+		url += "&";
+		url += URLEncoder.encode("as_q", StandardCharsets.UTF_8.name());
+		url += "=";
+		url += URLEncoder.encode("Java", StandardCharsets.UTF_8.name());
+		url += "&";
+		url += URLEncoder.encode("as_epq", StandardCharsets.UTF_8.name());
+		url += "=";
+		url += URLEncoder.encode("I/O", StandardCharsets.UTF_8.name());
+
+		System.out.println("url = " + url);
 	}
 }
