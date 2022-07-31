@@ -6,24 +6,27 @@ import kr.seok.calculator.v1.exception.CalculatorException;
 import java.util.Objects;
 
 public class Number {
-
+	
 	private final int number;
-
+	
 	protected Number(int number) {
 		this.number = number;
 	}
-
+	
 	public static Number of(String number) {
 		if (Validator.isNotNumericOrIsNegativeNumber(number)) {
 			throw new CalculatorException("계산할 수 없는 문자 입니다.");
 		}
 		return new Number(Integer.parseInt(number));
 	}
-
+	
+	public static Number of(int number) {
+		return new Number(number);
+	}
 	public int getNumber() {
 		return number;
 	}
-
+	
 	@Override
 	public boolean equals(Object o) {
 		if (this == o) return true;
@@ -31,7 +34,7 @@ public class Number {
 		final Number number1 = (Number) o;
 		return getNumber() == number1.getNumber();
 	}
-
+	
 	@Override
 	public int hashCode() {
 		return Objects.hash(getNumber());
