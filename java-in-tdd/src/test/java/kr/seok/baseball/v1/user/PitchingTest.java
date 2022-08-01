@@ -1,8 +1,8 @@
 package kr.seok.baseball.v1.user;
 
+import kr.seok.baseball.v1.balls.Balls;
+import kr.seok.baseball.v1.balls.Pitching;
 import org.junit.jupiter.api.Test;
-
-import static org.junit.jupiter.api.Assertions.*;
 
 class PitchingTest {
 	

@@ -1,4 +1,4 @@
-package kr.seok.baseball.v1.user;
+package kr.seok.baseball.v1.balls;
 
 import kr.seok.baseball.v1.strategy.Strategy;
 
@@ -10,6 +10,6 @@ public class Random {
 	 * 랜덤한 숫자 3개를 생성
 	 */
 	public static int[] createNum() {
-		return new int[]{};
+		return new int[]{1, 2, 3};
 	}
 }

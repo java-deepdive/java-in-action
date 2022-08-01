@@ -1,4 +1,4 @@
-package kr.seok.baseball.v1.user;
+package kr.seok.baseball.v1.balls;
 
 public class Pitching {
 	private final Balls com;
@@ -8,7 +8,6 @@ public class Pitching {
 		this.com = com;
 		this.player = player;
 	}
-	
 	
 	public void report() {
 	

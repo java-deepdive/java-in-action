@@ -1,4 +1,4 @@
-package kr.seok.baseball.v1.user;
+package kr.seok.baseball.v1.balls;
 
 import java.util.Arrays;
 import java.util.List;
