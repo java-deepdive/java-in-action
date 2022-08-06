@@ -1,10 +1,10 @@
-package kr.seok.baseball.v1.game;
+package kr.seok.baseball.v2.game;
 
-import kr.seok.baseball.v1.balls.Balls;
-import kr.seok.baseball.v1.user.Computer;
-import kr.seok.baseball.v1.balls.Pitching;
-import kr.seok.baseball.v1.view.Input;
-import kr.seok.baseball.v1.view.Output;
+import kr.seok.baseball.v2.balls.Balls;
+import kr.seok.baseball.v2.user.Computer;
+import kr.seok.baseball.v2.balls.Pitching;
+import kr.seok.baseball.v2.view.Input;
+import kr.seok.baseball.v2.view.Output;
 
 
 public class BaseBallGame implements Runnable {

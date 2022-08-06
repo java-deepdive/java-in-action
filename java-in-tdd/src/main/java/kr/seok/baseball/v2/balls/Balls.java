@@ -1,4 +1,4 @@
-package kr.seok.baseball.v1.balls;
+package kr.seok.baseball.v2.balls;
 
 import java.util.Arrays;
 import java.util.List;

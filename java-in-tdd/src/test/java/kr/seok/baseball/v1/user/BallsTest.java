@@ -1,6 +1,6 @@
 package kr.seok.baseball.v1.user;
 
-import kr.seok.baseball.v1.balls.Balls;
+import kr.seok.baseball.v2.balls.Balls;
 import org.junit.jupiter.api.DisplayName;
 import org.junit.jupiter.api.Test;
 

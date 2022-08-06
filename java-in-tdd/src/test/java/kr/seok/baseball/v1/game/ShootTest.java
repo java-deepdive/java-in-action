@@ -1,5 +1,6 @@
 package kr.seok.baseball.v1.game;
 
+import kr.seok.baseball.v2.game.Shoot;
 import org.junit.jupiter.api.DisplayName;
 import org.junit.jupiter.api.Test;
 

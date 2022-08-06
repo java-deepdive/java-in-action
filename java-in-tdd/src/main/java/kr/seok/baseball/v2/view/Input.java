@@ -1,6 +1,6 @@
-package kr.seok.baseball.v1.view;
+package kr.seok.baseball.v2.view;
 
-import kr.seok.baseball.v1.balls.Balls;
+import kr.seok.baseball.v2.balls.Balls;
 
 public class Input {
 	

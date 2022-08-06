@@ -1,4 +1,4 @@
-package kr.seok.baseball.v1.game;
+package kr.seok.baseball.v2.game;
 
 import java.util.Random;
 

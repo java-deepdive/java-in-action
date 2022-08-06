@@ -1,7 +1,8 @@
-package kr.seok.baseball.v1.game;
+package kr.seok.baseball.v2;
 
-import kr.seok.baseball.v1.view.Input;
-import kr.seok.baseball.v1.view.Output;
+import kr.seok.baseball.v2.game.BaseBallGame;
+import kr.seok.baseball.v2.view.Input;
+import kr.seok.baseball.v2.view.Output;
 
 public class BaseBallApplication {
 	public static void main(String[] args) {
@@ -10,6 +11,5 @@ public class BaseBallApplication {
 			.output(new Output())
 			.build()
 			.run();
-		
 	}
 }
