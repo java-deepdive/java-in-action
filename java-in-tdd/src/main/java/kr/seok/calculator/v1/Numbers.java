@@ -14,14 +14,14 @@ import static java.util.stream.Collectors.toList;
  */
 public class Numbers {
 
-	private final List<Number> numbers;
+	private final List<Number> values;
 
 	private Numbers(String text) {
 		this(text, new DefaultPattern());
 	}
 
 	protected Numbers(String text, PatternSeparator patternSeparator) {
-		numbers = getExtractNumbers(text, patternSeparator);
+		values = getExtractNumbers(text, patternSeparator);
 	}
 
 	public static Numbers of(String text) {
@@ -44,7 +44,7 @@ public class Numbers {
 	}
 
 	public int sumNumbers() {
-		return numbers.stream()
+		return values.stream()
 				.mapToInt(Number::getNumber)
 				.sum();
 	}

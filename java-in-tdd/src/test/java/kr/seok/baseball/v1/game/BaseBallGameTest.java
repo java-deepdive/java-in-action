@@ -15,4 +15,13 @@ class BaseBallGameTest {
 			.build()
 			.run();
 	}
+	
+	@Test
+	void testCase2() {
+		String[] items = "123".split("");
+		for(int i = 0 ; i < items.length ; i++) {
+			System.out.println("items = " + items[i]);
+		}
+		
+	}
 }
