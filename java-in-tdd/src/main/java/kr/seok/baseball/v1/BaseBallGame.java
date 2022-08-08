@@ -10,10 +10,6 @@ public class BaseBallGame {
 	
 	private final Scanner in = new Scanner(System.in);
 	
-	public static void main(String[] args) {
-		new BaseBallGame().run();
-	}
-	
 	public void run() {
 		do {
 			System.out.println("게임 시작");
