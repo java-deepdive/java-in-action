@@ -6,11 +6,11 @@ import java.util.stream.IntStream;
 
 import static java.util.stream.Collectors.toList;
 
-public class RandomBall {
+public class ComBall {
 	
 	private final List<Ball> values;
 	
-	public RandomBall(int min, int max) {
+	public ComBall(int min, int max) {
 		List<Ball> balls = make(min, max);
 		Collections.shuffle(balls);
 		this.values = balls.subList(0, 3);

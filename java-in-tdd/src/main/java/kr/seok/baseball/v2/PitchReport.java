@@ -10,8 +10,8 @@ public class PitchReport {
 		this.ball = ball;
 	}
 	
-	public boolean isStrike() {
-		return strike == 3;
+	public boolean threeStrike() {
+		return PitchRule.strike(strike);
 	}
 	
 	@Override
@@ -36,4 +36,21 @@ public class PitchReport {
 		}
 	}
 	
+	enum PitchRule {
+		STRIKE(3);
+		
+		private final int value;
+		
+		PitchRule(int value) {
+			this.value = value;
+		}
+		
+		public int value() {
+			return value;
+		}
+		
+		public static boolean strike(int value) {
+			return value == STRIKE.value;
+		}
+	}
 }
