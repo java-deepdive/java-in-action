@@ -9,8 +9,11 @@ repositories {
 }
 
 dependencies {
-    testCompile('org.junit.jupiter:junit-jupiter:5.8.2')
-    testCompile('org.assertj:assertj-core:3.22.0')
+
+    compileOnly 'org.projectlombok:lombok:1.18.24'
+    annotationProcessor 'org.projectlombok:lombok:1.18.24'
+    testCompile('org.junit.jupiter:junit-jupiter:5.9.0')
+    testCompile('org.assertj:assertj-core:3.23.1')
 }
 
 test {

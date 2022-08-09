@@ -28,7 +28,7 @@ VALUES (2, 'Stapler', 1);
 INSERT INTO items(id, name, sellerId)
 VALUES (3, 'Pencil', 2);
 
--- Expected output (in any order):
+-- Expected logging (in any order):
 -- Item      Seller
 -- ----------------
 -- Notebook  Penny
