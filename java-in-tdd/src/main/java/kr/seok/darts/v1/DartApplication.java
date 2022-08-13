@@ -1,4 +1,4 @@
-package kr.seok.darts;
+package kr.seok.darts.v1;
 
 import java.util.Scanner;
 
