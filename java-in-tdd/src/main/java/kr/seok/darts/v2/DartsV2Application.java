@@ -6,4 +6,3 @@ public class DartsV2Application {
 		dartsV2Game.play();
 	}
 }
-}
