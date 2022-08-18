@@ -14,6 +14,4 @@ public class CoffeeOrderV2 {
 		Customer customer = new Customer();
 		customer.order(menuName, new Menu(), new Barista());
 	}
-	
-	
 }

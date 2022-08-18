@@ -7,10 +7,10 @@ import java.util.Objects;
 
 public class Number {
 	
-	private final int number;
+	private final int value;
 	
-	protected Number(int number) {
-		this.number = number;
+	protected Number(int value) {
+		this.value = value;
 	}
 	
 	public static Number of(String number) {
@@ -23,8 +23,8 @@ public class Number {
 	public static Number of(int number) {
 		return new Number(number);
 	}
-	public int getNumber() {
-		return number;
+	public int getValue() {
+		return value;
 	}
 	
 	@Override
@@ -32,11 +32,11 @@ public class Number {
 		if (this == o) return true;
 		if (!(o instanceof Number)) return false;
 		final Number number1 = (Number) o;
-		return getNumber() == number1.getNumber();
+		return getValue() == number1.getValue();
 	}
 	
 	@Override
 	public int hashCode() {
-		return Objects.hash(getNumber());
+		return Objects.hash(getValue());
 	}
 }

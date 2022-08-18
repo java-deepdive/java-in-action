@@ -33,7 +33,7 @@ public final class MathContext {
 	public Queue<Operator> setOperations(String[] userInput) {
 		return Arrays.stream(userInput)
 				.filter(Operator::isOperation)
-				.map(Operator::getOperator)
+				.map(Operator::of)
 				.collect(toCollection(ConcurrentLinkedQueue::new));
 	}
 
