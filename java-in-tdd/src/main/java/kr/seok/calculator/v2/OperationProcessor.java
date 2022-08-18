@@ -5,7 +5,7 @@ import java.util.Optional;
 import java.util.function.BiFunction;
 import java.util.function.BinaryOperator;
 
-public enum Processor {
+public enum OperationProcessor {
 	PLUS("+", Double::sum),
 	SUBTRACT("-", (left, right) -> (left - right)),
 	MULTIPLY("*", (left, right) -> (left * right)),
@@ -21,12 +21,12 @@ public enum Processor {
 	private final String operator;
 	private final BiFunction<Double, Double, Double> expression;
 
-	Processor(String operator, BinaryOperator<Double> expression) {
+	OperationProcessor(String operator, BinaryOperator<Double> expression) {
 		this.operator = operator;
 		this.expression = expression;
 	}
 
-	public static Processor of(String operator) {
+	public static OperationProcessor of(String operator) {
 		return Arrays.stream(values())
 				.filter(op -> isMatchesOperator(operator, op))
 				.findFirst()
@@ -43,7 +43,7 @@ public enum Processor {
 		return expression.apply(left.value(), right.value());
 	}
 	
-	private static boolean isMatchesOperator(String operator, Processor op) {
+	private static boolean isMatchesOperator(String operator, OperationProcessor op) {
 		return op.operator.equals(operator);
 	}
 }

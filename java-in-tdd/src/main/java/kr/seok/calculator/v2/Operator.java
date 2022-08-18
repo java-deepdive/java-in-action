@@ -1,14 +1,14 @@
 package kr.seok.calculator.v2;
 
 public class Operator {
-    private final Processor value;
+    private final OperationProcessor value;
 
-    public Operator(Processor value) {
+    public Operator(OperationProcessor value) {
         this.value = value;
     }
 
     public Operator(String input) {
-        this(Processor.of(input));
+        this(OperationProcessor.of(input));
     }
 
     public double calculate(Operand left, Operand right) {
