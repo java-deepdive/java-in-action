@@ -1,10 +1,11 @@
 package kr.seok.java8.chap5;
 
-import lambdasinaction.chap4.*;
+
+import kr.seok.java8.chap4.Dish;
 
 import java.util.Optional;
 
-import static lambdasinaction.chap4.Dish.menu;
+import static kr.seok.java8.chap4.Dish.menu;
 
 public class Finding {
 	

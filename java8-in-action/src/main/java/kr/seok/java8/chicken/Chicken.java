@@ -32,4 +32,12 @@ public class Chicken {
 	public int hashCode() {
 		return Objects.hash(brand, price);
 	}
+	
+	@Override
+	public String toString() {
+		return "Chicken{" +
+			"brand=" + brand +
+			", price=" + price +
+			'}';
+	}
 }

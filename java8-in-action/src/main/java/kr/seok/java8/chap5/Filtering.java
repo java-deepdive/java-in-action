@@ -1,12 +1,12 @@
 package kr.seok.java8.chap5;
 
-import lambdasinaction.chap4.*;
+import kr.seok.java8.chap4.Dish;
 
 import java.util.Arrays;
 import java.util.List;
 
 import static java.util.stream.Collectors.toList;
-import static lambdasinaction.chap4.Dish.menu;
+import static kr.seok.java8.chap4.Dish.menu;
 
 public class Filtering {
 	
