@@ -17,7 +17,7 @@ class ChickenReportV2Test {
 	void testCase1() {
 		List<Chicken> originChickenList = List.of(
 			new Chicken(KFC, 10_000),
-			new Chicken(KFC, 10_000),
+			new Chicken(KFC, 12_000),
 			new Chicken(GCOVA, 9_000),
 			new Chicken(ChickenBrand.BBQ, 15_000)
 		);
