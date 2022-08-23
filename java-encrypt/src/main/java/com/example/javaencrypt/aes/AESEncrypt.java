@@ -5,6 +5,9 @@ import javax.crypto.spec.SecretKeySpec;
 import java.util.Base64;
 
 public class AESEncrypt {
+	
+	public static final String AES_ECB_PKCS_5_PADDING = "AES/ECB/PKCS5Padding";
+	
 	public static void main(String[] args) {
 //		String plainText = "";
 		String key = "시크릿키";
@@ -17,7 +20,7 @@ public class AESEncrypt {
 	
 	public static String encrypt(String plainText, String key) {
 		try {
-			Cipher cipher = Cipher.getInstance("AES/ECB/PKCS5Padding");
+			Cipher cipher = Cipher.getInstance(AES_ECB_PKCS_5_PADDING);
 			SecretKeySpec secretKey = new SecretKeySpec(key.getBytes(), "AES");
 			cipher.init(Cipher.ENCRYPT_MODE, secretKey);
 			byte[] encrypted = cipher.doFinal(plainText.getBytes());
@@ -30,7 +33,7 @@ public class AESEncrypt {
 	
 	public static String decrypt(String cipherText, String key) {
 		try {
-			Cipher cipher = Cipher.getInstance("AES/ECB/PKCS5Padding");
+			Cipher cipher = Cipher.getInstance(AES_ECB_PKCS_5_PADDING);
 			SecretKeySpec secretKey = new SecretKeySpec(key.getBytes(), "AES");
 			cipher.init(Cipher.DECRYPT_MODE, secretKey);
 			byte[] decrypted = cipher.doFinal(hexToByteArray(cipherText));
