@@ -1,5 +1,7 @@
 package kr.seok.java8.chicken;
 
+import java.util.Arrays;
+
 public enum ChickenBrand {
 	BHC,
 	KFC,
@@ -11,5 +13,9 @@ public enum ChickenBrand {
 	PELICANA,
 	HOOCHAM,
 	MOMSTOUCH,
-	PURADAK
+	PURADAK;
+	
+	public boolean isMatch(ChickenBrand brand) {
+		return Arrays.asList(values()).contains(brand);
+	}
 }
