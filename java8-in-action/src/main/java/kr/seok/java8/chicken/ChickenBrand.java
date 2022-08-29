@@ -16,6 +16,7 @@ public enum ChickenBrand {
 	PURADAK;
 	
 	public boolean isMatch(ChickenBrand brand) {
-		return Arrays.asList(values()).contains(brand);
+		return Arrays.stream(values())
+			.anyMatch(b -> b == brand);
 	}
 }
