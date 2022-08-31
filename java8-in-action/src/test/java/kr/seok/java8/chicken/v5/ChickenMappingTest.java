@@ -1,17 +1,14 @@
 package kr.seok.java8.chicken.v5;
 
 import kr.seok.java8.chicken.Chicken;
-import kr.seok.java8.chicken.ChickenBrand;
 import org.junit.jupiter.api.DisplayName;
 import org.junit.jupiter.api.Test;
 
 import java.util.List;
 
 import static kr.seok.java8.chicken.ChickenBrand.*;
-import static kr.seok.java8.chicken.ChickenBrand.GCOVA;
-import static kr.seok.java8.chicken.ChickenBrand.KFC;
 import static org.assertj.core.api.Assertions.assertThat;
-import static org.junit.jupiter.api.Assertions.*;
+import static org.junit.jupiter.api.Assertions.assertAll;
 
 class ChickenMappingTest {
 	
