@@ -5,19 +5,18 @@ import java.util.Optional;
 
 public class User {
 	private final String name;
-	private Optional<Order> order;
+	private Order order;
 	
 	public User(String name) {
 		this.name = name;
-		this.order = Optional.empty();
 	}
 	
 	public void order(Order order) {
-		this.order = Optional.ofNullable(order);
+		this.order = order;
 	}
 	
 	public Optional<Order> getOrder() {
-		return order;
+		return Optional.ofNullable(order);
 	}
 	
 	public String getName() {

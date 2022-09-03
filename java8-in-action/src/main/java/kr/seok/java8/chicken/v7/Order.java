@@ -6,18 +6,14 @@ import java.util.Objects;
 import java.util.Optional;
 
 public class Order {
-	private Optional<Chicken> chicken;
-
-	public Order() {
-		this.chicken = Optional.empty();
-	}
+	private Chicken chicken;
 
 	public void setChicken(Chicken chicken) {
-		this.chicken = Optional.ofNullable(chicken);
+		this.chicken = chicken;
 	}
 	
 	public Chicken getChicken() {
-		return chicken
+		return Optional.ofNullable(chicken)
 			.orElseThrow(() -> new RuntimeException("치킨 정보를 조회할 수 없습니다."));
 	}
 	
