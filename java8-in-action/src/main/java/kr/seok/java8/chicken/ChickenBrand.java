@@ -19,4 +19,8 @@ public enum ChickenBrand {
 		return Arrays.stream(values())
 			.anyMatch(b -> b == brand);
 	}
+	
+	public String getName() {
+		return this.name();
+	}
 }
