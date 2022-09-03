@@ -3,10 +3,13 @@ package kr.seok.java8.chicken.v6;
 class User {
 	private final String name;
 	
-	private final Order order;
+	private Order order;
 	
-	public User(String name, Order order) {
+	public User(String name) {
 		this.name = name;
+	}
+	
+	public void order(Order order) {
 		this.order = order;
 	}
 	
