@@ -16,7 +16,7 @@ public class ChickenDistinct {
 	
 	public List<Chicken> distinctByBrandAndMaxPrice(ChickenBrand brand) {
 		return chickens.stream()
-			.filter(chicken -> chicken.isMatch(brand))
+			.filter(chicken -> chicken.isMatchBrand(brand))
 			.sorted(Comparator.comparing(Chicken::getPrice).reversed())
 			.distinct()
 			.collect(Collectors.toList());
@@ -24,7 +24,7 @@ public class ChickenDistinct {
 	
 	public List<Chicken> distinctByBrandAndLimit(ChickenBrand brand, int limit) {
 		return chickens.stream()
-			.filter(chicken -> chicken.isMatch(brand))
+			.filter(chicken -> chicken.isMatchBrand(brand))
 			.sorted(Comparator.comparing(Chicken::getPrice).reversed())
 			.limit(limit)
 			.collect(Collectors.toList());

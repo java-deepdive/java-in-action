@@ -15,7 +15,7 @@ public class ChickenFilterV3 {
 	
 	public List<Chicken> filterBrandChicken(ChickenBrand brand) {
 		return this.chickens.stream()
-			.filter(chicken -> chicken.isMatch(brand))
+			.filter(chicken -> chicken.isMatchBrand(brand))
 			.collect(Collectors.toList());
 	}
 }

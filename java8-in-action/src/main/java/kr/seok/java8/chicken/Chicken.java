@@ -25,7 +25,7 @@ public class Chicken implements Comparable<Chicken> {
 		return this.price;
 	}
 	
-	public boolean isMatch(ChickenBrand brand) {
+	public boolean isMatchBrand(ChickenBrand brand) {
 		return this.brand == brand;
 	}
 	
