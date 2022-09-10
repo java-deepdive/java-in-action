@@ -5,7 +5,6 @@ import org.junit.jupiter.api.DisplayName;
 import org.junit.jupiter.api.RepeatedTest;
 import org.junit.jupiter.api.Test;
 
-import java.lang.annotation.Repeatable;
 import java.util.HashMap;
 import java.util.Map;
 
@@ -41,19 +40,49 @@ class ChickenReduceTest {
 		System.out.println("Stream reduce => totalPriceByBrand : " + (end - start));
 		
 		assertAll(
-				() -> assertThat(sumPriceByBrand).isEqualTo(ChickenFixture.getNeneChickenPrice()),
-				() -> assertThat(sumPriceByBrandStream).isEqualTo(ChickenFixture.getNeneChickenPrice()),
-				() -> assertThat(totalPriceByBrand).isEqualTo(ChickenFixture.getNeneChickenPrice())
+			() -> assertThat(sumPriceByBrand).isEqualTo(ChickenFixture.getNeneChickenPrice()),
+			() -> assertThat(sumPriceByBrandStream).isEqualTo(ChickenFixture.getNeneChickenPrice()),
+			() -> assertThat(totalPriceByBrand).isEqualTo(ChickenFixture.getNeneChickenPrice())
 		);
 	}
 	
 	@DisplayName("int 타입의 mapToInt vs reduce 성능 측정 테스트")
-	@Test
 	@RepeatedTest(100)
+	@Test
 	void testCase6() {
 		Map<String, Integer> dummyMap = new HashMap<>();
 		
-		for(int i = 0; i < 1000000; i++) {
+		for (int i = 0; i < 1000000; i++) {
+			dummyMap.put("" + i, i);
+		}
+		long start = System.currentTimeMillis();
+		int sum = 0;
+		for (Integer value : dummyMap.values()) {
+			sum += value;
+		}
+		long end = System.currentTimeMillis();
+		System.out.println("for-each => sum : " + (end - start));
+		
+		start = System.currentTimeMillis();
+		int sum2 = dummyMap.values().stream().mapToInt(Integer::intValue).sum();
+		end = System.currentTimeMillis();
+		
+		System.out.println("Stream => mapToInt : " + (end - start));
+		
+		start = System.currentTimeMillis();
+		int sum3 = dummyMap.values().stream().reduce(0, Integer::sum);
+		end = System.currentTimeMillis();
+		
+		System.out.println("Stream => reduce : " + (end - start));
+	}
+	
+	@DisplayName("int 타입의 mapToInt vs reduce parallel 성능 측정 테스트")
+	@RepeatedTest(100)
+	@Test
+	void testCase7() {
+		Map<String, Integer> dummyMap = new HashMap<>();
+		
+		for (int i = 0; i < 1000000; i++) {
 			dummyMap.put("" + i, i);
 		}
 		long start = System.currentTimeMillis();
@@ -68,12 +97,12 @@ class ChickenReduceTest {
 		int sum2 = dummyMap.values().stream().parallel().mapToInt(Integer::intValue).sum();
 		end = System.currentTimeMillis();
 		
-		System.out.println("Stream => mapToInt : " + (end - start));
+		System.out.println("Stream parallel => mapToInt : " + (end - start));
 		
 		start = System.currentTimeMillis();
 		int sum3 = dummyMap.values().stream().parallel().reduce(0, Integer::sum);
 		end = System.currentTimeMillis();
 		
-		System.out.println("Stream => reduce : " + (end - start));
+		System.out.println("Stream parallel => reduce : " + (end - start));
 	}
 }
