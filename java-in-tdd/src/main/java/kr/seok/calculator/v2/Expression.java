@@ -33,6 +33,7 @@ public class Expression {
 	}
 
 	private void classifyFormula(String input) {
+		System.out.println("input = " + input);
 		if (isOperand()) {
 			operands.offer(new Operand(input));
 			return;

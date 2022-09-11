@@ -19,6 +19,5 @@ class PrimeTestTest {
 			.limit(limit)
 			.filter(Prime::isPrime)
 			.forEach(System.out::println);
-		// then
 	}
 }
