@@ -16,10 +16,8 @@ public class PitchReport {
 	
 	@Override
 	public String toString() {
-		return "PitchReport{" +
-			"strike=" + strike +
-			", ball=" + ball +
-			'}';
+		return
+			((strike != 0) ? (strike + " 스트라이크 ") : "") + ((ball != 0) ? (ball + " 볼") : "");
 	}
 	
 	static class Builder {

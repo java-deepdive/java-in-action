@@ -28,12 +28,13 @@ public class BaseBallV2 {
 		System.out.println("게임스타트");
 		PitchReport report;
 		do {
+			System.out.print("숫자를 입력해 주세요. : ");
 			List<Ball> user = inputUser();
 			report = round(com, user);
 			
-			System.out.println("report = " + report);
+			System.out.println(report.toString());
 		} while (!report.threeStrike());
-		System.out.println("종료");
+		System.out.println("3개의 숫자를 모두 맞히셨습니다! 게임 종료");
 	}
 	
 	private List<Ball> inputUser() {
@@ -59,8 +60,8 @@ public class BaseBallV2 {
 	}
 
 	private boolean isReGame() {
-		System.out.println("재시작 여부 ex) exit");
+		System.out.println("게임을 새로 시작하려면 1, 종료하려면 2를 입력하세요.");
 		String nextLine = in.nextLine();
-		return "exit".equals(nextLine);
+		return "2".equals(nextLine);
 	}
 }

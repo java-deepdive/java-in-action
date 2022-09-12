@@ -34,12 +34,15 @@ class CalculatorTest {
 	}
 	
 	@DisplayName("데코레이터 패턴 추가 사칙 연산 테스트")
-	@CsvSource(value = "1 + 2 * 3:7 +", delimiter = ':')
-	@ParameterizedTest(name = "{index} => 연산식:{0} = 결과:{1}")
-	void testCase3() {
+	@CsvSource(value = {"1 + 2 * 3:7", "4 + 5 - 2 / 2 * 3:6"}, delimiter = ':')
+	@ParameterizedTest(name = "연산 결과 => {0} = {1}")
+	void testCase3(String expression, double expected) {
+		// given
 		CalculatorInterface calculatorInterface = new CalculatorConverter(new Calculator());
-		double calculate = calculatorInterface.calculate("1 + 2 * 3");
-		assertThat(calculate).isEqualTo(7);
+		// when
+		double calculate = calculatorInterface.calculate(expression);
+		// then
+		assertThat(calculate).isEqualTo(expected);
 		
 	}
 }

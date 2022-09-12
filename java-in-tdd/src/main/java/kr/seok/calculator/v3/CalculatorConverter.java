@@ -46,4 +46,25 @@ public final class CalculatorConverter extends CalculatorDecorator {
 			stringBuilder.append(" ");
 		}
 	}
+	
+	public static void main(String[] args) {
+		System.out.println();
+		CalculatorInterface calculator = new CalculatorConverter(new Calculator());
+		String expression = "1 + 2 * 3";
+		
+		double calculate = calculator.calculate(expression);
+		System.out.println("연산 식 = " + expression + " => 결과 = " + calculate);
+		
+		expression = "1 + 2 * 3 + 4";
+		calculate = calculator.calculate(expression);
+		System.out.println("연산 식 = " + expression + " => 결과 = " + calculate);
+		
+		expression = "1 + 2 / 3 + 4 * 5";
+		calculate = calculator.calculate(expression);
+		System.out.println("연산 식 = " + expression + " => 결과 = " + calculate);
+		
+		expression = "1 - 2 - 3 + 4 * 5 / 6";
+		calculate = calculator.calculate(expression);
+		System.out.println("연산 식 = " + expression + " => 결과 = " + calculate);
+	}
 }
