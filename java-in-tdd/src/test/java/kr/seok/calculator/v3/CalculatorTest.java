@@ -1,7 +1,6 @@
 package kr.seok.calculator.v3;
 
 import org.junit.jupiter.api.DisplayName;
-import org.junit.jupiter.api.Test;
 import org.junit.jupiter.params.ParameterizedTest;
 import org.junit.jupiter.params.provider.CsvSource;
 
@@ -26,7 +25,8 @@ class CalculatorTest {
 	@ParameterizedTest(name = "{index} => {0} = {1}")
 	void testCase2(String expression, double expected) {
 		// given
-		CalculatorInterface calculatorInterface = new ProxyCalculator();
+		
+		CalculatorInterface calculatorInterface = new CalculatorConverter(new Calculator());
 		// when
 		double calculate = calculatorInterface.calculate(expression);
 		// then

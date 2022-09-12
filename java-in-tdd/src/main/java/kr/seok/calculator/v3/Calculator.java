@@ -7,9 +7,6 @@ import java.util.Stack;
  */
 public class Calculator implements CalculatorInterface {
 	
-	public Calculator() {
-	}
-	
 	public double calculate(String expression) {
 		String[] tokens = expression.split(" ");
 		Stack<Double> stack = new Stack<>();

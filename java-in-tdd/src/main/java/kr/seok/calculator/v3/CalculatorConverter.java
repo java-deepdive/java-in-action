@@ -1,13 +1,17 @@
 package kr.seok.calculator.v3;
 
 
-import java.util.Stack;
+import java.util.Deque;
+import java.util.concurrent.ConcurrentLinkedDeque;
 
-public class ProxyCalculator implements CalculatorInterface {
+public class CalculatorConverter extends CalculatorDecorator {
 	
 	private Calculator calculator;
 	
-	@Override
+	public CalculatorConverter(CalculatorInterface calculator) {
+		super(calculator);
+	}
+	
 	public double calculate(String expression) {
 		if (calculator == null) {
 			this.calculator = new Calculator();
@@ -18,15 +22,13 @@ public class ProxyCalculator implements CalculatorInterface {
 	
 	protected String parseExpressionInfixToPostFix(String expression) {
 		StringBuilder stringBuilder = new StringBuilder();
-		Stack<String> stack = new Stack<>();
+		Deque<String> stack = new ConcurrentLinkedDeque<>();
 		String[] expSplit = expression.split(" ");
 		for (String s : expSplit) {
 			if (OperationProcessor.isOperator(s)) {
-				if (!stack.isEmpty()) {
-					if (OperationProcessor.compareTo(stack.peek(), s)) {
-						stringBuilder.append(stack.pop());
-						stringBuilder.append(" ");
-					}
+				if (!stack.isEmpty() && OperationProcessor.compareTo(stack.peek(), s)) {
+					stringBuilder.append(stack.pop());
+					stringBuilder.append(" ");
 				}
 				stack.push(s);
 			} else {
