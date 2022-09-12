@@ -24,21 +24,18 @@ public class BaseBallV3 {
 	
 	private void round(Input input, Logging log) { // 한 번의 라운드를 처리하는 메서드
 		
-		log.info("컴퓨터의 숫자 3개를 생성합니다.");
 		Balls com = Balls.generateRandomBalls();
 		PitchReport report;
 		do {
 			
-			log.info("사용자의 숫자 3개를 입력하세요.");
+			log.printf("숫자를 입력해주세요 : ");
 			Balls user = Converter.from(input.userTurn());
 			// 컴퓨터 숫자와 사용자 숫자를 비교하여 파악한 결과를 저장
-			log.info("컴퓨터의 숫자와 사용자의 숫자를 비교합니다.");
 			report = Pitch.report(com, user);
 			
 			log.printReport(report);
 			
-		} while (report.isStrike());
-		
-		
+		} while (!report.isStrike());
+		log.info("3개의 숫자를 모두 맞히셨습니다! 게임 종료");
 	}
 }

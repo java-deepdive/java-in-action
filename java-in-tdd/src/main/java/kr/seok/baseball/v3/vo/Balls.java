@@ -26,4 +26,11 @@ public class Balls {
 	public List<Ball> value() {
 		return Collections.unmodifiableList(values);
 	}
+	
+	@Override
+	public String toString() {
+		return "Balls{" +
+			"values=" + values +
+			'}';
+	}
 }

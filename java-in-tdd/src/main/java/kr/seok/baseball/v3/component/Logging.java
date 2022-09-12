@@ -8,8 +8,11 @@ public class Logging {
 		System.out.println(messages);
 	}
 	
+	public void printf(String messages) {
+		System.out.print(messages);
+	}
+	
 	public void printReport(PitchReport report) {
-		System.out.println("스트라이크 : " + report.getStrike());
-		System.out.println("볼 : " + report.getBall());
+		System.out.println(report.toString());
 	}
 }
