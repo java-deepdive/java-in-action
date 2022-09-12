@@ -1,15 +1,16 @@
 package kr.seok.calculator.v3;
 
-import java.util.Stack;
+import java.util.Deque;
+import java.util.concurrent.ConcurrentLinkedDeque;
 
 /**
  * 후위 표기법으로 정의된 수식을 계산하는 클래스
  */
-public class Calculator implements CalculatorInterface {
+public final class Calculator implements CalculatorInterface {
 	
 	public double calculate(String expression) {
 		String[] tokens = expression.split(" ");
-		Stack<Double> stack = new Stack<>();
+		Deque<Double> stack = new ConcurrentLinkedDeque<>();
 		for (String token : tokens) {
 			if (OperationProcessor.isOperator(token)) {
 				double b = stack.pop();
@@ -20,6 +21,6 @@ public class Calculator implements CalculatorInterface {
 				stack.push(Double.parseDouble(token));
 			}
 		}
-		return stack.peek();
+		return stack.pop();
 	}
 }

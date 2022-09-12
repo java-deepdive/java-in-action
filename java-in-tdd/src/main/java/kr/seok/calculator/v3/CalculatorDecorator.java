@@ -2,14 +2,14 @@ package kr.seok.calculator.v3;
 
 public abstract class CalculatorDecorator implements CalculatorInterface {
 	
-	private CalculatorInterface calculator;
-
-	public CalculatorDecorator(CalculatorInterface calculator) {
-		this.calculator = calculator;
+	private final CalculatorInterface core;
+	
+	protected CalculatorDecorator(CalculatorInterface core) {
+		this.core = core;
 	}
-
+	
 	@Override
 	public double calculate(String expression) {
-		return calculator.calculate(expression);
+		return core.calculate(expression);
 	}
 }

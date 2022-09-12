@@ -4,7 +4,7 @@ package kr.seok.calculator.v3;
 import java.util.Deque;
 import java.util.concurrent.ConcurrentLinkedDeque;
 
-public class CalculatorConverter extends CalculatorDecorator {
+public final class CalculatorConverter extends CalculatorDecorator {
 	
 	private Calculator calculator;
 	
@@ -20,27 +20,30 @@ public class CalculatorConverter extends CalculatorDecorator {
 		return calculator.calculate(postFix);
 	}
 	
-	protected String parseExpressionInfixToPostFix(String expression) {
+	String parseExpressionInfixToPostFix(String expression) {
 		StringBuilder stringBuilder = new StringBuilder();
 		Deque<String> stack = new ConcurrentLinkedDeque<>();
 		String[] expSplit = expression.split(" ");
 		for (String s : expSplit) {
-			if (OperationProcessor.isOperator(s)) {
-				if (!stack.isEmpty() && OperationProcessor.compareTo(stack.peek(), s)) {
-					stringBuilder.append(stack.pop());
-					stringBuilder.append(" ");
-				}
-				stack.push(s);
-			} else {
-				stringBuilder.append(s);
-				stringBuilder.append(" ");
-			}
+			makePostfixExpression(stringBuilder, stack, s);
 		}
 		while (!stack.isEmpty()) {
 			stringBuilder.append(stack.pop());
 			stringBuilder.append(" ");
 		}
-		
 		return stringBuilder.toString().trim();
+	}
+	
+	private void makePostfixExpression(StringBuilder stringBuilder, Deque<String> stack, String s) {
+		if (OperationProcessor.isOperator(s)) {
+			if (!stack.isEmpty() && OperationProcessor.compareTo(stack.peek(), s)) {
+				stringBuilder.append(stack.pop());
+				stringBuilder.append(" ");
+			}
+			stack.push(s);
+		} else {
+			stringBuilder.append(s);
+			stringBuilder.append(" ");
+		}
 	}
 }
