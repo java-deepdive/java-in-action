@@ -25,8 +25,8 @@ class ChickenMappingTest {
 		String convertToChickenBrand = chickenMapping.convertToChickenBrand();
 		assertAll(
 			() -> assertThat(convertToChickenBrand).isNotEqualTo("KFC,GCOVA"),
+			() -> assertThat(convertToChickenBrand).isNotEqualTo("KFC,KFC,GCOVA"),
 			() -> assertThat(convertToChickenBrand).isEqualTo("KFC,GCOVA,BBQ")
 		);
 	}
-	
 }

@@ -1,8 +1,10 @@
 package kr.seok.java8.chicken.v5;
 
 import kr.seok.java8.chicken.Chicken;
+import kr.seok.java8.chicken.ChickenBrand;
 
 import java.util.List;
+import java.util.function.Function;
 import java.util.stream.Collectors;
 
 public class ChickenMapping {
@@ -15,7 +17,8 @@ public class ChickenMapping {
 	
 	public String convertToChickenBrand() {
 		return chickens.stream()
-			.map(chicken -> chicken.getBrand().name())
+			.map(Chicken::getBrand)
+			.map(ChickenBrand::name)
 			.distinct()
 			.collect(Collectors.joining(","));
 	}
