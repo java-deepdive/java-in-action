@@ -43,6 +43,13 @@ class CalculatorTest {
 		double calculate = calculatorInterface.calculate(expression);
 		// then
 		assertThat(calculate).isEqualTo(expected);
-		
+	}
+	
+	@DisplayName("데코레이터 패턴 추가 사칙 연산 테스트")
+	@Test
+	void testCase4() {
+		CalculatorInterface calculatorInterface = new CalculatorConverter(new Calculator());
+		double calculate = calculatorInterface.calculate("1 + 2 * 3 + 4 / 2");
+		System.out.println("calculate = " + calculate);
 	}
 }

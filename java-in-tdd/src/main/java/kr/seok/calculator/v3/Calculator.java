@@ -12,15 +12,19 @@ public final class Calculator implements CalculatorInterface {
 		String[] tokens = expression.split(" ");
 		Deque<Double> stack = new ConcurrentLinkedDeque<>();
 		for (String token : tokens) {
-			if (OperationProcessor.isOperator(token)) {
-				double b = stack.pop();
-				double a = stack.pop();
-				double calculate = OperationProcessor.of(token).calculate(a, b);
-				stack.push(calculate);
-			} else {
-				stack.push(Double.parseDouble(token));
-			}
+			transaction(stack, token);
 		}
 		return stack.pop();
+	}
+	
+	private void transaction(Deque<Double> stack, String token) {
+		if (OperationProcessor.isOperator(token)) {
+			double b = stack.pop();
+			double a = stack.pop();
+			double calculate = OperationProcessor.of(token).calculate(a, b);
+			stack.push(calculate);
+		} else {
+			stack.push(Double.parseDouble(token));
+		}
 	}
 }

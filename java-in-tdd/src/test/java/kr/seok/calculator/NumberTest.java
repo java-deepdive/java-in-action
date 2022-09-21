@@ -2,6 +2,7 @@ package kr.seok.calculator;
 
 import kr.seok.calculator.v1.Number;
 import kr.seok.calculator.v1.exception.CalculatorException;
+import org.junit.jupiter.api.Test;
 import org.junit.jupiter.params.ParameterizedTest;
 import org.junit.jupiter.params.provider.Arguments;
 import org.junit.jupiter.params.provider.CsvSource;
@@ -38,5 +39,11 @@ class NumberTest {
 		assertThatThrownBy(() -> Number.of(given))
 			.isInstanceOf(CalculatorException.class);
 		
+	}
+	
+	@Test
+	void testCase1() {
+		int i = Integer.parseInt(Integer.MAX_VALUE + 1 + "");
+		Integer integer = Integer.valueOf(Integer.MAX_VALUE + "");
 	}
 }

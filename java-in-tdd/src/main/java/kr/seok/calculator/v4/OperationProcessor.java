@@ -1,16 +1,11 @@
-package kr.seok.calculator.v3;
+package kr.seok.calculator.v4;
+
+import kr.seok.calculator.v3.NotSupportedOperationException;
 
 import java.util.Arrays;
-import java.util.Collections;
-import java.util.Map;
 import java.util.Optional;
 import java.util.function.BiFunction;
 import java.util.function.BinaryOperator;
-import java.util.function.Function;
-import java.util.stream.Collectors;
-import java.util.stream.Stream;
-
-import static java.util.stream.Collectors.toMap;
 
 public enum OperationProcessor {
 	PLUS("+", 0, Double::sum),
@@ -28,10 +23,6 @@ public enum OperationProcessor {
 	private final String operator;
 	private final int priority;
 	private final BiFunction<Double, Double, Double> expression;
-	
-	private static final Map<String, OperationProcessor> OPERATOR_MAP =
-		Arrays.stream(OperationProcessor.values())
-			.collect(toMap(OperationProcessor::getOperator, operation -> operation));
 	
 	OperationProcessor(String operator, int priority, BinaryOperator<Double> expression) {
 		this.operator = operator;
@@ -58,10 +49,6 @@ public enum OperationProcessor {
 	
 	public double calculate(double left, double right) {
 		return expression.apply(left, right);
-	}
-	
-	private String getOperator() {
-		return operator;
 	}
 	
 	private static boolean isMatchesOperator(String operator, OperationProcessor op) {

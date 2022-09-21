@@ -1,14 +1,12 @@
-package kr.seok.calculator.v3;
+package kr.seok.calculator.v5;
+
+import kr.seok.calculator.v3.NotSupportedOperationException;
 
 import java.util.Arrays;
-import java.util.Collections;
 import java.util.Map;
 import java.util.Optional;
 import java.util.function.BiFunction;
 import java.util.function.BinaryOperator;
-import java.util.function.Function;
-import java.util.stream.Collectors;
-import java.util.stream.Stream;
 
 import static java.util.stream.Collectors.toMap;
 
@@ -24,10 +22,9 @@ public enum OperationProcessor {
 		return result;
 	});
 	
-	private static final String OPERATOR_VALUE = "^[+\\-*/]$";
 	private final String operator;
 	private final int priority;
-	private final BiFunction<Double, Double, Double> expression;
+	private final BinaryOperator<Double> expression;
 	
 	private static final Map<String, OperationProcessor> OPERATOR_MAP =
 		Arrays.stream(OperationProcessor.values())
@@ -40,16 +37,12 @@ public enum OperationProcessor {
 	}
 	
 	public static OperationProcessor of(String operator) {
-		return Arrays.stream(values())
-			.filter(op -> isMatchesOperator(operator, op))
-			.findFirst()
+		return Optional.ofNullable(OPERATOR_MAP.get(operator))
 			.orElseThrow(() -> new NotSupportedOperationException(operator));
 	}
 	
 	public static boolean isOperator(String userInput) {
-		return Optional.ofNullable(userInput)
-			.filter(s -> s.matches(OPERATOR_VALUE))
-			.isPresent();
+		return OPERATOR_MAP.containsKey(userInput);
 	}
 	
 	public static boolean compareTo(String peek, String s) {
@@ -62,9 +55,5 @@ public enum OperationProcessor {
 	
 	private String getOperator() {
 		return operator;
-	}
-	
-	private static boolean isMatchesOperator(String operator, OperationProcessor op) {
-		return op.operator.equals(operator);
 	}
 }
