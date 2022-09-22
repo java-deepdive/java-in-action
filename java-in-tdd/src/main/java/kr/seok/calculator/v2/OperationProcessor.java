@@ -19,7 +19,7 @@ public enum OperationProcessor {
 
 	private static final String OPERATOR_VALUE = "^[+\\-*/]$";
 	private final String operator;
-	private final BiFunction<Double, Double, Double> expression;
+	private final BinaryOperator<Double> expression;
 
 	OperationProcessor(String operator, BinaryOperator<Double> expression) {
 		this.operator = operator;

@@ -4,7 +4,6 @@ import kr.seok.calculator.v3.NotSupportedOperationException;
 
 import java.util.Arrays;
 import java.util.Optional;
-import java.util.function.BiFunction;
 import java.util.function.BinaryOperator;
 
 public enum OperationProcessor {
@@ -22,7 +21,7 @@ public enum OperationProcessor {
 	private static final String OPERATOR_VALUE = "^[+\\-*/]$";
 	private final String operator;
 	private final int priority;
-	private final BiFunction<Double, Double, Double> expression;
+	private final BinaryOperator<Double> expression;
 	
 	OperationProcessor(String operator, int priority, BinaryOperator<Double> expression) {
 		this.operator = operator;

@@ -6,7 +6,6 @@ class CalculatorTest {
 	
 	@Test
 	void testCase1() {
-		
 		double calculate = Calculator.calculate(new Expression("1 + 2"));
 		System.out.println("calculate = " + calculate);
 	}

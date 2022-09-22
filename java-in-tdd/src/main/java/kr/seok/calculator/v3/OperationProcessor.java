@@ -29,10 +29,6 @@ public enum OperationProcessor {
 	private final int priority;
 	private final BiFunction<Double, Double, Double> expression;
 	
-	private static final Map<String, OperationProcessor> OPERATOR_MAP =
-		Arrays.stream(OperationProcessor.values())
-			.collect(toMap(OperationProcessor::getOperator, operation -> operation));
-	
 	OperationProcessor(String operator, int priority, BinaryOperator<Double> expression) {
 		this.operator = operator;
 		this.priority = priority;
