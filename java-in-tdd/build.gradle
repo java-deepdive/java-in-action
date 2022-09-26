@@ -14,6 +14,7 @@ dependencies {
     annotationProcessor 'org.projectlombok:lombok:1.18.24'
     compile group: 'org.springframework', name: 'spring-core', version: '5.1.3.RELEASE'
     //Thanks for using https://jar-download.com
+
     testCompile('org.junit.jupiter:junit-jupiter:5.9.0')
     testCompile('org.assertj:assertj-core:3.23.1')
 }

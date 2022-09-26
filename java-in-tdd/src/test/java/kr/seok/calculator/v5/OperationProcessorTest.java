@@ -2,6 +2,7 @@ package kr.seok.calculator.v5;
 
 import org.junit.jupiter.api.Disabled;
 import org.junit.jupiter.api.DisplayName;
+import org.junit.jupiter.api.RepeatedTest;
 import org.junit.jupiter.api.Test;
 import org.springframework.util.StopWatch;
 
