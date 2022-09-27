@@ -4,6 +4,7 @@ import java.util.Arrays;
 import java.util.Optional;
 import java.util.function.BiFunction;
 import java.util.function.BinaryOperator;
+import java.util.function.DoubleBinaryOperator;
 
 public enum OperationProcessor {
 	PLUS("+", Double::sum),
@@ -19,9 +20,9 @@ public enum OperationProcessor {
 
 	private static final String OPERATOR_VALUE = "^[+\\-*/]$";
 	private final String operator;
-	private final BinaryOperator<Double> expression;
-
-	OperationProcessor(String operator, BinaryOperator<Double> expression) {
+	private final DoubleBinaryOperator expression;
+	
+	OperationProcessor(String operator, DoubleBinaryOperator expression) {
 		this.operator = operator;
 		this.expression = expression;
 	}
@@ -40,7 +41,7 @@ public enum OperationProcessor {
 	}
 	
 	public double calculate(Operand left, Operand right) {
-		return expression.apply(left.value(), right.value());
+		return expression.applyAsDouble(left.value(), right.value());
 	}
 	
 	private static boolean isMatchesOperator(String operator, OperationProcessor op) {

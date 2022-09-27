@@ -8,18 +8,18 @@ import java.util.ArrayList;
 import java.util.List;
 
 public class Phone {
-    private Money amount;
-    private Duration seconds;
-    private List<Call> calls = new ArrayList<>();
-
-    public Phone(Money amount, Duration seconds) {
-        this.amount = amount;
-        this.seconds = seconds;
-    }
-
-    public void call(Call call) {
-        calls.add(call);
-    }
+	private final Money amount;
+	private final Duration seconds;
+	private final List<Call> calls = new ArrayList<>();
+	
+	public Phone(Money amount, Duration seconds) {
+		this.amount = amount;
+		this.seconds = seconds;
+	}
+	
+	public void call(Call call) {
+		calls.add(call);
+	}
 
     public List<Call> getCalls() {
         return calls;

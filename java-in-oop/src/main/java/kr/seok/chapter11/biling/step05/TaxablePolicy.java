@@ -3,7 +3,7 @@ package kr.seok.chapter11.biling.step05;
 import kr.seok.chapter10.Money;
 
 public class TaxablePolicy extends AdditionalRatePolicy {
-    private double taxRatio;
+    private final double taxRatio;
 
     public TaxablePolicy(double taxRatio, RatePolicy next) {
         super(next);
