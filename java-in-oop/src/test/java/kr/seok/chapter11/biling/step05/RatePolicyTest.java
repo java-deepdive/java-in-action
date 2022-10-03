@@ -15,7 +15,13 @@ class RatePolicyTest {
 	@Test
 	void testCase1() {
 		// given
-		RatePolicy ratePolicy = new RateDiscountablePolicy(Money.wons(1000), new RegularPolicy(Money.wons(1000), Duration.ofSeconds(10)));
+		RatePolicy ratePolicy =
+			new RateDiscountablePolicy(
+				Money.wons(1000),
+				new RegularPolicy(
+					Money.wons(1000),
+					Duration.ofSeconds(10))
+			);
 		// when
 		Money fee = ratePolicy.calculateFee(new Phone(ratePolicy));
 		// then

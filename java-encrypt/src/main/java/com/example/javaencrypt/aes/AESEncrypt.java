@@ -31,6 +31,27 @@ public class AESEncrypt {
 		return null;
 	}
 	
+	public static String encryptSHA256AndHex(String plainText, String key) {
+		try {
+			Cipher cipher = Cipher.getInstance(AES_ECB_PKCS_5_PADDING);
+			SecretKeySpec secretKey = new SecretKeySpec(key.getBytes(), "AES");
+			cipher.init(Cipher.ENCRYPT_MODE, secretKey);
+			byte[] encrypted = cipher.doFinal(plainText.getBytes());
+			return bytesToHex(encrypted);
+		} catch (Exception e) {
+			e.printStackTrace();
+		}
+		return null;
+	}
+	
+	private static String bytesToHex(byte[] encrypted) {
+		StringBuffer result = new StringBuffer();
+		for (byte b : encrypted) {
+			result.append(Integer.toString((b & 0xff) + 0x100, 16).substring(1));
+		}
+		return result.toString();
+	}
+	
 	public static String decrypt(String cipherText, String key) {
 		try {
 			Cipher cipher = Cipher.getInstance(AES_ECB_PKCS_5_PADDING);
