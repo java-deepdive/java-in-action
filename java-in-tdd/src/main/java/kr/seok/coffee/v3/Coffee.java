@@ -1,14 +1,28 @@
 package kr.seok.coffee.v3;
 
+import kr.seok.coffee.v3.coupon.BenefitPolicy;
+import kr.seok.coffee.v3.money.Money;
+import kr.seok.coffee.v3.order.Order;
+
 import java.util.Objects;
 
 public class Coffee {
 	private final String name;
-	private final int price;
+	private final Money price;
+	private final BenefitPolicy benefitPolicy;
 	
-	public Coffee(String name, int price) {
+	public Coffee(String name, Money price, BenefitPolicy benefitPolicy) {
 		this.name = name;
 		this.price = price;
+		this.benefitPolicy = benefitPolicy;
+	}
+	
+	public Money fee() {
+		return price;
+	}
+	
+	public Money calculatorCoffeeFee(Order order) {
+		return price.minus(benefitPolicy.calculatorFee(order));
 	}
 	
 	@Override

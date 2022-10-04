@@ -1,7 +1,7 @@
 package kr.seok.coffee.v3.coupon;
 
-import kr.seok.coffee.v3.Coffee;
 import kr.seok.coffee.v3.money.Money;
+import kr.seok.coffee.v3.order.Order;
 
 public abstract class DiscountPolicy implements BenefitPolicy {
 	
@@ -12,8 +12,8 @@ public abstract class DiscountPolicy implements BenefitPolicy {
 	}
 	
 	@Override
-	public Money apply(Coffee coffee) {
-		Money orderSpecification = benefitPolicy.apply(coffee);
+	public Money calculatorFee(Order coffee) {
+		Money orderSpecification = benefitPolicy.calculatorFee(coffee);
 		return applyDiscount(orderSpecification);
 	}
 	

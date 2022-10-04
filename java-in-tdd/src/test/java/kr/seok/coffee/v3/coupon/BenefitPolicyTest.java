@@ -1,6 +1,6 @@
 package kr.seok.coffee.v3.coupon;
 
-import kr.seok.coffee.v3.money.Money;
+import kr.seok.coffee.v3.order.NoneDiscountPolicy;
 import org.junit.jupiter.api.DisplayName;
 import org.junit.jupiter.api.Test;
 
@@ -10,6 +10,6 @@ class BenefitPolicyTest {
 	@Test
 	void testCase1() {
 		// given
-		BenefitPolicy benefitPolicy = new NoneBenefitPolicy(Money.wons(1000));
+		BenefitPolicy benefitPolicy = new NoneDiscountPolicy();
 	}
 }

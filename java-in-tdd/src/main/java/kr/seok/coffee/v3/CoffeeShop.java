@@ -1,5 +1,8 @@
 package kr.seok.coffee.v3;
 
+import kr.seok.coffee.v3.money.Money;
+import kr.seok.coffee.v3.order.NoneDiscountPolicy;
+
 public class CoffeeShop {
 	
 	/**
@@ -11,7 +14,7 @@ public class CoffeeShop {
 	 */
 	public void order(String name, int price) {
 		
-		Coffee coffee = new Coffee(name, price);
+		Coffee coffee = new Coffee(name, Money.wons(15000), new NoneDiscountPolicy());
 	}
 	
 	public void findCoupon(String phoneNumber) {
