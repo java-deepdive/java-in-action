@@ -11,8 +11,8 @@ import java.util.List;
 public abstract class DefaultDiscountPolicy implements DiscountPolicy {
     private List<DiscountCondition> conditions = new ArrayList<>();
 
-    public DefaultDiscountPolicy(DiscountCondition... conditions) {
-        this.conditions = Arrays.asList(conditions);
+    protected DefaultDiscountPolicy(DiscountCondition... conditions) {
+	    this.conditions = Arrays.asList(conditions);
     }
 
     public Money calculateDiscountAmount(Screening screening) {

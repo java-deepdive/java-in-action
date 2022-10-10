@@ -1,7 +1,5 @@
-package kr.seok.coffee.v3;
+package kr.seok.coffee.v3.domain;
 
-import kr.seok.coffee.v3.coupon.BenefitPolicy;
-import kr.seok.coffee.v3.money.Money;
 import kr.seok.coffee.v3.order.Order;
 
 import java.util.Objects;

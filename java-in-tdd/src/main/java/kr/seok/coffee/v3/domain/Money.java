@@ -1,4 +1,4 @@
-package kr.seok.coffee.v3.money;
+package kr.seok.coffee.v3.domain;
 
 import java.math.BigDecimal;
 import java.util.Objects;
@@ -6,42 +6,50 @@ import java.util.Objects;
 public class Money {
 	public static final Money ZERO = Money.wons(0);
 	
-	private final BigDecimal amount;
+	private final long amount;
 	
-	Money(BigDecimal amount) {
+	Money(long amount) {
 		this.amount = amount;
 	}
 	
 	public static Money wons(long amount) {
-		return new Money(BigDecimal.valueOf(amount));
+		return new Money(amount);
 	}
 	
 	public static Money wons(double amount) {
-		return new Money(BigDecimal.valueOf(amount));
+		return new Money((long) amount);
 	}
 	
-	public Money plus(Money amount) {
-		return new Money(this.amount.add(amount.amount));
+	public Money plus(Money money) {
+		return new Money(this.amount + money.amount);
+	}
+	
+	public synchronized Money plus(long amount) {
+		return new Money(this.amount + amount);
 	}
 	
 	public synchronized Money minus(Money amount) {
-		return new Money(this.amount.subtract(amount.amount));
+		return new Money(this.amount - amount.amount);
 	}
 	
 	public synchronized Money minus(long amount) {
-		return new Money(this.amount.subtract(BigDecimal.valueOf(amount)));
+		return new Money(this.amount - amount);
 	}
 	
-	public Money times(double percent) {
-		return new Money(this.amount.multiply(BigDecimal.valueOf(percent)));
+	public long getAmount() {
+		return amount;
+	}
+	
+	public synchronized Money times(double percent) {
+		return new Money(BigDecimal.valueOf(amount * percent).longValue());
 	}
 	
 	public boolean isLessThan(Money other) {
-		return amount.compareTo(other.amount) < 0;
+		return amount < other.amount;
 	}
 	
 	public boolean isGreaterThanOrEqual(Money other) {
-		return amount.compareTo(other.amount) >= 0;
+		return amount >= other.amount;
 	}
 	
 	@Override

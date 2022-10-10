@@ -7,7 +7,8 @@ import java.time.LocalDateTime;
  */
 public class Screening {
     private final Movie movie;
-    private final int sequence;
+	
+	private final int sequence;
     private final LocalDateTime whenScreened;
 
     public Screening(Movie movie, int sequence, LocalDateTime whenScreened) {

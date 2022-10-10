@@ -1,8 +1,9 @@
 package kr.seok.coffee.v3.coupon;
 
-import kr.seok.coffee.v3.money.Money;
+import kr.seok.coffee.v3.domain.BenefitPolicy;
+import kr.seok.coffee.v3.domain.Money;
 
-public class CouponDiscountPolicy extends DiscountPolicy {
+public class CouponDiscountPolicy extends DefaultDiscountPolicy {
 	
 	private final Money discountAmt;
 	

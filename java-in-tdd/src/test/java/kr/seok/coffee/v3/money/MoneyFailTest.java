@@ -1,5 +1,6 @@
 package kr.seok.coffee.v3.money;
 
+import kr.seok.coffee.v3.domain.Money;
 import org.junit.jupiter.api.DisplayName;
 import org.junit.jupiter.api.Test;
 
@@ -9,7 +10,7 @@ import java.util.concurrent.Executors;
 
 import static org.assertj.core.api.Assertions.assertThat;
 
-class MoneyTest {
+class MoneyFailTest {
 	
 	@DisplayName("금액 차감 테스트")
 	@Test

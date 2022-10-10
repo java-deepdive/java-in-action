@@ -1,7 +1,7 @@
 package kr.seok.coffee.v3.order;
 
-import kr.seok.coffee.v3.coupon.BenefitPolicy;
-import kr.seok.coffee.v3.money.Money;
+import kr.seok.coffee.v3.domain.BenefitPolicy;
+import kr.seok.coffee.v3.domain.Money;
 
 public class NoneDiscountPolicy implements BenefitPolicy {
 	@Override

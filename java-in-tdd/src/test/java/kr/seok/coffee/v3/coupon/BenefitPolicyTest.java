@@ -1,5 +1,6 @@
 package kr.seok.coffee.v3.coupon;
 
+import kr.seok.coffee.v3.domain.BenefitPolicy;
 import kr.seok.coffee.v3.order.NoneDiscountPolicy;
 import org.junit.jupiter.api.DisplayName;
 import org.junit.jupiter.api.Test;

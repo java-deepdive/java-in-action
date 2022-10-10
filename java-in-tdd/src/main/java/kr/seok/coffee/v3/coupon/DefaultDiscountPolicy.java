@@ -1,13 +1,14 @@
 package kr.seok.coffee.v3.coupon;
 
-import kr.seok.coffee.v3.money.Money;
+import kr.seok.coffee.v3.domain.BenefitPolicy;
+import kr.seok.coffee.v3.domain.Money;
 import kr.seok.coffee.v3.order.Order;
 
-public abstract class DiscountPolicy implements BenefitPolicy {
+public abstract class DefaultDiscountPolicy implements BenefitPolicy {
 	
 	private final BenefitPolicy benefitPolicy;
 	
-	DiscountPolicy(BenefitPolicy benefitPolicy) {
+	DefaultDiscountPolicy(BenefitPolicy benefitPolicy) {
 		this.benefitPolicy = benefitPolicy;
 	}
 	

@@ -1,6 +1,6 @@
-package kr.seok.coffee.v3.coupon;
+package kr.seok.coffee.v3.domain;
 
-import kr.seok.coffee.v3.money.Money;
+import kr.seok.coffee.v3.domain.Money;
 import kr.seok.coffee.v3.order.Order;
 
 public interface BenefitPolicy {

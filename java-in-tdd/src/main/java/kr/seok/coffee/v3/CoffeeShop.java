@@ -1,6 +1,7 @@
 package kr.seok.coffee.v3;
 
-import kr.seok.coffee.v3.money.Money;
+import kr.seok.coffee.v3.domain.Money;
+import kr.seok.coffee.v3.domain.Coffee;
 import kr.seok.coffee.v3.order.NoneDiscountPolicy;
 
 public class CoffeeShop {
