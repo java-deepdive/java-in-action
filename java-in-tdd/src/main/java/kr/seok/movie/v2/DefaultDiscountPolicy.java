@@ -1,6 +1,5 @@
 package kr.seok.movie.v2;
 
-
 import java.util.Arrays;
 import java.util.List;
 
@@ -11,6 +10,7 @@ public abstract class DefaultDiscountPolicy implements DiscountPolicy {
 		this.conditions = Arrays.asList(conditions);
 	}
 	
+	@Override
 	public Money calculateDiscountAmount(Screening screening) {
 		for (DiscountCondition each : conditions) {
 			if (each.isSatisfiedBy(screening)) {
