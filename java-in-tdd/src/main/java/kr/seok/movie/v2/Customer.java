@@ -1,5 +1,7 @@
 package kr.seok.movie.v2;
 
+import kr.seok.movie.v3.DiscountAgePolicy;
+
 import java.util.Objects;
 
 public class Customer {

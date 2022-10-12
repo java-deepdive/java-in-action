@@ -17,4 +17,5 @@ public class Reservation {
 	public Money getFee() {
 		return fee;
 	}
+	
 }
