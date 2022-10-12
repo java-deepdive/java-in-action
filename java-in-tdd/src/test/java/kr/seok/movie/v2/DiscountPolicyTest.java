@@ -45,16 +45,20 @@ class DiscountPolicyTest {
 	void testCase3() {
 		// given
 		Movie movie = new Movie("스파이더맨", Money.wons(15000),
-			new PercentDefaultDiscountPolicy(0.5, new PeriodCondition(DayOfWeek.MONDAY,
-				LocalTime.of(10, 0),
-				LocalTime.of(11, 59)
-			))
+			new PercentDefaultDiscountPolicy(0.5,
+				// 기간 할인 조건
+				new PeriodCondition(
+					DayOfWeek.MONDAY,
+					LocalTime.of(23, 0),
+					LocalTime.of(23, 59)
+				))
 		);
-		Screening screening = new Screening(movie, 1, LocalDateTime.of(2020, 1, 1, 10, 0));
+		// 영화 예매 시간 (당일, 현시간 인 경우)
+		Screening screening = new Screening(movie, 1, LocalDateTime.of(2022, 10, 10, 23, 30));
 		
 		// when
 		Reservation reserve = screening.reserve(new Customer(20), 1);
 		// then
-		assertThat(reserve.getFee()).isEqualTo(Money.wons(13500));
+		assertThat(reserve.getFee()).isEqualTo(Money.wons(7500));
 	}
 }

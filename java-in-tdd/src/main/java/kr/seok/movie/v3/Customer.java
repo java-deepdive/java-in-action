@@ -1,4 +1,4 @@
-package kr.seok.movie.v2;
+package kr.seok.movie.v3;
 
 import java.util.Objects;
 
@@ -7,6 +7,10 @@ public class Customer {
 	
 	public Customer(int age) {
 		this.age = age;
+	}
+	
+	public int getAge() {
+		return age;
 	}
 	
 	@Override
