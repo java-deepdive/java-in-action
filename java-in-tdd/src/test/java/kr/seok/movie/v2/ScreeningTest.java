@@ -1,9 +1,13 @@
 package kr.seok.movie.v2;
 
+import kr.seok.movie.v3.time.PercentDiscountPolicy;
 import org.junit.jupiter.api.DisplayName;
 import org.junit.jupiter.api.Test;
 
+import java.time.DayOfWeek;
+import java.time.LocalDate;
 import java.time.LocalDateTime;
+import java.time.LocalTime;
 
 import static org.assertj.core.api.Assertions.assertThat;
 import static org.junit.jupiter.api.Assertions.assertAll;
@@ -58,5 +62,27 @@ class ScreeningTest {
 		Money receipt = reservation.getFee();
 		
 		assertThat(receipt).isEqualTo(Money.wons(29000));
+	}
+	
+	@DisplayName("상영 정보 생성 및 비율 할인 검증 테스트")
+	@Test
+	void testCase4() {
+		// given
+		DayOfWeek dayOfWeek = LocalDate.now().getDayOfWeek();
+		LocalTime startTime = LocalTime.of(0, 0);
+		LocalTime endTime = LocalTime.of(9, 30);
+		DiscountCondition periodCondition = new PeriodCondition(dayOfWeek, startTime, endTime);
+		DiscountPolicy percentDiscountPolicy = new PercentDefaultDiscountPolicy(0.5, periodCondition);
+		
+		LocalDateTime whenScreened = LocalDateTime.of(LocalDate.now(), LocalTime.of(8, 30));
+		
+		Movie movie = new Movie("어벤져스", Money.wons(10000), percentDiscountPolicy);
+		// when
+		Screening screening = new Screening(movie, 1, whenScreened);
+		Reservation reserve = screening.reserve(null, 1);
+		Money fee = reserve.getFee();
+		
+		// then
+		assertThat(fee).isEqualTo(Money.wons(5000));
 	}
 }
