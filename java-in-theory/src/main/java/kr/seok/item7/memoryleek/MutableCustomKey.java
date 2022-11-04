@@ -1,25 +1,25 @@
-package kr.seok.item7;
+package kr.seok.item7.memoryleek;
 
 import java.util.HashMap;
 import java.util.Map;
 import java.util.Objects;
 
-public class MemoryLeekMutableCustomKey {
-
-    private String name;
-
-    public MemoryLeekMutableCustomKey(String name) {
-        this.name = name;
-    }
-
-    public static void main(String[] args) {
-        MemoryLeekMutableCustomKey key = new MemoryLeekMutableCustomKey("Shamik");
-
-        Map<MemoryLeekMutableCustomKey, String> map = new HashMap<>();
+public class MutableCustomKey {
+	
+	private String name;
+	
+	public MutableCustomKey(String name) {
+		this.name = name;
+	}
+	
+	public static void main(String[] args) {
+		MutableCustomKey key = new MutableCustomKey("Shamik");
+		
+		Map<MutableCustomKey, String> map = new HashMap<>();
         map.put(key, "Shamik Mitra");
-
-        MemoryLeekMutableCustomKey refKey = new MemoryLeekMutableCustomKey("Shamik");
-        String val = map.get(refKey);
+		
+		MutableCustomKey refKey = new MutableCustomKey("Shamik");
+		String val = map.get(refKey);
         System.out.println("Value Found " + val);
         key.setName("Bubun");
 
@@ -39,7 +39,7 @@ public class MemoryLeekMutableCustomKey {
     public boolean equals(Object o) {
         if (this == o) return true;
         if (o == null || getClass() != o.getClass()) return false;
-        MemoryLeekMutableCustomKey that = (MemoryLeekMutableCustomKey) o;
+	    MutableCustomKey that = (MutableCustomKey) o;
         return Objects.equals(getName(), that.getName());
     }
 

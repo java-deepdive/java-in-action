@@ -1,15 +1,15 @@
-package kr.seok.item7;
+package kr.seok.item7.memoryleek;
 
-public class MemoryLeekStack {
-    private final int maxSize;
-    private final int[] stackArray;
-    private int pointer;
-
-    public MemoryLeekStack(int s) {
-        maxSize = s;
-        stackArray = new int[maxSize];
-        pointer = -1;
-    }
+public class Stack {
+	private final int maxSize;
+	private final int[] stackArray;
+	private int pointer;
+	
+	public Stack(int s) {
+		maxSize = s;
+		stackArray = new int[maxSize];
+		pointer = -1;
+	}
 
     public void push(int j) {
         stackArray[++pointer] = j;

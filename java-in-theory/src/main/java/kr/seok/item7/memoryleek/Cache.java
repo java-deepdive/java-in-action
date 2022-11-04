@@ -1,19 +1,19 @@
-package kr.seok.item7;
+package kr.seok.item7.memoryleek;
 
 import java.util.HashMap;
 import java.util.Map;
 
-public class MemoryLeekCache {
-    private final Map<String, String> map = new HashMap<>();
-
-    public static void main(String[] args) {
-        MemoryLeekCache cache = new MemoryLeekCache();
-        cache.initCache();
-        cache.forEachDisplay();
-    }
-
-    public void initCache() {
-        map.put("Anil", "Work as Engineer");
+public class Cache {
+	private final Map<String, String> map = new HashMap<>();
+	
+	public static void main(String[] args) {
+		Cache cache = new Cache();
+		cache.initCache();
+		cache.forEachDisplay();
+	}
+	
+	public void initCache() {
+		map.put("Anil", "Work as Engineer");
         map.put("Shamik", "Work as Java Engineer");
         map.put("Ram", "Work as Doctor");
     }
