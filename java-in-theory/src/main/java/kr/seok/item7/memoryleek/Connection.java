@@ -12,8 +12,8 @@ public class Connection {
 		
 		// 메타 정보 살짝 확인
 		conn.getMetaDataInfo(connection);
-
-        // 자원 반환
-        conn.disConnect();
-    }
+		
+		// 자원 반환
+		conn.disConnect();
+	}
 }

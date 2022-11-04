@@ -16,5 +16,5 @@ public class Gc {
 			}
 			IntStream.range(0, 100).forEach(li::add);
 		}
-    }
+	}
 }

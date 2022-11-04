@@ -5,16 +5,9 @@ package kr.seok.item7.memoryleek;
  */
 public class AutoBoxing {
 	
-	public static void main(String[] args) {
-		AutoBoxing autoBoxing = new AutoBoxing();
-		for (long i = 0; i < 1_000_000; i++) {
-			autoBoxing.addIncremental(i);
-		}
-	}
-	
 	public long addIncremental(long l) {
 		Long sum = 0L;
-        sum = sum + l;
-        return sum;
-    }
+		sum = sum + l;
+		return sum;
+	}
 }
