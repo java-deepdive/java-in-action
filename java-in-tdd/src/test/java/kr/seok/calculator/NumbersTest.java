@@ -10,15 +10,18 @@ import org.junit.jupiter.params.ParameterizedTest;
 import org.junit.jupiter.params.provider.Arguments;
 import org.junit.jupiter.params.provider.MethodSource;
 
+import java.util.Arrays;
 import java.util.stream.Stream;
 
-class NumbersTest {
+import static org.assertj.core.api.Assertions.assertThat;
 
+class NumbersTest {
+	
 	private static Stream<Arguments> numberList() {
 		return Stream.of(
-				Arguments.of("1,2,3", new Integer[]{1, 2, 3}),
-				Arguments.of("1,2:3", new Integer[]{1, 2, 3}),
-				Arguments.of("1:2,3", new Integer[]{1, 2, 3})
+			Arguments.of("1,2,3", new Integer[]{1, 2, 3}),
+			Arguments.of("1,2:3", new Integer[]{1, 2, 3}),
+			Arguments.of("1:2,3", new Integer[]{1, 2, 3})
 		);
 	}
 
@@ -44,6 +47,9 @@ class NumbersTest {
 		// given
 		Numbers numbers = Numbers.of(given);
 		// when
+		int sum = numbers.sumNumbers();
+		// then
+		assertThat(sum).isEqualTo(Arrays.stream(expected).mapToInt(Integer::intValue).sum());
 	}
 
 	@DisplayName("일급 컬렉션 문자열 분리 테스트")
@@ -53,6 +59,7 @@ class NumbersTest {
 		// given
 		Numbers numbers = Numbers.of(given);
 		// when
+		
 	}
 
 	@DisplayName("일급 컬렉션 전략에 따른 문자열 분리 테스트")

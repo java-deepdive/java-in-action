@@ -15,10 +15,6 @@ public class PitchReport {
 		return PitchRule.strike(strike);
 	}
 	
-	public int getStrike() {
-		return strike;
-	}
-	
 	public int getBall() {
 		return ball;
 	}
@@ -61,7 +57,6 @@ public class PitchReport {
 			return new PitchReport(strike, ball);
 		}
 	}
-	
 	
 	enum PitchRule {
 		STRIKE(3);

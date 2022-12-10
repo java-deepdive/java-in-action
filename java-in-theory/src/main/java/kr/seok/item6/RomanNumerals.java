@@ -17,5 +17,4 @@ public class RomanNumerals {
 	static boolean isRomanNumeralFast(String s) {
 		return ROMAN.matcher(s).matches();
 	}
-	
 }

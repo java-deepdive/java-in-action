@@ -11,8 +11,11 @@ public class Converter {
 	
 	public static final String STRING_EMPTY = "";
 	
-	public static Balls from(String user) {
-		String[] userBalls = user.split(STRING_EMPTY);
+	private Converter() {
+	}
+	
+	public static Balls from(String userInput) {
+		String[] userBalls = userInput.split(STRING_EMPTY);
 		List<Ball> balls = Arrays.stream(userBalls)
 			.map((String value) -> new Ball(Integer.parseInt(value)))
 			.collect(Collectors.toList());
