@@ -3,7 +3,7 @@ apply plugin: 'eclipse'
 
 group 'kr.seok'
 version '1.0-SNAPSHOT'
-
+sourceCompatibility = JavaVersion.VERSION_17
 repositories {
     mavenCentral()
 }
