@@ -11,7 +11,7 @@ public class Ball {
 	}
 	
 	private void checkArgument(int value, String messages) {
-		if (!(value >= BallRule.MIN.value() && value <= BallRule.MAX.value())) {
+		if (!BallRule.isRange(value)) {
 			throw new IllegalArgumentException(messages);
 		}
 	}
@@ -48,6 +48,10 @@ public class Ball {
 		
 		BallRule(int value) {
 			this.value = value;
+		}
+		
+		static boolean isRange(int value) {
+			return value >= MIN.value() && value <= MAX.value();
 		}
 		
 		public int value() {

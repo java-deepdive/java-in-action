@@ -3,9 +3,13 @@ package kr.seok.baseball.v3.component;
 import java.util.Scanner;
 
 public class Input {
-	private static final Scanner scanner = new Scanner(System.in);
+	private final Scanner scanner;
 	
-	public String userTurn() {
+	public Input() {
+		scanner = new Scanner(System.in);
+	}
+	
+	public String numbers() {
 		return scanner.nextLine();
 	}
 	

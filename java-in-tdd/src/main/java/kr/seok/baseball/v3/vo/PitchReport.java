@@ -35,7 +35,7 @@ public class PitchReport {
 	@Override
 	public String toString() {
 		return
-			strike + " 스트라이크 " +
+			((strike != 0) ? (strike + " 스트라이크 ") : "") +
 				((ball != 0) ? (ball + " 볼") : "");
 	}
 	

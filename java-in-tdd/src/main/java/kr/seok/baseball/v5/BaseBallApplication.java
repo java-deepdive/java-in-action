@@ -6,6 +6,7 @@ public class BaseBallApplication {
 		Output output = new Output();
 		
 		BaseBallGame baseBallGame = new BaseBallGame(input, output);
-		baseBallGame.run(new RandomNumber());
+		// TODO : 숫자 생성기를 주입받아야 한다.
+		baseBallGame.run(null);
 	}
 }

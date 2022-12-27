@@ -18,7 +18,7 @@ import static org.assertj.core.api.Assertions.assertThat;
  * - @ParameterizedTest 를 활용하여 테스트 코드 중복을 제거 학습 <br/>
  * - 위 어노테이션과 함께 사용할 수 있는 @ValueSource, @CsvSource 를 활용하는 학습
  */
-public class SetTest {
+class SetTest {
 	private Set<Integer> numbers;
 
 	@BeforeEach

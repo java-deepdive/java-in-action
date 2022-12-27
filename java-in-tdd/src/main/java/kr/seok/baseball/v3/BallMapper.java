@@ -7,18 +7,19 @@ import java.util.Arrays;
 import java.util.List;
 import java.util.stream.Collectors;
 
-public class Converter {
+public class BallMapper {
 	
 	public static final String STRING_EMPTY = "";
 	
-	private Converter() {
+	private BallMapper() {
 	}
 	
 	public static Balls from(String userInput) {
 		String[] userBalls = userInput.split(STRING_EMPTY);
 		List<Ball> balls = Arrays.stream(userBalls)
-			.map((String value) -> new Ball(Integer.parseInt(value)))
-			.collect(Collectors.toList());
+			.map(Integer::parseInt)
+			.map(Ball::new)
+			.collect(Collectors.toUnmodifiableList());
 		return new Balls(balls);
 	}
 }
