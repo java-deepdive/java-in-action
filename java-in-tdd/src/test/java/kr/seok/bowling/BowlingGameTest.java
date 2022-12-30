@@ -1,5 +1,6 @@
 package kr.seok.bowling;
 
+import kr.seok.bowling.v1.BowlingGame;
 import org.junit.jupiter.api.DisplayName;
 import org.junit.jupiter.api.Test;
 
