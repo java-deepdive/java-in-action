@@ -24,8 +24,8 @@ public class BaseBallGame {
 			// 컴퓨터 숫자 생성
 			Balls targetNumber = numberGenerator.hits(numberSize);
 			// 라운드 시작 및 종료
-			Pitching pitchingResult = new Round(input, output, targetNumber)
-				.start(numberSize);
+			Pitching pitchingResult = new Round(input, output)
+				.start(targetNumber, numberSize);
 			
 			output.print(pitchingResult.toString());
 			

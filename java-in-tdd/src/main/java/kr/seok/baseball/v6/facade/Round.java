@@ -12,15 +12,13 @@ public class Round {
 	
 	private final Input input;
 	private final Output output;
-	private final Balls targetBall;
 	
-	public Round(Input input, Output output, Balls targetBall) {
+	public Round(Input input, Output output) {
 		this.input = input;
 		this.output = output;
-		this.targetBall = targetBall;
 	}
 	
-	public Pitching start(int ballSize) {
+	public Pitching start(Balls targetBall, int ballSize) {
 		// 라운드의 트랜잭션
 		// 1. 사용자의 투구
 		// 2. 사용자의 투구와 컴퓨터의 투구를 비교
@@ -32,8 +30,7 @@ public class Round {
 			
 			Balls userBall = input.numbers(ballSize);
 			
-			pitching = new Pitching(targetBall)
-				.matches(userBall);
+			pitching = Pitching.matches(targetBall, userBall);
 			
 			output.print(pitching.toString());
 			

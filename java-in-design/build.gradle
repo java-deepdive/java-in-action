@@ -19,8 +19,8 @@ dependencies {
     // https://mvnrepository.com/artifact/com.fasterxml.jackson.core/jackson-databind
     implementation group: 'com.fasterxml.jackson.core', name: 'jackson-databind', version: '2.12.1'
 
-    testCompile('org.junit.jupiter:junit-jupiter:5.4.2')
-    testCompile('org.assertj:assertj-core:3.11.1')
+    testCompileOnly('org.junit.jupiter:junit-jupiter:5.4.2')
+    testCompileOnly('org.assertj:assertj-core:3.11.1')
 }
 
 test {

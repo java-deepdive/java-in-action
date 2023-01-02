@@ -11,8 +11,8 @@ repositories {
 
 dependencies {
     implementation 'javax.servlet:javax.servlet-api:3.1.0'
-    testCompile('org.junit.jupiter:junit-jupiter:5.9.0')
-    testCompile('org.assertj:assertj-core:3.23.1')
+    testCompileOnly('org.junit.jupiter:junit-jupiter:5.9.0')
+    testCompileOnly('org.assertj:assertj-core:3.23.1')
 }
 
 test {

@@ -5,22 +5,37 @@ package kr.seok.baseball.v6.numbers;
  */
 public class Pitching {
 	
-	private final Balls target;
+	private static final int BASEBALL_STRIKE = 3;
+	private final int strike;
+	private final int ball;
 	
-	public Pitching(Balls target) {
-		this.target = target;
+	private Pitching(int strike, int ball) {
+		this.strike = strike;
+		this.ball = ball;
 	}
 	
-	public Pitching matches(Balls userNumber) {
-		return null;
+	public static Pitching matches(Balls target, Balls user) {
+		int strike = 0;
+		int ball = 0;
+		for (int i = 0; i < target.size(); i++) {
+			if (target.isStrike(user, i)) {
+				strike++;
+			} else if (target.isBall(user, i)) {
+				ball++;
+			}
+		}
+		return new Pitching(strike, ball);
 	}
 	
 	public boolean isStrike() {
-		return false;
+		return strike == BASEBALL_STRIKE;
 	}
 	
 	@Override
 	public String toString() {
-		return "Pitching{}";
+		return "Pitching{" +
+			"strike=" + strike +
+			", ball=" + ball +
+			'}';
 	}
 }

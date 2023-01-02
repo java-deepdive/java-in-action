@@ -33,8 +33,8 @@ dependencies {
     testCompileOnly 'org.projectlombok:lombok:1.18.20'
     testAnnotationProcessor 'org.projectlombok:lombok:1.18.20'
 
-    testCompile('org.junit.jupiter:junit-jupiter:5.4.2')
-    testCompile('org.assertj:assertj-core:3.11.1')
+    testCompileOnly('org.junit.jupiter:junit-jupiter:5.4.2')
+    testCompileOnly('org.assertj:assertj-core:3.11.1')
 }
 
 test {

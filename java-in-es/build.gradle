@@ -41,8 +41,8 @@ dependencies {
     // https://mvnrepository.com/artifact/org.elasticsearch.client/elasticsearch-rest-high-level-client
     implementation group: 'org.elasticsearch.client', name: 'elasticsearch-rest-high-level-client', version: '7.9.3'
 
-    testCompile('org.junit.jupiter:junit-jupiter:5.4.2')
-    testCompile('org.assertj:assertj-core:3.11.1')
+    testCompileOnly('org.junit.jupiter:junit-jupiter:5.4.2')
+    testCompileOnly('org.assertj:assertj-core:3.11.1')
 }
 
 test {

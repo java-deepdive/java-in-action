@@ -11,4 +11,16 @@ public class Expression {
 		this.left = left;
 		this.right = right;
 	}
+	
+	public String getSign() {
+		return sign;
+	}
+	
+	public int getLeft() {
+		return left;
+	}
+	
+	public int getRight() {
+		return right;
+	}
 }

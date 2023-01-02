@@ -8,6 +8,7 @@ import java.io.IOException;
 import java.io.InputStreamReader;
 import java.text.MessageFormat;
 import java.util.Arrays;
+import java.util.List;
 
 public class InputBaseBallConsole implements Input {
 	
@@ -42,7 +43,7 @@ public class InputBaseBallConsole implements Input {
 		while (tryCurrentCnt < numberSize) {
 			userNumbers[tryCurrentCnt++] = validUserNumber();
 		}
-		return new Balls(userNumbers);
+		return new Balls(List.of(userNumbers));
 	}
 	
 	private Ball validUserNumber() {
