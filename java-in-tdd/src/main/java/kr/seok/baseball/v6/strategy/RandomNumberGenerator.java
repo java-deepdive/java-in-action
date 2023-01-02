@@ -1,10 +1,10 @@
 package kr.seok.baseball.v6.strategy;
 
-import kr.seok.baseball.v6.numbers.Numbers;
+import kr.seok.baseball.v6.numbers.Balls;
 
 public class RandomNumberGenerator implements NumberGenerator {
 	@Override
-	public Numbers hits(int numberSize) {
+	public Balls hits(int numberSize) {
 		return null;
 	}
 }

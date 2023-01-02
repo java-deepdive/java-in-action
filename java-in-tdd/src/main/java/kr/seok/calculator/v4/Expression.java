@@ -63,7 +63,7 @@ public class Expression {
 			
 		}
 		
-		private static void parse(StringBuilder stringBuilder, Deque<String> stack, String s) {
+		private void parse(StringBuilder stringBuilder, Deque<String> stack, String s) {
 			if (OperationProcessor.isOperator(s)) {
 				if (!stack.isEmpty() && OperationProcessor.compareTo(stack.peek(), s)) {
 					stringBuilder.append(stack.pop());

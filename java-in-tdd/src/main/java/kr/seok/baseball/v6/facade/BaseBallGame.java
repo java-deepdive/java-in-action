@@ -2,7 +2,7 @@ package kr.seok.baseball.v6.facade;
 
 import kr.seok.baseball.v6.io.Input;
 import kr.seok.baseball.v6.io.Output;
-import kr.seok.baseball.v6.numbers.Numbers;
+import kr.seok.baseball.v6.numbers.Balls;
 import kr.seok.baseball.v6.numbers.Pitching;
 import kr.seok.baseball.v6.strategy.NumberGenerator;
 
@@ -22,7 +22,7 @@ public class BaseBallGame {
 		// 게임이라는 로직의 트랜잭션
 		do {
 			// 컴퓨터 숫자 생성
-			Numbers targetNumber = numberGenerator.hits(numberSize);
+			Balls targetNumber = numberGenerator.hits(numberSize);
 			// 라운드 시작 및 종료
 			Pitching pitchingResult = new Round(input, output, targetNumber)
 				.start(numberSize);

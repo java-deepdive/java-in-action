@@ -15,7 +15,7 @@ import java.util.stream.Stream;
 
 import static org.assertj.core.api.Assertions.assertThat;
 
-class NumbersTest {
+class BallsTest {
 	
 	private static Stream<Arguments> numberList() {
 		return Stream.of(

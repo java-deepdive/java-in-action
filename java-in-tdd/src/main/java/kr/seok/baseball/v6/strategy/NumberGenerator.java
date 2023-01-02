@@ -1,7 +1,7 @@
 package kr.seok.baseball.v6.strategy;
 
-import kr.seok.baseball.v6.numbers.Numbers;
+import kr.seok.baseball.v6.numbers.Balls;
 
 public interface NumberGenerator {
-	Numbers hits(int numberSize);
+	Balls hits(int numberSize);
 }

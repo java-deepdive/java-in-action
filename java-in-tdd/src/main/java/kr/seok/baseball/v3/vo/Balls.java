@@ -27,6 +27,14 @@ public class Balls {
 		return Collections.unmodifiableList(values);
 	}
 	
+	public boolean isStrike(Balls user, int idx) {
+		return values.get(idx).isMatches(user.value().get(idx));
+	}
+	
+	public boolean isBall(Balls user, int idx) {
+		return values.contains(user.value().get(idx));
+	}
+	
 	@Override
 	public String toString() {
 		return "Balls{" +

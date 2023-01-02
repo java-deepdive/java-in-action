@@ -2,7 +2,7 @@ package kr.seok.baseball.v6.facade;
 
 import kr.seok.baseball.v6.io.Input;
 import kr.seok.baseball.v6.io.Output;
-import kr.seok.baseball.v6.numbers.Numbers;
+import kr.seok.baseball.v6.numbers.Balls;
 import kr.seok.baseball.v6.numbers.Pitching;
 
 /**
@@ -12,15 +12,15 @@ public class Round {
 	
 	private final Input input;
 	private final Output output;
-	private final Numbers targetNumber;
+	private final Balls targetBall;
 	
-	public Round(Input input, Output output, Numbers targetNumber) {
+	public Round(Input input, Output output, Balls targetBall) {
 		this.input = input;
 		this.output = output;
-		this.targetNumber = targetNumber;
+		this.targetBall = targetBall;
 	}
 	
-	public Pitching start(int numberSize) {
+	public Pitching start(int ballSize) {
 		// 라운드의 트랜잭션
 		// 1. 사용자의 투구
 		// 2. 사용자의 투구와 컴퓨터의 투구를 비교
@@ -30,10 +30,10 @@ public class Round {
 		Pitching pitching;
 		do {
 			
-			Numbers userNumber = input.numbers(numberSize);
+			Balls userBall = input.numbers(ballSize);
 			
-			pitching = new Pitching(targetNumber)
-				.matches(userNumber);
+			pitching = new Pitching(targetBall)
+				.matches(userBall);
 			
 			output.print(pitching.toString());
 			

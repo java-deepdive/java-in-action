@@ -12,9 +12,9 @@ public final class Pitch {
 		int strike = 0;
 		int ball = 0;
 		for (int i = 0; i < com.value().size(); i++) {
-			if (com.value().get(i).value() == user.value().get(i).value()) {
+			if (com.isStrike(user, i)) {
 				strike++;
-			} else if (com.value().contains(user.value().get(i))) {
+			} else if (com.isBall(user, i)) {
 				ball++;
 			}
 		}

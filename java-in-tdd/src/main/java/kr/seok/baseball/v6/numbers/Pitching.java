@@ -5,13 +5,13 @@ package kr.seok.baseball.v6.numbers;
  */
 public class Pitching {
 	
-	private final Numbers targetNumber;
+	private final Balls target;
 	
-	public Pitching(Numbers targetNumber) {
-		this.targetNumber = targetNumber;
+	public Pitching(Balls target) {
+		this.target = target;
 	}
 	
-	public Pitching matches(Numbers userNumber) {
+	public Pitching matches(Balls userNumber) {
 		return null;
 	}
 	

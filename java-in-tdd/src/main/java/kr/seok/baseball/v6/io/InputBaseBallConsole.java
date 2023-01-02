@@ -1,7 +1,7 @@
 package kr.seok.baseball.v6.io;
 
-import kr.seok.baseball.v6.numbers.Number;
-import kr.seok.baseball.v6.numbers.Numbers;
+import kr.seok.baseball.v6.numbers.Ball;
+import kr.seok.baseball.v6.numbers.Balls;
 
 import java.io.BufferedReader;
 import java.io.IOException;
@@ -34,18 +34,18 @@ public class InputBaseBallConsole implements Input {
 	}
 	
 	@Override
-	public Numbers numbers(int numberSize) {
+	public Balls numbers(int numberSize) {
 		// TODO 사용자로부터 숫자를 입력받는다.
 		
 		int tryCurrentCnt = 0;
-		Number[] userNumbers = new Number[numberSize];
+		Ball[] userNumbers = new Ball[numberSize];
 		while (tryCurrentCnt < numberSize) {
 			userNumbers[tryCurrentCnt++] = validUserNumber();
 		}
-		return new Numbers(userNumbers);
+		return new Balls(userNumbers);
 	}
 	
-	private Number validUserNumber() {
+	private Ball validUserNumber() {
 		// TODO 사용자로부터 받은 숫자가 유효한지 체크
 		
 		int number = 0;
@@ -57,7 +57,7 @@ public class InputBaseBallConsole implements Input {
 			System.out.println(MessageFormat.format("잘못된 입력값입니다. {}", readUserNumber));
 			validUserNumber();
 		}
-		return new Number(number);
+		return new Ball(number);
 	}
 	
 	enum ReGame {

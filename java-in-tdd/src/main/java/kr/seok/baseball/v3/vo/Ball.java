@@ -20,6 +20,10 @@ public class Ball {
 		return value;
 	}
 	
+	public boolean isMatches(Ball ball) {
+		return this.value == ball.value;
+	}
+	
 	@Override
 	public boolean equals(Object o) {
 		if (this == o) return true;

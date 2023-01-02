@@ -9,6 +9,6 @@ public class InputConsole implements Input {
 	
 	@Override
 	public int[] userNumbers(NumberGenerator numberGenerator) {
-		return new int[0];
+		return numberGenerator.generate();
 	}
 }
