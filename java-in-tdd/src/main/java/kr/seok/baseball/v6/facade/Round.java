@@ -34,7 +34,7 @@ public class Round {
 			
 			output.print(pitching.toString());
 			
-		} while(pitching.isStrike());
+		} while(!pitching.isStrike());
 		
 		return pitching;
 	}
