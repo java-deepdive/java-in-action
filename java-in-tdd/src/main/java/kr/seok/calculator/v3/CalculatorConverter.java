@@ -34,7 +34,7 @@ public final class CalculatorConverter extends CalculatorDecorator {
 		return stringBuilder.toString().trim();
 	}
 	
-	private void makePostfixExpression(StringBuilder stringBuilder, Deque<String> stack, String s) {
+	private static void makePostfixExpression(StringBuilder stringBuilder, Deque<String> stack, String s) {
 		if (OperationProcessor.isOperator(s)) {
 			if (!stack.isEmpty() && OperationProcessor.compareTo(stack.peek(), s)) {
 				stringBuilder.append(stack.pop());
