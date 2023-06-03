@@ -15,13 +15,9 @@ public class TeamGenerator {
         Collections.shuffle(participants);
 
         List<ReviewPair> round1 = createPairs(participants);
-
-        System.out.println("\nRound 1 pairs:");
         printPairs(round1);
 
         List<ReviewPair> round2 = createPairsForRound2(round1);
-
-        System.out.println("\nRound 2 pairs:");
         printPairs(round2);
     }
 
